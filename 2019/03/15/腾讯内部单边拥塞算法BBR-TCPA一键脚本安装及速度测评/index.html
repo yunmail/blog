@@ -20,13 +20,13 @@
 <meta property="og:description" content="TCPA简介：腾讯内部使用的TCPA，由腾讯TEG操作系统组研发，基于RHEL7.4源码，定制化的TCPA。团队介绍：腾讯TEG操作系统组, 2010年成立，专业的内核团队,维护研发腾讯内部linux操作系统tlinux, 保证百万级server高效稳定运行， 为腾讯业务提供有力支撑。 优势：TCPA启用后，小文件比BBR能提升40%以上，大文件比BBR能提升5%~10%。TCPA的优势在于小文件">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-03-15T05:34:19.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.447Z">
+<meta property="article:modified_time" content="2020-06-09T15:06:44.422Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="tcp加速">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778644">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260281">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -205,6 +205,8 @@
   <article>
     <h2 id="TCPA简介："><a href="#TCPA简介：" class="headerlink" title="TCPA简介："></a>TCPA简介：</h2><p>腾讯内部使用的<a href="https://opt.gs/posts/89bc2c8e/" target="_blank" rel="noopener">TCPA</a>，由腾讯TEG操作系统组研发，基于RHEL7.4源码，定制化的<a href="https://opt.gs/posts/89bc2c8e/" target="_blank" rel="noopener">TCPA</a>。<br>团队介绍：<br>腾讯TEG操作系统组, 2010年成立，专业的内核团队,维护研发腾讯内部linux操作系统tlinux, 保证百万级server高效稳定运行， 为腾讯业务提供有力支撑。</p>
 <p>优势：<a href="https://opt.gs/posts/89bc2c8e/" target="_blank" rel="noopener">TCPA</a>启用后，小文件比BBR能提升40%以上，大文件比BBR能提升5%~10%。<a href="https://opt.gs/posts/89bc2c8e/" target="_blank" rel="noopener">TCPA</a>的优势在于小文件的性能提升，程序也默认仅加速网站端口(80/443/8080)，所以更适用于建站场景。</p>
+<a id="more"></a>
+
 <h2 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h2><p>系统：centos7以上<br>boot分区不小于500M(太小可能导致安装内核失败)<br>一键包安装<br>wget <a href="http://down.08mb.com/tcp_opz/tcpa/tcpa.sh" target="_blank" rel="noopener">http://down.08mb.com/tcp_opz/tcpa/tcpa.sh</a><br>sh tcpa.sh</p>
 <h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明:"></a>使用说明:</h2><p>一键包会自动安装依赖(仅epel-release、net-tools)和内核并重启，重启后安装自动完成无需人工干预。</p>
 <h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><ol>
@@ -296,7 +298,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778646"></script>
+<script src="/js/app.js?v=1591715260283"></script>
   
 
 

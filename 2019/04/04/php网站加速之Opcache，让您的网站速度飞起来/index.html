@@ -12,22 +12,22 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="官方Doc http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php 说明  OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用 PHP APC加速 PHP开启opcache方法">
+  <meta name="description" content="官方Doc http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php 说明  OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用 PHP APC加速">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php网站加速之Opcache，让您的网站速度飞起来">
 <meta property="og:url" content="http://yoursite.com/2019/04/04/php%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E4%B9%8BOpcache%EF%BC%8C%E8%AE%A9%E6%82%A8%E7%9A%84%E7%BD%91%E7%AB%99%E9%80%9F%E5%BA%A6%E9%A3%9E%E8%B5%B7%E6%9D%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="官方Doc http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php 说明  OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用 PHP APC加速 PHP开启opcache方法">
+<meta property="og:description" content="官方Doc http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php 说明  OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用 PHP APC加速">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-04T11:43:54.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.449Z">
+<meta property="article:modified_time" content="2020-06-09T15:05:02.742Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="网站加速">
 <meta property="article:tag" content="php加速">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778628">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260263">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -211,7 +211,9 @@
 </blockquote>
 <pre><code>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是
 省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用
-PHP APC加速</code></pre><blockquote>
+PHP APC加速</code></pre><a id="more"></a>
+
+<blockquote>
 <h4 id="PHP开启opcache方法"><a href="#PHP开启opcache方法" class="headerlink" title="PHP开启opcache方法"></a>PHP开启opcache方法</h4></blockquote>
 <h5 id="1-打开php-ini文件-找到：-opcache-，设置为："><a href="#1-打开php-ini文件-找到：-opcache-，设置为：" class="headerlink" title="1.打开php.ini文件, 找到：[opcache]，设置为："></a>1.打开php.ini文件, 找到：[opcache]，设置为：</h5><pre><code>[opcache]
 ; dll地址
@@ -373,7 +375,7 @@ opcache.fast_shutdown=1
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778630"></script>
+<script src="/js/app.js?v=1591715260265"></script>
   
 
 

@@ -12,22 +12,22 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="之前写过一篇《自编译Lean的Openwrt固件全攻略》，相信不少小伙伴已经自己成功编译了自己个性化固件，今天给大家分享一下如何进行二次编译。 cd lede                                                   #进入LEDE目录 git pull                                                  #同">
+  <meta name="description" content="之前写过一篇《自编译Lean的Openwrt固件全攻略》，相信不少小伙伴已经自己成功编译了自己个性化固件，今天给大家分享一下如何进行二次编译。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Openwrt | 二次编译基本常用命令">
 <meta property="og:url" content="http://yoursite.com/2019/12/20/Openwrt-%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="之前写过一篇《自编译Lean的Openwrt固件全攻略》，相信不少小伙伴已经自己成功编译了自己个性化固件，今天给大家分享一下如何进行二次编译。 cd lede                                                   #进入LEDE目录 git pull                                                  #同">
+<meta property="og:description" content="之前写过一篇《自编译Lean的Openwrt固件全攻略》，相信不少小伙伴已经自己成功编译了自己个性化固件，今天给大家分享一下如何进行二次编译。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-20T14:06:50.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.445Z">
+<meta property="article:modified_time" content="2020-06-09T15:04:39.360Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="openwrt二次编译">
 <meta property="article:tag" content="lede编译">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778558">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260197">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -205,6 +205,8 @@
 
   <article>
     <p>之前写过一篇<a href="https://opt.gs/posts/580/" target="_blank" rel="noopener">《自编译Lean的Openwrt固件全攻略》</a>，相信不少小伙伴已经自己成功编译了自己个性化固件，今天给大家分享一下如何进行二次编译。</p>
+<a id="more"></a>
+
 <pre><code>cd lede                                                   #进入LEDE目录
 git pull                                                  #同步更新源码
 ./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a   #更新FEEDS
@@ -262,7 +264,7 @@ make V=s -j$(nproc)                                       #多线程编译</code
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778560"></script>
+<script src="/js/app.js?v=1591715260199"></script>
   
 
 

@@ -12,15 +12,15 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="这里的密钥对是 Public key，具体请参考 公开密钥加密  将密钥保存到远程服务器1.如果是通过ssh-keygen生成的密钥对，那么我们需要将id_rsa.pub文件放置到你要进行远程登陆的用户主目录下，比如这里的用户名为centos，主目录为&#x2F;home&#x2F;centos，那么我们需要将id_rsa.pub公钥放置到&#x2F;home&#x2F;centos&#x2F;.ssh目录下，然后执行以下操作： 使用命令 ss">
+  <meta name="description" content="这里的密钥对是 Public key，具体请参考 公开密钥加密  将密钥保存到远程服务器1.如果是通过ssh-keygen生成的密钥对，那么我们需要将id_rsa.pub文件放置到你要进行远程登陆的用户主目录下，比如这里的用户名为centos，主目录为&#x2F;home&#x2F;centos，那么我们需要将id_rsa.pub公钥放置到&#x2F;home&#x2F;centos&#x2F;.ssh目录下，然后执行以下操作：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux实现密钥免密登录 让Linux VPS服务器更安全">
 <meta property="og:url" content="http://yoursite.com/2020/02/13/Linux%E5%AE%9E%E7%8E%B0%E5%AF%86%E9%92%A5%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95-%E8%AE%A9Linux-VPS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E5%AE%89%E5%85%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这里的密钥对是 Public key，具体请参考 公开密钥加密  将密钥保存到远程服务器1.如果是通过ssh-keygen生成的密钥对，那么我们需要将id_rsa.pub文件放置到你要进行远程登陆的用户主目录下，比如这里的用户名为centos，主目录为&#x2F;home&#x2F;centos，那么我们需要将id_rsa.pub公钥放置到&#x2F;home&#x2F;centos&#x2F;.ssh目录下，然后执行以下操作： 使用命令 ss">
+<meta property="og:description" content="这里的密钥对是 Public key，具体请参考 公开密钥加密  将密钥保存到远程服务器1.如果是通过ssh-keygen生成的密钥对，那么我们需要将id_rsa.pub文件放置到你要进行远程登陆的用户主目录下，比如这里的用户名为centos，主目录为&#x2F;home&#x2F;centos，那么我们需要将id_rsa.pub公钥放置到&#x2F;home&#x2F;centos&#x2F;.ssh目录下，然后执行以下操作：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-12T18:38:53.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.432Z">
+<meta property="article:modified_time" content="2020-06-09T15:04:25.759Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="ssh加固">
 <meta property="article:tag" content="linux免密登录">
@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778540">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260183">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -209,6 +209,8 @@
 <p>这里的密钥对是 <code>Public key</code>，具体请参考 <a href="https://zh.wikipedia.org/zh/公开密钥加密" target="_blank" rel="noopener">公开密钥加密</a></p>
 </blockquote>
 <h2 id="将密钥保存到远程服务器"><a href="#将密钥保存到远程服务器" class="headerlink" title="将密钥保存到远程服务器"></a>将密钥保存到远程服务器</h2><p>1.如果是通过ssh-keygen生成的密钥对，那么我们需要将id_rsa.pub文件放置到你要进行远程登陆的用户主目录下，比如这里的用户名为centos，主目录为/home/centos，那么我们需要将id_rsa.pub公钥放置到/home/centos/.ssh目录下，然后执行以下操作：</p>
+<a id="more"></a>
+
 <p>使用命令</p>
 <pre><code class="bash">ssh-keygen -t rsa</code></pre>
 <p>接下来会提示让你输入一个路径来保存密钥对，默认在 <code>~/.ssh/id_rsa</code> 下面生成 <code>id_rsa</code>（私钥）和 <code>id_rsa.pub</code>（公钥），如果没什么特殊需求就直接默认就好。</p>
@@ -288,7 +290,7 @@ StrictModes no               # 修改为 no, 默认为 yes. 如果不修改用 k
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778544"></script>
+<script src="/js/app.js?v=1591715260186"></script>
   
 
 

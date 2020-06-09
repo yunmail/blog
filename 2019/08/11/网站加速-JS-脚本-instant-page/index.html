@@ -20,14 +20,14 @@
 <meta property="og:description" content="有一项技术叫做 prefetch，这个技术，其实说白了，就是一项预加载技术，当用户有意向访问某个页面之前，浏览器首先对此页面进行预加载，当用户真正点击链接后，会从预加载的缓存中直接读取页面内容，缩短页面的加载时间。 而如何来使用这项技术？其实在 html5 的链接标签中有一个 rel 属性，其中有个参数就是 prefetch，不过使用的人不多。 本文介绍的 instant.page，就是使用这项技">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-11T06:34:52.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.448Z">
+<meta property="article:modified_time" content="2020-06-09T15:06:49.799Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="网站加速JS脚本">
 <meta property="article:tag" content="instant.page">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778594">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260232">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -207,6 +207,8 @@
     <p>有一项技术叫做 <code>prefetch</code>，这个技术，其实说白了，就是一项预加载技术，当用户有意向访问某个页面之前，浏览器首先对此页面进行预加载，当用户真正点击链接后，会从预加载的缓存中直接读取页面内容，缩短页面的加载时间。</p>
 <p>而如何来使用这项技术？其实在 <code>html5</code> 的链接标签中有一个 <strong>rel 属性</strong>，其中有个参数就是 <code>prefetch</code>，不过使用的人不多。</p>
 <p>本文介绍的 <code>instant.page</code>，就是使用这项技术的一个脚本，脚本会根据用户鼠标在链接上的停留时间进行判断，当达到 65 毫秒，用户有一半的机会打开此链接，<code>instant.page</code> 将会对此页面进行预加载。</p>
+<a id="more"></a>
+
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、使用官方提供的带有 Cloudflare 加速的脚本</p>
 <p><code>instant.page</code> 的使用非常简单：</p>
 <pre><code>&lt;script src=&quot;//instant.page/1.2.2&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</code></pre><p>只需要把这行代码添加到网站的 <code>&lt;/body&gt;</code> 之前即可。</p>
@@ -270,7 +272,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778597"></script>
+<script src="/js/app.js?v=1591715260235"></script>
   
 
 

@@ -12,15 +12,15 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="前段时间闹得沸沸扬扬的沃通丑闻事件最终以 Google，Firefox 相继宣布停止信任沃通和 StartCom 的证书宣告结束。按照沃通 CA 以及 StartCom 的证书在国内外的使用广泛程度，估计得有一大批网站需要更换 SSL 证书。本博客在建立之初就使用了 Let’s Encrypt 的免费证书，这个被沃通说成是「非常危险」的 CA，恰恰是一个不错的选择。 关于 HTTPS大概从去年开始">
+  <meta name="description" content="前段时间闹得沸沸扬扬的沃通丑闻事件最终以 Google，Firefox 相继宣布停止信任沃通和 StartCom 的证书宣告结束。按照沃通 CA 以及 StartCom 的证书在国内外的使用广泛程度，估计得有一大批网站需要更换 SSL 证书。本博客在建立之初就使用了 Let’s Encrypt 的免费证书，这个被沃通说成是「非常危险」的 CA，恰恰是一个不错的选择。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为博客添加 Let&#39;s Encrypt 免费证书">
 <meta property="og:url" content="http://yoursite.com/2018/09/07/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Let-s-Encrypt-%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前段时间闹得沸沸扬扬的沃通丑闻事件最终以 Google，Firefox 相继宣布停止信任沃通和 StartCom 的证书宣告结束。按照沃通 CA 以及 StartCom 的证书在国内外的使用广泛程度，估计得有一大批网站需要更换 SSL 证书。本博客在建立之初就使用了 Let’s Encrypt 的免费证书，这个被沃通说成是「非常危险」的 CA，恰恰是一个不错的选择。 关于 HTTPS大概从去年开始">
+<meta property="og:description" content="前段时间闹得沸沸扬扬的沃通丑闻事件最终以 Google，Firefox 相继宣布停止信任沃通和 StartCom 的证书宣告结束。按照沃通 CA 以及 StartCom 的证书在国内外的使用广泛程度，估计得有一大批网站需要更换 SSL 证书。本博客在建立之初就使用了 Let’s Encrypt 的免费证书，这个被沃通说成是「非常危险」的 CA，恰恰是一个不错的选择。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-09-07T07:57:42.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.432Z">
+<meta property="article:modified_time" content="2020-06-09T15:07:08.403Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="https">
 <meta property="article:tag" content="ssl部署">
@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778649">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260284">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -206,6 +206,8 @@
 
   <article>
     <p>前段时间闹得沸沸扬扬的<strong><a href="https://bbs.jiasuidc.cn" target="_blank" rel="noopener">沃通丑闻事件</a></strong>最终以 Google，Firefox 相继宣布停止信任沃通和 StartCom 的证书宣告结束。按照沃通 CA 以及 StartCom 的证书在国内外的使用广泛程度，估计得有一大批网站需要更换 SSL 证书。本博客在建立之初就使用了 Let’s Encrypt 的免费证书，这个被沃通说成是「非常危险」的 CA，恰恰是一个不错的选择。</p>
+<a id="more"></a>
+
 <h2 id="关于-HTTPS"><a href="#关于-HTTPS" class="headerlink" title="关于 HTTPS"></a>关于 HTTPS</h2><p>大概从去年开始，我偶尔会发现之前收藏的网站变成了未收藏状态，仔细一看才发现原来是这些网站的地址都变成了 https 开头。</p>
 <p>越来越多的网站开始采用 HTTPS 加密，同时 Mozilla、Google 等公司也在促进 HTTPS 的普及。可以看到，全面启用 HTTPS 已经是大势所趋。</p>
 <blockquote>
@@ -297,7 +299,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778650"></script>
+<script src="/js/app.js?v=1591715260285"></script>
   
 
 

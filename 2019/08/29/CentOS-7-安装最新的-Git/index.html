@@ -21,7 +21,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/20160730222608.png">
 <meta property="article:published_time" content="2019-08-29T05:49:51.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.438Z">
+<meta property="article:modified_time" content="2020-06-09T15:02:28.757Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="centos安装最新git">
 <meta property="article:tag" content="linux安装最新版git">
@@ -30,7 +30,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/20160730222608.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778581">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260217">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -210,6 +210,8 @@
     <blockquote>
 <p>yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.23.0。想要安装最新版本的的 Git，只能下载源码进行安装。</p>
 </blockquote>
+<a id="more"></a>
+
 <h1 id="1-查看-yum-源仓库的-Git-信息："><a href="#1-查看-yum-源仓库的-Git-信息：" class="headerlink" title="1. 查看 yum 源仓库的 Git 信息："></a>1. 查看 yum 源仓库的 Git 信息：</h1><pre><code># yum info git</code></pre><p><img data-sizes="auto" data-src="/images/20160730222608.png" alt="" class="lazyload"></p>
 <p>可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">新的 Git 发布版本</a>，已经 2.23.0 了。</p>
 <h1 id="2-依赖库安装"><a href="#2-依赖库安装" class="headerlink" title="2. 依赖库安装"></a>2. 依赖库安装</h1><pre><code># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
@@ -272,7 +274,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778583"></script>
+<script src="/js/app.js?v=1591715260219"></script>
   
 
 

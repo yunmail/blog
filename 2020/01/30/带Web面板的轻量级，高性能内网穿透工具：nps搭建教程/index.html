@@ -20,14 +20,14 @@
 <meta property="og:description" content="说明：内网穿透工具之前已经介绍了不少了，比如Frp、lanproxy、Holer等，现在再介绍个带Web面板的穿透工具nps，之前叫easyProxy，只是改名了而已，该工具是一款使用go语言编写的轻量级、功能强大的内网穿透服务器。支持tcp、udp流量转发，支持内网http、socks5代理，同时支持snappy压缩(节省带宽和流量)、站点保护、加密传输、多路复用、header修改等。同时还支持">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-30T03:34:16.000Z">
-<meta property="article:modified_time" content="2020-06-09T14:29:02.434Z">
+<meta property="article:modified_time" content="2020-06-09T15:06:06.676Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="内网穿透">
 <meta property="article:tag" content="NPS搭建">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778551">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260189">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -205,6 +205,8 @@
 
   <article>
     <p><strong>说明：</strong>内网穿透工具之前已经介绍了不少了，比如<code>Frp</code>、<code>lanproxy</code>、<code>Holer</code>等，现在再介绍个带<code>Web</code>面板的穿透工具<code>nps</code>，之前叫<code>easyProxy</code>，只是改名了而已，该工具是一款使用<code>go</code>语言编写的轻量级、功能强大的内网穿透服务器。支持<code>tcp</code>、<code>udp</code>流量转发，支持内网<code>http</code>、<code>socks5</code>代理，同时支持<code>snappy</code>压缩(节省带宽和流量)、站点保护、加密传输、多路复用、<code>header</code>修改等。同时还支持<code>web</code>图形化管理。</p>
+<a id="more"></a>
+
 <h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>从 <a href="https://github.com/cnlh/nps/releases" target="_blank" rel="noopener">release</a> 下载和服务器匹配的最新版本到 ，如果对于<code>Linux</code>服务器还是不知道怎么选择的，这里拿<code>Vultr</code>、搬瓦工大多数<code>VPS</code>为例。先使用命令<code>getconf LONG_BIT</code>获取系统版本，<code>32</code>位就选<code>386</code>，<code>64</code>就选<code>amd64</code>，具体还是以实际情况为准。</p>
 <h2 id="服务端使用"><a href="#服务端使用" class="headerlink" title="服务端使用"></a>服务端使用</h2><p>这里博主使用的是<code>Vultr Linux x64</code>服务器，直接使用命令：</p>
 <pre><code>#记得复制前先将下面链接替换成当前最新版地址
@@ -352,7 +354,7 @@ journalctl -f -u nps</code></pre><h3 id="一键安装脚本-macos-linux"><a href
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778554"></script>
+<script src="/js/app.js?v=1591715260193"></script>
   
 
 

@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778721">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591715260358">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -201,204 +201,6 @@
             
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是在Rat大佬博客发现的一个软件挺不错的，就在这里转载过来了，它可以将局域网服务器代理到公网的内网穿透工具，支持转发基于TCP等协议的报文，之前服务端并未开源，由作者免费提供服务，现在服务端代码已经开源了，而且带Web管理面板，我们就可以拿来自建一个内网穿透服务器，使用效果还不错。</p>
 <hr>
-<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img data-sizes="auto" data-src="/images/Holer.png" alt="" class="lazyload"></p>
-<h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><p><strong>Github地址：</strong><a href="https://github.com/Wisdom-Projects/holer" target="_blank" rel="noopener">https://github.com/Wisdom-Projects/holer</a></p>
-<p><strong>支持系统：</strong><code>Windows</code>、<code>Linux</code>系统，这里只说<code>Linux</code>搭建，建议直接<code>Debain</code>。</p>
-<p><strong>说明：</strong>由于该面板使用的<code>JAVA</code>，所以还是比较消耗内存的，如果内存太小，建议先加一点虚拟内存，可以使用<code>Swap</code>一键脚本→<a href="https://www.quchao.net/Swap.html" target="_blank" rel="noopener">传送门</a>。</p>
-<p><strong>1、安装JAVA</strong></p>
-<pre><code>#CentOS系统
-yum install java-1.8.0-openjdk -y
-
-#Debian/Ubuntu系统
-apt update
-apt install default-jdk -y</code></pre><p><strong>2、安装Mysql</strong></p>
-<pre><code>#CentOS 6系统
-rpm -ivh http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
-yum install mysql-community-server -y
-service mysqld start
-chkconfig mysqld on
-
-#CentOS 7系统
-rpm -ivh http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-yum install mysql-community-server -y
-systemctl start mysqld
-systemctl enable mysqld
-
-#Debian/Ubuntu系统
-apt install mysql-server -y</code></pre><p>如果<code>Debian</code>或<code>Ubuntu</code>在安装期间有弹出窗口要你输入密码就设置一个，没有的话密码就是空格。</p>
-<p>修改数据库密码：</p>
-<pre><code>#CentOS系统，第一行登录数据库的时候直接Enter跳过，第二行moerats为要修改的密码，自行修改
-mysql -u root -p
-mysql&gt; set password=password(&quot;moerats&quot;);
-mysql&gt; exit;
-
-#Debian、Ubuntu系统，第一行登录数据库的时候直接Enter跳过，第二行moerats为要修改的密码，自行修改
-mysql -u root -p
-mysql&gt; UPDATE mysql.user SET authentication_string=PASSWORD(&#39;moerats&#39;), PLUGIN=&#39;mysql_native_password&#39; WHERE USER=&#39;root&#39;;
-mysql&gt; exit;</code></pre><p>最后修改过密码的还需要重启数据库：</p>
-<pre><code>#CentOS系统
-service mysqld restart
-
-#Debian和Ubuntu系统
-systemctl restart mysql</code></pre><p>此时<code>Mysql</code>算是安装完成了。</p>
-<p><strong>3、安装源码</strong><br>安装<code>unzip</code>：</p>
-<pre><code>#CentOS系统
-yum install unzip -y
-
-#Debian和Ubuntu系统
-apt install unzip -y</code></pre><p>下载源码：</p>
-<pre><code>wget https://github.com/wisdom-projects/holer/releases/download/v1.1/holer-server-1.1.zip
-unzip holer-server-1.1.zip &amp;&amp; rm -rf holer-server-1.1.zip
-#移动到opt目录，然后进入到源码文件夹
-mv holer-server /opt/holer &amp;&amp; cd $_
-#修改配置文件
-nano resources/application.yaml</code></pre><p>关键配置如下：</p>
-<pre><code>#运行端口
-server:
-  port: 600
-
-#Mysql数据库用户名和密码
-spring:
-  datasource:
-    username: root
-    password: moerats
-
-#域名和nginx目录，可以直接全部删掉，用ip不需要，域名的话，有点不好用
-holer
-  domain:
-    name: your-domain.com
-  nginx:
-    #home: /usr/local/nginx
-    home: C:/nginx-1.14.2</code></pre><p>修改后使用<code>Ctrl+x</code>、<code>y</code>保存退出，或者可以直接使用<code>FTP</code>等工具直接编辑。</p>
-<p>再修改管理员用户名和密码，使用命令：</p>
-<pre><code>nano resources/conf/holer-data.sql</code></pre><p><code>admin</code>和<code>admin123</code>为管理员用户名和密码，自行修改，修改完成后同样的使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
-<p>最后启动：</p>
-<pre><code>chmod +x holer
-./holer start</code></pre><p>如果想开机自启的话，这里可以建一个简单的<code>systemd</code>配置文件，且不适用<code>CentOS 6</code>，使用命令：</p>
-<pre><code>#将以下代码一起复制到SSH运行
-cat &gt; /etc/systemd/system/holer.service &lt;&lt;EOF
-[Unit]
-Description=holer
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=$(command -v java) -server -Xms256m -Xmx512m -jar holer-server-1.1.jar
-WorkingDirectory=/opt/holer
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-EOF</code></pre><p>然后启动并设置开机自启：</p>
-<pre><code>systemctl start holer
-systemctl enable holer</code></pre><p>然后就可以使用<code>ip:600</code>访问管理界面了，具体端口以你修改的为准。</p>
-<p>然后CentOS系统建议关闭防火墙使用，或者打开部分端口也行，关闭命令：</p>
-<pre><code>#CentOS 6系统
-service iptables stop
-chkconfig iptables off
-
-#CentOS 7系统
-systemctl stop firewalld
-systemctl disable firewalld</code></pre><p>像阿里云等服务器，还需要去安全组那里开发下端口端。</p>
-<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><p>首先我们需要去用户列表新建一个用户，然后再去端口映射选择该用户，新建一个穿透规则，这里根据需求自行选择，然后设置好时长。</p>
-<p>然后就可以直接在客户端使用了，一般客户端有<code>JAVA</code>和<code>GO</code>版，使用<code>JAVA</code>的话，需要先安装<code>JAVA</code>环境，所以这里直接选择<code>GO</code>版本，简单粗暴。</p>
-<p>首先根据直接的系统和架构下载指定的<code>GO</code>版客户端，每个压缩包里都包含<code>32</code>位和<code>64</code>位，下载地址→<a href="https://github.com/wisdom-projects/holer/tree/master/Binary/Go" target="_blank" rel="noopener">传送门</a>。</p>
-<p>这里拿我们常见的<code>Linux</code>服务器架构来说，直接使用命令：</p>
-<pre><code>#下载并解压
-wget https://github.com/wisdom-projects/holer/raw/master/Binary/Go/holer-linux-x86.tar.gz
-tar -zxvf holer-linux-x86.tar.gz
-
-#32位启动，分别为访问秘钥和服务端ip地址
-nohup ./holer-linux-386 -k 7aa8d973bc8e40 -s ip地址 &amp;
-#64位启动
-nohup ./holer-linux-amd64 -k 7aa8d973bc8e40 -s ip地址 &amp;</code></pre><p>如果是<code>Windows</code>系统，先把压缩包下载并解压到<code>D</code>盘根目录，然后按住<code>Win+R</code>，输入<code>cmd</code>进入命令窗口，使用命令：</p>
-<pre><code>#进入到D盘根目录
-cd D:\
-
-#32位启动，分别为访问秘钥和服务端ip地址
-.\holer-windows-386.exe -k 7aa8d973bc8e40 -s ip地址
-#64位启动
-.\holer-windows-amd64.exe -k 7aa8d973bc8e40 -s ip地址</code></pre><p>到这里基本上就运行成功了。</p>
-<h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>如果你想使用域名来配置服务器面板的话，就需要安装<code>Web</code>服务器了，这里就直接使用<code>Nginx</code>。</p>
-<p><strong>1、安装Nginx</strong></p>
-<pre><code>#CentOS 6系统
-rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
-yum install nginx -y
-service nginx start
-chkconfig nginx on
-
-#CentOS 7系统
-rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-yum install nginx -y
-systemctl start nginx
-systemctl enable nginx
-
-#Debian/Ubuntu系统
-apt install nginx -y</code></pre><p><strong>2、申请SSL证书</strong></p>
-<p>这里就使用简单粗暴的<code>webroot</code>方式签发<code>Let&#39;s Encrypt</code>证书，首先解析好域名并生效。</p>
-<p>安装<code>letsencrypt</code>：</p>
-<pre><code>#CentOS系统
-yum install letsencrypt -y
-
-#Debian/Ubuntu系统
-apt install letsencrypt -y</code></pre><p>申请<code>SSL</code>证书：</p>
-<pre><code>#CentOS系统
-letsencrypt certonly --webroot -w /usr/share/nginx/html --domain www.quchao.net
-
-#Debian/Ubuntu系统
-letsencrypt certonly --webroot -w /var/www/html --domain www.quchao.net</code></pre><p>请替换成自己域名后运行，期间会要你输入邮箱和<code>A</code>选项啥的，申请后证书文件在<code>/etc/letsencrypt/live</code>。</p>
-<p><strong>3、新建conf文件</strong></p>
-<pre><code>#将下面域名修改成自己的，然后证书路径也修改下，再一起复制进SSH客户端运行
-cat &gt; /etc/nginx/conf.d/holer.conf &lt;&lt; &#39;EOF&#39;
-server {
-    listen 443;
-    server_name www.quchao.net;    
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/www.quchao.net/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/www.quchao.net/privkey.pem;
-    ssl_session_timeout 5m;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
-    ssl_ciphers &quot;EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5&quot;;
-    ssl_session_cache builtin:1000 shared:SSL:10m;
-    charset utf-8;
-    location /{
-        proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-
-        client_max_body_size       1024m;
-        client_body_buffer_size    128k;
-
-        proxy_connect_timeout      90;
-        proxy_send_timeout         90;
-        proxy_read_timeout         90;
-        proxy_buffer_size          4k;
-        proxy_buffers              4 32k;
-        proxy_busy_buffers_size    64k;
-        proxy_temp_file_write_size 64k;
-        proxy_pass http://127.0.0.1:600/;
-    }
-
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   html;
-    }
-}
-server
-    {
-        listen 80;
-        server_name www.quchao.net;
-        rewrite ^(.*) https://www.quchao.net$1 permanent;
-    }
-EOF</code></pre><p>重启<code>Nginx</code>生效：</p>
-<pre><code>systemctl restart nginx</code></pre><p>最后连接的时候，就可以填域名了。</p>
-<p>最后要是觉得搭建服务器麻烦，或者不想搭建的，可以使用作者提供的免费服务，更多使用方法移至→<a href="http://blog.wdom.net/" target="_blank" rel="noopener">传送门</a>。</p>
-<hr>
-<blockquote>
-<p>本文为选摘文章，版权归 <a href="https://www.moerats.com/" target="_blank" rel="noopener">Rat’s</a> 所有，转载请注明出处！</p>
-</blockquote>
-
             
         </article>
     </div>
@@ -424,17 +226,6 @@ EOF</code></pre><p>重启<code>Nginx</code>生效：</p>
                 <blockquote>
 <p>yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.23.0。想要安装最新版本的的 Git，只能下载源码进行安装。</p>
 </blockquote>
-<h1 id="1-查看-yum-源仓库的-Git-信息："><a href="#1-查看-yum-源仓库的-Git-信息：" class="headerlink" title="1. 查看 yum 源仓库的 Git 信息："></a>1. 查看 yum 源仓库的 Git 信息：</h1><pre><code># yum info git</code></pre><p><img data-sizes="auto" data-src="/images/20160730222608.png" alt="" class="lazyload"></p>
-<p>可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">新的 Git 发布版本</a>，已经 2.23.0 了。</p>
-<h1 id="2-依赖库安装"><a href="#2-依赖库安装" class="headerlink" title="2. 依赖库安装"></a>2. 依赖库安装</h1><pre><code># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-# yum install  gcc perl-ExtUtils-MakeMaker</code></pre><h1 id="3-卸载低版本的-Git"><a href="#3-卸载低版本的-Git" class="headerlink" title="3. 卸载低版本的 Git"></a>3. 卸载低版本的 Git</h1><p>通过命令：<code>git –-version</code> 查看系统带的版本，Git 版本是： <code>1.8.3.1</code>，所以先要卸载低版本的 Git，命令：</p>
-<pre><code># yum remove git</code></pre><h1 id="4-下载新版的-Git-源码包"><a href="#4-下载新版的-Git-源码包" class="headerlink" title="4. 下载新版的 Git 源码包"></a>4. 下载新版的 Git 源码包</h1><pre><code># wget https://github.com/git/git/archive/v2.23.0.tar.gz</code></pre><p>也可以离线下载，然后传到 CentOS 系统中指定的目录下。</p>
-<h1 id="5-解压到指定目录"><a href="#5-解压到指定目录" class="headerlink" title="5. 解压到指定目录"></a>5. 解压到指定目录</h1><pre><code># tar -xzvf v2.23.0.tar.gz -C ~/app/</code></pre><h1 id="6-安装-Git"><a href="#6-安装-Git" class="headerlink" title="6. 安装 Git"></a>6. 安装 Git</h1><p>分别执行以下命令进行编译安装，编译过程可能比较漫长，请耐心等待完成。</p>
-<pre><code># cd git-2.23.0
-# make prefix=/usr/local/git all
-# make prefix=/usr/local/git install</code></pre><h1 id="7-添加到环境变量"><a href="#7-添加到环境变量" class="headerlink" title="7. 添加到环境变量"></a>7. 添加到环境变量</h1><pre><code># echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc
-# source /etc/bashrc # 实时生效</code></pre><h1 id="8-查看版本号"><a href="#8-查看版本号" class="headerlink" title="8. 查看版本号"></a>8. 查看版本号</h1><pre><code># git --versiongit version 2.23.0</code></pre><p>至此，CentOS 就安装上了最新版本的 Git。</p>
-
             
         </article>
     </div>
@@ -459,64 +250,6 @@ EOF</code></pre><p>重启<code>Nginx</code>生效：</p>
             
                 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><strong>zerotier</strong> 可以作为一款 p2p 的 vlan <strong>内网穿透</strong>工具，功能强大且易用，同类产品还有 <strong>frp</strong>和 <strong>LanProxy</strong>等。最近有个朋友有创建 p2p vlan 的需求，在简单调研之后决定使用 zerotier 作为基础工具。</p>
 <p>官方给出的使用方案比较简单。首先需要一个中心的节点用于两个内网节点的握手，该中心节点需要有一个公网 IP。<a href="https://my.zerotier.com/login" target="_blank" rel="noopener">zerotier 官网</a>提供了中心节点相关服务，免费账户有一定的使用限制，但是由于其节点位于国外，延迟比较高，且可能还需要科学上网才能使用。除此之外，zerotier 也支持自己搭建中心节点服务器，也叫做 MOON 服务器。下面是它的搭建步骤。</p>
-<h2 id="MOON-服务器配置"><a href="#MOON-服务器配置" class="headerlink" title="MOON 服务器配置"></a>MOON 服务器配置</h2><p>操作系统版本是 <code>Ubuntu 18.04</code>, <code>Zerotier One</code> 版本是 <code>v1.2.10</code>, 公网 (也就是 MOON 服务器) 地址是 <code>1.1.1.1</code>。</p>
-<ol>
-<li>通过<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">官网</a>文档根据不同操作系统选择不同的安装方式，这里直接通过命令行安装</li>
-</ol>
-<pre><code>curl -s &#39;https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39; | gpg --import &amp;&amp; \ if z=(curl -s &#39;https://install.zerotier.com/&#39; | gpg); then echo &quot;z&quot; | sudo bash; fi</code></pre><p>如果上述命令运行失败，那么使用下面命令</p>
-<pre><code>curl -s https://install.zerotier.com/ | sudo bash</code></pre><ol start="2">
-<li>将 MOON 服务器加入 Zerotier 局域网</li>
-</ol>
-<p>虽然搭建了 MOON 服务器，我们还是需要借助 <a href="https://www.moewah.com/go/aHR0cHM6Ly9teS56ZXJvdGllci5jb20vbmV0d29yaw==" target="_blank" rel="noopener">zerotier network</a>，也就是需要先通过 zerotier 官网创建一个 network，并且内网节点需要使用 <code>join</code> 命令加入该网络才能实现内网节点的互通，换句话说 MOON 节点只起到了加速的作用，虚拟网络的分配和管理还是需要 zerotier 服务端参与。</p>
-<pre><code>zerotier-cli join &lt;network id&gt;</code></pre><ol start="2">
-<li>生成配置文件</li>
-</ol>
-<pre><code>sudo chmod 777 /var/lib/zerotier-one # 这里为了有写入文件的权限
-cd /var/lib/zerotier-one
-sudo zerotier-idtool initmoon identity.public &gt; moon.json</code></pre><ol start="3">
-<li>修改配置文件 <code>moon.json</code>，主要是添加公网 IP，修改内容如下，<code>9993</code> 是默认端口</li>
-</ol>
-<pre><code>&quot;stableEndpoints&quot;: [ &quot;1.1.1.1/9993&quot; ] #修改为VPS公网IP/9993</code></pre><p>还需要注意 <code>moon.json</code> 中的 id 值，它是 MOON 服务器的 ID，是一个 10 位的字符串，我的为 <code>efe9e9a259</code>，也可以用 <code>sudo zerotier-cli info</code> 查看，后面会用到。</p>
-<ol start="4">
-<li>生成 moon 文件</li>
-</ol>
-<pre><code>sudo zerotier-idtool genmoon moon.json</code></pre><ol start="5">
-<li>在 <code>/var/lib/zerotier-one</code> 目录下新建 <code>moons.d</code> 文件夹中，并将生成的 moon 文件放到该文件夹下，我的 moon 文件名为 <code>000000efe9e9a259.moon</code></li>
-</ol>
-<pre><code>mv 000000efe9e9a259.moon moons.d/</code></pre><ol start="6">
-<li>重启 <code>zerotier-one</code></li>
-</ol>
-<pre><code>sudo killall -9 zerotier-one # 这里我们杀死相关进程后会自动重启该服务</code></pre><h2 id="内网节点配置"><a href="#内网节点配置" class="headerlink" title="内网节点配置"></a>内网节点配置</h2><ol>
-<li>在内网节点安装 zerotier，安装方法和上面类似，根据<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">文档</a>选择不同操作系统的方法进行安装即可。请参考文章<a href="https://www.moewah.com/archives/1474.html" target="_blank" rel="noopener">《ZeroTier 无公网 IP 实现内网穿透》</a></li>
-<li>将 MOON 节点添加到常规节点</li>
-</ol>
-<pre><code>sudo zerotier-cli orbit efe9e9a259 efe9e9a259 # 注意这里是两次根节点的ID</code></pre><p>如果没返回 <code>200 orbit OK</code> 的话，需要手动拷贝生成的 moon 文件 <code>000000efe9e9a259.moon</code> 文件到常规节点的机器上，位置如下:</p>
-<pre><code>Windows: C:\ProgramData\ZeroTier\One
-Macintosh: /Library/Application Support/ZeroTier/One (在 Terminal 中应为 /Library/Application\ Support/ZeroTier/One)
-Linux: /var/lib/zerotier-one
-FreeBSD/OpenBSD: /var/db/zerotier-one</code></pre><p>然后重启 zerotier-one</p>
-<ol start="3">
-<li>查看节点列表，出现根服务器的 MOON 节点表示成功</li>
-</ol>
-<pre><code> ~ sudo zerotier-cli listpeers
-200 listpeers     
-200 listpeers 3dfa0fd16b - -1 - LEAF
-200 listpeers 8841408a2e 45.32.248.87/9993;11749;11453 252 1.1.5 PLANET
-200 listpeers 9d219039f3 128.199.197.217/9993;11749;11381 390 1.1.5 PLANET
-200 listpeers abfd31bd47 178.128.240.145/35368;6238;14319 509 1.2.5 LEAF
-200 listpeers efe9e9a259 1.1.1.1/9993;6238;1184 36 1.2.12 MOON</code></pre><ol start="4">
-<li>我们再在内网节点上运行 <code>ifconfig</code>(windows 是 <code>ipconfig</code>)，可以看到 zerotier vlan 分配给其的内网 IP</li>
-</ol>
-<pre><code>zt0: flags=8843 metric 5000 mtu 2800
-    ether 1a:42:9a:39:7d:3f
-    inet 10.147.18.127 netmask 0xffffff00 broadcast 10.147.18.255
-    inet6 fe80::1842:9aff:fe39:7d3f%zt0 prefixlen 64 scopeid 0xc
-    inet6 fcec:2f1a:a769:487e:c00e::1 prefixlen 40
-    nd6 options=201
-    media: autoselect
-    status: active
-    open (pid 84214)</code></pre><p>这里的 <code>10.147.18.127</code> 就是其虚拟局域网的 IP，在另外一个局域网中通过上述过程配置另外一个节点，它的虚拟局域网 IP 为 <code>10.147.18.30</code>，两个节点通过 <code>ping</code> 可以互相通</p>
-
             
         </article>
     </div>
@@ -541,26 +274,6 @@ FreeBSD/OpenBSD: /var/db/zerotier-one</code></pre><p>然后重启 zerotier-one</
             
                 <p>frp分为两部分，客户端（frpc）和服务端（frps），所以使用过程中要注意不要混淆了文件。</p>
 <p>网络上默认有很多教程，教我们使用，但是对于Openwrt lede软路由默认只支持到0.20，没有提到怎么升级，也没有及时更新，所以研究了一下，总结了以下教程。</p>
-<p>新版解决了以下几个问题：</p>
-<ol>
-<li>同个域名，不同协议无法使用，比如，同一个域名，Http和https同时存在就无法使用了；</li>
-<li>空域名与www域名不能同时存在，会冲突无法访问；</li>
-<li>报错页面无法修改，默认的404页面提示是直接写在编译文件里面，无法直接修改。</li>
-</ol>
-<p>一、Frpc客户端的安装</p>
-<p>1、首先在Openwrt lede软路由酷软里面找到frpc进行安装，安装成功后先不要开启服务，如果开启了先停止后保存。</p>
-<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC1.png" alt="lede软路由更新frp" class="lazyload"></p>
-<p>2、访问 <a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a> （移动、联通、长城宽带或者乱七八糟的宽带可能无法访问，有个比较好的办法，就是你用手机4G直接下载到手机，转发到你电脑）下载最新版本</p>
-<p>我是的系统是amd64的下载所以下载   <a href="https://github.com/fatedier/frp/releases/download/v0.28.2/frp_0.28.2_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.28.2_linux_amd64.tar.gz</a></p>
-<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC2.png" alt="lede软路由更新frp" class="lazyload"></p>
-<h4 id="3-ssh登陆koolshare-账号：root-密码：koolshare"><a href="#3-ssh登陆koolshare-账号：root-密码：koolshare" class="headerlink" title="3.ssh登陆koolshare   账号：root  密码：koolshare"></a>3.ssh登陆koolshare   账号：root  密码：koolshare</h4><pre><code>wget https://github.com/fatedier/frp/releases/download/v0.28.2/frp_0.28.2_linux_amd64.tar.gz
-tar -xzvf  frp_0.28.2_linux_amd64.tar.gz
-rm -rf  /koolshare/frpc/frpc
-cp /root/frp_0.28.2_linux_amd64  /koolshare/frpc/
-chmod +x /koolshare/frpc/frpc</code></pre><p>4.登陆酷软中心frpc</p>
-<p>状态已经更新0.28.2，目前是最新版</p>
-<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC3.png" alt="lede软路由更新frp" class="lazyload"></p>
-
             
         </article>
     </div>
@@ -584,22 +297,6 @@ chmod +x /koolshare/frpc/frpc</code></pre><p>4.登陆酷软中心frpc</p>
         <article>
             
                 <p>由于现在Google浏览器提示非https的网站为不安全，为了使网站的https达到A+可谓费劲苦心。<br>下边说一下全站开启https的过程吧。</p>
-<h3 id="证书申请"><a href="#证书申请" class="headerlink" title="证书申请"></a>证书申请</h3><p>这个东西看自己哪里申请都行，现在免费的证书大部分用的都是Let’s Encrypt（90天期限）和赛门铁克（本站用的期限1年）可以在<strong>腾讯云</strong>免费申请</p>
-<p><img data-sizes="auto" data-src="/images/tenxunsslzssq.png" alt="全站开启https并达到A+插图" class="lazyload"></p>
-<p>打开后自己申请一个,所有默认即可。申请好后下载证书解压。(后边会用到)</p>
-<h3 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h3><p><img data-sizes="auto" data-src="/images/20180821123403.png" alt="全站开启https并达到A+插图(1)" class="lazyload"></p>
-<p>我使用的是宝塔（如果是新手的话推荐大家用宝塔）<br>打开网站的管理，找到ssl，如上图吧证书打开复制里边的内容添加到相应的框内。（过程不在赘述）勾选右上角的强制<a href="https://www.xiaomcm.com/tag/86" target="_blank" rel="noopener">https</a>，别忘记保存，之后访问你的网站你就会发现实https…</p>
-<h3 id="安全规则配置"><a href="#安全规则配置" class="headerlink" title="安全规则配置"></a>安全规则配置</h3><p><img data-sizes="auto" data-src="/images/20180821141104.png" alt="全站开启https并达到A+插图(2)" class="lazyload"></p>
-<p>打开网站配置修改一下部分</p>
-<h4 id="使用安全协议"><a href="#使用安全协议" class="headerlink" title="使用安全协议"></a>使用安全协议</h4><p>现在大部分都是用的TLSV1.2</p>
-<pre><code>ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;</code></pre><h4 id="使用安全加密套件"><a href="#使用安全加密套件" class="headerlink" title="使用安全加密套件"></a>使用安全加密套件</h4><p>这个安全加密套件可以有多种匹配，本站推荐一下加密套间</p>
-<pre><code>ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256::!MD5;</code></pre><h4 id="使用HSTS"><a href="#使用HSTS" class="headerlink" title="使用HSTS"></a>使用HSTS</h4><p>如山图找到网站的配置文件，在20行左右添加一下语句<br>- 其中max-age是必选参数，是一个以秒为单位的数值，它代表着HSTS Header的过期时间，通常设置为1年，即31536000秒。<br>- includeSubDomains是可选参数，如果包含它，则意味着当前域名及其子域名均开启HSTS保护。<br>- preload是可选参数，只有当你申请将自己的域名加入到浏览器内置列表的时候才需要使用到它。关于浏览器内置列表，下文有详细介绍。</p>
-<pre><code>add_header Strict-Transport-Security &quot;max-age=31536000; includeSubdomains; preload&quot;;</code></pre><h3 id="https安全监测"><a href="#https安全监测" class="headerlink" title="https安全监测"></a>https安全监测</h3><p>以上东西配置好后网站就已经配置好https并且安全等级达到A+</p>
-<p>监测地址：<a href="https://www.xiaomcm.com/go?_=f9a83e1324aHR0cHM6Ly9teXNzbC5jb20v" target="_blank" rel="noopener">https://myssl.com/</a></p>
-<blockquote>
-<p>引用：<a href="https://www.xiaomcm.com/204.html" target="_blank" rel="noopener">https://www.xiaomcm.com/204.html</a></p>
-</blockquote>
-
             
         </article>
     </div>
@@ -624,96 +321,6 @@ chmod +x /koolshare/frpc/frpc</code></pre><p>4.登陆酷软中心frpc</p>
             
                 <p>自己有几个需要定时运行的爬虫，用不到诸如 pyspider 之类的爬虫框架，但是又觉得 crontab 不太直观。所以找到了 jiacrontab，自带 web 界面，使用 Go 语言开发。</p>
 <p>提供可视化界面的定时任务&amp;常驻任务管理工具。</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
-<li>允许设置每个脚本的超时时间，超时操作可选择邮件通知管理者，或强杀脚本进程</li>
-<li>允许设置脚本的最大并发数。</li>
-<li>一台 server 管理多个 client。</li>
-<li>每个脚本都可在 server 端灵活配置，如测试脚本运行，查看日志，强杀进程，停止定时…。</li>
-<li>允许添加脚本依赖（支持跨服务器），依赖脚本提供同步和异步的执行模式。</li>
-<li>友好的 web 界面，方便用户操作。</li>
-<li>脚本出错时可选择邮箱通知多人。</li>
-<li>支持常驻任务，任务失败后可配置自动重启。</li>
-<li>支持管道操作。</li>
-</ol>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>jiacrontab 由 server，client 两部分构成，两者完全独立通过 rpc 通信。<br>server：向用户提供可视化界面，调度多个 client。<br>client：实现定时逻辑，隔离用户脚本，将 client 布置于多台服务器上可由 server 统一管理。 每个脚本的定时格式完全兼容 linux 本身的 crontab 脚本配置格式。</p>
-<h2 id="界面截图"><a href="#界面截图" class="headerlink" title="界面截图"></a>界面截图</h2><p><img data-sizes="auto" data-src="/images/jiacrontab01.jpg" alt="" class="lazyload"></p>
-<p><img data-sizes="auto" data-src="/images/jiacrontab02.jpg" alt="" class="lazyload"></p>
-<p><img data-sizes="auto" data-src="/images/jiacrontab03.jpg" alt="" class="lazyload"></p>
-<h1 id="下载安装并运行"><a href="#下载安装并运行" class="headerlink" title="下载安装并运行"></a>下载安装并运行</h1><p>Github 地址：<a href="https://github.com/iwannay/jiacrontab" target="_blank" rel="noopener">https://github.com/iwannay/jiacrontab</a></p>
-<p>最新版下载地址：<a href="https://jiacrontab.iwannay.cn/download/" target="_blank" rel="noopener">https://jiacrontab.iwannay.cn/download/</a></p>
-<pre><code>$ wget https://jiacrontab.iwannay.cn/download/jiacrontab-v1.4.5-linux-amd64.zip
-$ unzip jiacrontab-v1.4.5-linux-amd64.zip
-$ cd jiacrontab/server
-$ nohup ./jiaserver &amp;&gt; jiaserver.log &amp;
-$ cd .. &amp;&amp; cd client
-$ nohup ./jiaclient &amp;&gt; jiaclient.log &amp;</code></pre><p>之后，可以在浏览器中输入 <a href="http://YourServerIP:20000" target="_blank" rel="noopener">http://YourServerIP:20000</a> 进行访问。默认用户名为 <code>admin</code>，密码是 <code>123456</code>。</p>
-<h1 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h1><h5 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h5><p>在 <code>/etc/init.d</code> 新建开机启动脚本，命名为 <code>jiacrontab</code></p>
-<pre><code>$ vi /etc/init.d/jiacrontab
-
-# 输入以下内容，:wq 保存
-
-#!/bin/bash
-### BEGIN INIT INFO
-# Provides:          uznEnehC
-# Required-Start:    $network $remote_fs $local_fs
-# Required-Stop:     $network $remote_fs $local_fs
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: jiacontab
-# Description:       jiacontab startup
-### END INIT INFO
-cd root/jiacrontab/server # 假设之前下载到 root 文件夹，根据自身情况修改
-nohup ./jiaserver &amp;&gt; jiaserver.log &amp;
-cd .. &amp;&amp; cd client
-nohup ./jiaclient &amp;&gt; jiaclient.log &amp;
-exit 0</code></pre><p>给予脚本相应的权限</p>
-<pre><code>$ chmod 777 /etc/init.d/jiacrontab</code></pre><p>设置开机启动</p>
-<pre><code>$ update-rc.d jiacrontab defaults
-# update-rc.d -f jiacrontab remove # 删除开机启动，添加 -f 参数强制删除</code></pre><h5 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h5><p>新建客户端service</p>
-<pre><code>vi /etc/systemd/system/jiaclient.service</code></pre><p>写入如下代码</p>
-<pre><code>[Unit]
-Description=jiacrontab
-
-[Service]
-User=root
-Group=root
-Type=simple
-ExecStart=/data/app/jiacrontab/client/jiaclient
-ExecReload=/bin/kill -s HUP $MAINPID
-KillMode=control-group
-Restart=on-failure
-GuessMainPID=yes
-WorkingDirectory=/data/app/jiacrontab/client/
-PIDFile=/data/app/jiacrontab/client/jiaclient.pid
-RestartSec=15
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>新建服务端service</p>
-<pre><code>vi /etc/systemd/system/jiaserver.service</code></pre><pre><code>[Unit]
-Description=jiacrontab
-
-[Service]
-User=root
-Group=root
-Type=simple
-ExecStart=/data/app/jiacrontab/server/jiaserver
-ExecReload=/bin/kill -s HUP $MAINPID
-KillMode=control-group
-Restart=on-failure
-GuessMainPID=yes
-WorkingDirectory=/data/app/jiacrontab/server/
-PIDFile=/data/app/jiacrontab/server/jiaserver.pid
-RestartSec=15
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>启动jiacrontab以及设置开机启动：</p>
-<pre><code>systemctl start jiaclient
-systemctl enable jiaclient
-
-systemctl start jiaserver
-systemctl enable jiaserver</code></pre>
             
         </article>
     </div>
@@ -739,18 +346,6 @@ systemctl enable jiaserver</code></pre>
                 <p>有一项技术叫做 <code>prefetch</code>，这个技术，其实说白了，就是一项预加载技术，当用户有意向访问某个页面之前，浏览器首先对此页面进行预加载，当用户真正点击链接后，会从预加载的缓存中直接读取页面内容，缩短页面的加载时间。</p>
 <p>而如何来使用这项技术？其实在 <code>html5</code> 的链接标签中有一个 <strong>rel 属性</strong>，其中有个参数就是 <code>prefetch</code>，不过使用的人不多。</p>
 <p>本文介绍的 <code>instant.page</code>，就是使用这项技术的一个脚本，脚本会根据用户鼠标在链接上的停留时间进行判断，当达到 65 毫秒，用户有一半的机会打开此链接，<code>instant.page</code> 将会对此页面进行预加载。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、使用官方提供的带有 Cloudflare 加速的脚本</p>
-<p><code>instant.page</code> 的使用非常简单：</p>
-<pre><code>&lt;script src=&quot;//instant.page/1.2.2&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</code></pre><p>只需要把这行代码添加到网站的 <code>&lt;/body&gt;</code> 之前即可。</p>
-<p>2、自托管</p>
-<p>建议服务器在国内的朋友使用。只需将下面这段 <code>js</code> 上传到自己服务器，然后在 <code>&lt;/body&gt;</code> 标签之前根据路径添加下面的代码即可。</p>
-<p>然后在 <code>&lt;/body&gt;</code> 标签之前根据路径添加下面的代码即可。</p>
-<p><a href="https://cdn.zrahh.com/js/instantclick-1.2.2.js" target="_blank" rel="noopener">instantclick-1.2.2.js</a></p>
-<pre><code>&lt;script src=&quot;存放路径/instantclick-1.2.2.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</code></pre><p>3、左岸提供的 cdn。脚本放在又拍云，不用担心拖慢速度。</p>
-<pre><code>&lt;script src=&quot;https://cdn.zrahh.com/js/instantclick-1.2.2.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;</code></pre><blockquote>
-<p>本文转自：<a href="https://www.zrahh.com/archives/399.html/comment-page-3#comments" target="_blank" rel="noopener">左岸博客</a></p>
-</blockquote>
-
             
         </article>
     </div>
@@ -774,22 +369,6 @@ systemctl enable jiaserver</code></pre>
         <article>
             
                 <p>今天登录服务器发现有将近一万个登陆失败的提示，明摆着被人盯上了。。。于是将服务器的登录方式改为了RSA密钥登录。</p>
-<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>首先是要生成密钥，我直接使用的<strong>XShell</strong>生成，另存为文件</p>
-<p><img data-sizes="auto" data-src="/images/3242527655.png" alt="" class="lazyload"></p>
-<p><img data-sizes="auto" data-src="/images/3147790571.png" alt="" class="lazyload"></p>
-<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>进入<code>/home/用户名/.ssh</code>文件夹，如果是<code>root</code>用户就是<code>/root/.ssh</code>。<br>添加<code>authorized_keys</code>文件，已存在就下一步。</p>
-<pre><code>touch authorized_keys</code></pre><p>更改文件权限为<code>600</code>。</p>
-<pre><code>chmod 600 authorized_keys</code></pre><p>将公钥文件复制到目录内，使用<code>&gt;&gt;</code>追加到<code>authorized_keys</code>文件里。</p>
-<pre><code>cat id_rsa.pub &gt;&gt; authorized_keys</code></pre><p>修改sshd配置文件</p>
-<pre><code>vim /etc/ssh/sshd_config
-
-RSAAuthentication yes #有这一项就开启，没有则不管
-PubkeyAuthentication yes #开启密钥认证
-PasswordAuthentication no #关闭密码登录
-PermitRootLogin yes #是否允许root用户登录，我用的root用户登录，所以开启，视需求而定</code></pre><p>重启<code>sshd</code>服务</p>
-<pre><code>systemctl restart sshd</code></pre><p>使用私钥密钥登录，私钥一定要妥善保管。</p>
-<p><img data-sizes="auto" data-src="/images/2533459913.png" alt="" class="lazyload"></p>
-
             
         </article>
     </div>
@@ -812,70 +391,7 @@ PermitRootLogin yes #是否允许root用户登录，我用的root用户登录，
 
         <article>
             
-                <h3 id="Linux-设置开机启动项的几种方法"><a href="#Linux-设置开机启动项的几种方法" class="headerlink" title="Linux 设置开机启动项的几种方法"></a>Linux 设置开机启动项的几种方法</h3><p>Linux 设置开机启动项的几种方法</p>
-<h3 id="方法一：编辑rc-loacl脚本"><a href="#方法一：编辑rc-loacl脚本" class="headerlink" title="方法一：编辑rc.loacl脚本"></a>方法一：编辑rc.loacl脚本</h3><p>Ubuntu开机之后会执行/etc/rc.local文件中的脚本。</p>
-<p>所以我们可以直接在/etc/rc.local中添加启动脚本。</p>
-<pre><code>vim /etc/rc.local</code></pre><pre><code class="bash">#!/bin/sh
-#
-# This script will be executed *after* all the other init scripts.
-# You can put your own initialization stuff in here if you don&#39;t
-# want to do the full Sys V style init stuff.
-
-touch /var/lock/subsys/local
-/etc/init.d/mysqld start #mysql开机启动
-/etc/init.d/nginx start #nginx开机启动
-/etc/init.d/php-fpm start #php-fpm开机启动
-/etc/init.d/memcached start #memcache开机启动
-
-#在文件末尾（exit 0之前）加上你开机需要启动的程序或执行的命令即可（执行的程序需要写绝对路径，添加到系统环境变量的除外），如：
-
-/usr/local/thttpd/sbin/thttpd  -C /usr/local/thttpd/etc/thttpd.conf</code></pre>
-<h3 id="方法二：添加一个开机启动服务。"><a href="#方法二：添加一个开机启动服务。" class="headerlink" title="方法二：添加一个开机启动服务。"></a>方法二：添加一个开机启动服务。</h3><p>将你的启动脚本复制到 /etc/init.d目录下，并设置脚本权限, 假设脚本为test</p>
-<pre><code> mv test /etc/init.d/test
- sudo chmod 755 /etc/init.d/test</code></pre><p>将该脚本放倒启动列表中去</p>
-<pre><code>cd .etc/init.d
-sudo update-rc.d test defaults 95</code></pre><p>注：其中数字95是脚本启动的顺序号，按照自己的需要相应修改即可。在你有多个启动脚本，而它们之间又有先后启动的依赖关系时你就知道这个数字的具体作用了。</p>
-<p>将该脚本从启动列表中剔除</p>
-<pre><code>cd /etc/init.d
-
-sudo update-rc.d -f test remove</code></pre><h3 id="方法三：自己写一个shell脚本"><a href="#方法三：自己写一个shell脚本" class="headerlink" title="方法三：自己写一个shell脚本"></a>方法三：自己写一个shell脚本</h3><p>将写好的脚本（.sh文件）放到目录 /etc/profile.d/ 下，系统启动后就会自动执行该目录下的所有shell脚本。</p>
-<h3 id="方法四：通过chkconfig命令设置"><a href="#方法四：通过chkconfig命令设置" class="headerlink" title="方法四：通过chkconfig命令设置"></a>方法四：通过chkconfig命令设置</h3><p>将启动文件cp到 /etc/init.d/或者/etc/rc.d/init.d/（前者是后者的软连接）下</p>
-<p>vim 启动文件，文件前面务必添加如下三行代码，否侧会提示chkconfig不支持</p>
-<pre><code class="bash">#!/bin/sh 告诉系统使用的shell,所以的shell脚本都是这样
-#chkconfig: 35 20 80 分别代表运行级别，启动优先权，关闭优先权，此行代码必须
-#description: http server（自己随便发挥）//两行都注释掉！！！，此行代码必须
-
-chkconfig --add 脚本文件名 操作后就已经添加了</code></pre>
-<h2 id="五、注册服务实例"><a href="#五、注册服务实例" class="headerlink" title="五、注册服务实例"></a>五、注册服务实例</h2><ul>
-<li><p>配置文件目录<br> systemctl脚本目录：<code>/usr/lib/systemd/</code><br> 系统服务目录：<code>/usr/lib/systemd/system/</code><br> 用户服务目录：<code>/usr/lib/systemd/user/</code></p>
-</li>
-<li><p>在/usr/lib/systemd/system目录下新建service-name.service文件：</p>
-<pre><code>[UNIT]
-#服务描述
-Description=Media wanager Service
-#指定了在systemd在执行完那些target之后再启动该服务
-After=network.target
-
-[Service]
-#定义Service的运行类型，一般是forking(后台运行)   
-Type=forking
-
-#定义systemctl start|stop|reload *.service 的执行方法（具体命令需要写绝对路径）
-#注：ExecStartPre为启动前执行的命令
-ExecStartPre=/usr/bin/test &quot;x${NETWORKMANAGER}&quot; = xyes
-ExecStart=/home/mobileoa/apps/shMediaManager.sh -start
-ExecReload=
-ExecStop=/home/mobileoa/apps/shMediaManager.sh -stop
-
-#创建私有的内存临时空间
-PrivateTmp=True
-
-[Install]
-#多用户
-WantedBy=multi-user.target</code></pre><p>重载系统服务：<code>systemctl daemon-reload</code><br> 设置开机启动：<code>systemctl enable *.service</code><br> 启动服务：<code>systemctl start *.service</code><br> 停止服务：<code>systemctl stop *.service</code><br> 重启服务：<code>systemctl reload *.service</code></p>
-</li>
-</ul>
-
+                <h3 id="Linux-设置开机启动项的几种方法"><a href="#Linux-设置开机启动项的几种方法" class="headerlink" title="Linux 设置开机启动项的几种方法"></a>Linux 设置开机启动项的几种方法</h3><p>Linux 设置开机启动项的几种方法…..</p>
             
         </article>
     </div>
@@ -901,124 +417,6 @@ WantedBy=multi-user.target</code></pre><p>重载系统服务：<code>systemctl d
                 <blockquote>
 <p><a href="https://www.moewah.com/go/aHR0cDovL3N1cGVydmlzb3JkLm9yZy8=" target="_blank" rel="noopener">Supervisor</a> 是一款使用 Python 开发的非常优秀的进程管理工具。它可以在类 UNIX 系统上让用户精确地监视与控制多组指定数量的服务进程。当监控的服务进程意外退出时，会尝试自动重启这些服务，以保持服务可用状态。</p>
 </blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Supervisor <a href="https://www.moewah.com/go/aHR0cDovL3d3dy5zdXBlcnZpc29yZC5vcmcvaW5zdGFsbGluZy5odG1s" target="_blank" rel="noopener">官方</a> 提供的安装方式较多，这里采用 pip 方式安装。</p>
-<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><pre><code>$ yum install python-pip
-# 升级pip
-$ pip install --upgrade pip
-$ pip -V
-pip 9.0.1</code></pre><h3 id="安装-Supervisor"><a href="#安装-Supervisor" class="headerlink" title="安装 Supervisor"></a>安装 Supervisor</h3><p>通过 pip 安装 Supervisor：</p>
-<pre><code>$ pip install supervisor
-Successfully installed supervisor-3.3.3</code></pre><p>安装 Supervisor 后，会出现 supervisorctl 和 supervisord 两个程序，其中 supervisorctl 为服务监控终端，而 supervisord 才是所有监控服务的大脑。查看 supervisord 是否安装成功：</p>
-<pre><code>$ supervisord -v
-3.3.3</code></pre><h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><p>将 supervisord 配置成开机启动服务，下载官方 <a href="https://www.moewah.com/go/aHR0cHM6Ly9naXRodWIuY29tL1N1cGVydmlzb3IvaW5pdHNjcmlwdHMvYmxvYi9tYXN0ZXIvcmVkaGF0LWluaXQtbWluZ2FsZXZtZQ==" target="_blank" rel="noopener">init 脚本</a>。</p>
-<p>修改关键路径配置：</p>
-<pre><code>PIDFILE=/var/run/supervisord.pid
-LOCKFILE=/var/lock/subsys/supervisord
-OPTIONS=&quot;-c /etc/supervisord.conf&quot;</code></pre><p>移到该文件到 <code>/etc/init.d</code> 目录下，并重命名为 supervisor，添加可执行权限：</p>
-<pre><code>$ chmod 777 /etc/init.d/supervisor</code></pre><p>配置成开机启动服务：</p>
-<pre><code>$ chkconfig --add supervisor
-$ chkconfig supervisor on
-$ chkconfig --list | grep &quot;supervisor&quot;
-supervisor  0:off 1:off 2:on 3:on 4:on 5:on 6:off</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>Supervisord 安装后，需要使用如下命令生成配置文件。</p>
-<pre><code>$ mkdir /etc/supervisor
-$ echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</code></pre><h3 id="主配置部分"><a href="#主配置部分" class="headerlink" title="主配置部分"></a>主配置部分</h3><p><code>supervisord.conf</code> 的主配置部分说明：</p>
-<pre><code>[unix_http_server]
-file=/tmp/supervisor.sock   ; socket文件的路径
-;chmod=0700                 ; socket文件权限
-;chown=nobody:nogroup       ; socket文件用户和用户组
-;username=user              ; 连接时认证的用户名
-;password=123               ; 连接时认证的密码
-
-[inet_http_server]          ; 监听TCP
-port=127.0.0.1:9001         ; 监听ip和端口
-username=user               ; 连接时认证的用户名
-password=123                ; 连接时认证的密码
-
-[supervisord]
-logfile=/var/log/supervisord.log ; log目录
-logfile_maxbytes=50MB        ; log文件最大空间
-logfile_backups=10           ; log文件保持的数量
-loglevel=info                ; log级别
-pidfile=/var/run/supervisord.pid
-nodaemon=false               ; 是否非守护进程态运行
-minfds=1024                  ; 系统空闲的最少文件描述符
-minprocs=200                 ; 可用的最小进程描述符
-;umask=022                   ; 进程创建文件的掩码
-;identifier=supervisor       ; supervisord标识符
-;directory=/tmp              ; 启动前切换到的目录
-;nocleanup=true              ; 启动前是否清除子进程的日志文件
-;childlogdir=/tmp            ; AUTO模式，子进程日志路径
-;environment=KEY=&quot;value&quot;     ; 设置环境变量
-
-[rpcinterface:supervisor]    ; XML_RPC配置
-supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
-
-[supervisorctl]
-serverurl=unix:///tmp/supervisor.sock ; 连接的socket路径
-;username=chris               ; 用户名
-;password=123                 ; 密码
-prompt=mysupervisor           ; 输入用户名和密码时的提示符
-;history_file=~/.sc_history   ; 历史操作记录存储路径
-
-[include]                     ; 包含文件，将每个进程配置为一个文件并包含
-files = /etc/supervisor/*.ini ; 多个进程的配置文件</code></pre><p>这部分我们不需要做太多的配置修改，如果需要开启 WEB 终端监控，则需要配置并开启 inet_http_server 项。</p>
-<h3 id="进程配置部分"><a href="#进程配置部分" class="headerlink" title="进程配置部分"></a>进程配置部分</h3><p>Supervisor 需管理的进程服务配置，示例如下：</p>
-<pre><code>[program:work]                      ; 服务名，例如work
-command=php -r &quot;sleep(10);exit(1);&quot; ; 带有参数的可执行命令
-process_name=%(process_num)s        ; 进程名，当numprocs&gt;1时，需包含%(process_num)s
-numprocs=2                          ; 启动进程的数目数
-;directory=/tmp                     ; 运行前切换到该目录
-;umask=022                          ; 进程掩码
-;priority=999                       ; 子进程启动关闭优先级
-autostart=true                      ; 子进程是否被自动启动
-startsecs=1                         ; 成功启动几秒后则认为成功启动
-;startretries=3                     ; 子进程启动失败后，最大尝试启动的次数
-autorestart=unexpected            ; 子进程意外退出后自动重启的选项，false, unexpected, true。unexpected表示不在exitcodes列表时重启
-exitcodes=0,2                     ; 期待的子程序退出码
-;stopsignal=QUIT                  ; 进程停止信号，可以为TERM,HUP,INT,QUIT,KILL,USR1,or USR2等信号，默认为TERM
-;stopwaitsecs=10                  ; 发送停止信号后等待的最大时间
-;stopasgroup=false                ; 是否向子进程组发送停止信号
-;killasgroup=false                ; 是否向子进程组发送kill信号
-;redirect_stderr=true             ; 是否重定向日志到标准输出
-stdout_logfile=/data/logs/work.log ; 进程的stdout的日志路径
-;stdout_logfile_maxbytes=1MB      ; 日志文件最大大小
-;stdout_logfile_backups=10
-;stdout_capture_maxbytes=1MB
-;stderr_logfile=/a/path           ; stderr的日志路径
-;stderr_logfile_maxbytes=1MB
-;stderr_logfile_backups=10
-;stderr_capture_maxbytes=1MB
-;environment=A=&quot;1&quot;,B=&quot;2&quot;          ; 子进程的环境变量
-;serverurl=AUTO                   ; 子进程的环境变量SUPERVISOR_SERVER_URL</code></pre><blockquote>
-<p>通常将每个进程的配置信息配置成独立文件，并通过 include 模块包含，这样方便修改和管理配置文件。</p>
-</blockquote>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>配置完成后，启动 supervisord 守护服务：</p>
-<pre><code>$ supervisord -c /etc/supervisor/supervisord.conf</code></pre><p>常用的命令参数说明：</p>
-<ul>
-<li>-c：指定配置文件路径</li>
-<li>-n：是否非守护态运行</li>
-<li>-l：日志文件目录</li>
-<li>-i：唯一标识</li>
-</ul>
-<p>查看 supervisord 启动情况：</p>
-<pre><code>$ ps -ef | grep &quot;supervisor&quot;
-root  24901  1  0 Sep23 ? 00:00:30 /usr/bin/python /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
-$ netstat -tunpl
-tcp 0 0 127.0.0.1:9001  0.0.0.0:*  LISTEN  24901/python</code></pre><h2 id="监控进程"><a href="#监控进程" class="headerlink" title="监控进程"></a>监控进程</h2><p>Supervisor 提供了多种监控服务的方式，包括 supervisorctl 命令行终端、Web 端、XML_RPC 接口多种方式。</p>
-<h3 id="命令终端"><a href="#命令终端" class="headerlink" title="命令终端"></a>命令终端</h3><p>直接使用 supervisorctl 即可在命令行终端查看所有服务的情况，如下：</p>
-<pre><code>$ supervisorctl 
-work:0      RUNNING   pid 31313, uptime 0:00:07
-work:1      RUNNING   pid 31318, uptime 0:00:06
-# -u 用户名 -p 密码</code></pre><p>supervisorctl 常用命令列表如下；</p>
-<pre><code>status：查看服务状态
-update：重新加载配置文件
-restart：重新启动服务
-stop：停止服务
-pid：查看某服务的 pid
-tail：输出最新的 log 信息
-shutdown：关闭 supervisord 服务</code></pre><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>在配置中开启 inet_http_server 后，即可通过 Web 界面便捷地监控进程服务了。</p>
-<p><img data-sizes="auto" data-src="/images/3728202999.png" alt="" class="lazyload"></p>
-
             
         </article>
     </div>
@@ -1038,7 +436,7 @@ shutdown：关闭 supervisord 服务</code></pre><h3 id="Web"><a href="#Web" cla
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714778723"></script>
+<script src="/js/app.js?v=1591715260360"></script>
   
 
 
