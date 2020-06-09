@@ -34,7 +34,7 @@
 <meta name="twitter:image" content="https://imgki.com/usr/uploads/2019/09/3102421826.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365543">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778561">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -202,8 +202,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年11月30日</a>
-    <a><i class="nexmoefont icon-areachart"></i>3.9k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 19 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 20 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -229,30 +229,25 @@
 </ol>
 <p>   sudo useradd -m vagrant -d /home/vagrant -s /bin/bash</p>
 <p>2、为创建的用户设置密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd vagrant</span><br></pre></td></tr></table></figure>
-
-<p>3、修改用户的权限：（ /etc/sudoers文件只有r权限，在改动前需要增加w权限，改动后，再去掉w权限 ）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(1)为sudoers增加写入权限</span><br><span class="line">      sudo chmod +w &#x2F;etc&#x2F;sudoers</span><br><span class="line">      sudo vim &#x2F;etc&#x2F;sudoers</span><br><span class="line">(2)为用户XXX添加读写权限</span><br><span class="line">      # User privilege specification </span><br><span class="line">      root　ALL&#x3D;(ALL:ALL) ALL</span><br><span class="line">      vagrant ALL&#x3D;(ALL:ALL) ALL    &#x2F;&#x2F; 这一行为新添加的代码</span><br><span class="line">(3)将sudoers文件的操作权限改为只读模式</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装必备组件"><a href="#安装必备组件" class="headerlink" title="安装必备组件"></a>安装必备组件</h3><p>命令行输入 sudo apt-get update ，然后输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint</span><br></pre></td></tr></table></figure>
-
-<h2 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h2><h3 id="Clone源码"><a href="#Clone源码" class="headerlink" title="Clone源码"></a>Clone源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;coolsnowwolf&#x2F;lede 命令下载好源代码，然后 cd lede 进入目录</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置编译"><a href="#配置编译" class="headerlink" title="配置编译"></a>配置编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;scripts&#x2F;feeds update -a </span><br><span class="line">.&#x2F;scripts&#x2F;feeds install -a</span><br><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
-
-<p>之后进入如下界面，这实际上是一个配置界面，用来配置编译的配置，并不是编译的过程。</p>
+<pre><code>sudo passwd vagrant</code></pre><p>3、修改用户的权限：（ /etc/sudoers文件只有r权限，在改动前需要增加w权限，改动后，再去掉w权限 ）</p>
+<pre><code>(1)为sudoers增加写入权限
+      sudo chmod +w /etc/sudoers
+      sudo vim /etc/sudoers
+(2)为用户XXX添加读写权限
+      # User privilege specification 
+      root　ALL=(ALL:ALL) ALL
+      vagrant ALL=(ALL:ALL) ALL    // 这一行为新添加的代码
+(3)将sudoers文件的操作权限改为只读模式</code></pre><h3 id="安装必备组件"><a href="#安装必备组件" class="headerlink" title="安装必备组件"></a>安装必备组件</h3><p>命令行输入 sudo apt-get update ，然后输入</p>
+<pre><code>sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint</code></pre><h2 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h2><h3 id="Clone源码"><a href="#Clone源码" class="headerlink" title="Clone源码"></a>Clone源码</h3><pre><code>git clone https://github.com/coolsnowwolf/lede 命令下载好源代码，然后 cd lede 进入目录</code></pre><h3 id="配置编译"><a href="#配置编译" class="headerlink" title="配置编译"></a>配置编译</h3><pre><code>./scripts/feeds update -a 
+./scripts/feeds install -a
+make menuconfig </code></pre><p>之后进入如下界面，这实际上是一个配置界面，用来配置编译的配置，并不是编译的过程。</p>
 <p><a href="https://imgki.com/usr/uploads/2019/09/3102421826.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/3102421826.png" alt="oplean1-1.png" class="lazyload"></a><br>进入Target System和Subtarget勾选你需要编译的平台，我用的是X86，并且是64位的，所以你需要选择自助选择。<br><a href="https://imgki.com/usr/uploads/2019/09/3433535562.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/3433535562.png" alt="oplean1-2.png" class="lazyload"></a><br>进入Target Images勾选你需要的固件格式等(img、vmdk等这里我保持默认，默认也够用了吧？)<br><a href="https://imgki.com/usr/uploads/2019/09/2458172706.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/2458172706.png" alt="oplean1-3.png" class="lazyload"></a><br>进入LuCI–&gt;Applications内选中你需要的插件<br><a href="https://imgki.com/usr/uploads/2019/09/2533905169.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/2533905169.png" alt="oplean1-4.png" class="lazyload"></a><br><a href="https://imgki.com/usr/uploads/2019/09/99712410.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/99712410.png" alt="oplean1-5.png" class="lazyload"></a></p>
 <p>在这里有一些别的选项，比如一些VPN、aria2的web管理等等，根据需要自己进去研究。</p>
 <p>勾选完需要的东西就可以退回第一个界面保存退出，保存按默认的文件名称(.config）保存即可，不需要修改。编译会根据.config的内容编译，想要恢复到初始配置删掉.config文件即可。</p>
 <p>在编译的过程中，要下载一些组件什么的，如果你不翻墙，下载速度会非常慢，甚至下载不下来。</p>
 <h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>保存后执行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j1 V&#x3D;s    &#x2F;&#x2F;第一次编译非常的慢，要花上一两个小时</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://imgki.com/usr/uploads/2019/09/53805221.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/53805221.png" alt="Snipaste_2019-09-15_22-31-56.png" class="lazyload"></a></p>
-<h3 id="取得固件"><a href="#取得固件" class="headerlink" title="取得固件"></a>取得固件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd bin&#x2F;targets&#x2F;x86&#x2F;64        注：这个bin目录在你克隆源码的lede路径下，非根目录下的bin目录</span><br></pre></td></tr></table></figure>
-
-<h2 id="二次编译"><a href="#二次编译" class="headerlink" title="二次编译"></a>二次编译</h2><p>cd lede 进入LEDE目录<br>git pull 同步更新大雕源码<br>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a 更新FEEDS<br>rm -rf ./tmp &amp;&amp; rm -rf .config 清除编译配置和缓存<br>make menuconfig 进入编译配置菜单<br>make -j1 V=s n=线程数+1，例如4线程的I5填-j5，开始编译<br>编译完成后固件输出在/lede/bin/targets</p>
+<pre><code>make -j1 V=s    //第一次编译非常的慢，要花上一两个小时</code></pre><p><a href="https://imgki.com/usr/uploads/2019/09/53805221.png" target="_blank" rel="noopener"><img data-sizes="auto" data-src="https://imgki.com/usr/uploads/2019/09/53805221.png" alt="Snipaste_2019-09-15_22-31-56.png" class="lazyload"></a></p>
+<h3 id="取得固件"><a href="#取得固件" class="headerlink" title="取得固件"></a>取得固件</h3><pre><code>cd bin/targets/x86/64        注：这个bin目录在你克隆源码的lede路径下，非根目录下的bin目录</code></pre><h2 id="二次编译"><a href="#二次编译" class="headerlink" title="二次编译"></a>二次编译</h2><p>cd lede 进入LEDE目录<br>git pull 同步更新大雕源码<br>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a 更新FEEDS<br>rm -rf ./tmp &amp;&amp; rm -rf .config 清除编译配置和缓存<br>make menuconfig 进入编译配置菜单<br>make -j1 V=s n=线程数+1，例如4线程的I5填-j5，开始编译<br>编译完成后固件输出在/lede/bin/targets</p>
 <h2 id="LEAN大佬原版的说明"><a href="#LEAN大佬原版的说明" class="headerlink" title="LEAN大佬原版的说明"></a>LEAN大佬原版的说明</h2><p>其实Lean在自己的github中说的很明白了<br>﻿Welcome to Lean’s git source of OpenWrt and packages</p>
 <p>中文：如何编译自己需要的 OpenWrt 固件</p>
 <p>注意：</p>
@@ -282,14 +277,195 @@
 <p>3.如有问题需要讨论，欢迎加入 QQ  2756093580</p>
 <h2 id="插件详细清单"><a href="#插件详细清单" class="headerlink" title="插件详细清单"></a>插件详细清单</h2><p>OpenWrt 编译 LuCI —&gt; Applications 添加插件应用说明 【人人为我，我为人人】 2019.8.3 更新 ！！！</p>
 <p>make menuconfig 进入定制界面<br>进入编译选项配置界面,.按照需要配置.( ‘*’ 代表编入固件，‘M’ 表示编译成模块或者IPK包， ‘空’不编译 )</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line">选择LuCI 配置：  常用</span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">L大雕 选择LuCI 配置：</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-accesscontrol  #访问时间控制</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-adbyby-plus   #广告屏蔽大师Plus +</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-arpbind  #IP&#x2F;MAC绑定</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-autoreboot  #高级重启</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-aliddns   #阿里DDNS客户端</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ddns   #动态域名 DNS</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-filetransfer  #文件传输</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-firewall   #添加防火墙</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-frpc   #内网穿透 Frp</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-guest-wifi  #WiFi访客网络</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ipsec-virtual**d  #virtual**服务器 IPSec</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mwan   #MWAN负载均衡</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mwan3   #MWAN3分流助手</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-nlbwmon   #网络带宽监视器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-p p t p-server  #virtual**服务器 p p t p</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ramfree  #释放内存</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-samba   #网络共享(Samba)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-sfe  #Turbo ACC网络加速(开启Fast Path转发加速)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-sqm  #流量智能队列管理(QOS)</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus   #S-S R兲朝上网Plus+</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include V2ray  #V2Ray透明代理</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-syncdial  #多拨虚拟网卡(原macvlan)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-upnp   #通用即插即用UPnP(端口自动转发)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-v2ray-pro  #V2Ray透明代理</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-vlmcsd  #KMS服务器设置</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-vsftpd  #FTP服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wifischedule  #WiFi 计划</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wireless-regdb  #WiFi无线</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wol   #WOL网络唤醒</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wrtbwmon  #实时流量监测</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-xlnetacc  #迅雷快鸟</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-zerotier  #ZeroTier内网穿透</span><br><span class="line">Extra packages  ---&gt;  ipv6helper  #支持 ipv6</span><br><span class="line">Utilities  ---&gt;  open-vm-tools  #打开适用于VMware的VM Tools</span><br><span class="line"></span><br><span class="line">以下是全部：</span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-accesscontrol  #访问时间控制</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-adblock   #ADB广告过滤</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-adbyby-plus  #广告屏蔽大师Plus +</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-adbyby   #广告过滤大师（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-adkill   #广告过滤（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-advanced-reboot  #Linksys高级重启</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ahcp  #支持AHCPd</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-aliddns   #阿里DDNS客户端（已弃，集成ddns）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-amule  #aMule下载工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-aria2 # Aria2下载工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-arpbind  #IP&#x2F;MAC绑定</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-asterisk  #支持Asterisk电话服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-attendedsysupgrade  #固件更新升级相关</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-autoreboot  #支持计划重启</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-bcp38  #BCP38网络入口过滤(不确定)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-bird4   #Bird 4(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-bird6   #Bird 6(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-bmx6  #BMX6路由协议</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-bmx7  #BMX7路由协议</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-caldav  #联系人</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-cjdns  #加密IPV6网络相关</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-clamav  #ClamAV杀毒软件</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-commands   #Shell命令模块</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-cshark   #CloudShark捕获工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ddns   #动态域名 DNS</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-diag-core   #core诊断工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-dnscrypt-proxy  #DNSCrypt解决DNS污染</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-dnscrypt-dnsforwarder  #DNSForwarder防DNS污染</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-dnspod  #DNSPod</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-dump1090  #民航无线频率(不确定)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-dynapoint  #DynaPoint(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-e2guardian   #Web内容过滤器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-familycloud   #家庭云盘</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-filetransfer  #文件传输</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-firewall   #添加防火墙</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-flowoffload   #Turbo ACC  FLOW转发加速(集成在sfe)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-freifunk-diagnostics   #freifunk组件 诊断(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-freifunk-policyrouting  #freifunk组件 策略路由(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-freifunk-widgets  #freifunk组件 索引(未知)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-frpc   #内网穿透 Frp</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-fwknopd  #Firewall Knock Operator服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-guest-wifi   #WiFi访客网络</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-gfwlist   #GFW域名列表（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-hd-idle  #硬盘休眠</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-hnet  #Homenet Status家庭网络控制协议</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-kodexplorer  #KOD可道云私人网盘</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-kooldns  #virtual**服务器 ddns替代方案（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-koolproxy  #KP去广告（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-lxc   #LXC容器管理</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-meshwizard #网络设置向导</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-minidlna   #完全兼容DLNA &#x2F; UPnP-AV客户端的服务器软件</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mjpg-streamer   #兼容Linux-UVC的摄像头程序</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mmc-over-gpio   #添加SD卡操作界面（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-multiwan   #多拨虚拟网卡（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mwan   #MWAN负载均衡</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-mwan3   #MWAN3分流助手</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-n2n_v2   #N2N内网穿透 N2N v2 virtual**服务</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-nft-qos  #QOS流控 Nftables版（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ngrokc  #Ngrok 内网穿透（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-nlbwmon   #网络带宽监视器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-noddos  #NodDOS Clients 阻止DDoS攻击</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ntpc   #NTP时间同步服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ocserv  #OpenConnect virtual**服务</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-olsr  #OLSR配置和状态模块</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-olsr-services  #OLSR服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-olsr-viz   #OLSR可视化</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ocserv   #OpenConnect virtual**服务（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-openvirtual**  #Openvirtual**客户端</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-openvirtual**-server  #易于使用的Openvirtual**服务器 Web-UI</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-oscam   #OSCAM服务器（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-p910nd   #打印服务器模块</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-pagekitee   #Pagekite内网穿透客户端</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-polipo  #Polipo代理(是一个小型且快速的网页缓存代理)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-pppoe-relay  #PPPoE NAT穿透 点对点协议(PPP)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-p p t p-server  #virtual**服务器 p p t p</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-privoxy  #Privoxy网络代理(带过滤无缓存)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-qos   #流量服务质量(QoS)流控</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-radicale   #CalDAV&#x2F;CardDAV同步工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ramfree  #释放内存</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-rp-pppoe-server  #Roaring Penguin PPPoE Server 服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-samba   #网络共享(Samba)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-samba4   #网络共享(Samba4)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-sfe  #Turbo ACC网络加速(开启Fast Path转发加速)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-s-s   #SS兲朝上网（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-s-s-libes  #SS-libev服务端</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-shairplay  #支持AirPlay功能</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-siitwizard  #SIIT配置向导  SIIT-Wizzard</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-simple-adblock  #简单的广告拦截</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-simple-softethervirtual**  #SoftEther virtual**服务器  NAT穿透（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-splash  #Client-Splash是无线MESH网络的一个热点认证系统</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-sqm  #流量智能队列管理(QOS)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-squid   #Squid代理服务器</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus   #S-S R兲朝上网Plus+</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-s New Versiong  #新SS代理</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include V2ray  #V2Ray透明代理</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include Kcptun  #Kcptun代理</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-sR Server  #S-S R客户端</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-sR Socks and Tunnel  #S-S R代理</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S R-pro  #S-S R-Pro</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-S-S Rserver-python  #s-sR Python服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-statistics  #流量监控工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-syncdial  #多拨虚拟网卡(原macvlan)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-tinyproxy  #Tinyproxy是 HTTP(S)代理服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-transmission   #BT下载工具</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-travelmate  #旅行路由器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-ttyd   #网页终端命令行</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-udpxy  #udpxy做组播服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-uhttpd  #uHTTPd Web服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-unblockmusic  #解锁网易云灰色歌曲</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-unbound  #Unbound DNS解析器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-upnp   #通用即插即用UPnP(端口自动转发)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-usb-printer   #USB 打印服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-v2ray-pro  #V2Ray透明代理（已弃，集成S-S R）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-vlmcsd  #KMS服务器设置</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-vnstat   #vnStat网络监控(图表)</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-virtual**bypass  #virtual** BypassWebUI  绕过virtual**设置</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-vsftpd  #FTP服务器</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-watchcat  #断网检测功能与定时重启</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-webadmin  #Web管理页面设置</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-webshell  #网页命令行终端（已弃）</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wifischedule  #WiFi 计划</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wireguard  #virtual**服务器 WireGuard状态</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wireless-regdb  #WiFi无线</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wol   #WOL网络唤醒</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-wrtbwmon  #实时流量监测</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-xlnetacc  #迅雷快鸟</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-app-zerotier  #ZeroTier内网穿透</span><br><span class="line">LuCI ---&gt; Applications ---&gt; luci-i18n-qbittorrent-zh-cn  #BT下载工具(qBittorrent)</span><br><span class="line">---------------------------------------------------------------------------------------------------</span><br><span class="line">LuCI ---&gt; Collections ---&gt; luci   #添加luci (web界面管理)</span><br><span class="line">LuCI ---&gt; Modules ---&gt; Translations ---&gt; Simplified Chinese (zh-cn) #新版本中文语言包位置</span><br><span class="line">LuCI ---&gt; Themes ---&gt; luci-theme-bootstrap   #默认主题，大家可以自行增减插件</span><br><span class="line">LuCI ---&gt; Translations ---&gt; luci-i18n-chinese   #添加luci的中文语言包</span><br><span class="line">---------------------------------------------------------------------------------------------------</span><br><span class="line">支持 iPv6：</span><br><span class="line">Extra packages  ---&gt;  ipv6helper  （选定这个后下面几项自动选择了）</span><br><span class="line">Network  ---&gt;  odhcp6c</span><br><span class="line">Network  ---&gt;  odhcpd-ipv6only</span><br><span class="line">LuCI  ---&gt;  Protocols  ---&gt;  luci-proto-ipv6</span><br><span class="line">LuCI  ---&gt;  Protocols  ---&gt;  luci-proto-ppp</span><br></pre></td></tr></table></figure>
+<pre><code>选择LuCI 配置：  常用
+-----------------------------------------------------------------------------------------
+L大雕 选择LuCI 配置：
+LuCI ---&gt; Applications ---&gt; luci-app-accesscontrol  #访问时间控制
+LuCI ---&gt; Applications ---&gt; luci-app-adbyby-plus   #广告屏蔽大师Plus +
+LuCI ---&gt; Applications ---&gt; luci-app-arpbind  #IP/MAC绑定
+LuCI ---&gt; Applications ---&gt; luci-app-autoreboot  #高级重启
+LuCI ---&gt; Applications ---&gt; luci-app-aliddns   #阿里DDNS客户端
+LuCI ---&gt; Applications ---&gt; luci-app-ddns   #动态域名 DNS
+LuCI ---&gt; Applications ---&gt; luci-app-filetransfer  #文件传输
+LuCI ---&gt; Applications ---&gt; luci-app-firewall   #添加防火墙
+LuCI ---&gt; Applications ---&gt; luci-app-frpc   #内网穿透 Frp
+LuCI ---&gt; Applications ---&gt; luci-app-guest-wifi  #WiFi访客网络
+LuCI ---&gt; Applications ---&gt; luci-app-ipsec-virtual**d  #virtual**服务器 IPSec
+LuCI ---&gt; Applications ---&gt; luci-app-mwan   #MWAN负载均衡
+LuCI ---&gt; Applications ---&gt; luci-app-mwan3   #MWAN3分流助手
+LuCI ---&gt; Applications ---&gt; luci-app-nlbwmon   #网络带宽监视器
+LuCI ---&gt; Applications ---&gt; luci-app-p p t p-server  #virtual**服务器 p p t p
+LuCI ---&gt; Applications ---&gt; luci-app-ramfree  #释放内存
+LuCI ---&gt; Applications ---&gt; luci-app-samba   #网络共享(Samba)
+LuCI ---&gt; Applications ---&gt; luci-app-sfe  #Turbo ACC网络加速(开启Fast Path转发加速)
+LuCI ---&gt; Applications ---&gt; luci-app-sqm  #流量智能队列管理(QOS)
+-------------------------------------------------------------------------------------------
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus   #S-S R兲朝上网Plus+
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include V2ray  #V2Ray透明代理
+-------------------------------------------------------------------------------------------
+LuCI ---&gt; Applications ---&gt; luci-app-syncdial  #多拨虚拟网卡(原macvlan)
+LuCI ---&gt; Applications ---&gt; luci-app-upnp   #通用即插即用UPnP(端口自动转发)
+LuCI ---&gt; Applications ---&gt; luci-app-v2ray-pro  #V2Ray透明代理
+LuCI ---&gt; Applications ---&gt; luci-app-vlmcsd  #KMS服务器设置
+LuCI ---&gt; Applications ---&gt; luci-app-vsftpd  #FTP服务器
+LuCI ---&gt; Applications ---&gt; luci-app-wifischedule  #WiFi 计划
+LuCI ---&gt; Applications ---&gt; luci-app-wireless-regdb  #WiFi无线
+LuCI ---&gt; Applications ---&gt; luci-app-wol   #WOL网络唤醒
+LuCI ---&gt; Applications ---&gt; luci-app-wrtbwmon  #实时流量监测
+LuCI ---&gt; Applications ---&gt; luci-app-xlnetacc  #迅雷快鸟
+LuCI ---&gt; Applications ---&gt; luci-app-zerotier  #ZeroTier内网穿透
+Extra packages  ---&gt;  ipv6helper  #支持 ipv6
+Utilities  ---&gt;  open-vm-tools  #打开适用于VMware的VM Tools
 
-<p>这个地址应该是长期更新插件清单：<a href="https://www.right.com.cn/forum/thread-344825-1-1.html" target="_blank" rel="noopener">https://www.right.com.cn/forum/thread-344825-1-1.html</a></p>
+以下是全部：
+-----------------------------------------------------------------------------------------
+LuCI ---&gt; Applications ---&gt; luci-app-accesscontrol  #访问时间控制
+LuCI ---&gt; Applications ---&gt; luci-app-adblock   #ADB广告过滤
+LuCI ---&gt; Applications ---&gt; luci-app-adbyby-plus  #广告屏蔽大师Plus +
+LuCI ---&gt; Applications ---&gt; luci-app-adbyby   #广告过滤大师（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-adkill   #广告过滤（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-advanced-reboot  #Linksys高级重启
+LuCI ---&gt; Applications ---&gt; luci-app-ahcp  #支持AHCPd
+LuCI ---&gt; Applications ---&gt; luci-app-aliddns   #阿里DDNS客户端（已弃，集成ddns）
+LuCI ---&gt; Applications ---&gt; luci-app-amule  #aMule下载工具
+LuCI ---&gt; Applications ---&gt; luci-app-aria2 # Aria2下载工具
+LuCI ---&gt; Applications ---&gt; luci-app-arpbind  #IP/MAC绑定
+LuCI ---&gt; Applications ---&gt; luci-app-asterisk  #支持Asterisk电话服务器
+LuCI ---&gt; Applications ---&gt; luci-app-attendedsysupgrade  #固件更新升级相关
+LuCI ---&gt; Applications ---&gt; luci-app-autoreboot  #支持计划重启
+LuCI ---&gt; Applications ---&gt; luci-app-bcp38  #BCP38网络入口过滤(不确定)
+LuCI ---&gt; Applications ---&gt; luci-app-bird4   #Bird 4(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-bird6   #Bird 6(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-bmx6  #BMX6路由协议
+LuCI ---&gt; Applications ---&gt; luci-app-bmx7  #BMX7路由协议
+LuCI ---&gt; Applications ---&gt; luci-app-caldav  #联系人
+LuCI ---&gt; Applications ---&gt; luci-app-cjdns  #加密IPV6网络相关
+LuCI ---&gt; Applications ---&gt; luci-app-clamav  #ClamAV杀毒软件
+LuCI ---&gt; Applications ---&gt; luci-app-commands   #Shell命令模块
+LuCI ---&gt; Applications ---&gt; luci-app-cshark   #CloudShark捕获工具
+LuCI ---&gt; Applications ---&gt; luci-app-ddns   #动态域名 DNS
+LuCI ---&gt; Applications ---&gt; luci-app-diag-core   #core诊断工具
+LuCI ---&gt; Applications ---&gt; luci-app-dnscrypt-proxy  #DNSCrypt解决DNS污染
+LuCI ---&gt; Applications ---&gt; luci-app-dnscrypt-dnsforwarder  #DNSForwarder防DNS污染
+LuCI ---&gt; Applications ---&gt; luci-app-dnspod  #DNSPod
+LuCI ---&gt; Applications ---&gt; luci-app-dump1090  #民航无线频率(不确定)
+LuCI ---&gt; Applications ---&gt; luci-app-dynapoint  #DynaPoint(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-e2guardian   #Web内容过滤器
+LuCI ---&gt; Applications ---&gt; luci-app-familycloud   #家庭云盘
+LuCI ---&gt; Applications ---&gt; luci-app-filetransfer  #文件传输
+LuCI ---&gt; Applications ---&gt; luci-app-firewall   #添加防火墙
+LuCI ---&gt; Applications ---&gt; luci-app-flowoffload   #Turbo ACC  FLOW转发加速(集成在sfe)
+LuCI ---&gt; Applications ---&gt; luci-app-freifunk-diagnostics   #freifunk组件 诊断(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-freifunk-policyrouting  #freifunk组件 策略路由(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-freifunk-widgets  #freifunk组件 索引(未知)
+LuCI ---&gt; Applications ---&gt; luci-app-frpc   #内网穿透 Frp
+LuCI ---&gt; Applications ---&gt; luci-app-fwknopd  #Firewall Knock Operator服务器
+LuCI ---&gt; Applications ---&gt; luci-app-guest-wifi   #WiFi访客网络
+LuCI ---&gt; Applications ---&gt; luci-app-gfwlist   #GFW域名列表（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-hd-idle  #硬盘休眠
+LuCI ---&gt; Applications ---&gt; luci-app-hnet  #Homenet Status家庭网络控制协议
+LuCI ---&gt; Applications ---&gt; luci-app-kodexplorer  #KOD可道云私人网盘
+LuCI ---&gt; Applications ---&gt; luci-app-kooldns  #virtual**服务器 ddns替代方案（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-koolproxy  #KP去广告（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-lxc   #LXC容器管理
+LuCI ---&gt; Applications ---&gt; luci-app-meshwizard #网络设置向导
+LuCI ---&gt; Applications ---&gt; luci-app-minidlna   #完全兼容DLNA / UPnP-AV客户端的服务器软件
+LuCI ---&gt; Applications ---&gt; luci-app-mjpg-streamer   #兼容Linux-UVC的摄像头程序
+LuCI ---&gt; Applications ---&gt; luci-app-mmc-over-gpio   #添加SD卡操作界面（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-multiwan   #多拨虚拟网卡（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-mwan   #MWAN负载均衡
+LuCI ---&gt; Applications ---&gt; luci-app-mwan3   #MWAN3分流助手
+LuCI ---&gt; Applications ---&gt; luci-app-n2n_v2   #N2N内网穿透 N2N v2 virtual**服务
+LuCI ---&gt; Applications ---&gt; luci-app-nft-qos  #QOS流控 Nftables版（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-ngrokc  #Ngrok 内网穿透（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-nlbwmon   #网络带宽监视器
+LuCI ---&gt; Applications ---&gt; luci-app-noddos  #NodDOS Clients 阻止DDoS攻击
+LuCI ---&gt; Applications ---&gt; luci-app-ntpc   #NTP时间同步服务器
+LuCI ---&gt; Applications ---&gt; luci-app-ocserv  #OpenConnect virtual**服务
+LuCI ---&gt; Applications ---&gt; luci-app-olsr  #OLSR配置和状态模块
+LuCI ---&gt; Applications ---&gt; luci-app-olsr-services  #OLSR服务器
+LuCI ---&gt; Applications ---&gt; luci-app-olsr-viz   #OLSR可视化
+LuCI ---&gt; Applications ---&gt; luci-app-ocserv   #OpenConnect virtual**服务（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-openvirtual**  #Openvirtual**客户端
+LuCI ---&gt; Applications ---&gt; luci-app-openvirtual**-server  #易于使用的Openvirtual**服务器 Web-UI
+LuCI ---&gt; Applications ---&gt; luci-app-oscam   #OSCAM服务器（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-p910nd   #打印服务器模块
+LuCI ---&gt; Applications ---&gt; luci-app-pagekitee   #Pagekite内网穿透客户端
+LuCI ---&gt; Applications ---&gt; luci-app-polipo  #Polipo代理(是一个小型且快速的网页缓存代理)
+LuCI ---&gt; Applications ---&gt; luci-app-pppoe-relay  #PPPoE NAT穿透 点对点协议(PPP)
+LuCI ---&gt; Applications ---&gt; luci-app-p p t p-server  #virtual**服务器 p p t p
+LuCI ---&gt; Applications ---&gt; luci-app-privoxy  #Privoxy网络代理(带过滤无缓存)
+LuCI ---&gt; Applications ---&gt; luci-app-qos   #流量服务质量(QoS)流控
+LuCI ---&gt; Applications ---&gt; luci-app-radicale   #CalDAV/CardDAV同步工具
+LuCI ---&gt; Applications ---&gt; luci-app-ramfree  #释放内存
+LuCI ---&gt; Applications ---&gt; luci-app-rp-pppoe-server  #Roaring Penguin PPPoE Server 服务器
+LuCI ---&gt; Applications ---&gt; luci-app-samba   #网络共享(Samba)
+LuCI ---&gt; Applications ---&gt; luci-app-samba4   #网络共享(Samba4)
+LuCI ---&gt; Applications ---&gt; luci-app-sfe  #Turbo ACC网络加速(开启Fast Path转发加速)
+LuCI ---&gt; Applications ---&gt; luci-app-s-s   #SS兲朝上网（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-s-s-libes  #SS-libev服务端
+LuCI ---&gt; Applications ---&gt; luci-app-shairplay  #支持AirPlay功能
+LuCI ---&gt; Applications ---&gt; luci-app-siitwizard  #SIIT配置向导  SIIT-Wizzard
+LuCI ---&gt; Applications ---&gt; luci-app-simple-adblock  #简单的广告拦截
+LuCI ---&gt; Applications ---&gt; luci-app-simple-softethervirtual**  #SoftEther virtual**服务器  NAT穿透（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-splash  #Client-Splash是无线MESH网络的一个热点认证系统
+LuCI ---&gt; Applications ---&gt; luci-app-sqm  #流量智能队列管理(QOS)
+LuCI ---&gt; Applications ---&gt; luci-app-squid   #Squid代理服务器
+-------------------------------------------------------------------------------------------
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus   #S-S R兲朝上网Plus+
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-s New Versiong  #新SS代理
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include V2ray  #V2Ray透明代理
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include Kcptun  #Kcptun代理
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-sR Server  #S-S R客户端
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-plus ---&gt; Include s-sR Socks and Tunnel  #S-S R代理
+-------------------------------------------------------------------------------------------
+LuCI ---&gt; Applications ---&gt; luci-app-S-S R-pro  #S-S R-Pro
+LuCI ---&gt; Applications ---&gt; luci-app-S-S Rserver-python  #s-sR Python服务器
+LuCI ---&gt; Applications ---&gt; luci-app-statistics  #流量监控工具
+LuCI ---&gt; Applications ---&gt; luci-app-syncdial  #多拨虚拟网卡(原macvlan)
+LuCI ---&gt; Applications ---&gt; luci-app-tinyproxy  #Tinyproxy是 HTTP(S)代理服务器
+LuCI ---&gt; Applications ---&gt; luci-app-transmission   #BT下载工具
+LuCI ---&gt; Applications ---&gt; luci-app-travelmate  #旅行路由器
+LuCI ---&gt; Applications ---&gt; luci-app-ttyd   #网页终端命令行
+LuCI ---&gt; Applications ---&gt; luci-app-udpxy  #udpxy做组播服务器
+LuCI ---&gt; Applications ---&gt; luci-app-uhttpd  #uHTTPd Web服务器
+LuCI ---&gt; Applications ---&gt; luci-app-unblockmusic  #解锁网易云灰色歌曲
+LuCI ---&gt; Applications ---&gt; luci-app-unbound  #Unbound DNS解析器
+LuCI ---&gt; Applications ---&gt; luci-app-upnp   #通用即插即用UPnP(端口自动转发)
+LuCI ---&gt; Applications ---&gt; luci-app-usb-printer   #USB 打印服务器
+LuCI ---&gt; Applications ---&gt; luci-app-v2ray-pro  #V2Ray透明代理（已弃，集成S-S R）
+LuCI ---&gt; Applications ---&gt; luci-app-vlmcsd  #KMS服务器设置
+LuCI ---&gt; Applications ---&gt; luci-app-vnstat   #vnStat网络监控(图表)
+LuCI ---&gt; Applications ---&gt; luci-app-virtual**bypass  #virtual** BypassWebUI  绕过virtual**设置
+LuCI ---&gt; Applications ---&gt; luci-app-vsftpd  #FTP服务器
+LuCI ---&gt; Applications ---&gt; luci-app-watchcat  #断网检测功能与定时重启
+LuCI ---&gt; Applications ---&gt; luci-app-webadmin  #Web管理页面设置
+LuCI ---&gt; Applications ---&gt; luci-app-webshell  #网页命令行终端（已弃）
+LuCI ---&gt; Applications ---&gt; luci-app-wifischedule  #WiFi 计划
+LuCI ---&gt; Applications ---&gt; luci-app-wireguard  #virtual**服务器 WireGuard状态
+LuCI ---&gt; Applications ---&gt; luci-app-wireless-regdb  #WiFi无线
+LuCI ---&gt; Applications ---&gt; luci-app-wol   #WOL网络唤醒
+LuCI ---&gt; Applications ---&gt; luci-app-wrtbwmon  #实时流量监测
+LuCI ---&gt; Applications ---&gt; luci-app-xlnetacc  #迅雷快鸟
+LuCI ---&gt; Applications ---&gt; luci-app-zerotier  #ZeroTier内网穿透
+LuCI ---&gt; Applications ---&gt; luci-i18n-qbittorrent-zh-cn  #BT下载工具(qBittorrent)
+---------------------------------------------------------------------------------------------------
+LuCI ---&gt; Collections ---&gt; luci   #添加luci (web界面管理)
+LuCI ---&gt; Modules ---&gt; Translations ---&gt; Simplified Chinese (zh-cn) #新版本中文语言包位置
+LuCI ---&gt; Themes ---&gt; luci-theme-bootstrap   #默认主题，大家可以自行增减插件
+LuCI ---&gt; Translations ---&gt; luci-i18n-chinese   #添加luci的中文语言包
+---------------------------------------------------------------------------------------------------
+支持 iPv6：
+Extra packages  ---&gt;  ipv6helper  （选定这个后下面几项自动选择了）
+Network  ---&gt;  odhcp6c
+Network  ---&gt;  odhcpd-ipv6only
+LuCI  ---&gt;  Protocols  ---&gt;  luci-proto-ipv6
+LuCI  ---&gt;  Protocols  ---&gt;  luci-proto-ppp</code></pre><p>这个地址应该是长期更新插件清单：<a href="https://www.right.com.cn/forum/thread-344825-1-1.html" target="_blank" rel="noopener">https://www.right.com.cn/forum/thread-344825-1-1.html</a></p>
 <hr>
 <p>有一个作者维护的frp的ipk：<a href="https://github.com/kuoruan/openwrt-frp" target="_blank" rel="noopener">https://github.com/kuoruan/openwrt-frp</a></p>
 <hr>
 <p>即使编译了ssr-plus之后，你发现在菜单里依然没有选项。因为作者又一次调皮了，居然给隐藏了。<br>输入以下代码后可以看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 0xDEADBEEF &gt; &#x2F;etc&#x2F;config&#x2F;google_fu_mode</span><br></pre></td></tr></table></figure>
+<pre><code>echo 0xDEADBEEF &gt; /etc/config/google_fu_mode</code></pre>
   </article>
 
   <div class="nexmoe-post-meta nexmoe-rainbow">
@@ -341,7 +517,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365546"></script>
+<script src="/js/app.js?v=1591714778564"></script>
   
 
 

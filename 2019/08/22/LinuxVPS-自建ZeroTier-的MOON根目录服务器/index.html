@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365569">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778584">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -209,66 +209,59 @@
 <ol>
 <li>通过<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">官网</a>文档根据不同操作系统选择不同的安装方式，这里直接通过命令行安装</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s &#39;https:&#x2F;&#x2F;pgp.mit.edu&#x2F;pks&#x2F;lookup?op&#x3D;get&amp;search&#x3D;0x1657198823E52A61&#39; | gpg --import &amp;&amp; \ if z&#x3D;(curl -s &#39;https:&#x2F;&#x2F;install.zerotier.com&#x2F;&#39; | gpg); then echo &quot;z&quot; | sudo bash; fi</span><br></pre></td></tr></table></figure>
-
-<p>如果上述命令运行失败，那么使用下面命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s https:&#x2F;&#x2F;install.zerotier.com&#x2F; | sudo bash</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<pre><code>curl -s &#39;https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39; | gpg --import &amp;&amp; \ if z=(curl -s &#39;https://install.zerotier.com/&#39; | gpg); then echo &quot;z&quot; | sudo bash; fi</code></pre><p>如果上述命令运行失败，那么使用下面命令</p>
+<pre><code>curl -s https://install.zerotier.com/ | sudo bash</code></pre><ol start="2">
 <li>将 MOON 服务器加入 Zerotier 局域网</li>
 </ol>
 <p>虽然搭建了 MOON 服务器，我们还是需要借助 <a href="https://www.moewah.com/go/aHR0cHM6Ly9teS56ZXJvdGllci5jb20vbmV0d29yaw==" target="_blank" rel="noopener">zerotier network</a>，也就是需要先通过 zerotier 官网创建一个 network，并且内网节点需要使用 <code>join</code> 命令加入该网络才能实现内网节点的互通，换句话说 MOON 节点只起到了加速的作用，虚拟网络的分配和管理还是需要 zerotier 服务端参与。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zerotier-cli join &lt;network id&gt;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<pre><code>zerotier-cli join &lt;network id&gt;</code></pre><ol start="2">
 <li>生成配置文件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 &#x2F;var&#x2F;lib&#x2F;zerotier-one # 这里为了有写入文件的权限</span><br><span class="line">cd &#x2F;var&#x2F;lib&#x2F;zerotier-one</span><br><span class="line">sudo zerotier-idtool initmoon identity.public &gt; moon.json</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
+<pre><code>sudo chmod 777 /var/lib/zerotier-one # 这里为了有写入文件的权限
+cd /var/lib/zerotier-one
+sudo zerotier-idtool initmoon identity.public &gt; moon.json</code></pre><ol start="3">
 <li>修改配置文件 <code>moon.json</code>，主要是添加公网 IP，修改内容如下，<code>9993</code> 是默认端口</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;stableEndpoints&quot;: [ &quot;1.1.1.1&#x2F;9993&quot; ] #修改为VPS公网IP&#x2F;9993</span><br></pre></td></tr></table></figure>
-
-<p>还需要注意 <code>moon.json</code> 中的 id 值，它是 MOON 服务器的 ID，是一个 10 位的字符串，我的为 <code>efe9e9a259</code>，也可以用 <code>sudo zerotier-cli info</code> 查看，后面会用到。</p>
+<pre><code>&quot;stableEndpoints&quot;: [ &quot;1.1.1.1/9993&quot; ] #修改为VPS公网IP/9993</code></pre><p>还需要注意 <code>moon.json</code> 中的 id 值，它是 MOON 服务器的 ID，是一个 10 位的字符串，我的为 <code>efe9e9a259</code>，也可以用 <code>sudo zerotier-cli info</code> 查看，后面会用到。</p>
 <ol start="4">
 <li>生成 moon 文件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zerotier-idtool genmoon moon.json</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
+<pre><code>sudo zerotier-idtool genmoon moon.json</code></pre><ol start="5">
 <li>在 <code>/var/lib/zerotier-one</code> 目录下新建 <code>moons.d</code> 文件夹中，并将生成的 moon 文件放到该文件夹下，我的 moon 文件名为 <code>000000efe9e9a259.moon</code></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv 000000efe9e9a259.moon moons.d&#x2F;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
+<pre><code>mv 000000efe9e9a259.moon moons.d/</code></pre><ol start="6">
 <li>重启 <code>zerotier-one</code></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall -9 zerotier-one # 这里我们杀死相关进程后会自动重启该服务</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="内网节点配置"><a href="#内网节点配置" class="headerlink" title="内网节点配置"></a>内网节点配置</h2><ol>
+<pre><code>sudo killall -9 zerotier-one # 这里我们杀死相关进程后会自动重启该服务</code></pre><h2 id="内网节点配置"><a href="#内网节点配置" class="headerlink" title="内网节点配置"></a>内网节点配置</h2><ol>
 <li>在内网节点安装 zerotier，安装方法和上面类似，根据<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">文档</a>选择不同操作系统的方法进行安装即可。请参考文章<a href="https://www.moewah.com/archives/1474.html" target="_blank" rel="noopener">《ZeroTier 无公网 IP 实现内网穿透》</a></li>
 <li>将 MOON 节点添加到常规节点</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zerotier-cli orbit efe9e9a259 efe9e9a259 # 注意这里是两次根节点的ID</span><br></pre></td></tr></table></figure>
-
-<p>如果没返回 <code>200 orbit OK</code> 的话，需要手动拷贝生成的 moon 文件 <code>000000efe9e9a259.moon</code> 文件到常规节点的机器上，位置如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows: C:\ProgramData\ZeroTier\One</span><br><span class="line">Macintosh: &#x2F;Library&#x2F;Application Support&#x2F;ZeroTier&#x2F;One (在 Terminal 中应为 &#x2F;Library&#x2F;Application\ Support&#x2F;ZeroTier&#x2F;One)</span><br><span class="line">Linux: &#x2F;var&#x2F;lib&#x2F;zerotier-one</span><br><span class="line">FreeBSD&#x2F;OpenBSD: &#x2F;var&#x2F;db&#x2F;zerotier-one</span><br></pre></td></tr></table></figure>
-
-<p>然后重启 zerotier-one</p>
+<pre><code>sudo zerotier-cli orbit efe9e9a259 efe9e9a259 # 注意这里是两次根节点的ID</code></pre><p>如果没返回 <code>200 orbit OK</code> 的话，需要手动拷贝生成的 moon 文件 <code>000000efe9e9a259.moon</code> 文件到常规节点的机器上，位置如下:</p>
+<pre><code>Windows: C:\ProgramData\ZeroTier\One
+Macintosh: /Library/Application Support/ZeroTier/One (在 Terminal 中应为 /Library/Application\ Support/ZeroTier/One)
+Linux: /var/lib/zerotier-one
+FreeBSD/OpenBSD: /var/db/zerotier-one</code></pre><p>然后重启 zerotier-one</p>
 <ol start="3">
 <li>查看节点列表，出现根服务器的 MOON 节点表示成功</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> ~ sudo zerotier-cli listpeers</span><br><span class="line">200 listpeers     </span><br><span class="line">200 listpeers 3dfa0fd16b - -1 - LEAF</span><br><span class="line">200 listpeers 8841408a2e 45.32.248.87&#x2F;9993;11749;11453 252 1.1.5 PLANET</span><br><span class="line">200 listpeers 9d219039f3 128.199.197.217&#x2F;9993;11749;11381 390 1.1.5 PLANET</span><br><span class="line">200 listpeers abfd31bd47 178.128.240.145&#x2F;35368;6238;14319 509 1.2.5 LEAF</span><br><span class="line">200 listpeers efe9e9a259 1.1.1.1&#x2F;9993;6238;1184 36 1.2.12 MOON</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
+<pre><code> ~ sudo zerotier-cli listpeers
+200 listpeers     
+200 listpeers 3dfa0fd16b - -1 - LEAF
+200 listpeers 8841408a2e 45.32.248.87/9993;11749;11453 252 1.1.5 PLANET
+200 listpeers 9d219039f3 128.199.197.217/9993;11749;11381 390 1.1.5 PLANET
+200 listpeers abfd31bd47 178.128.240.145/35368;6238;14319 509 1.2.5 LEAF
+200 listpeers efe9e9a259 1.1.1.1/9993;6238;1184 36 1.2.12 MOON</code></pre><ol start="4">
 <li>我们再在内网节点上运行 <code>ifconfig</code>(windows 是 <code>ipconfig</code>)，可以看到 zerotier vlan 分配给其的内网 IP</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zt0: flags&#x3D;8843 metric 5000 mtu 2800</span><br><span class="line">    ether 1a:42:9a:39:7d:3f</span><br><span class="line">    inet 10.147.18.127 netmask 0xffffff00 broadcast 10.147.18.255</span><br><span class="line">    inet6 fe80::1842:9aff:fe39:7d3f%zt0 prefixlen 64 scopeid 0xc</span><br><span class="line">    inet6 fcec:2f1a:a769:487e:c00e::1 prefixlen 40</span><br><span class="line">    nd6 options&#x3D;201</span><br><span class="line">    media: autoselect</span><br><span class="line">    status: active</span><br><span class="line">    open (pid 84214)</span><br></pre></td></tr></table></figure>
-
-<p>这里的 <code>10.147.18.127</code> 就是其虚拟局域网的 IP，在另外一个局域网中通过上述过程配置另外一个节点，它的虚拟局域网 IP 为 <code>10.147.18.30</code>，两个节点通过 <code>ping</code> 可以互相通</p>
+<pre><code>zt0: flags=8843 metric 5000 mtu 2800
+    ether 1a:42:9a:39:7d:3f
+    inet 10.147.18.127 netmask 0xffffff00 broadcast 10.147.18.255
+    inet6 fe80::1842:9aff:fe39:7d3f%zt0 prefixlen 64 scopeid 0xc
+    inet6 fcec:2f1a:a769:487e:c00e::1 prefixlen 40
+    nd6 options=201
+    media: autoselect
+    status: active
+    open (pid 84214)</code></pre><p>这里的 <code>10.147.18.127</code> 就是其虚拟局域网的 IP，在另外一个局域网中通过上述过程配置另外一个节点，它的虚拟局域网 IP 为 <code>10.147.18.30</code>，两个节点通过 <code>ping</code> 可以互相通</p>
 
   </article>
 
@@ -321,7 +314,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365571"></script>
+<script src="/js/app.js?v=1591714778586"></script>
   
 
 

@@ -12,12 +12,12 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="lede和openwrt合并之后 lede官网挂了。。 git.openwrt.org，也访问不了。。 只好去github上找最新源码： 1git clone https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git  最新的lede 1git clone -b lede-17.01 https:&#x2F;&#x2F;github.co">
+  <meta name="description" content="lede和openwrt合并之后 lede官网挂了。。 git.openwrt.org，也访问不了。。 只好去github上找最新源码： git clone https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git最新的lede git clone -b lede-17.01 https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git但是问题又来了，， .&#x2F;s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openwrt 修改feeds.conf.default为GitHub源">
 <meta property="og:url" content="http://yoursite.com/2020/02/02/openwrt-%E4%BF%AE%E6%94%B9feeds-conf-default%E4%B8%BAGitHub%E6%BA%90/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="lede和openwrt合并之后 lede官网挂了。。 git.openwrt.org，也访问不了。。 只好去github上找最新源码： 1git clone https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git  最新的lede 1git clone -b lede-17.01 https:&#x2F;&#x2F;github.co">
+<meta property="og:description" content="lede和openwrt合并之后 lede官网挂了。。 git.openwrt.org，也访问不了。。 只好去github上找最新源码： git clone https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git最新的lede git clone -b lede-17.01 https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git但是问题又来了，， .&#x2F;s">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T04:24:05.000Z">
 <meta property="article:modified_time" content="2020-06-09T14:29:02.437Z">
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365523">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778545">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -195,7 +195,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月02日</a>
-    <a><i class="nexmoefont icon-areachart"></i>293 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>234 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -206,19 +206,23 @@
   <article>
     <p>lede和openwrt合并之后 lede官网挂了。。 git.openwrt.org，也访问不了。。</p>
 <p>只好去github上找最新源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git</span><br></pre></td></tr></table></figure>
-
-<p>最新的lede</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b lede-17.01 https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git</span><br></pre></td></tr></table></figure>
-
-<p>但是问题又来了，， <code>./script/feeds update -a</code> 又挂了，，</p>
+<pre><code>git clone https://github.com/openwrt/openwrt.git</code></pre><p>最新的lede</p>
+<pre><code>git clone -b lede-17.01 https://github.com/openwrt/openwrt.git</code></pre><p>但是问题又来了，， <code>./script/feeds update -a</code> 又挂了，，</p>
 <p>查看文件<code>feeds.conf.default</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">src-git packages https:&#x2F;&#x2F;git.openwrt.org&#x2F;feed&#x2F;packages.git</span><br><span class="line">src-git luci https:&#x2F;&#x2F;git.openwrt.org&#x2F;project&#x2F;luci.git</span><br><span class="line">src-git routing https:&#x2F;&#x2F;git.openwrt.org&#x2F;feed&#x2F;routing.git</span><br><span class="line">src-git telephony https:&#x2F;&#x2F;git.openwrt.org&#x2F;feed&#x2F;telephony.git</span><br><span class="line">#src-git video https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;video.git</span><br><span class="line">#src-git targets https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;targets.git</span><br><span class="line">#src-git management https:&#x2F;&#x2F;github.com&#x2F;openwrt-management&#x2F;packages.git</span><br><span class="line">#src-git oldpackages http:&#x2F;&#x2F;git.openwrt.org&#x2F;packages.git</span><br><span class="line">#src-link custom &#x2F;usr&#x2F;src&#x2F;openwrt&#x2F;custom-feed</span><br></pre></td></tr></table></figure>
-
-<p>git.openwrt.org访问不了，无法更新，只能使用github源地址： 更新如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">src-git packages https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;packages.git</span><br><span class="line">src-git luci https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;luci.git</span><br><span class="line">src-git routing https:&#x2F;&#x2F;github.com&#x2F;openwrt-routing&#x2F;packages.git</span><br><span class="line">src-git telephony https:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;telephony.git</span><br><span class="line">src-git management https:&#x2F;&#x2F;github.com&#x2F;openwrt-management&#x2F;packages.git</span><br></pre></td></tr></table></figure>
-
-<p>OK，<code>./script/feeds update -a</code>  可以了</p>
+<pre><code>src-git packages https://git.openwrt.org/feed/packages.git
+src-git luci https://git.openwrt.org/project/luci.git
+src-git routing https://git.openwrt.org/feed/routing.git
+src-git telephony https://git.openwrt.org/feed/telephony.git
+#src-git video https://github.com/openwrt/video.git
+#src-git targets https://github.com/openwrt/targets.git
+#src-git management https://github.com/openwrt-management/packages.git
+#src-git oldpackages http://git.openwrt.org/packages.git
+#src-link custom /usr/src/openwrt/custom-feed</code></pre><p>git.openwrt.org访问不了，无法更新，只能使用github源地址： 更新如下：</p>
+<pre><code>src-git packages https://github.com/openwrt/packages.git
+src-git luci https://github.com/openwrt/luci.git
+src-git routing https://github.com/openwrt-routing/packages.git
+src-git telephony https://github.com/openwrt/telephony.git
+src-git management https://github.com/openwrt-management/packages.git</code></pre><p>OK，<code>./script/feeds update -a</code>  可以了</p>
 
   </article>
 
@@ -271,7 +275,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365529"></script>
+<script src="/js/app.js?v=1591714778547"></script>
   
 
 

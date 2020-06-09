@@ -31,7 +31,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/jiacrontab01.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365580">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778592">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -199,8 +199,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月12日</a>
-    <a><i class="nexmoefont icon-areachart"></i>832 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>762 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -227,35 +227,79 @@
 <p><img data-sizes="auto" data-src="/images/jiacrontab03.jpg" alt="" class="lazyload"></p>
 <h1 id="下载安装并运行"><a href="#下载安装并运行" class="headerlink" title="下载安装并运行"></a>下载安装并运行</h1><p>Github 地址：<a href="https://github.com/iwannay/jiacrontab" target="_blank" rel="noopener">https://github.com/iwannay/jiacrontab</a></p>
 <p>最新版下载地址：<a href="https://jiacrontab.iwannay.cn/download/" target="_blank" rel="noopener">https://jiacrontab.iwannay.cn/download/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ wget https:&#x2F;&#x2F;jiacrontab.iwannay.cn&#x2F;download&#x2F;jiacrontab-v1.4.5-linux-amd64.zip</span><br><span class="line">$ unzip jiacrontab-v1.4.5-linux-amd64.zip</span><br><span class="line">$ cd jiacrontab&#x2F;server</span><br><span class="line">$ nohup .&#x2F;jiaserver &amp;&gt; jiaserver.log &amp;</span><br><span class="line">$ cd .. &amp;&amp; cd client</span><br><span class="line">$ nohup .&#x2F;jiaclient &amp;&gt; jiaclient.log &amp;</span><br></pre></td></tr></table></figure>
-
-<p>之后，可以在浏览器中输入 <a href="http://YourServerIP:20000" target="_blank" rel="noopener">http://YourServerIP:20000</a> 进行访问。默认用户名为 <code>admin</code>，密码是 <code>123456</code>。</p>
+<pre><code>$ wget https://jiacrontab.iwannay.cn/download/jiacrontab-v1.4.5-linux-amd64.zip
+$ unzip jiacrontab-v1.4.5-linux-amd64.zip
+$ cd jiacrontab/server
+$ nohup ./jiaserver &amp;&gt; jiaserver.log &amp;
+$ cd .. &amp;&amp; cd client
+$ nohup ./jiaclient &amp;&gt; jiaclient.log &amp;</code></pre><p>之后，可以在浏览器中输入 <a href="http://YourServerIP:20000" target="_blank" rel="noopener">http://YourServerIP:20000</a> 进行访问。默认用户名为 <code>admin</code>，密码是 <code>123456</code>。</p>
 <h1 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h1><h5 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h5><p>在 <code>/etc/init.d</code> 新建开机启动脚本，命名为 <code>jiacrontab</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ vi &#x2F;etc&#x2F;init.d&#x2F;jiacrontab</span><br><span class="line"></span><br><span class="line"># 输入以下内容，:wq 保存</span><br><span class="line"></span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">### BEGIN INIT INFO</span><br><span class="line"># Provides:          uznEnehC</span><br><span class="line"># Required-Start:    $network $remote_fs $local_fs</span><br><span class="line"># Required-Stop:     $network $remote_fs $local_fs</span><br><span class="line"># Default-Start:     2 3 4 5</span><br><span class="line"># Default-Stop:      0 1 6</span><br><span class="line"># Short-Description: jiacontab</span><br><span class="line"># Description:       jiacontab startup</span><br><span class="line">### END INIT INFO</span><br><span class="line">cd root&#x2F;jiacrontab&#x2F;server # 假设之前下载到 root 文件夹，根据自身情况修改</span><br><span class="line">nohup .&#x2F;jiaserver &amp;&gt; jiaserver.log &amp;</span><br><span class="line">cd .. &amp;&amp; cd client</span><br><span class="line">nohup .&#x2F;jiaclient &amp;&gt; jiaclient.log &amp;</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+<pre><code>$ vi /etc/init.d/jiacrontab
 
-<p>给予脚本相应的权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 777 &#x2F;etc&#x2F;init.d&#x2F;jiacrontab</span><br></pre></td></tr></table></figure>
+# 输入以下内容，:wq 保存
 
-<p>设置开机启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ update-rc.d jiacrontab defaults</span><br><span class="line"># update-rc.d -f jiacrontab remove # 删除开机启动，添加 -f 参数强制删除</span><br></pre></td></tr></table></figure>
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          uznEnehC
+# Required-Start:    $network $remote_fs $local_fs
+# Required-Stop:     $network $remote_fs $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: jiacontab
+# Description:       jiacontab startup
+### END INIT INFO
+cd root/jiacrontab/server # 假设之前下载到 root 文件夹，根据自身情况修改
+nohup ./jiaserver &amp;&gt; jiaserver.log &amp;
+cd .. &amp;&amp; cd client
+nohup ./jiaclient &amp;&gt; jiaclient.log &amp;
+exit 0</code></pre><p>给予脚本相应的权限</p>
+<pre><code>$ chmod 777 /etc/init.d/jiacrontab</code></pre><p>设置开机启动</p>
+<pre><code>$ update-rc.d jiacrontab defaults
+# update-rc.d -f jiacrontab remove # 删除开机启动，添加 -f 参数强制删除</code></pre><h5 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h5><p>新建客户端service</p>
+<pre><code>vi /etc/systemd/system/jiaclient.service</code></pre><p>写入如下代码</p>
+<pre><code>[Unit]
+Description=jiacrontab
 
-<h5 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h5><p>新建客户端service</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;jiaclient.service</span><br></pre></td></tr></table></figure>
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/data/app/jiacrontab/client/jiaclient
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=control-group
+Restart=on-failure
+GuessMainPID=yes
+WorkingDirectory=/data/app/jiacrontab/client/
+PIDFile=/data/app/jiacrontab/client/jiaclient.pid
+RestartSec=15
 
-<p>写入如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;jiacrontab</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">Group&#x3D;root</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;jiaclient</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line">KillMode&#x3D;control-group</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">GuessMainPID&#x3D;yes</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;</span><br><span class="line">PIDFile&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;jiaclient.pid</span><br><span class="line">RestartSec&#x3D;15</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>新建服务端service</p>
+<pre><code>vi /etc/systemd/system/jiaserver.service</code></pre><pre><code>[Unit]
+Description=jiacrontab
 
-<p>新建服务端service</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;jiaserver.service</span><br></pre></td></tr></table></figure>
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/data/app/jiacrontab/server/jiaserver
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=control-group
+Restart=on-failure
+GuessMainPID=yes
+WorkingDirectory=/data/app/jiacrontab/server/
+PIDFile=/data/app/jiacrontab/server/jiaserver.pid
+RestartSec=15
 
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>启动jiacrontab以及设置开机启动：</p>
+<pre><code>systemctl start jiaclient
+systemctl enable jiaclient
 
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;jiacrontab</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">Group&#x3D;root</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;jiaserver</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line">KillMode&#x3D;control-group</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">GuessMainPID&#x3D;yes</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;</span><br><span class="line">PIDFile&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;jiaserver.pid</span><br><span class="line">RestartSec&#x3D;15</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>启动jiacrontab以及设置开机启动：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start jiaclient</span><br><span class="line">systemctl enable jiaclient</span><br><span class="line"></span><br><span class="line">systemctl start jiaserver</span><br><span class="line">systemctl enable jiaserver</span><br></pre></td></tr></table></figure>
-
-
+systemctl start jiaserver
+systemctl enable jiaserver</code></pre>
   </article>
 
   <div class="nexmoe-post-meta nexmoe-rainbow">
@@ -307,7 +351,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365583"></script>
+<script src="/js/app.js?v=1591714778594"></script>
   
 
 

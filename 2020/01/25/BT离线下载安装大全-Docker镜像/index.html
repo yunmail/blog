@@ -12,12 +12,12 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="前言随着大家对离线下载的需求越来越高，这里就找了一些用户量比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。  安装Docker首先安装下面程序之前，需要在服务器上安装Docker环境，使用命令： 1234567891011#CentOS 6系统rp">
+  <meta name="description" content="前言随着大家对离线下载的需求越来越高，这里就找了一些用户量比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。  安装Docker首先安装下面程序之前，需要在服务器上安装Docker环境，使用命令： #CentOS 6系统 rpm -iUvh http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BT离线下载安装大全-Docker镜像">
 <meta property="og:url" content="http://yoursite.com/2020/01/25/BT%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%A4%A7%E5%85%A8-Docker%E9%95%9C%E5%83%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言随着大家对离线下载的需求越来越高，这里就找了一些用户量比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。  安装Docker首先安装下面程序之前，需要在服务器上安装Docker环境，使用命令： 1234567891011#CentOS 6系统rp">
+<meta property="og:description" content="前言随着大家对离线下载的需求越来越高，这里就找了一些用户量比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。  安装Docker首先安装下面程序之前，需要在服务器上安装Docker环境，使用命令： #CentOS 6系统 rpm -iUvh http">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-25T13:57:35.000Z">
 <meta property="article:modified_time" content="2020-06-09T14:29:02.440Z">
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365534">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778555">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -195,8 +195,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月25日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.6k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -207,84 +207,179 @@
     <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着大家对离线下载的需求越来越高，这里就找了一些用户量比较多，也经常在维护的<code>BT</code>离线程序的<code>Docker</code>镜像，包括<code>Aria2</code>、<code>utorrent</code>、<code>Deluge</code>、<code>Transmission</code>、<code>Rutorrent</code>、<code>Qbittorrent</code>，算是比较全了，这里就分享下。</p>
 <hr>
 <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>首先安装下面程序之前，需要在服务器上安装<code>Docker</code>环境，使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">rpm -iUvh http:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;6&#x2F;x86_64&#x2F;epel-release-6-8.noarch.rpm</span><br><span class="line">yum update -y</span><br><span class="line">yum -y install docker-io</span><br><span class="line">service docker start</span><br><span class="line">chkconfig docker on</span><br><span class="line"></span><br><span class="line">#CentOS 7、Debian、Ubuntu系统</span><br><span class="line">curl -sSL https:&#x2F;&#x2F;get.docker.com&#x2F; | sh</span><br><span class="line">systemctl start docker</span><br><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+<pre><code>#CentOS 6系统
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
 
-<hr>
+#CentOS 7、Debian、Ubuntu系统
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><hr>
 <h2 id="安装Aria2"><a href="#安装Aria2" class="headerlink" title="安装Aria2"></a>安装Aria2</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/onisuly/aria2-with-webui" target="_blank" rel="noopener">https://hub.docker.com/r/onisuly/aria2-with-webui</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name aria2-ariang -d \</span><br><span class="line">-p 6060:80 \</span><br><span class="line">-p 6800:6800 \</span><br><span class="line">-e SECRET&#x3D;quchaonet \</span><br><span class="line">-v ~&#x2F;aria2&#x2F;down:&#x2F;data \</span><br><span class="line">-v ~&#x2F;aria2&#x2F;conf:&#x2F;conf \</span><br><span class="line">onisuly&#x2F;aria2-with-webui</span><br></pre></td></tr></table></figure>
+<pre><code>docker run --restart=always --name aria2-ariang -d \
+-p 6060:80 \
+-p 6800:6800 \
+-e SECRET=quchaonet \
+-v ~/aria2/down:/data \
+-v ~/aria2/conf:/conf \
+onisuly/aria2-with-webui</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>AriaNg地址：http://ip:6060
+aria2连接端口：6800
+aria2连接密匙：quchaonet
+下载/配置目录：~/aria2</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 6060 -j ACCEPT
+iptables -A INPUT -p tcp --dport 6800 -j ACCEPT
+service iptables save
+service iptables restart
 
-<p>安装完成后，相关信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AriaNg地址：http:&#x2F;&#x2F;ip:6060</span><br><span class="line">aria2连接端口：6800</span><br><span class="line">aria2连接密匙：quchaonet</span><br><span class="line">下载&#x2F;配置目录：~&#x2F;aria2</span><br></pre></td></tr></table></figure>
-
-<p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6</span><br><span class="line">iptables -I INPUT -p tcp --dport 6060 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 6800 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line">#CentOS 7</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6060&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6800&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>如果你不想用了，可以使用以下命令卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep onisuly&#x2F;aria2-with-webui|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep onisuly&#x2F;aria2-with-webui|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;aria2</span><br></pre></td></tr></table></figure>
-
-<hr>
+#CentOS 7
+firewall-cmd --zone=public --add-port=6060/tcp --permanent
+firewall-cmd --zone=public --add-port=6800/tcp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep onisuly/aria2-with-webui|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep onisuly/aria2-with-webui|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/aria2</code></pre><hr>
 <h2 id="安装utorrent"><a href="#安装utorrent" class="headerlink" title="安装utorrent"></a>安装utorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/ekho/utorrent" target="_blank" rel="noopener">https://hub.docker.com/r/ekho/utorrent</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name utorrent -d \</span><br><span class="line">-p 8080:8080 \</span><br><span class="line">-p 6881:6881 \</span><br><span class="line">-v ~&#x2F;utorrent:&#x2F;utorrent&#x2F;data \</span><br><span class="line">ekho&#x2F;utorrent</span><br></pre></td></tr></table></figure>
-
-<p>如果你不想用了，可以使用以下命令卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep ekho&#x2F;utorrent|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep ekho&#x2F;utorrent|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;utorrent</span><br></pre></td></tr></table></figure>
-
-<hr>
+<pre><code>docker run --restart=always --name utorrent -d \
+-p 8080:8080 \
+-p 6881:6881 \
+-v ~/utorrent:/utorrent/data \
+ekho/utorrent</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep ekho/utorrent|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep ekho/utorrent|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/utorrent</code></pre><hr>
 <h2 id="安装Deluge"><a href="#安装Deluge" class="headerlink" title="安装Deluge"></a>安装Deluge</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/deluge" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/deluge</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name deluge -d \</span><br><span class="line">--net&#x3D;host \</span><br><span class="line">-v ~&#x2F;deluge&#x2F;config:&#x2F;config \</span><br><span class="line">-v ~&#x2F;deluge&#x2F;downloads:&#x2F;downloads \</span><br><span class="line">linuxserver&#x2F;deluge</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，相关信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deluge地址：http:&#x2F;&#x2F;ip:8112</span><br><span class="line">访问密码：deluge</span><br><span class="line">配置&#x2F;下载目录：~&#x2F;deluge</span><br></pre></td></tr></table></figure>
-
-<p>进入界面后，记得点击上方的<code>Preferences</code>，将下载目录设置为<code>/downloads</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep linuxserver&#x2F;deluge|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep linuxserver&#x2F;deluge|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;deluge</span><br></pre></td></tr></table></figure>
-
-<hr>
+<pre><code>docker run --restart=always --name deluge -d \
+--net=host \
+-v ~/deluge/config:/config \
+-v ~/deluge/downloads:/downloads \
+linuxserver/deluge</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>deluge地址：http://ip:8112
+访问密码：deluge
+配置/下载目录：~/deluge</code></pre><p>进入界面后，记得点击上方的<code>Preferences</code>，将下载目录设置为<code>/downloads</code>。</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/deluge|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/deluge|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/deluge</code></pre><hr>
 <h2 id="安装Transmission"><a href="#安装Transmission" class="headerlink" title="安装Transmission"></a>安装Transmission</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/transmission" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/transmission</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name transmission -d \</span><br><span class="line">-e TRANSMISSION_WEB_HOME&#x3D;&#x2F;transmission-web-control&#x2F; \</span><br><span class="line">-e USER&#x3D;quchaonet \</span><br><span class="line">-e PASS&#x3D;qucahonet \</span><br><span class="line">-p 9091:9091 \</span><br><span class="line">-p 51413:51413 \</span><br><span class="line">-p 51413:51413&#x2F;udp \</span><br><span class="line">-v ~&#x2F;transmission&#x2F;config:&#x2F;config \</span><br><span class="line">-v ~&#x2F;transmission&#x2F;downloads:&#x2F;downloads \</span><br><span class="line">-v ~&#x2F;transmission&#x2F;watch:&#x2F;watch \</span><br><span class="line">linuxserver&#x2F;transmission</span><br></pre></td></tr></table></figure>
+<pre><code>docker run --restart=always --name transmission -d \
+-e TRANSMISSION_WEB_HOME=/transmission-web-control/ \
+-e USER=quchaonet \
+-e PASS=qucahonet \
+-p 9091:9091 \
+-p 51413:51413 \
+-p 51413:51413/udp \
+-v ~/transmission/config:/config \
+-v ~/transmission/downloads:/downloads \
+-v ~/transmission/watch:/watch \
+linuxserver/transmission</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>transmission地址：http://ip:9091
+访问用户名：quchaonet
+访问密码：quchaonet
+配置/下载目录：~/transmission</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 9091 -j ACCEPT
+iptables -A INPUT -p tcp --dport 51413 -j ACCEPT
+iptables -A INPUT -p udp --dport 51413 -j ACCEPT
+service iptables save
+service iptables restart
 
-<p>安装完成后，相关信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transmission地址：http:&#x2F;&#x2F;ip:9091</span><br><span class="line">访问用户名：quchaonet</span><br><span class="line">访问密码：quchaonet</span><br><span class="line">配置&#x2F;下载目录：~&#x2F;transmission</span><br></pre></td></tr></table></figure>
-
-<p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6</span><br><span class="line">iptables -I INPUT -p tcp --dport 9091 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 51413 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p udp --dport 51413 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line">#CentOS 7</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;9091&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;51413&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;51413&#x2F;udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>如果你不想用了，可以使用以下命令卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep linuxserver&#x2F;transmission|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep linuxserver&#x2F;transmission|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;transmission</span><br></pre></td></tr></table></figure>
-
-<hr>
+#CentOS 7
+firewall-cmd --zone=public --add-port=9091/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/transmission|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/transmission|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/transmission</code></pre><hr>
 <h2 id="安装Rutorrent"><a href="#安装Rutorrent" class="headerlink" title="安装Rutorrent"></a>安装Rutorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/rutorrent" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/rutorrent</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name rutorrent -d \</span><br><span class="line">-p 2222:80 \</span><br><span class="line">-p 5000:5000 \</span><br><span class="line">-p 51413:51413 \</span><br><span class="line">-p 6881:6881&#x2F;udp \</span><br><span class="line">-v ~&#x2F;rutorrent&#x2F;config:&#x2F;config \</span><br><span class="line">-v ~&#x2F;rutorrent&#x2F;downloads:&#x2F;downloads \</span><br><span class="line">linuxserver&#x2F;rutorrent</span><br></pre></td></tr></table></figure>
+<pre><code>docker run --restart=always --name rutorrent -d \
+-p 2222:80 \
+-p 5000:5000 \
+-p 51413:51413 \
+-p 6881:6881/udp \
+-v ~/rutorrent/config:/config \
+-v ~/rutorrent/downloads:/downloads \
+linuxserver/rutorrent</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>rutorrent地址：http://ip:2222
+配置/下载目录：~/rutorrent</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 2222 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5000 -j ACCEPT
+iptables -A INPUT -p tcp --dport 51413 -j ACCEPT
+iptables -A INPUT -p udp --dport 6881 -j ACCEPT
+service iptables save
+service iptables restart
 
-<p>安装完成后，相关信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rutorrent地址：http:&#x2F;&#x2F;ip:2222</span><br><span class="line">配置&#x2F;下载目录：~&#x2F;rutorrent</span><br></pre></td></tr></table></figure>
-
-<p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6</span><br><span class="line">iptables -I INPUT -p tcp --dport 2222 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 5000 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 51413 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p udp --dport 6881 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line">#CentOS 7</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;2222&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;5000&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;51413&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6881&#x2F;udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>如果你不想用了，可以使用以下命令卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep linuxserver&#x2F;rutorrent|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep linuxserver&#x2F;rutorrent|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;rutorrent</span><br></pre></td></tr></table></figure>
-
-<hr>
+#CentOS 7
+firewall-cmd --zone=public --add-port=2222/tcp --permanent
+firewall-cmd --zone=public --add-port=5000/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/rutorrent|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/rutorrent|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/rutorrent</code></pre><hr>
 <h2 id="安装Qbittorrent"><a href="#安装Qbittorrent" class="headerlink" title="安装Qbittorrent"></a>安装Qbittorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/qbittorrent" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/qbittorrent</a></p>
 <p>先安装<code>Docker</code>，然后执行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run --restart&#x3D;always --name qbittorrent -d \</span><br><span class="line">-p 6881:6881 \</span><br><span class="line">-p 6881:6881&#x2F;udp \</span><br><span class="line">-p 8080:8080 \</span><br><span class="line">-v ~&#x2F;qbittorrent&#x2F;config:&#x2F;config \</span><br><span class="line">-v ~&#x2F;qbittorrent&#x2F;downloads:&#x2F;downloads \</span><br><span class="line">linuxserver&#x2F;qbittorrent</span><br></pre></td></tr></table></figure>
+<pre><code>docker run --restart=always --name qbittorrent -d \
+-p 6881:6881 \
+-p 6881:6881/udp \
+-p 8080:8080 \
+-v ~/qbittorrent/config:/config \
+-v ~/qbittorrent/downloads:/downloads \
+linuxserver/qbittorrent</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>qbittorrent地址：http://ip:8080
+用户名：admin
+密码：adminadmin
+配置和/下载目录：~/qbittorrent</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -p tcp --dport 6881 -j ACCEPT
+iptables -A INPUT -p udp --dport 6881 -j ACCEPT
+service iptables save
+service iptables restart
 
-<p>安装完成后，相关信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent地址：http:&#x2F;&#x2F;ip:8080</span><br><span class="line">用户名：admin</span><br><span class="line">密码：adminadmin</span><br><span class="line">配置和&#x2F;下载目录：~&#x2F;qbittorrent</span><br></pre></td></tr></table></figure>
-
-<p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6</span><br><span class="line">iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 6881 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p udp --dport 6881 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line">#CentOS 7</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6881&#x2F;tcp --permanent</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6881&#x2F;udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>如果你不想用了，可以使用以下命令卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删掉容器</span><br><span class="line">ContainerID&#x3D;&#96;docker ps|grep linuxserver&#x2F;qbittorrent|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">docker kill $&#123;ContainerID&#125;</span><br><span class="line">docker rm $&#123;ContainerID&#125;</span><br><span class="line">docker rmi &#96;docker images|grep linuxserver&#x2F;qbittorrent|awk &#39;&#123;print $3&#125;&#39;&#96;</span><br><span class="line">#删掉下载文件夹</span><br><span class="line">rm -rf ~&#x2F;qbittorrent</span><br></pre></td></tr></table></figure>
-
-<p>这里顺便推荐个磁力链接聚合搜索<code>magnetW</code>，有兴趣的可以下载<code>Windows/Mac</code>端应用程序，下载地址→<a href="https://magnetw.app/guide/install.html" target="_blank" rel="noopener">传送门</a>。</p>
+#CentOS 7
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/qbittorrent|awk &#39;{print $1}&#39;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/qbittorrent|awk &#39;{print $3}&#39;`
+#删掉下载文件夹
+rm -rf ~/qbittorrent</code></pre><p>这里顺便推荐个磁力链接聚合搜索<code>magnetW</code>，有兴趣的可以下载<code>Windows/Mac</code>端应用程序，下载地址→<a href="https://magnetw.app/guide/install.html" target="_blank" rel="noopener">传送门</a>。</p>
 <p>最后这里只列举简单的安装，更深层次的可以访问镜像地址使用</p>
 <blockquote>
 <p>本文为选摘文章，版权归 <a href="https://www.moerats.com/" target="_blank" rel="noopener">Rat’s</a> 所有，转载请注明出处！</p>
@@ -341,7 +436,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365537"></script>
+<script src="/js/app.js?v=1591714778557"></script>
   
 
 

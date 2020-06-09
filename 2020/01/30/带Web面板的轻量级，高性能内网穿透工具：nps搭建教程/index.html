@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365530">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778551">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -207,43 +207,70 @@
     <p><strong>说明：</strong>内网穿透工具之前已经介绍了不少了，比如<code>Frp</code>、<code>lanproxy</code>、<code>Holer</code>等，现在再介绍个带<code>Web</code>面板的穿透工具<code>nps</code>，之前叫<code>easyProxy</code>，只是改名了而已，该工具是一款使用<code>go</code>语言编写的轻量级、功能强大的内网穿透服务器。支持<code>tcp</code>、<code>udp</code>流量转发，支持内网<code>http</code>、<code>socks5</code>代理，同时支持<code>snappy</code>压缩(节省带宽和流量)、站点保护、加密传输、多路复用、<code>header</code>修改等。同时还支持<code>web</code>图形化管理。</p>
 <h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>从 <a href="https://github.com/cnlh/nps/releases" target="_blank" rel="noopener">release</a> 下载和服务器匹配的最新版本到 ，如果对于<code>Linux</code>服务器还是不知道怎么选择的，这里拿<code>Vultr</code>、搬瓦工大多数<code>VPS</code>为例。先使用命令<code>getconf LONG_BIT</code>获取系统版本，<code>32</code>位就选<code>386</code>，<code>64</code>就选<code>amd64</code>，具体还是以实际情况为准。</p>
 <h2 id="服务端使用"><a href="#服务端使用" class="headerlink" title="服务端使用"></a>服务端使用</h2><p>这里博主使用的是<code>Vultr Linux x64</code>服务器，直接使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#记得复制前先将下面链接替换成当前最新版地址</span><br><span class="line">cd ~</span><br><span class="line">#下载并解压服务端</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;ehang-io&#x2F;nps&#x2F;releases&#x2F;download&#x2F;v0.26.1&#x2F;linux_amd64_server.tar.gz &amp;&amp; tar zxvf linux_amd64_server.tar.gz</span><br><span class="line">#编辑配置文件</span><br><span class="line">cd nps</span><br><span class="line">vi conf&#x2F;nps.conf</span><br></pre></td></tr></table></figure>
+<pre><code>#记得复制前先将下面链接替换成当前最新版地址
+cd ~
+#下载并解压服务端
+wget https://github.com/ehang-io/nps/releases/download/v0.26.1/linux_amd64_server.tar.gz &amp;&amp; tar zxvf linux_amd64_server.tar.gz
+#编辑配置文件
+cd nps
+vi conf/nps.conf</code></pre><p>配置文件参数如下：</p>
+<pre><code>#web管理端口
+httpport
+#web界面管理密码
+password
+#服务端客户端通信端口
+bridePort
+#ssl certFile绝对路径
+pemPath
+#ssl keyFile绝对路径
+keyPath
+#域名代理https代理监听端口
+httpsProxyPort
+#域名代理http代理监听端口
+httpProxyPort
+#web api免验证IP地址
+authip
+#客户端与服务端连接方式kcp或tcp
+bridgeType</code></pre><h3 id="启动-amp-amp-验证"><a href="#启动-amp-amp-验证" class="headerlink" title="启动 &amp;&amp; 验证"></a>启动 &amp;&amp; 验证</h3><pre><code># 启动命令
+{nps_dir}/nps      ##{nps_dir}指的是nps所在目录</code></pre><p>然后打开地址<code>http://ip:8080</code>访问管理界面，具体端口以自己修改的为准，再使用密码登录进去，默认为<code>123</code>。</p>
+<pre><code>#如果打不开Web界面，就需要开启防火墙，一般CentOS系统出现情况最多
+#Centos 6系统
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+service iptables save
+service iptables restart
 
-<p>配置文件参数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#web管理端口</span><br><span class="line">httpport</span><br><span class="line">#web界面管理密码</span><br><span class="line">password</span><br><span class="line">#服务端客户端通信端口</span><br><span class="line">bridePort</span><br><span class="line">#ssl certFile绝对路径</span><br><span class="line">pemPath</span><br><span class="line">#ssl keyFile绝对路径</span><br><span class="line">keyPath</span><br><span class="line">#域名代理https代理监听端口</span><br><span class="line">httpsProxyPort</span><br><span class="line">#域名代理http代理监听端口</span><br><span class="line">httpProxyPort</span><br><span class="line">#web api免验证IP地址</span><br><span class="line">authip</span><br><span class="line">#客户端与服务端连接方式kcp或tcp</span><br><span class="line">bridgeType</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动-amp-amp-验证"><a href="#启动-amp-amp-验证" class="headerlink" title="启动 &amp;&amp; 验证"></a>启动 &amp;&amp; 验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 启动命令</span><br><span class="line">&#123;nps_dir&#125;&#x2F;nps      ##&#123;nps_dir&#125;指的是nps所在目录</span><br></pre></td></tr></table></figure>
-
-<p>然后打开地址<code>http://ip:8080</code>访问管理界面，具体端口以自己修改的为准，再使用密码登录进去，默认为<code>123</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#如果打不开Web界面，就需要开启防火墙，一般CentOS系统出现情况最多</span><br><span class="line">#Centos 6系统</span><br><span class="line">iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent </span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>对于有些服务器，比如阿里云，谷歌云等，还需要在服务器管理面板上开放<code>Web</code>端口才行。</p>
-<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">tee &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;nps.service &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">[Unit]</span><br><span class="line">Description&#x3D;nps server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">Documentation&#x3D;https:&#x2F;&#x2F;github.com&#x2F;cnlh&#x2F;nps</span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">Group&#x3D;root</span><br><span class="line">ExecStart&#x3D;&lt;nps_dir&gt;&#x2F;nps</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;30s</span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br><span class="line">EOF</span><br><span class="line">systemctl enable nps</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart nps</span><br><span class="line"># 查看日志, 是否启动</span><br><span class="line">journalctl -f -u nps</span><br></pre></td></tr></table></figure>
-
-<h3 id="一键安装脚本-macos-linux"><a href="#一键安装脚本-macos-linux" class="headerlink" title="一键安装脚本(macos/linux)"></a>一键安装<a href="http://static.xinshangshangxin.com/shell-tools/nps/nps.sh" target="_blank" rel="noopener">脚本</a>(macos/linux)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &quot;$(wget -O - http:&#x2F;&#x2F;static.xinshangshangxin.com&#x2F;shell-tools&#x2F;nps&#x2F;nps.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h3 id="下载客户端"><a href="#下载客户端" class="headerlink" title="下载客户端"></a>下载客户端</h3><p>从 <a href="https://github.com/cnlh/nps/releases" target="_blank" rel="noopener">release</a> 下载 <code>npc</code> 最新版本 到 </p>
-<h3 id="无配置启动"><a href="#无配置启动" class="headerlink" title="无配置启动"></a>无配置启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;nps_dir&#125;&#x2F;npc -server&#x3D;$&#123;server&#125; -vkey&#x3D;$&#123;vkey&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="一键安装启动脚本-macos-linux"><a href="#一键安装启动脚本-macos-linux" class="headerlink" title="一键安装启动脚本(macos/linux)"></a>一键安装启动<a href="http://static.xinshangshangxin.com/shell-tools/nps/npc.sh" target="_blank" rel="noopener">脚本</a>(macos/linux)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &quot;$(wget -O - http:&#x2F;&#x2F;static.xinshangshangxin.com&#x2F;shell-tools&#x2F;nps&#x2F;npc.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>关于使用场景，<code>Github</code>文档写的很清楚了，这里大概的说下。</p>
+#CentOS 7系统
+firewall-cmd --zone=public --add-port=8080/tcp --permanent 
+firewall-cmd --reload</code></pre><p>对于有些服务器，比如阿里云，谷歌云等，还需要在服务器管理面板上开放<code>Web</code>端口才行。</p>
+<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><pre><code>tee /lib/systemd/system/nps.service &lt;&lt;-&#39;EOF&#39;
+[Unit]
+Description=nps server
+After=network.target
+Documentation=https://github.com/cnlh/nps
+[Service]
+User=root
+Group=root
+ExecStart=&lt;nps_dir&gt;/nps
+Restart=always
+RestartSec=30s
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable nps
+systemctl daemon-reload
+systemctl restart nps
+# 查看日志, 是否启动
+journalctl -f -u nps</code></pre><h3 id="一键安装脚本-macos-linux"><a href="#一键安装脚本-macos-linux" class="headerlink" title="一键安装脚本(macos/linux)"></a>一键安装<a href="http://static.xinshangshangxin.com/shell-tools/nps/nps.sh" target="_blank" rel="noopener">脚本</a>(macos/linux)</h3><pre><code>bash -c &quot;$(wget -O - http://static.xinshangshangxin.com/shell-tools/nps/nps.sh)&quot;</code></pre><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h3 id="下载客户端"><a href="#下载客户端" class="headerlink" title="下载客户端"></a>下载客户端</h3><p>从 <a href="https://github.com/cnlh/nps/releases" target="_blank" rel="noopener">release</a> 下载 <code>npc</code> 最新版本 到 </p>
+<h3 id="无配置启动"><a href="#无配置启动" class="headerlink" title="无配置启动"></a>无配置启动</h3><pre><code>${nps_dir}/npc -server=${server} -vkey=${vkey}</code></pre><h3 id="一键安装启动脚本-macos-linux"><a href="#一键安装启动脚本-macos-linux" class="headerlink" title="一键安装启动脚本(macos/linux)"></a>一键安装启动<a href="http://static.xinshangshangxin.com/shell-tools/nps/npc.sh" target="_blank" rel="noopener">脚本</a>(macos/linux)</h3><pre><code>bash -c &quot;$(wget -O - http://static.xinshangshangxin.com/shell-tools/nps/npc.sh)&quot;
+</code></pre><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>关于使用场景，<code>Github</code>文档写的很清楚了，这里大概的说下。</p>
 <p><strong>1、tcp隧道模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">适用：想在外网通过ssh连接内网的机器，做云服务器到内网服务器端口的映射，或者做微信公众号开发、小程序开发等。</span><br></pre></td></tr></table></figure>
-
-<p>详细教程→<a href="https://github.com/cnlh/nps#tcp隧道" target="_blank" rel="noopener">点击查看</a>。</p>
+<pre><code>适用：想在外网通过ssh连接内网的机器，做云服务器到内网服务器端口的映射，或者做微信公众号开发、小程序开发等。</code></pre><p>详细教程→<a href="https://github.com/cnlh/nps#tcp隧道" target="_blank" rel="noopener">点击查看</a>。</p>
 <p><strong>2、udp隧道模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">适用：在非内网环境下使用内网dns，或者需要通过udp访问内网机器等。</span><br></pre></td></tr></table></figure>
-
-<p>详细教程→<a href="https://github.com/cnlh/nps#udp隧道" target="_blank" rel="noopener">点击查看</a>。</p>
+<pre><code>适用：在非内网环境下使用内网dns，或者需要通过udp访问内网机器等。</code></pre><p>详细教程→<a href="https://github.com/cnlh/nps#udp隧道" target="_blank" rel="noopener">点击查看</a>。</p>
 <p><strong>3、http代理模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">适用：在外网使用HTTP代理访问内网站点。</span><br></pre></td></tr></table></figure>
-
-<p>详细教程→<a href="https://github.com/cnlh/nps#http正向代理" target="_blank" rel="noopener">点击查看</a>。</p>
+<pre><code>适用：在外网使用HTTP代理访问内网站点。</code></pre><p>详细教程→<a href="https://github.com/cnlh/nps#http正向代理" target="_blank" rel="noopener">点击查看</a>。</p>
 <p><strong>4、socks5代理模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">适用：搭建一个内网穿透55，在外网如同使用内网v皮n一样访问内网资源或者设备。</span><br></pre></td></tr></table></figure>
-
-<p>详细教程→<a href="https://github.com/cnlh/nps#socks5代理" target="_blank" rel="noopener">点击查看</a>。</p>
+<pre><code>适用：搭建一个内网穿透55，在外网如同使用内网v皮n一样访问内网资源或者设备。</code></pre><p>详细教程→<a href="https://github.com/cnlh/nps#socks5代理" target="_blank" rel="noopener">点击查看</a>。</p>
 <h2 id="相关功能"><a href="#相关功能" class="headerlink" title="相关功能"></a>相关功能</h2><p><strong>1、数据压缩支持</strong><br>由于是内网穿透，内网客户端与服务端之间的隧道存在大量的数据交换，为节省流量，加快传输速度，由此本程序支持<code>SNNAPY</code>形式的压缩。</p>
 <ul>
 <li>所有模式均支持数据压缩，可以与加密同时使用</li>
@@ -269,9 +296,8 @@
 <p><strong>8、带宽限制</strong><br>支持客户端级带宽限制，带宽计算方式为入口和出口总和，权重均衡。</p>
 <p><strong>9、负载均衡</strong><br>本代理支持域名解析模式的负载均衡，在<code>web</code>域名添加或者编辑中内网目标分行填写多个目标即可实现轮训级别的负载均衡。</p>
 <p><strong>10、守护进程</strong><br>本代理支持守护进程，使用示例如下，服务端客户端所有模式通用，支持<code>linux</code>、<code>darwin</code>、<code>windows</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;(nps|npc) start|stop|restart|status 若有其他参数可加其他参数</span><br><span class="line">(nps|npc).exe start|stop|restart|status 若有其他参数可加其他参数</span><br></pre></td></tr></table></figure>
-
-<p><strong>11、KCP协议支持</strong><br><code>KCP</code>是一个快速可靠协议，能以比<code>TCP</code>浪费<code>10%-20%</code>的带宽的代价，换取平均延迟降低<code>30%-40%</code>，在弱网环境下对性能能有一定的提升。可在<code>app.conf</code>中修改<code>bridgeType</code>为<code>kcp</code>。</p>
+<pre><code>./(nps|npc) start|stop|restart|status 若有其他参数可加其他参数
+(nps|npc).exe start|stop|restart|status 若有其他参数可加其他参数</code></pre><p><strong>11、KCP协议支持</strong><br><code>KCP</code>是一个快速可靠协议，能以比<code>TCP</code>浪费<code>10%-20%</code>的带宽的代价，换取平均延迟降低<code>30%-40%</code>，在弱网环境下对性能能有一定的提升。可在<code>app.conf</code>中修改<code>bridgeType</code>为<code>kcp</code>。</p>
 <ul>
 <li>当服务端为<code>kcp</code>时，客户端连接时也需要加上参数<code>-type=kcp</code>。</li>
 </ul>
@@ -326,7 +352,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365533"></script>
+<script src="/js/app.js?v=1591714778554"></script>
   
 
 

@@ -31,7 +31,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC1.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365572">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778586">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -199,7 +199,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>410 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>393 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -222,9 +222,11 @@
 <p>2、访问 <a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a> （移动、联通、长城宽带或者乱七八糟的宽带可能无法访问，有个比较好的办法，就是你用手机4G直接下载到手机，转发到你电脑）下载最新版本</p>
 <p>我是的系统是amd64的下载所以下载   <a href="https://github.com/fatedier/frp/releases/download/v0.28.2/frp_0.28.2_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.28.2_linux_amd64.tar.gz</a></p>
 <p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC2.png" alt="lede软路由更新frp" class="lazyload"></p>
-<h4 id="3-ssh登陆koolshare-账号：root-密码：koolshare"><a href="#3-ssh登陆koolshare-账号：root-密码：koolshare" class="headerlink" title="3.ssh登陆koolshare   账号：root  密码：koolshare"></a>3.ssh登陆koolshare   账号：root  密码：koolshare</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp&#x2F;releases&#x2F;download&#x2F;v0.28.2&#x2F;frp_0.28.2_linux_amd64.tar.gz</span><br><span class="line">tar -xzvf  frp_0.28.2_linux_amd64.tar.gz</span><br><span class="line">rm -rf  &#x2F;koolshare&#x2F;frpc&#x2F;frpc</span><br><span class="line">cp &#x2F;root&#x2F;frp_0.28.2_linux_amd64  &#x2F;koolshare&#x2F;frpc&#x2F;</span><br><span class="line">chmod +x &#x2F;koolshare&#x2F;frpc&#x2F;frpc</span><br></pre></td></tr></table></figure>
-
-<p>4.登陆酷软中心frpc</p>
+<h4 id="3-ssh登陆koolshare-账号：root-密码：koolshare"><a href="#3-ssh登陆koolshare-账号：root-密码：koolshare" class="headerlink" title="3.ssh登陆koolshare   账号：root  密码：koolshare"></a>3.ssh登陆koolshare   账号：root  密码：koolshare</h4><pre><code>wget https://github.com/fatedier/frp/releases/download/v0.28.2/frp_0.28.2_linux_amd64.tar.gz
+tar -xzvf  frp_0.28.2_linux_amd64.tar.gz
+rm -rf  /koolshare/frpc/frpc
+cp /root/frp_0.28.2_linux_amd64  /koolshare/frpc/
+chmod +x /koolshare/frpc/frpc</code></pre><p>4.登陆酷软中心frpc</p>
 <p>状态已经更新0.28.2，目前是最新版</p>
 <p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC3.png" alt="lede软路由更新frp" class="lazyload"></p>
 
@@ -279,7 +281,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365574"></script>
+<script src="/js/app.js?v=1591714778588"></script>
   
 
 

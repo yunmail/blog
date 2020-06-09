@@ -35,7 +35,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/opt.gs_100001369.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365552">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778570">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -203,8 +203,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年10月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>839 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>796 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -220,52 +220,54 @@
 <p><img data-sizes="auto" data-src="/images/opt.gs_100001372.jpeg" alt="" class="lazyload"></p>
 <p><img data-sizes="auto" data-src="/images/opt.gs_100001373.jpeg" alt="" class="lazyload"></p>
 <h2 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h2><p>博主使用的是军哥LNMP_v1.6一键安装包。本教程的安装环境如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PHP version 7.3.5 （建议php7.0以上）</span><br><span class="line">Composer version 1.8.5 （建议升级最新版本）</span><br><span class="line">nginx&#x2F;1.16.0</span><br><span class="line">MySQL version 5.6.44</span><br></pre></td></tr></table></figure>
-
-<p><strong>如果没有安装composer，请运行下面的命令进行安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https:&#x2F;&#x2F;getcomposer.org&#x2F;installer | php</span><br><span class="line">mv composer.phar &#x2F;usr&#x2F;local&#x2F;bin&#x2F;composer</span><br></pre></td></tr></table></figure>
-
-<p>参考 <a href="https://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="noopener">LNMP使用教程</a> 使用<code>lnmp</code>相关命令，添加网站、创建网站根目录、建立数据库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#将域名修改成自己的再运行</span><br><span class="line">cd &#x2F;www&#x2F;wwwroot&#x2F;xx.com</span><br><span class="line">#克隆代码</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;hui-ho&#x2F;WebStack-Laravel.git</span><br><span class="line">cd &#x2F;www&#x2F;wwwroot&#x2F;xx.com&#x2F;WebStack-Laravel</span><br></pre></td></tr></table></figure>
-
-<p><strong>安装依赖</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer install</span><br></pre></td></tr></table></figure>
-
-<p><strong>修改配置</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#拷贝文件并重命名为.env</span><br><span class="line">cp .env.example .env</span><br></pre></td></tr></table></figure>
-
-<p>使用<code>vi</code>命令或<code>nano</code>命令修改<code>WebStack-Laravel</code>目录下的<code>.env</code>文件，对<code>APP_URL</code>、<code>DB_DATABASE</code>、<code>DB_USERNAME</code>、<code>DB_PASSWORD</code>进行修改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">APP_URL&#x3D;http:&#x2F;&#x2F;localhost</span><br><span class="line">...</span><br><span class="line">DB_DATABASE&#x3D;database</span><br><span class="line">DB_USERNAME&#x3D;username</span><br><span class="line">DB_PASSWORD&#x3D;password</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p><strong>生成KEY</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure>
-
-<p><strong>迁移数据</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate:refresh --seed</span><br></pre></td></tr></table></figure>
-
-<p><strong>开启服务</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan serve</span><br></pre></td></tr></table></figure>
-
-<p>注意：默认 Laravel 开启服务后，默认会监听在 <code>localhost</code> 的 <code>8000</code> 端口上。如遇到端口冲突问题，可以可以使用 <code>--host</code>参数与 <code>—port</code>参数来更换监听的接口地址或端口号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan serve --host&#x3D;0.0.0.0 --port&#x3D;9889</span><br></pre></td></tr></table></figure>
-
-<h2 id="Nginx-反代"><a href="#Nginx-反代" class="headerlink" title="Nginx 反代"></a>Nginx 反代</h2><p>修改vhost主机对应的nginx配置文件<code>xx.com.conf</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name xx.com;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:9889;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header X-Remote-Port $remote_port;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~ ^&#x2F;(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)</span><br><span class="line">    &#123;</span><br><span class="line">        return 404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>重启Nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;nginx restart</span><br></pre></td></tr></table></figure>
-
-<p>正常情况下，现在已经可以通过<code>xx.com</code>域名直接访问。</p>
+<pre><code>PHP version 7.3.5 （建议php7.0以上）
+Composer version 1.8.5 （建议升级最新版本）
+nginx/1.16.0
+MySQL version 5.6.44</code></pre><p><strong>如果没有安装composer，请运行下面的命令进行安装</strong></p>
+<pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer</code></pre><p>参考 <a href="https://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="noopener">LNMP使用教程</a> 使用<code>lnmp</code>相关命令，添加网站、创建网站根目录、建立数据库。</p>
+<pre><code>#将域名修改成自己的再运行
+cd /www/wwwroot/xx.com
+#克隆代码
+git clone https://github.com/hui-ho/WebStack-Laravel.git
+cd /www/wwwroot/xx.com/WebStack-Laravel</code></pre><p><strong>安装依赖</strong></p>
+<pre><code>composer install</code></pre><p><strong>修改配置</strong></p>
+<pre><code>#拷贝文件并重命名为.env
+cp .env.example .env</code></pre><p>使用<code>vi</code>命令或<code>nano</code>命令修改<code>WebStack-Laravel</code>目录下的<code>.env</code>文件，对<code>APP_URL</code>、<code>DB_DATABASE</code>、<code>DB_USERNAME</code>、<code>DB_PASSWORD</code>进行修改。</p>
+<pre><code>APP_URL=http://localhost
+...
+DB_DATABASE=database
+DB_USERNAME=username
+DB_PASSWORD=password
+...</code></pre><p><strong>生成KEY</strong></p>
+<pre><code>php artisan key:generate </code></pre><p><strong>迁移数据</strong></p>
+<pre><code>php artisan migrate:refresh --seed</code></pre><p><strong>开启服务</strong></p>
+<pre><code>php artisan serve</code></pre><p>注意：默认 Laravel 开启服务后，默认会监听在 <code>localhost</code> 的 <code>8000</code> 端口上。如遇到端口冲突问题，可以可以使用 <code>--host</code>参数与 <code>—port</code>参数来更换监听的接口地址或端口号。</p>
+<pre><code>php artisan serve --host=0.0.0.0 --port=9889</code></pre><h2 id="Nginx-反代"><a href="#Nginx-反代" class="headerlink" title="Nginx 反代"></a>Nginx 反代</h2><p>修改vhost主机对应的nginx配置文件<code>xx.com.conf</code></p>
+<pre><code>server {
+    listen 80;
+    server_name xx.com;
+    location / {
+        proxy_pass http://127.0.0.1:9889;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Remote-Port $remote_port;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+    }
+    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
+    {
+        return 404;
+    }
+}</code></pre><p>重启Nginx</p>
+<pre><code>/etc/init.d/nginx restart</code></pre><p>正常情况下，现在已经可以通过<code>xx.com</code>域名直接访问。</p>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>问题1：</strong>使用<code>composer install</code>命令安装依赖过程中遇到<code>The Process class relies on proc_open, which is not available on your PHP installation.</code>这类的报错。是因为部分所需的<code>php</code>函数被禁用导致的。</p>
 <p><strong>解决方法：</strong>找到<code>php.ini</code>文件，并搜索<code>disable_functions</code>找到类似如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disable_functions &#x3D; passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,popen,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server</span><br></pre></td></tr></table></figure>
-
-<p>找到<code>proc_open</code>、<code>proc_get_status</code>并删除即可。</p>
+<pre><code>disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,popen,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server</code></pre><p>找到<code>proc_open</code>、<code>proc_get_status</code>并删除即可。</p>
 <p><strong>问题2：</strong>移数据出错，比如出现<code>SQLSTATE[HY000] [2002] .......Connection timed out</code>报错，基本是因为<code>.env</code>文件，数据库配置有误导致，请自行核查配置准确性。</p>
 <p><strong>问题3：</strong>如何强制Laravel使用HTTPS？<br><strong>解决方法：</strong>找到并修改<code>AppServiceProvider</code>文件，在<code>boot</code>中添加一行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\URL::forceScheme(&#39;https&#39;);</span><br></pre></td></tr></table></figure>
-
-<p>现在你的所有生成的路由链接已经默认是 HTTPS 了。当然你也可以用 Nginx 来做非 HTTPS 跳转，只是我觉得这个方法更加简单。需要注意的是：<code>forceScheme</code> 这个函数在 5.4 的时候更换过名称 , L5.3 及以下版本请使用 <code>\URL::forceSchema(&#39;https&#39;);</code>。</p>
+<pre><code>\URL::forceScheme(&#39;https&#39;);</code></pre><p>现在你的所有生成的路由链接已经默认是 HTTPS 了。当然你也可以用 Nginx 来做非 HTTPS 跳转，只是我觉得这个方法更加简单。需要注意的是：<code>forceScheme</code> 这个函数在 5.4 的时候更换过名称 , L5.3 及以下版本请使用 <code>\URL::forceSchema(&#39;https&#39;);</code>。</p>
 
   </article>
 
@@ -318,7 +320,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365555"></script>
+<script src="/js/app.js?v=1591714778573"></script>
   
 
 

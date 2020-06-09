@@ -30,7 +30,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/3242527655.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365586">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778598">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -198,7 +198,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月10日</a>
-    <a><i class="nexmoefont icon-areachart"></i>249 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>245 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -212,21 +212,16 @@
 <p><img data-sizes="auto" data-src="/images/3242527655.png" alt="" class="lazyload"></p>
 <p><img data-sizes="auto" data-src="/images/3147790571.png" alt="" class="lazyload"></p>
 <h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>进入<code>/home/用户名/.ssh</code>文件夹，如果是<code>root</code>用户就是<code>/root/.ssh</code>。<br>添加<code>authorized_keys</code>文件，已存在就下一步。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br></pre></td></tr></table></figure>
+<pre><code>touch authorized_keys</code></pre><p>更改文件权限为<code>600</code>。</p>
+<pre><code>chmod 600 authorized_keys</code></pre><p>将公钥文件复制到目录内，使用<code>&gt;&gt;</code>追加到<code>authorized_keys</code>文件里。</p>
+<pre><code>cat id_rsa.pub &gt;&gt; authorized_keys</code></pre><p>修改sshd配置文件</p>
+<pre><code>vim /etc/ssh/sshd_config
 
-<p>更改文件权限为<code>600</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure>
-
-<p>将公钥文件复制到目录内，使用<code>&gt;&gt;</code>追加到<code>authorized_keys</code>文件里。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
-
-<p>修改sshd配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line"></span><br><span class="line">RSAAuthentication yes #有这一项就开启，没有则不管</span><br><span class="line">PubkeyAuthentication yes #开启密钥认证</span><br><span class="line">PasswordAuthentication no #关闭密码登录</span><br><span class="line">PermitRootLogin yes #是否允许root用户登录，我用的root用户登录，所以开启，视需求而定</span><br></pre></td></tr></table></figure>
-
-<p>重启<code>sshd</code>服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
-
-<p>使用私钥密钥登录，私钥一定要妥善保管。</p>
+RSAAuthentication yes #有这一项就开启，没有则不管
+PubkeyAuthentication yes #开启密钥认证
+PasswordAuthentication no #关闭密码登录
+PermitRootLogin yes #是否允许root用户登录，我用的root用户登录，所以开启，视需求而定</code></pre><p>重启<code>sshd</code>服务</p>
+<pre><code>systemctl restart sshd</code></pre><p>使用私钥密钥登录，私钥一定要妥善保管。</p>
 <p><img data-sizes="auto" data-src="/images/2533459913.png" alt="" class="lazyload"></p>
 
   </article>
@@ -280,7 +275,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365588"></script>
+<script src="/js/app.js?v=1591714778600"></script>
   
 
 

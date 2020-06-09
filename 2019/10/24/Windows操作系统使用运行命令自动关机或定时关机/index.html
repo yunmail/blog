@@ -12,12 +12,12 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="前言经常下载东西或者处理数据的时候想让电脑自动关机，然后就在想如何不借助工具的情况下让电脑（Windows10）进行自动关机，然后查阅了资料就有这篇水文了。  运行命令关机法首先点击开始→运行（你也可以使用组合快捷键Win+R一步到位），输入如下指令： 1shutdown -s -t 3600  其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所">
+  <meta name="description" content="前言经常下载东西或者处理数据的时候想让电脑自动关机，然后就在想如何不借助工具的情况下让电脑（Windows10）进行自动关机，然后查阅了资料就有这篇水文了。  运行命令关机法首先点击开始→运行（你也可以使用组合快捷键Win+R一步到位），输入如下指令： shutdown -s -t 3600其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所以定了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows操作系统使用运行命令自动关机或定时关机">
 <meta property="og:url" content="http://yoursite.com/2019/10/24/Windows%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E6%88%96%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言经常下载东西或者处理数据的时候想让电脑自动关机，然后就在想如何不借助工具的情况下让电脑（Windows10）进行自动关机，然后查阅了资料就有这篇水文了。  运行命令关机法首先点击开始→运行（你也可以使用组合快捷键Win+R一步到位），输入如下指令： 1shutdown -s -t 3600  其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所">
+<meta property="og:description" content="前言经常下载东西或者处理数据的时候想让电脑自动关机，然后就在想如何不借助工具的情况下让电脑（Windows10）进行自动关机，然后查阅了资料就有这篇水文了。  运行命令关机法首先点击开始→运行（你也可以使用组合快捷键Win+R一步到位），输入如下指令： shutdown -s -t 3600其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所以定了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-10-24T12:22:43.000Z">
 <meta property="article:modified_time" content="2020-06-09T14:29:02.438Z">
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365556">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778574">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -195,7 +195,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年10月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>856 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>853 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
 </div>
 
@@ -207,19 +207,35 @@
     <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常下载东西或者处理数据的时候想让电脑自动关机，然后就在想如何不借助工具的情况下让电脑（Windows10）进行自动关机，然后查阅了资料就有这篇水文了。</p>
 <hr>
 <h2 id="运行命令关机法"><a href="#运行命令关机法" class="headerlink" title="运行命令关机法"></a>运行命令关机法</h2><p>首先点击<code>开始</code>→<code>运行</code>（你也可以使用组合快捷键<code>Win+R</code>一步到位），输入如下指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -s -t 3600</span><br></pre></td></tr></table></figure>
-
-<p>其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所以定了3600</p>
+<pre><code>shutdown -s -t 3600</code></pre><p>其中3600的单位是秒，小伙伴们可以根据自己的需求进行制定，缙哥哥觉得小姐姐们一个小时应该能到家了，所以定了3600</p>
 <p>当然，你如果忽然觉得时间不够，你还可以通过下面命令取消</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -a</span><br></pre></td></tr></table></figure>
-
-<p>神马，还要爷计算多少秒？那你可以试试输入下方指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">at 23:59 shutdown -s</span><br></pre></td></tr></table></figure>
-
-<p>其中23:59是代表着关机时间，小伙伴们同样可根据需求来这样就不用去计算多少秒了。</p>
+<pre><code>shutdown -a</code></pre><p>神马，还要爷计算多少秒？那你可以试试输入下方指令：</p>
+<pre><code>at 23:59 shutdown -s</code></pre><p>其中23:59是代表着关机时间，小伙伴们同样可根据需求来这样就不用去计算多少秒了。</p>
 <hr>
 <h2 id="关机命令详解"><a href="#关机命令详解" class="headerlink" title="关机命令详解"></a>关机命令详解</h2><p>Shutdown.exe的参数，每个都具有特定的用途，执行每一个都会产生不同的效果，比如“-s”就表示关闭本地计算机，“-a”表示取消关机操作，想必聪明如你看了上面的指令应该也能看出来了，下面缙哥哥列出了更多关机命令参数，大家可以在Shutdown.exe中按需使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-i         显示图形用户界面(GUI)。这必须是第一个选项。</span><br><span class="line">-l         注销。这不能与 -m 或 -d 选项一起使用。</span><br><span class="line">-s         关闭计算机。</span><br><span class="line">-sg        关闭计算机。在下一次启动时，重启任何注册的应用程序。</span><br><span class="line">-r         完全关闭并重启计算机。</span><br><span class="line">-g         完全关闭并重新启动计算机。在重新启动系统后，重启任何注册的应用程序。</span><br><span class="line">-a         中止系统关闭。这只能在超时期间使用。与 -fw 结合使用，以清除任何未完成的至固件的引导。</span><br><span class="line">-p         关闭本地计算机，没有超时或警告。可以与 -d 和 -f 选项一起使用。</span><br><span class="line">-h         休眠本地计算机。可以与 -f 选项一起使用。</span><br><span class="line">-hybrid    执行计算机关闭并进行准备以快速启动。必须与 -s 选项一起使用。</span><br><span class="line">-fw        与关闭选项结合使用，使下次启动转到固件用户界面。</span><br><span class="line">-e         记录计算机意外关闭的原因。</span><br><span class="line">-o         转到高级启动选项菜单并重新启动计算机。必须与 -r 选项一起使用。</span><br><span class="line">-m \\computer 指定目标计算机。</span><br><span class="line">-t xxx     将关闭前的超时时间设置为 xxx 秒。有效范围是 0-315360000 (10 年)，默认值为 30。如果超时时间大于 0，则默示为 -f 参数。</span><br><span class="line">-c &quot;comment&quot; 有关重新启动或关闭的原因的注释。最多允许 512 个字符。</span><br><span class="line">-f         强制关闭正在运行的应用程序而不事先警告用户。如果为 -t 参数指定大于 0 的值，则默示为 -f 参数。</span><br><span class="line">-d [p|u:]xx:yy  提供重新启动或关闭的原因。</span><br><span class="line">p         指示重启或关闭是计划内的。</span><br><span class="line">u         指示原因是用户定义的。</span><br><span class="line">          如果未指定 p 也未指定 u，则重新启动或关闭是计划外的。</span><br><span class="line">xx        是主要原因编号(小于 256 的正整数)。</span><br><span class="line">yy        是次要原因编号(小于 65536 的正整数)。</span><br></pre></td></tr></table></figure>
+<pre><code>-i         显示图形用户界面(GUI)。这必须是第一个选项。
+-l         注销。这不能与 -m 或 -d 选项一起使用。
+-s         关闭计算机。
+-sg        关闭计算机。在下一次启动时，重启任何注册的应用程序。
+-r         完全关闭并重启计算机。
+-g         完全关闭并重新启动计算机。在重新启动系统后，重启任何注册的应用程序。
+-a         中止系统关闭。这只能在超时期间使用。与 -fw 结合使用，以清除任何未完成的至固件的引导。
+-p         关闭本地计算机，没有超时或警告。可以与 -d 和 -f 选项一起使用。
+-h         休眠本地计算机。可以与 -f 选项一起使用。
+-hybrid    执行计算机关闭并进行准备以快速启动。必须与 -s 选项一起使用。
+-fw        与关闭选项结合使用，使下次启动转到固件用户界面。
+-e         记录计算机意外关闭的原因。
+-o         转到高级启动选项菜单并重新启动计算机。必须与 -r 选项一起使用。
+-m \\computer 指定目标计算机。
+-t xxx     将关闭前的超时时间设置为 xxx 秒。有效范围是 0-315360000 (10 年)，默认值为 30。如果超时时间大于 0，则默示为 -f 参数。
+-c &quot;comment&quot; 有关重新启动或关闭的原因的注释。最多允许 512 个字符。
+-f         强制关闭正在运行的应用程序而不事先警告用户。如果为 -t 参数指定大于 0 的值，则默示为 -f 参数。
+-d [p|u:]xx:yy  提供重新启动或关闭的原因。
+p         指示重启或关闭是计划内的。
+u         指示原因是用户定义的。
+          如果未指定 p 也未指定 u，则重新启动或关闭是计划外的。
+xx        是主要原因编号(小于 256 的正整数)。
+yy        是次要原因编号(小于 65536 的正整数)。</code></pre>
   </article>
 
   <div class="nexmoe-post-meta nexmoe-rainbow">
@@ -271,7 +287,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365560"></script>
+<script src="/js/app.js?v=1591714778576"></script>
   
 
 

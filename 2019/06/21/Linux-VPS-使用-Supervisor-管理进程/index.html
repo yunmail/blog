@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="http://yoursite.com/images/3728202999.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365593">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778603">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -197,8 +197,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月21日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -210,49 +210,98 @@
 <p><a href="https://www.moewah.com/go/aHR0cDovL3N1cGVydmlzb3JkLm9yZy8=" target="_blank" rel="noopener">Supervisor</a> 是一款使用 Python 开发的非常优秀的进程管理工具。它可以在类 UNIX 系统上让用户精确地监视与控制多组指定数量的服务进程。当监控的服务进程意外退出时，会尝试自动重启这些服务，以保持服务可用状态。</p>
 </blockquote>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Supervisor <a href="https://www.moewah.com/go/aHR0cDovL3d3dy5zdXBlcnZpc29yZC5vcmcvaW5zdGFsbGluZy5odG1s" target="_blank" rel="noopener">官方</a> 提供的安装方式较多，这里采用 pip 方式安装。</p>
-<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ yum install python-pip</span><br><span class="line"># 升级pip</span><br><span class="line">$ pip install --upgrade pip</span><br><span class="line">$ pip -V</span><br><span class="line">pip 9.0.1</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="安装-Supervisor"><a href="#安装-Supervisor" class="headerlink" title="安装 Supervisor"></a>安装 Supervisor</h3><p>通过 pip 安装 Supervisor：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip install supervisor</span><br><span class="line">Successfully installed supervisor-3.3.3</span><br></pre></td></tr></table></figure>
-
-<p>安装 Supervisor 后，会出现 supervisorctl 和 supervisord 两个程序，其中 supervisorctl 为服务监控终端，而 supervisord 才是所有监控服务的大脑。查看 supervisord 是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ supervisord -v</span><br><span class="line">3.3.3</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><p>将 supervisord 配置成开机启动服务，下载官方 <a href="https://www.moewah.com/go/aHR0cHM6Ly9naXRodWIuY29tL1N1cGVydmlzb3IvaW5pdHNjcmlwdHMvYmxvYi9tYXN0ZXIvcmVkaGF0LWluaXQtbWluZ2FsZXZtZQ==" target="_blank" rel="noopener">init 脚本</a>。</p>
+<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><pre><code>$ yum install python-pip
+# 升级pip
+$ pip install --upgrade pip
+$ pip -V
+pip 9.0.1</code></pre><h3 id="安装-Supervisor"><a href="#安装-Supervisor" class="headerlink" title="安装 Supervisor"></a>安装 Supervisor</h3><p>通过 pip 安装 Supervisor：</p>
+<pre><code>$ pip install supervisor
+Successfully installed supervisor-3.3.3</code></pre><p>安装 Supervisor 后，会出现 supervisorctl 和 supervisord 两个程序，其中 supervisorctl 为服务监控终端，而 supervisord 才是所有监控服务的大脑。查看 supervisord 是否安装成功：</p>
+<pre><code>$ supervisord -v
+3.3.3</code></pre><h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><p>将 supervisord 配置成开机启动服务，下载官方 <a href="https://www.moewah.com/go/aHR0cHM6Ly9naXRodWIuY29tL1N1cGVydmlzb3IvaW5pdHNjcmlwdHMvYmxvYi9tYXN0ZXIvcmVkaGF0LWluaXQtbWluZ2FsZXZtZQ==" target="_blank" rel="noopener">init 脚本</a>。</p>
 <p>修改关键路径配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PIDFILE&#x3D;&#x2F;var&#x2F;run&#x2F;supervisord.pid</span><br><span class="line">LOCKFILE&#x3D;&#x2F;var&#x2F;lock&#x2F;subsys&#x2F;supervisord</span><br><span class="line">OPTIONS&#x3D;&quot;-c &#x2F;etc&#x2F;supervisord.conf&quot;</span><br></pre></td></tr></table></figure>
+<pre><code>PIDFILE=/var/run/supervisord.pid
+LOCKFILE=/var/lock/subsys/supervisord
+OPTIONS=&quot;-c /etc/supervisord.conf&quot;</code></pre><p>移到该文件到 <code>/etc/init.d</code> 目录下，并重命名为 supervisor，添加可执行权限：</p>
+<pre><code>$ chmod 777 /etc/init.d/supervisor</code></pre><p>配置成开机启动服务：</p>
+<pre><code>$ chkconfig --add supervisor
+$ chkconfig supervisor on
+$ chkconfig --list | grep &quot;supervisor&quot;
+supervisor  0:off 1:off 2:on 3:on 4:on 5:on 6:off</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>Supervisord 安装后，需要使用如下命令生成配置文件。</p>
+<pre><code>$ mkdir /etc/supervisor
+$ echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</code></pre><h3 id="主配置部分"><a href="#主配置部分" class="headerlink" title="主配置部分"></a>主配置部分</h3><p><code>supervisord.conf</code> 的主配置部分说明：</p>
+<pre><code>[unix_http_server]
+file=/tmp/supervisor.sock   ; socket文件的路径
+;chmod=0700                 ; socket文件权限
+;chown=nobody:nogroup       ; socket文件用户和用户组
+;username=user              ; 连接时认证的用户名
+;password=123               ; 连接时认证的密码
 
-<p>移到该文件到 <code>/etc/init.d</code> 目录下，并重命名为 supervisor，添加可执行权限：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 777 &#x2F;etc&#x2F;init.d&#x2F;supervisor</span><br></pre></td></tr></table></figure>
+[inet_http_server]          ; 监听TCP
+port=127.0.0.1:9001         ; 监听ip和端口
+username=user               ; 连接时认证的用户名
+password=123                ; 连接时认证的密码
 
-<p>配置成开机启动服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chkconfig --add supervisor</span><br><span class="line">$ chkconfig supervisor on</span><br><span class="line">$ chkconfig --list | grep &quot;supervisor&quot;</span><br><span class="line">supervisor  0:off 1:off 2:on 3:on 4:on 5:on 6:off</span><br></pre></td></tr></table></figure>
+[supervisord]
+logfile=/var/log/supervisord.log ; log目录
+logfile_maxbytes=50MB        ; log文件最大空间
+logfile_backups=10           ; log文件保持的数量
+loglevel=info                ; log级别
+pidfile=/var/run/supervisord.pid
+nodaemon=false               ; 是否非守护进程态运行
+minfds=1024                  ; 系统空闲的最少文件描述符
+minprocs=200                 ; 可用的最小进程描述符
+;umask=022                   ; 进程创建文件的掩码
+;identifier=supervisor       ; supervisord标识符
+;directory=/tmp              ; 启动前切换到的目录
+;nocleanup=true              ; 启动前是否清除子进程的日志文件
+;childlogdir=/tmp            ; AUTO模式，子进程日志路径
+;environment=KEY=&quot;value&quot;     ; 设置环境变量
 
+[rpcinterface:supervisor]    ; XML_RPC配置
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
+[supervisorctl]
+serverurl=unix:///tmp/supervisor.sock ; 连接的socket路径
+;username=chris               ; 用户名
+;password=123                 ; 密码
+prompt=mysupervisor           ; 输入用户名和密码时的提示符
+;history_file=~/.sc_history   ; 历史操作记录存储路径
 
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>Supervisord 安装后，需要使用如下命令生成配置文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir &#x2F;etc&#x2F;supervisor</span><br><span class="line">$ echo_supervisord_conf &gt; &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="主配置部分"><a href="#主配置部分" class="headerlink" title="主配置部分"></a>主配置部分</h3><p><code>supervisord.conf</code> 的主配置部分说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[unix_http_server]</span><br><span class="line">file&#x3D;&#x2F;tmp&#x2F;supervisor.sock   ; socket文件的路径</span><br><span class="line">;chmod&#x3D;0700                 ; socket文件权限</span><br><span class="line">;chown&#x3D;nobody:nogroup       ; socket文件用户和用户组</span><br><span class="line">;username&#x3D;user              ; 连接时认证的用户名</span><br><span class="line">;password&#x3D;123               ; 连接时认证的密码</span><br><span class="line"></span><br><span class="line">[inet_http_server]          ; 监听TCP</span><br><span class="line">port&#x3D;127.0.0.1:9001         ; 监听ip和端口</span><br><span class="line">username&#x3D;user               ; 连接时认证的用户名</span><br><span class="line">password&#x3D;123                ; 连接时认证的密码</span><br><span class="line"></span><br><span class="line">[supervisord]</span><br><span class="line">logfile&#x3D;&#x2F;var&#x2F;log&#x2F;supervisord.log ; log目录</span><br><span class="line">logfile_maxbytes&#x3D;50MB        ; log文件最大空间</span><br><span class="line">logfile_backups&#x3D;10           ; log文件保持的数量</span><br><span class="line">loglevel&#x3D;info                ; log级别</span><br><span class="line">pidfile&#x3D;&#x2F;var&#x2F;run&#x2F;supervisord.pid</span><br><span class="line">nodaemon&#x3D;false               ; 是否非守护进程态运行</span><br><span class="line">minfds&#x3D;1024                  ; 系统空闲的最少文件描述符</span><br><span class="line">minprocs&#x3D;200                 ; 可用的最小进程描述符</span><br><span class="line">;umask&#x3D;022                   ; 进程创建文件的掩码</span><br><span class="line">;identifier&#x3D;supervisor       ; supervisord标识符</span><br><span class="line">;directory&#x3D;&#x2F;tmp              ; 启动前切换到的目录</span><br><span class="line">;nocleanup&#x3D;true              ; 启动前是否清除子进程的日志文件</span><br><span class="line">;childlogdir&#x3D;&#x2F;tmp            ; AUTO模式，子进程日志路径</span><br><span class="line">;environment&#x3D;KEY&#x3D;&quot;value&quot;     ; 设置环境变量</span><br><span class="line"></span><br><span class="line">[rpcinterface:supervisor]    ; XML_RPC配置</span><br><span class="line">supervisor.rpcinterface_factory &#x3D; supervisor.rpcinterface:make_main_rpcinterface</span><br><span class="line"></span><br><span class="line">[supervisorctl]</span><br><span class="line">serverurl&#x3D;unix:&#x2F;&#x2F;&#x2F;tmp&#x2F;supervisor.sock ; 连接的socket路径</span><br><span class="line">;username&#x3D;chris               ; 用户名</span><br><span class="line">;password&#x3D;123                 ; 密码</span><br><span class="line">prompt&#x3D;mysupervisor           ; 输入用户名和密码时的提示符</span><br><span class="line">;history_file&#x3D;~&#x2F;.sc_history   ; 历史操作记录存储路径</span><br><span class="line"></span><br><span class="line">[include]                     ; 包含文件，将每个进程配置为一个文件并包含</span><br><span class="line">files &#x3D; &#x2F;etc&#x2F;supervisor&#x2F;*.ini ; 多个进程的配置文件</span><br></pre></td></tr></table></figure>
-
-<p>这部分我们不需要做太多的配置修改，如果需要开启 WEB 终端监控，则需要配置并开启 inet_http_server 项。</p>
+[include]                     ; 包含文件，将每个进程配置为一个文件并包含
+files = /etc/supervisor/*.ini ; 多个进程的配置文件</code></pre><p>这部分我们不需要做太多的配置修改，如果需要开启 WEB 终端监控，则需要配置并开启 inet_http_server 项。</p>
 <h3 id="进程配置部分"><a href="#进程配置部分" class="headerlink" title="进程配置部分"></a>进程配置部分</h3><p>Supervisor 需管理的进程服务配置，示例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[program:work]                      ; 服务名，例如work</span><br><span class="line">command&#x3D;php -r &quot;sleep(10);exit(1);&quot; ; 带有参数的可执行命令</span><br><span class="line">process_name&#x3D;%(process_num)s        ; 进程名，当numprocs&gt;1时，需包含%(process_num)s</span><br><span class="line">numprocs&#x3D;2                          ; 启动进程的数目数</span><br><span class="line">;directory&#x3D;&#x2F;tmp                     ; 运行前切换到该目录</span><br><span class="line">;umask&#x3D;022                          ; 进程掩码</span><br><span class="line">;priority&#x3D;999                       ; 子进程启动关闭优先级</span><br><span class="line">autostart&#x3D;true                      ; 子进程是否被自动启动</span><br><span class="line">startsecs&#x3D;1                         ; 成功启动几秒后则认为成功启动</span><br><span class="line">;startretries&#x3D;3                     ; 子进程启动失败后，最大尝试启动的次数</span><br><span class="line">autorestart&#x3D;unexpected            ; 子进程意外退出后自动重启的选项，false, unexpected, true。unexpected表示不在exitcodes列表时重启</span><br><span class="line">exitcodes&#x3D;0,2                     ; 期待的子程序退出码</span><br><span class="line">;stopsignal&#x3D;QUIT                  ; 进程停止信号，可以为TERM,HUP,INT,QUIT,KILL,USR1,or USR2等信号，默认为TERM</span><br><span class="line">;stopwaitsecs&#x3D;10                  ; 发送停止信号后等待的最大时间</span><br><span class="line">;stopasgroup&#x3D;false                ; 是否向子进程组发送停止信号</span><br><span class="line">;killasgroup&#x3D;false                ; 是否向子进程组发送kill信号</span><br><span class="line">;redirect_stderr&#x3D;true             ; 是否重定向日志到标准输出</span><br><span class="line">stdout_logfile&#x3D;&#x2F;data&#x2F;logs&#x2F;work.log ; 进程的stdout的日志路径</span><br><span class="line">;stdout_logfile_maxbytes&#x3D;1MB      ; 日志文件最大大小</span><br><span class="line">;stdout_logfile_backups&#x3D;10</span><br><span class="line">;stdout_capture_maxbytes&#x3D;1MB</span><br><span class="line">;stderr_logfile&#x3D;&#x2F;a&#x2F;path           ; stderr的日志路径</span><br><span class="line">;stderr_logfile_maxbytes&#x3D;1MB</span><br><span class="line">;stderr_logfile_backups&#x3D;10</span><br><span class="line">;stderr_capture_maxbytes&#x3D;1MB</span><br><span class="line">;environment&#x3D;A&#x3D;&quot;1&quot;,B&#x3D;&quot;2&quot;          ; 子进程的环境变量</span><br><span class="line">;serverurl&#x3D;AUTO                   ; 子进程的环境变量SUPERVISOR_SERVER_URL</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>[program:work]                      ; 服务名，例如work
+command=php -r &quot;sleep(10);exit(1);&quot; ; 带有参数的可执行命令
+process_name=%(process_num)s        ; 进程名，当numprocs&gt;1时，需包含%(process_num)s
+numprocs=2                          ; 启动进程的数目数
+;directory=/tmp                     ; 运行前切换到该目录
+;umask=022                          ; 进程掩码
+;priority=999                       ; 子进程启动关闭优先级
+autostart=true                      ; 子进程是否被自动启动
+startsecs=1                         ; 成功启动几秒后则认为成功启动
+;startretries=3                     ; 子进程启动失败后，最大尝试启动的次数
+autorestart=unexpected            ; 子进程意外退出后自动重启的选项，false, unexpected, true。unexpected表示不在exitcodes列表时重启
+exitcodes=0,2                     ; 期待的子程序退出码
+;stopsignal=QUIT                  ; 进程停止信号，可以为TERM,HUP,INT,QUIT,KILL,USR1,or USR2等信号，默认为TERM
+;stopwaitsecs=10                  ; 发送停止信号后等待的最大时间
+;stopasgroup=false                ; 是否向子进程组发送停止信号
+;killasgroup=false                ; 是否向子进程组发送kill信号
+;redirect_stderr=true             ; 是否重定向日志到标准输出
+stdout_logfile=/data/logs/work.log ; 进程的stdout的日志路径
+;stdout_logfile_maxbytes=1MB      ; 日志文件最大大小
+;stdout_logfile_backups=10
+;stdout_capture_maxbytes=1MB
+;stderr_logfile=/a/path           ; stderr的日志路径
+;stderr_logfile_maxbytes=1MB
+;stderr_logfile_backups=10
+;stderr_capture_maxbytes=1MB
+;environment=A=&quot;1&quot;,B=&quot;2&quot;          ; 子进程的环境变量
+;serverurl=AUTO                   ; 子进程的环境变量SUPERVISOR_SERVER_URL</code></pre><blockquote>
 <p>通常将每个进程的配置信息配置成独立文件，并通过 include 模块包含，这样方便修改和管理配置文件。</p>
 </blockquote>
 <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>配置完成后，启动 supervisord 守护服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisord -c &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br></pre></td></tr></table></figure>
-
-<p>常用的命令参数说明：</p>
+<pre><code>$ supervisord -c /etc/supervisor/supervisord.conf</code></pre><p>常用的命令参数说明：</p>
 <ul>
 <li>-c：指定配置文件路径</li>
 <li>-n：是否非守护态运行</li>
@@ -260,20 +309,22 @@
 <li>-i：唯一标识</li>
 </ul>
 <p>查看 supervisord 启动情况：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep &quot;supervisor&quot;</span><br><span class="line">root  24901  1  0 Sep23 ? 00:00:30 &#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;supervisord -c &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br><span class="line">$ netstat -tunpl</span><br><span class="line">tcp 0 0 127.0.0.1:9001  0.0.0.0:*  LISTEN  24901&#x2F;python</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="监控进程"><a href="#监控进程" class="headerlink" title="监控进程"></a>监控进程</h2><p>Supervisor 提供了多种监控服务的方式，包括 supervisorctl 命令行终端、Web 端、XML_RPC 接口多种方式。</p>
+<pre><code>$ ps -ef | grep &quot;supervisor&quot;
+root  24901  1  0 Sep23 ? 00:00:30 /usr/bin/python /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+$ netstat -tunpl
+tcp 0 0 127.0.0.1:9001  0.0.0.0:*  LISTEN  24901/python</code></pre><h2 id="监控进程"><a href="#监控进程" class="headerlink" title="监控进程"></a>监控进程</h2><p>Supervisor 提供了多种监控服务的方式，包括 supervisorctl 命令行终端、Web 端、XML_RPC 接口多种方式。</p>
 <h3 id="命令终端"><a href="#命令终端" class="headerlink" title="命令终端"></a>命令终端</h3><p>直接使用 supervisorctl 即可在命令行终端查看所有服务的情况，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl </span><br><span class="line">work:0      RUNNING   pid 31313, uptime 0:00:07</span><br><span class="line">work:1      RUNNING   pid 31318, uptime 0:00:06</span><br><span class="line"># -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
-
-<p>supervisorctl 常用命令列表如下；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">status：查看服务状态</span><br><span class="line">update：重新加载配置文件</span><br><span class="line">restart：重新启动服务</span><br><span class="line">stop：停止服务</span><br><span class="line">pid：查看某服务的 pid</span><br><span class="line">tail：输出最新的 log 信息</span><br><span class="line">shutdown：关闭 supervisord 服务</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>在配置中开启 inet_http_server 后，即可通过 Web 界面便捷地监控进程服务了。</p>
+<pre><code>$ supervisorctl 
+work:0      RUNNING   pid 31313, uptime 0:00:07
+work:1      RUNNING   pid 31318, uptime 0:00:06
+# -u 用户名 -p 密码</code></pre><p>supervisorctl 常用命令列表如下；</p>
+<pre><code>status：查看服务状态
+update：重新加载配置文件
+restart：重新启动服务
+stop：停止服务
+pid：查看某服务的 pid
+tail：输出最新的 log 信息
+shutdown：关闭 supervisord 服务</code></pre><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>在配置中开启 inet_http_server 后，即可通过 Web 界面便捷地监控进程服务了。</p>
 <p><img data-sizes="auto" data-src="/images/3728202999.png" alt="" class="lazyload"></p>
 
   </article>
@@ -327,7 +378,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365595"></script>
+<script src="/js/app.js?v=1591714778605"></script>
   
 
 

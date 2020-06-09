@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365746">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714778723">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -193,7 +193,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月07日</a>
-            <a><i class="nexmoefont icon-areachart"></i>261 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>246 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
@@ -201,17 +201,15 @@
             
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们的很多<code>VPS</code>服务器，默认的端口都是<code>22</code>，所以一直会被人扫描爆破，很容易会出现问题，所以我们需要通过修改端口来尽可能减少这种事情发生，这里博主就整了个<code>SSH</code>端口一键修改脚本。从<code>OneinStack</code>一键安装包上扒下来的。</p>
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>支持<code>Debian</code>、<code>Ubuntu</code>、<code>CentOS</code>系统。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h2 id="1、运行以下命令"><a href="#1、运行以下命令" class="headerlink" title="1、运行以下命令"></a>1、运行以下命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;www.moerats.com&#x2F;usr&#x2F;down&#x2F;sshport.sh</span><br><span class="line">bash sshport.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2、输入端口确认，再打开防火墙端口"><a href="#2、输入端口确认，再打开防火墙端口" class="headerlink" title="2、输入端口确认，再打开防火墙端口"></a>2、输入端口确认，再打开防火墙端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#如果防火墙使用的iptables（Centos 6），修改端口为8080</span><br><span class="line">iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line">#如果使用的是firewall（CentOS 7）</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent </span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3、最后重启-ssh-生效"><a href="#3、最后重启-ssh-生效" class="headerlink" title="3、最后重启 ssh 生效"></a>3、最后重启 ssh 生效</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;sshd restart #centos系统</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;ssh restart #debian,ubuntu系统</span><br></pre></td></tr></table></figure>
-
-<p>然后就可以使用新端口<code>SSH</code>登录了，不过对于更安全的登录方式当属使用密钥登录了。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h2 id="1、运行以下命令"><a href="#1、运行以下命令" class="headerlink" title="1、运行以下命令"></a>1、运行以下命令</h2><pre><code>wget https://www.moerats.com/usr/down/sshport.sh
+bash sshport.sh</code></pre><h2 id="2、输入端口确认，再打开防火墙端口"><a href="#2、输入端口确认，再打开防火墙端口" class="headerlink" title="2、输入端口确认，再打开防火墙端口"></a>2、输入端口确认，再打开防火墙端口</h2><pre><code>#如果防火墙使用的iptables（Centos 6），修改端口为8080
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+service iptables save
+service iptables restart
+#如果使用的是firewall（CentOS 7）
+firewall-cmd --zone=public --add-port=8080/tcp --permanent 
+firewall-cmd --reload</code></pre><h2 id="3、最后重启-ssh-生效"><a href="#3、最后重启-ssh-生效" class="headerlink" title="3、最后重启 ssh 生效"></a>3、最后重启 ssh 生效</h2><pre><code>/etc/init.d/sshd restart #centos系统
+/etc/init.d/ssh restart #debian,ubuntu系统</code></pre><p>然后就可以使用新端口<code>SSH</code>登录了，不过对于更安全的登录方式当属使用密钥登录了。</p>
 
             
         </article>
@@ -229,7 +227,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月07日</a>
-            <a><i class="nexmoefont icon-areachart"></i>131 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>124 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
@@ -237,9 +235,7 @@
             
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在<code>VPS</code>上写程序时发现有些系统中文会有乱码的情况，于是即兴写了这么一个脚本。这是一个用于把<code>Linux</code>的系统环境改为简体中文的小工具。也可以给本身无法显示中文的<code>VPS</code>增加中文显示。</p>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;FunctionClub&#x2F;LocaleCN&#x2F;master&#x2F;LocaleCN.sh &amp;&amp; bash LocaleCN.sh</span><br></pre></td></tr></table></figure>
-
-<p>然后重启<code>VPS</code>即可。</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/LocaleCN/master/LocaleCN.sh &amp;&amp; bash LocaleCN.sh</code></pre><p>然后重启<code>VPS</code>即可。</p>
 <h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><h2 id="1、使用前"><a href="#1、使用前" class="headerlink" title="1、使用前"></a>1、使用前</h2><p><img data-sizes="auto" data-src="/images/3861424202.png" alt="" class="lazyload"></p>
 <h2 id="2、使用后"><a href="#2、使用后" class="headerlink" title="2、使用后"></a>2、使用后</h2><p><img data-sizes="auto" data-src="/images/253289467.png" alt="" class="lazyload"></p>
 
@@ -962,7 +958,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>307 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>273 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
@@ -970,40 +966,13 @@
             
                 <h1 id="一、设置root密码"><a href="#一、设置root密码" class="headerlink" title="一、设置root密码"></a>一、设置root密码</h1><h3 id="1-先选择从浏览器打开ssh连接服务器"><a href="#1-先选择从浏览器打开ssh连接服务器" class="headerlink" title="1.先选择从浏览器打开ssh连接服务器"></a>1.先选择从浏览器打开ssh连接服务器</h3><p><img data-sizes="auto" data-src="/images/2557178057.png" alt="" class="lazyload"></p>
 <p> 2.切换到root账号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-设置root密码"><a href="#3-设置root密码" class="headerlink" title="3.设置root密码"></a>3.设置root密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
-
-<h4 id="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"><a href="#然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车" class="headerlink" title="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"></a>然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车</h4><p><img data-sizes="auto" data-src="/images/2932129962.png" alt="" class="lazyload"></p>
-<h1 id="二、开启SSH权限"><a href="#二、开启SSH权限" class="headerlink" title="二、开启SSH权限"></a>二、开启SSH权限</h1><h2 id="①方法一"><a href="#①方法一" class="headerlink" title="①方法一"></a>①方法一</h2><h3 id="1-修改SSH配置文件-etc-ssh-sshd-config"><a href="#1-修改SSH配置文件-etc-ssh-sshd-config" class="headerlink" title="1.修改SSH配置文件/etc/ssh/sshd_config"></a>1.修改SSH配置文件/etc/ssh/sshd_config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-然后再输”i”进入编辑模式"><a href="#2-然后再输”i”进入编辑模式" class="headerlink" title="2.然后再输”i”进入编辑模式"></a>2.然后再输”i”进入编辑模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-找到以下内容并修改"><a href="#3-找到以下内容并修改" class="headerlink" title="3.找到以下内容并修改"></a>3.找到以下内容并修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes           &#x2F;&#x2F;默认为no，需要开启root用户访问改为yes</span><br><span class="line">PasswordAuthentication yes    &#x2F;&#x2F;默认为no，改为yes开启密码登陆</span><br></pre></td></tr></table></figure>
-
-<p><img data-sizes="auto" data-src="/images/3324977715.png" alt="" class="lazyload"></p>
-<h3 id="4-修改完成后，再下按-esc-键，然后再输入"><a href="#4-修改完成后，再下按-esc-键，然后再输入" class="headerlink" title="4.修改完成后，再下按 esc 键，然后再输入"></a>4.修改完成后，再下按 esc 键，然后再输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
-
-<p><img data-sizes="auto" data-src="/images/1145294211.png" alt="" class="lazyload"></p>
-<h3 id="5-重启服务器"><a href="#5-重启服务器" class="headerlink" title="5.重启服务器"></a>5.重启服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="②方法二"><a href="#②方法二" class="headerlink" title="②方法二"></a>②方法二</h2><h3 id="CentOS和Debian通用，输入以下两条命令"><a href="#CentOS和Debian通用，输入以下两条命令" class="headerlink" title="CentOS和Debian通用，输入以下两条命令"></a>CentOS和Debian通用，输入以下两条命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;s&#x2F;PermitRootLogin no&#x2F;PermitRootLogin yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">sed -i &#39;s&#x2F;PasswordAuthentication no&#x2F;PasswordAuthentication yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Ubuntu系统，输入以下两条命令"><a href="#Ubuntu系统，输入以下两条命令" class="headerlink" title="Ubuntu系统，输入以下两条命令"></a>Ubuntu系统，输入以下两条命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;s&#x2F;#PermitRootLogin prohibit-password&#x2F;PermitRootLogin yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">sed -i &#39;s&#x2F;PasswordAuthentication no&#x2F;PasswordAuthentication yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<pre><code>sudo -i</code></pre><h3 id="3-设置root密码"><a href="#3-设置root密码" class="headerlink" title="3.设置root密码"></a>3.设置root密码</h3><pre><code>passwd</code></pre><h4 id="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"><a href="#然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车" class="headerlink" title="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"></a>然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车</h4><p><img data-sizes="auto" data-src="/images/2932129962.png" alt="" class="lazyload"></p>
+<h1 id="二、开启SSH权限"><a href="#二、开启SSH权限" class="headerlink" title="二、开启SSH权限"></a>二、开启SSH权限</h1><h2 id="①方法一"><a href="#①方法一" class="headerlink" title="①方法一"></a>①方法一</h2><h3 id="1-修改SSH配置文件-etc-ssh-sshd-config"><a href="#1-修改SSH配置文件-etc-ssh-sshd-config" class="headerlink" title="1.修改SSH配置文件/etc/ssh/sshd_config"></a>1.修改SSH配置文件/etc/ssh/sshd_config</h3><pre><code>vi /etc/ssh/sshd_config</code></pre><h3 id="2-然后再输”i”进入编辑模式"><a href="#2-然后再输”i”进入编辑模式" class="headerlink" title="2.然后再输”i”进入编辑模式"></a>2.然后再输”i”进入编辑模式</h3><pre><code>i</code></pre><h3 id="3-找到以下内容并修改"><a href="#3-找到以下内容并修改" class="headerlink" title="3.找到以下内容并修改"></a>3.找到以下内容并修改</h3><pre><code>PermitRootLogin yes           //默认为no，需要开启root用户访问改为yes
+PasswordAuthentication yes    //默认为no，改为yes开启密码登陆</code></pre><p><img data-sizes="auto" data-src="/images/3324977715.png" alt="" class="lazyload"></p>
+<h3 id="4-修改完成后，再下按-esc-键，然后再输入"><a href="#4-修改完成后，再下按-esc-键，然后再输入" class="headerlink" title="4.修改完成后，再下按 esc 键，然后再输入"></a>4.修改完成后，再下按 esc 键，然后再输入</h3><pre><code>:wq</code></pre><p><img data-sizes="auto" data-src="/images/1145294211.png" alt="" class="lazyload"></p>
+<h3 id="5-重启服务器"><a href="#5-重启服务器" class="headerlink" title="5.重启服务器"></a>5.重启服务器</h3><pre><code>reboot</code></pre><h2 id="②方法二"><a href="#②方法二" class="headerlink" title="②方法二"></a>②方法二</h2><h3 id="CentOS和Debian通用，输入以下两条命令"><a href="#CentOS和Debian通用，输入以下两条命令" class="headerlink" title="CentOS和Debian通用，输入以下两条命令"></a>CentOS和Debian通用，输入以下两条命令</h3><pre><code>sed -i &#39;s/PermitRootLogin no/PermitRootLogin yes/g&#39; /etc/ssh/sshd_config
+sed -i &#39;s/PasswordAuthentication no/PasswordAuthentication yes/g&#39; /etc/ssh/sshd_config</code></pre><h3 id="Ubuntu系统，输入以下两条命令"><a href="#Ubuntu系统，输入以下两条命令" class="headerlink" title="Ubuntu系统，输入以下两条命令"></a>Ubuntu系统，输入以下两条命令</h3><pre><code>sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g&#39; /etc/ssh/sshd_config
+sed -i &#39;s/PasswordAuthentication no/PasswordAuthentication yes/g&#39; /etc/ssh/sshd_config</code></pre><h3 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h3><pre><code>reboot</code></pre>
             
         </article>
     </div>
@@ -1020,7 +989,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月26日</a>
-            <a><i class="nexmoefont icon-areachart"></i>356 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>352 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
@@ -1028,15 +997,8 @@
             
                 <p>因为某种需求所以需要使用命令行同步文件夹，很多教程有写过rsync，但是此处我并不需要随时同步，只需要迁移，所以通过简单的命令行操作就可以了。</p>
 <p>这里为了避免因为网络原因造成的ssh中断后出现文件传输终端，我们需要使用screen.</p>
-<h2 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install screen #此处为centos&#96;</span><br><span class="line">&#96;apt install screen #此处为Ubuntu&#x2F;Debian</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="使用screen"><a href="#使用screen" class="headerlink" title="使用screen"></a>使用screen</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S 随便取一个你记得的名字</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>这里我们使用命令行操作。</p>
+<h2 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h2><pre><code>yum install screen #此处为centos`
+`apt install screen #此处为Ubuntu/Debian</code></pre><h3 id="使用screen"><a href="#使用screen" class="headerlink" title="使用screen"></a>使用screen</h3><pre><code>screen -S 随便取一个你记得的名字</code></pre><h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>这里我们使用命令行操作。</p>
 <p>举个例子，我们有A/B两台Linux服务器，我想要A的文件传输到B的机器上。</p>
 <p>你<strong>需要登录A服务器</strong></p>
 <p>scp /data(你所需要传输的目录 此处data只是举例)/* (这里的意思是将/data目录下所有的文件传输) root@B服务器的IP地址:/你所需要传输到的目录</p>
@@ -1068,51 +1030,88 @@
         <article>
             
                 <p><strong>说明：</strong>一般我们考虑到<code>VPS</code>的安全问题的时候，都是更改<code>SSH</code>端口和密码，然后更安全的也就是禁用密码使用密匙登录。方法很久前就水过了，这里再分享一个方法，可以在<code>VPS</code>上安装一个<code>Google Authenticator</code>(谷歌身份验证器)，这样我们登录<code>VPS</code>的时候，不仅需要密码正确，而且还要你输入正确的动态验证码才能登录进去，这样安全性就高了不少，这里就说下<code>CentOS</code>、<code>Debian</code>、<code>Ubuntu</code>的使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：教程需要配合Google身份验证器一起使用，手机没有安装该APP的需要安装一下，方便获取动态验证码。</span><br></pre></td></tr></table></figure>
+<pre><code>提示：教程需要配合Google身份验证器一起使用，手机没有安装该APP的需要安装一下，方便获取动态验证码。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、软件包安装</strong></p>
+<pre><code>#CentOS 6系统
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+yum install google-authenticator -y
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、软件包安装</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">rpm -Uvh https:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;epel-release-latest-6.noarch.rpm</span><br><span class="line">yum install google-authenticator -y</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">rpm -Uvh https:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;epel-release-latest-7.noarch.rpm</span><br><span class="line">yum install google-authenticator -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt update</span><br><span class="line">apt install libpam-google-authenticator -y</span><br></pre></td></tr></table></figure>
+#CentOS 7系统
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install google-authenticator -y
 
-<p><strong>2、编译安装</strong><br>安装依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install gcc make pam-devel libpng-devel libtool wget git autoconf automake qrencode -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt update</span><br><span class="line">apt install -y gcc make autoconf automake libtool libpam0g-dev libqrencode3 git</span><br></pre></td></tr></table></figure>
+#Debian/Ubuntu系统
+apt update
+apt install libpam-google-authenticator -y</code></pre><p><strong>2、编译安装</strong><br>安装依赖：</p>
+<pre><code>#CentOS系统
+yum install gcc make pam-devel libpng-devel libtool wget git autoconf automake qrencode -y
 
-<p>安装验证器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;google-authenticator-libpam.git</span><br><span class="line">cd google-authenticator-libpam</span><br><span class="line">.&#x2F;bootstrap.sh</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+#Debian/Ubuntu系统
+apt update
+apt install -y gcc make autoconf automake libtool libpam0g-dev libqrencode3 git</code></pre><p>安装验证器：</p>
+<pre><code>git clone https://github.com/google/google-authenticator-libpam.git
+cd google-authenticator-libpam
+./bootstrap.sh
+./configure
+make &amp;&amp; make install</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>1、配置验证器</strong></p>
+<pre><code>google-authenticator</code></pre><p>输出如下：</p>
+<pre><code>Do you want authentication tokens to be time-based (y/n) y
+#验证二维码，在浏览器打开使用谷歌验证器APP扫描添加即可。
+https://www.google.com/chart?chs=200x200xxx
+Your new secret key is: WKDPJHOKR2P3DOWL
+Your verification code is 189192
+#临时验证码，手机不在身边可以使用，不过一个码只能用一次
+Your emergency scratch codes are:
+  77678926
+  14729443
+  83656478
+  55669982
+  23960253
 
+#下面可以直接照着填，或者自己使用谷歌翻译，然后自行选择
+Do you want me to update your &quot;/root/.google_authenticator&quot; file (y/n) y
 
+Do you want to disallow multiple uses of the same authentication
+token? This restricts you to one login about every 30s, but it increases
+your chances to notice or even prevent man-in-the-middle attacks (y/n) y
 
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>1、配置验证器</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google-authenticator</span><br></pre></td></tr></table></figure>
+By default, tokens are good for 30 seconds and in order to compensate for
+possible time-skew between the client and the server, we allow an extra
+token before and after the current time. If you experience problems with poor
+time synchronization, you can increase the window from its default
+size of 1:30min to about 4min. Do you want to do so (y/n) y
 
-<p>输出如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Do you want authentication tokens to be time-based (y&#x2F;n) y</span><br><span class="line">#验证二维码，在浏览器打开使用谷歌验证器APP扫描添加即可。</span><br><span class="line">https:&#x2F;&#x2F;www.google.com&#x2F;chart?chs&#x3D;200x200xxx</span><br><span class="line">Your new secret key is: WKDPJHOKR2P3DOWL</span><br><span class="line">Your verification code is 189192</span><br><span class="line">#临时验证码，手机不在身边可以使用，不过一个码只能用一次</span><br><span class="line">Your emergency scratch codes are:</span><br><span class="line">  77678926</span><br><span class="line">  14729443</span><br><span class="line">  83656478</span><br><span class="line">  55669982</span><br><span class="line">  23960253</span><br><span class="line"></span><br><span class="line">#下面可以直接照着填，或者自己使用谷歌翻译，然后自行选择</span><br><span class="line">Do you want me to update your &quot;&#x2F;root&#x2F;.google_authenticator&quot; file (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">Do you want to disallow multiple uses of the same authentication</span><br><span class="line">token? This restricts you to one login about every 30s, but it increases</span><br><span class="line">your chances to notice or even prevent man-in-the-middle attacks (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">By default, tokens are good for 30 seconds and in order to compensate for</span><br><span class="line">possible time-skew between the client and the server, we allow an extra</span><br><span class="line">token before and after the current time. If you experience problems with poor</span><br><span class="line">time synchronization, you can increase the window from its default</span><br><span class="line">size of 1:30min to about 4min. Do you want to do so (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">If the computer that you are logging into isn&#39;t hardened against brute-force</span><br><span class="line">login attempts, you can enable rate-limiting for the authentication module.</span><br><span class="line">By default, this limits attackers to no more than 3 login attempts every 30s.</span><br><span class="line">Do you want to enable rate-limiting (y&#x2F;n) y</span><br></pre></td></tr></table></figure>
-
-<p><strong>2、配置PAM文件</strong><br>修改<code>PAM</code>配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br></pre></td></tr></table></figure>
-
-<p>在相应的位置添加<code>auth required pam_google_authenticator.so</code>代码，大概如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6在#%PAM-1.0下面一行添加</span><br><span class="line">#CentOS 7在auth substack password-auth下面一行添加</span><br><span class="line">#Debian和Ubuntu在末尾添加</span><br></pre></td></tr></table></figure>
-
-<p>然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+If the computer that you are logging into isn&#39;t hardened against brute-force
+login attempts, you can enable rate-limiting for the authentication module.
+By default, this limits attackers to no more than 3 login attempts every 30s.
+Do you want to enable rate-limiting (y/n) y</code></pre><p><strong>2、配置PAM文件</strong><br>修改<code>PAM</code>配置文件：</p>
+<pre><code>nano /etc/pam.d/sshd</code></pre><p>在相应的位置添加<code>auth required pam_google_authenticator.so</code>代码，大概如下：</p>
+<pre><code>#CentOS 6在#%PAM-1.0下面一行添加
+#CentOS 7在auth substack password-auth下面一行添加
+#Debian和Ubuntu在末尾添加</code></pre><p>然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
 <p>或者直接使用命令添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">sed -i &#39;1a\auth required pam_google_authenticator.so&#39; &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br><span class="line">#CentOS 7系统</span><br><span class="line">sed -i &quot;&#x2F;auth[ ]*substack[ ]*pass*&#x2F;a\auth required pam_google_authenticator.so&quot; &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">echo &#39;auth required pam_google_authenticator.so&#39; &gt;&gt;&#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br></pre></td></tr></table></figure>
-
-<p>如果是编译安装的，还需要做一下软链接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">ln -fs &#x2F;usr&#x2F;local&#x2F;lib&#x2F;security&#x2F;pam_google_authenticator.so &#x2F;lib64&#x2F;security&#x2F;</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">ln -fs &#x2F;usr&#x2F;local&#x2F;lib&#x2F;security&#x2F;pam_google_authenticator.so &#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;security&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p><strong>3、修改SSH文件</strong><br>这里可以直接使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -r &#39;s#(ChallengeResponseAuthentication) no#\1 yes#g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
-
-<p>然后同步下时间：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查看下服务器时间</span><br><span class="line">date</span><br><span class="line">#如果时区不一样，再使用命令修改为本地时间</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br></pre></td></tr></table></figure>
-
-<p>对于<code>CentOS</code>系统，还需要关闭<code>SELINUX</code>，不过并不是所有系统都是开启状态，使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#使用命令查看状态</span><br><span class="line">getenforce</span><br><span class="line">#如果输出disabled则为关闭，反之开启，然后使用命令关闭</span><br><span class="line">sed -i &#39;s&#x2F;SELINUX&#x3D;enforcing&#x2F;SELINUX&#x3D;disabled&#x2F;g&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br></pre></td></tr></table></figure>
-
-<p>最后重启<code>SSH</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">service sshd restart</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-
-<p>配置好了，再登录<code>SSH</code>的时候，这里以<code>Xshell</code>为例，类型选择<code>Keyboard Interactive</code>方式，然后会要你输入动态验证码了。</p>
+<pre><code>#CentOS 6系统
+sed -i &#39;1a\auth required pam_google_authenticator.so&#39; /etc/pam.d/sshd
+#CentOS 7系统
+sed -i &quot;/auth[ ]*substack[ ]*pass*/a\auth required pam_google_authenticator.so&quot; /etc/pam.d/sshd
+#Debian/Ubuntu系统
+echo &#39;auth required pam_google_authenticator.so&#39; &gt;&gt;/etc/pam.d/sshd</code></pre><p>如果是编译安装的，还需要做一下软链接：</p>
+<pre><code>#CentOS系统
+ln -fs /usr/local/lib/security/pam_google_authenticator.so /lib64/security/
+#Debian/Ubuntu系统
+ln -fs /usr/local/lib/security/pam_google_authenticator.so /lib/x86_64-linux-gnu/security/</code></pre><p><strong>3、修改SSH文件</strong><br>这里可以直接使用命令：</p>
+<pre><code>sed -i -r &#39;s#(ChallengeResponseAuthentication) no#\1 yes#g&#39; /etc/ssh/sshd_config</code></pre><p>然后同步下时间：</p>
+<pre><code>#查看下服务器时间
+date
+#如果时区不一样，再使用命令修改为本地时间
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></pre><p>对于<code>CentOS</code>系统，还需要关闭<code>SELINUX</code>，不过并不是所有系统都是开启状态，使用命令：</p>
+<pre><code>#使用命令查看状态
+getenforce
+#如果输出disabled则为关闭，反之开启，然后使用命令关闭
+sed -i &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/selinux/config</code></pre><p>最后重启<code>SSH</code>：</p>
+<pre><code>#CentOS系统
+service sshd restart
+#Debian/Ubuntu系统
+service ssh restart</code></pre><p>配置好了，再登录<code>SSH</code>的时候，这里以<code>Xshell</code>为例，类型选择<code>Keyboard Interactive</code>方式，然后会要你输入动态验证码了。</p>
 <p><img data-sizes="auto" data-src="/images/Google_Authenticator.png" alt="" class="lazyload"></p>
 <p>基本上以后我们每次登录<code>VPS</code>的时候，不仅会要你输入密码，还会要你输入谷歌验证的动态码才能进入<code>VPS</code>，安全增加了不少。</p>
 
@@ -1470,7 +1469,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月04日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>991 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
         </div>
 
@@ -1478,29 +1477,122 @@
             
                 <blockquote>
 <h4 id="官方Doc"><a href="#官方Doc" class="headerlink" title="官方Doc"></a>官方Doc</h4></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>http://php.net/manual/zh/book.opcache.php</code></pre><blockquote>
 <p>说明</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是</span><br><span class="line">省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用</span><br><span class="line">PHP APC加速</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是
+省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用
+PHP APC加速</code></pre><blockquote>
 <h4 id="PHP开启opcache方法"><a href="#PHP开启opcache方法" class="headerlink" title="PHP开启opcache方法"></a>PHP开启opcache方法</h4></blockquote>
-<h5 id="1-打开php-ini文件-找到：-opcache-，设置为："><a href="#1-打开php-ini文件-找到：-opcache-，设置为：" class="headerlink" title="1.打开php.ini文件, 找到：[opcache]，设置为："></a>1.打开php.ini文件, 找到：[opcache]，设置为：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[opcache]</span><br><span class="line">; dll地址</span><br><span class="line">zend_extension&#x3D;php_opcache.dll</span><br><span class="line">; 开关打开</span><br><span class="line">opcache.enable&#x3D;1</span><br><span class="line">; 开启CLI</span><br><span class="line">opcache.enable_cli&#x3D;1</span><br><span class="line">; 可用内存, 酌情而定, 单位为：Mb</span><br><span class="line">opcache.memory_consumption&#x3D;528</span><br><span class="line">; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)</span><br><span class="line">opcache.interned_strings_buffer&#x3D;8</span><br><span class="line">; 对多缓存文件限制, 命中率不到 100% 的话, 可以试着提高这个值</span><br><span class="line">opcache.max_accelerated_files&#x3D;10000</span><br><span class="line">; Opcache 会在一定时间内去检查文件的修改时间, 这里设置检查的时间周期, 默认为 2, 定位为秒</span><br><span class="line">opcache.revalidate_freq&#x3D;1</span><br><span class="line">; 打开快速关闭, 打开这个在PHP Request Shutdown的时候回收内存的速度会提高</span><br><span class="line">opcache.fast_shutdown&#x3D;1</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="2-重启apache即可。"><a href="#2-重启apache即可。" class="headerlink" title="2.重启apache即可。"></a>2.重启apache即可。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-配置完成后，可以使用如下代码查询opcache："><a href="#3-配置完成后，可以使用如下代码查询opcache：" class="headerlink" title="3.配置完成后，可以使用如下代码查询opcache："></a>3.配置完成后，可以使用如下代码查询opcache：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-访问页面得到如下界面："><a href="#4-访问页面得到如下界面：" class="headerlink" title="4.访问页面得到如下界面："></a>4.访问页面得到如下界面：</h5><p><img data-sizes="auto" data-src="" alt="php_opcache" class="lazyload"></p>
+<h5 id="1-打开php-ini文件-找到：-opcache-，设置为："><a href="#1-打开php-ini文件-找到：-opcache-，设置为：" class="headerlink" title="1.打开php.ini文件, 找到：[opcache]，设置为："></a>1.打开php.ini文件, 找到：[opcache]，设置为：</h5><pre><code>[opcache]
+; dll地址
+zend_extension=php_opcache.dll
+; 开关打开
+opcache.enable=1
+; 开启CLI
+opcache.enable_cli=1
+; 可用内存, 酌情而定, 单位为：Mb
+opcache.memory_consumption=528
+; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)
+opcache.interned_strings_buffer=8
+; 对多缓存文件限制, 命中率不到 100% 的话, 可以试着提高这个值
+opcache.max_accelerated_files=10000
+; Opcache 会在一定时间内去检查文件的修改时间, 这里设置检查的时间周期, 默认为 2, 定位为秒
+opcache.revalidate_freq=1
+; 打开快速关闭, 打开这个在PHP Request Shutdown的时候回收内存的速度会提高
+opcache.fast_shutdown=1</code></pre><h5 id="2-重启apache即可。"><a href="#2-重启apache即可。" class="headerlink" title="2.重启apache即可。"></a>2.重启apache即可。</h5><pre><code>测试</code></pre><h5 id="3-配置完成后，可以使用如下代码查询opcache："><a href="#3-配置完成后，可以使用如下代码查询opcache：" class="headerlink" title="3.配置完成后，可以使用如下代码查询opcache："></a>3.配置完成后，可以使用如下代码查询opcache：</h5><pre><code>&lt;?php
+    phpinfo();
+?&gt;</code></pre><h5 id="4-访问页面得到如下界面："><a href="#4-访问页面得到如下界面：" class="headerlink" title="4.访问页面得到如下界面："></a>4.访问页面得到如下界面：</h5><p><img data-sizes="auto" data-src="" alt="php_opcache" class="lazyload"></p>
 <blockquote>
 <h4 id="opcache配置说明"><a href="#opcache配置说明" class="headerlink" title="opcache配置说明"></a>opcache配置说明</h4></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">[opcache]</span><br><span class="line">zend_extension &#x3D; &quot;G:&#x2F;PHP&#x2F;php-5.5.6-Win32-VC11-x64&#x2F;ext&#x2F;php_opcache.dll&quot;</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 的开关, 关闭时代码不再优化.</span><br><span class="line">opcache.enable&#x3D;1</span><br><span class="line"></span><br><span class="line">; Determines if Zend OPCache is enabled for the CLI version of PHP</span><br><span class="line">opcache.enable_cli&#x3D;1</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 共享内存的大小, 总共能够存储多少预编译的 PHP 代码(单位:MB)</span><br><span class="line">; 推荐 128</span><br><span class="line">opcache.memory_consumption&#x3D;64</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)</span><br><span class="line">; 推荐 8</span><br><span class="line">opcache.interned_strings_buffer&#x3D;4</span><br><span class="line"></span><br><span class="line">; 最大缓存的文件数目 200  到 100000 之间</span><br><span class="line">; 推荐 4000</span><br><span class="line">opcache.max_accelerated_files&#x3D;2000</span><br><span class="line"></span><br><span class="line">; 内存“浪费”达到此值对应的百分比,就会发起一个重启调度.</span><br><span class="line">opcache.max_wasted_percentage&#x3D;5</span><br><span class="line"></span><br><span class="line">; 开启这条指令, Zend Optimizer + 会自动将当前工作目录的名字追加到脚本键上,</span><br><span class="line">; 以此消除同名文件间的键值命名冲突.关闭这条指令会提升性能,</span><br><span class="line">; 但是会对已存在的应用造成破坏.</span><br><span class="line">opcache.use_cwd&#x3D;0</span><br><span class="line"></span><br><span class="line">; 开启文件时间戳验证 </span><br><span class="line">opcache.validate_timestamps&#x3D;1</span><br><span class="line"></span><br><span class="line">; 2s检查一次文件更新 注意:0是一直检查不是关闭</span><br><span class="line">; 推荐 60</span><br><span class="line">opcache.revalidate_freq&#x3D;2</span><br><span class="line"></span><br><span class="line">; 允许或禁止在 include_path 中进行文件搜索的优化</span><br><span class="line">;opcache.revalidate_path&#x3D;0</span><br><span class="line"></span><br><span class="line">; 是否保存文件&#x2F;函数的注释   如果apigen、Doctrine、 ZF2、 PHPUnit需要文件注释</span><br><span class="line">; 推荐 0</span><br><span class="line">opcache.save_comments&#x3D;1</span><br><span class="line"></span><br><span class="line">; 是否加载文件&#x2F;函数的注释</span><br><span class="line">;opcache.load_comments&#x3D;1</span><br><span class="line"></span><br><span class="line">; 打开快速关闭, 打开这个在PHP Request Shutdown的时候会收内存的速度会提高</span><br><span class="line">; 推荐 1</span><br><span class="line">opcache.fast_shutdown&#x3D;1</span><br><span class="line"></span><br><span class="line">;允许覆盖文件存在（file_exists等）的优化特性。</span><br><span class="line">;opcache.enable_file_override&#x3D;0</span><br><span class="line"></span><br><span class="line">; 定义启动多少个优化过程</span><br><span class="line">;opcache.optimization_level&#x3D;0xffffffff</span><br><span class="line"></span><br><span class="line">; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.</span><br><span class="line">;opcache.inherited_hack&#x3D;1</span><br><span class="line"></span><br><span class="line">; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.</span><br><span class="line">;opcache.dups_fix&#x3D;0</span><br><span class="line"></span><br><span class="line">; 设置不缓存的黑名单</span><br><span class="line">; 不缓存指定目录下cache_开头的PHP文件. &#x2F;png&#x2F;www&#x2F;example.com&#x2F;public_html&#x2F;cache&#x2F;cache_ </span><br><span class="line">;opcache.blacklist_filename&#x3D;</span><br><span class="line"></span><br><span class="line">; 通过文件大小屏除大文件的缓存.默认情况下所有的文件都会被缓存.</span><br><span class="line">;opcache.max_file_size&#x3D;0</span><br><span class="line"></span><br><span class="line">; 每 N 次请求检查一次缓存校验.默认值0表示检查被禁用了.</span><br><span class="line">; 由于计算校验值有损性能,这个指令应当紧紧在开发调试的时候开启.</span><br><span class="line">;opcache.consistency_checks&#x3D;0</span><br><span class="line"></span><br><span class="line">; 从缓存不被访问后,等待多久后(单位为秒)调度重启</span><br><span class="line">;opcache.force_restart_timeout&#x3D;180</span><br><span class="line"></span><br><span class="line">; 错误日志文件名.留空表示使用标准错误输出(stderr).</span><br><span class="line">;opcache.error_log&#x3D;</span><br><span class="line"></span><br><span class="line">; 将错误信息写入到服务器(Apache等)日志</span><br><span class="line">;opcache.log_verbosity_level&#x3D;1</span><br><span class="line"></span><br><span class="line">; 内存共享的首选后台.留空则是让系统选择.</span><br><span class="line">;opcache.preferred_memory_model&#x3D;</span><br><span class="line"></span><br><span class="line">; 防止共享内存在脚本执行期间被意外写入, 仅用于内部调试.</span><br><span class="line">;opcache.protect_memory&#x3D;0</span><br><span class="line">高级运维PHPopcache性能加速</span><br></pre></td></tr></table></figure>
+<pre><code>[opcache]
+zend_extension = &quot;G:/PHP/php-5.5.6-Win32-VC11-x64/ext/php_opcache.dll&quot;
 
+; Zend Optimizer + 的开关, 关闭时代码不再优化.
+opcache.enable=1
 
+; Determines if Zend OPCache is enabled for the CLI version of PHP
+opcache.enable_cli=1
+
+; Zend Optimizer + 共享内存的大小, 总共能够存储多少预编译的 PHP 代码(单位:MB)
+; 推荐 128
+opcache.memory_consumption=64
+
+; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)
+; 推荐 8
+opcache.interned_strings_buffer=4
+
+; 最大缓存的文件数目 200  到 100000 之间
+; 推荐 4000
+opcache.max_accelerated_files=2000
+
+; 内存“浪费”达到此值对应的百分比,就会发起一个重启调度.
+opcache.max_wasted_percentage=5
+
+; 开启这条指令, Zend Optimizer + 会自动将当前工作目录的名字追加到脚本键上,
+; 以此消除同名文件间的键值命名冲突.关闭这条指令会提升性能,
+; 但是会对已存在的应用造成破坏.
+opcache.use_cwd=0
+
+; 开启文件时间戳验证 
+opcache.validate_timestamps=1
+
+; 2s检查一次文件更新 注意:0是一直检查不是关闭
+; 推荐 60
+opcache.revalidate_freq=2
+
+; 允许或禁止在 include_path 中进行文件搜索的优化
+;opcache.revalidate_path=0
+
+; 是否保存文件/函数的注释   如果apigen、Doctrine、 ZF2、 PHPUnit需要文件注释
+; 推荐 0
+opcache.save_comments=1
+
+; 是否加载文件/函数的注释
+;opcache.load_comments=1
+
+; 打开快速关闭, 打开这个在PHP Request Shutdown的时候会收内存的速度会提高
+; 推荐 1
+opcache.fast_shutdown=1
+
+;允许覆盖文件存在（file_exists等）的优化特性。
+;opcache.enable_file_override=0
+
+; 定义启动多少个优化过程
+;opcache.optimization_level=0xffffffff
+
+; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.
+;opcache.inherited_hack=1
+
+; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.
+;opcache.dups_fix=0
+
+; 设置不缓存的黑名单
+; 不缓存指定目录下cache_开头的PHP文件. /png/www/example.com/public_html/cache/cache_ 
+;opcache.blacklist_filename=
+
+; 通过文件大小屏除大文件的缓存.默认情况下所有的文件都会被缓存.
+;opcache.max_file_size=0
+
+; 每 N 次请求检查一次缓存校验.默认值0表示检查被禁用了.
+; 由于计算校验值有损性能,这个指令应当紧紧在开发调试的时候开启.
+;opcache.consistency_checks=0
+
+; 从缓存不被访问后,等待多久后(单位为秒)调度重启
+;opcache.force_restart_timeout=180
+
+; 错误日志文件名.留空表示使用标准错误输出(stderr).
+;opcache.error_log=
+
+; 将错误信息写入到服务器(Apache等)日志
+;opcache.log_verbosity_level=1
+
+; 内存共享的首选后台.留空则是让系统选择.
+;opcache.preferred_memory_model=
+
+; 防止共享内存在脚本执行期间被意外写入, 仅用于内部调试.
+;opcache.protect_memory=0
+高级运维PHPopcache性能加速</code></pre>
             
         </article>
     </div>
@@ -2669,7 +2761,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1591714365748"></script>
+<script src="/js/app.js?v=1591714778724"></script>
   
 
 
