@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365742">-->
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>37</div>
+        <div><span>标签</span>75</div>
+        <div><span>分类</span>5</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hexo/">hexo</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux/">linux</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux教程/">linux教程</a>
+          <span class="category-list-count">27</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/vps评测/">vps评测</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/windows教程/">windows教程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/BT%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">BT下载</a> <a href="/tags/LEDE%E6%9B%B4%E6%94%B9%E6%BA%90/" style="font-size: 10px;">LEDE更改源</a> <a href="/tags/LEDE%E6%9B%B4%E6%96%B0frp/" style="font-size: 10px;">LEDE更新frp</a> <a href="/tags/LEDE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">LEDE系统安装</a> <a href="/tags/LEDE%E7%BC%96%E8%AF%91/" style="font-size: 10px;">LEDE编译</a> <a href="/tags/MOON%E6%A0%B9%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">MOON根目录</a> <a href="/tags/N2N%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" style="font-size: 10px;">N2N搭建教程</a> <a href="/tags/NPS%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">NPS搭建</a> <a href="/tags/P2P%E7%BB%84%E7%BD%91/" style="font-size: 10px;">P2P组网</a> <a href="/tags/VPN%E7%BB%84%E7%BD%91/" style="font-size: 10px;">VPN组网</a> <a href="/tags/ZeroTier/" style="font-size: 10px;">ZeroTier</a> <a href="/tags/centos%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0git/" style="font-size: 10px;">centos安装最新git</a> <a href="/tags/docker%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">docker离线下载</a> <a href="/tags/git%E5%AE%89%E8%A3%85/" style="font-size: 10px;">git安装</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo%E9%83%A8%E7%BD%B2%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">hexo部署打赏插件</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/https%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" style="font-size: 10px;">https一键安装</a> <a href="/tags/https%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">https修改</a> <a href="/tags/https%E5%BC%80%E5%90%AFTls1-3/" style="font-size: 10px;">https开启Tls1.3</a> <a href="/tags/https%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">https部署</a> <a href="/tags/instant-page/" style="font-size: 10px;">instant.page</a> <a href="/tags/jiacrontab%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">jiacrontab搭建</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lede%E7%BC%96%E8%AF%91/" style="font-size: 10px;">lede编译</a> <a href="/tags/linux%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" style="font-size: 10px;">linux免密登录</a> <a href="/tags/linux%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">linux命令</a> <a href="/tags/linux%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88git/" style="font-size: 10px;">linux安装最新版git</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 15px;">linux开机启动</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">linux开机启动程序</a> <a href="/tags/linux%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" style="font-size: 10px;">linux文件复制</a> <a href="/tags/linux%E6%9B%B4%E6%94%B9%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/" style="font-size: 10px;">linux更改简体中文</a> <a href="/tags/linux%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux系统</a> <a href="/tags/linux%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E8%BF%90/" style="font-size: 10px;">linux脚本自动运</a> <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/" style="font-size: 10px;">linux设置密钥登陆</a> <a href="/tags/nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">nginx无法启动</a> <a href="/tags/openwrt%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt二次编译</a> <a href="/tags/openwrt%E5%9B%BA%E4%BB%B6%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt固件编译</a> <a href="/tags/openwrt%E6%9B%B4%E6%96%B0frpc/" style="font-size: 10px;">openwrt更新frpc</a> <a href="/tags/php%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">php加速</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh%E5%8A%A0%E5%9B%BA/" style="font-size: 15px;">ssh加固</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口一键修改</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口修改</a> <a href="/tags/ssh%E9%98%B2%E7%A0%B4%E8%A7%A3/" style="font-size: 10px;">ssh防破解</a> <a href="/tags/ssl%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">ssl部署</a> <a href="/tags/tcp%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">tcp加速</a> <a href="/tags/vim%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">vim技巧</a> <a href="/tags/web%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">web邮箱</a> <a href="/tags/wget%E6%95%99%E7%A8%8B/" style="font-size: 10px;">wget教程</a> <a href="/tags/%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8Fvps/" style="font-size: 10px;">不限流量vps</a> <a href="/tags/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">临时邮箱</a> <a href="/tags/%E4%BE%BF%E5%AE%9C%E7%9A%84vps/" style="font-size: 10px;">便宜的vps</a> <a href="/tags/%E5%86%85%E7%BD%91%E6%98%A0%E5%B0%84/" style="font-size: 10px;">内网映射</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 20px;">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">分类导航</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" style="font-size: 10px;">定时任务</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">定时关机</a> <a href="/tags/%E5%AE%9D%E5%A1%94nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">宝塔nginx无法启动</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99/" style="font-size: 10px;">导航网站</a> <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%BB%84%E5%BB%BA/" style="font-size: 10px;">局域网组建</a> <a href="/tags/%E5%BB%BA%E7%AB%99vps/" style="font-size: 10px;">建站vps</a> <a href="/tags/%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">打赏插件</a> <a href="/tags/%E6%97%A0%E9%99%90%E9%87%8Fvps/" style="font-size: 10px;">无限量vps</a> <a href="/tags/%E6%97%A5%E6%9C%ACvps/" style="font-size: 10px;">日本vps</a> <a href="/tags/%E6%B4%9B%E6%9D%89%E7%9F%B6vps/" style="font-size: 10px;">洛杉矶vps</a> <a href="/tags/%E7%94%B5%E4%BF%A1%E8%81%94%E9%80%9A%E7%9B%B4%E8%BF%9E/" style="font-size: 10px;">电信联通直连</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">网站加速</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9FJS%E8%84%9A%E6%9C%AC/" style="font-size: 10px;">网站加速JS脚本</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">网站导航</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">自动关机</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/" style="font-size: 10px;">谷歌云开启root密码登陆</a> <a href="/tags/%E8%B7%A8%E7%BD%91%E5%85%B1%E4%BA%AB/" style="font-size: 10px;">跨网共享</a> <a href="/tags/%E9%9F%A9%E5%9B%BDvps/" style="font-size: 10px;">韩国vps</a> <a href="/tags/%E9%AB%98%E9%80%9Fvps/" style="font-size: 10px;">高速vps</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2019/10/24/Holer-%E5%B8%A6Web%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E7%9A%84%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Holer 带Web管理界面的内网穿透工具" class="lazyload">
+                    <h1>Holer 带Web管理界面的内网穿透工具</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年10月24日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.9k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+        </div>
+
+        <article>
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是在Rat大佬博客发现的一个软件挺不错的，就在这里转载过来了，它可以将局域网服务器代理到公网的内网穿透工具，支持转发基于TCP等协议的报文，之前服务端并未开源，由作者免费提供服务，现在服务端代码已经开源了，而且带Web管理面板，我们就可以拿来自建一个内网穿透服务器，使用效果还不错。</p>
+<hr>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img data-sizes="auto" data-src="/images/Holer.png" alt="" class="lazyload"></p>
+<h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><p><strong>Github地址：</strong><a href="https://github.com/Wisdom-Projects/holer" target="_blank" rel="noopener">https://github.com/Wisdom-Projects/holer</a></p>
+<p><strong>支持系统：</strong><code>Windows</code>、<code>Linux</code>系统，这里只说<code>Linux</code>搭建，建议直接<code>Debain</code>。</p>
+<p><strong>说明：</strong>由于该面板使用的<code>JAVA</code>，所以还是比较消耗内存的，如果内存太小，建议先加一点虚拟内存，可以使用<code>Swap</code>一键脚本→<a href="https://www.quchao.net/Swap.html" target="_blank" rel="noopener">传送门</a>。</p>
+<p><strong>1、安装JAVA</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install java-1.8.0-openjdk -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt update</span><br><span class="line">apt install default-jdk -y</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、安装Mysql</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">rpm -ivh http:&#x2F;&#x2F;repo.mysql.com&#x2F;mysql-community-release-el6-5.noarch.rpm</span><br><span class="line">yum install mysql-community-server -y</span><br><span class="line">service mysqld start</span><br><span class="line">chkconfig mysqld on</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">rpm -ivh http:&#x2F;&#x2F;repo.mysql.com&#x2F;mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">yum install mysql-community-server -y</span><br><span class="line">systemctl start mysqld</span><br><span class="line">systemctl enable mysqld</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt install mysql-server -y</span><br></pre></td></tr></table></figure>
+
+<p>如果<code>Debian</code>或<code>Ubuntu</code>在安装期间有弹出窗口要你输入密码就设置一个，没有的话密码就是空格。</p>
+<p>修改数据库密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统，第一行登录数据库的时候直接Enter跳过，第二行moerats为要修改的密码，自行修改</span><br><span class="line">mysql -u root -p</span><br><span class="line">mysql&gt; set password&#x3D;password(&quot;moerats&quot;);</span><br><span class="line">mysql&gt; exit;</span><br><span class="line"></span><br><span class="line">#Debian、Ubuntu系统，第一行登录数据库的时候直接Enter跳过，第二行moerats为要修改的密码，自行修改</span><br><span class="line">mysql -u root -p</span><br><span class="line">mysql&gt; UPDATE mysql.user SET authentication_string&#x3D;PASSWORD(&#39;moerats&#39;), PLUGIN&#x3D;&#39;mysql_native_password&#39; WHERE USER&#x3D;&#39;root&#39;;</span><br><span class="line">mysql&gt; exit;</span><br></pre></td></tr></table></figure>
+
+<p>最后修改过密码的还需要重启数据库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">service mysqld restart</span><br><span class="line"></span><br><span class="line">#Debian和Ubuntu系统</span><br><span class="line">systemctl restart mysql</span><br></pre></td></tr></table></figure>
+
+<p>此时<code>Mysql</code>算是安装完成了。</p>
+<p><strong>3、安装源码</strong><br>安装<code>unzip</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install unzip -y</span><br><span class="line"></span><br><span class="line">#Debian和Ubuntu系统</span><br><span class="line">apt install unzip -y</span><br></pre></td></tr></table></figure>
+
+<p>下载源码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;wisdom-projects&#x2F;holer&#x2F;releases&#x2F;download&#x2F;v1.1&#x2F;holer-server-1.1.zip</span><br><span class="line">unzip holer-server-1.1.zip &amp;&amp; rm -rf holer-server-1.1.zip</span><br><span class="line">#移动到opt目录，然后进入到源码文件夹</span><br><span class="line">mv holer-server &#x2F;opt&#x2F;holer &amp;&amp; cd $_</span><br><span class="line">#修改配置文件</span><br><span class="line">nano resources&#x2F;application.yaml</span><br></pre></td></tr></table></figure>
+
+<p>关键配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#运行端口</span><br><span class="line">server:</span><br><span class="line">  port: 600</span><br><span class="line"></span><br><span class="line">#Mysql数据库用户名和密码</span><br><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    username: root</span><br><span class="line">    password: moerats</span><br><span class="line"></span><br><span class="line">#域名和nginx目录，可以直接全部删掉，用ip不需要，域名的话，有点不好用</span><br><span class="line">holer</span><br><span class="line">  domain:</span><br><span class="line">    name: your-domain.com</span><br><span class="line">  nginx:</span><br><span class="line">    #home: &#x2F;usr&#x2F;local&#x2F;nginx</span><br><span class="line">    home: C:&#x2F;nginx-1.14.2</span><br></pre></td></tr></table></figure>
+
+<p>修改后使用<code>Ctrl+x</code>、<code>y</code>保存退出，或者可以直接使用<code>FTP</code>等工具直接编辑。</p>
+<p>再修改管理员用户名和密码，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano resources&#x2F;conf&#x2F;holer-data.sql</span><br></pre></td></tr></table></figure>
+
+<p><code>admin</code>和<code>admin123</code>为管理员用户名和密码，自行修改，修改完成后同样的使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>最后启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x holer</span><br><span class="line">.&#x2F;holer start</span><br></pre></td></tr></table></figure>
+
+<p>如果想开机自启的话，这里可以建一个简单的<code>systemd</code>配置文件，且不适用<code>CentOS 6</code>，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#将以下代码一起复制到SSH运行</span><br><span class="line">cat &gt; &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;holer.service &lt;&lt;EOF</span><br><span class="line">[Unit]</span><br><span class="line">Description&#x3D;holer</span><br><span class="line">After&#x3D;network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;$(command -v java) -server -Xms256m -Xmx512m -jar holer-server-1.1.jar</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;opt&#x2F;holer</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>然后启动并设置开机自启：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start holer</span><br><span class="line">systemctl enable holer</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以使用<code>ip:600</code>访问管理界面了，具体端口以你修改的为准。</p>
+<p>然后CentOS系统建议关闭防火墙使用，或者打开部分端口也行，关闭命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">service iptables stop</span><br><span class="line">chkconfig iptables off</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+
+<p>像阿里云等服务器，还需要去安全组那里开发下端口端。</p>
+<h2 id="客户端使用"><a href="#客户端使用" class="headerlink" title="客户端使用"></a>客户端使用</h2><p>首先我们需要去用户列表新建一个用户，然后再去端口映射选择该用户，新建一个穿透规则，这里根据需求自行选择，然后设置好时长。</p>
+<p>然后就可以直接在客户端使用了，一般客户端有<code>JAVA</code>和<code>GO</code>版，使用<code>JAVA</code>的话，需要先安装<code>JAVA</code>环境，所以这里直接选择<code>GO</code>版本，简单粗暴。</p>
+<p>首先根据直接的系统和架构下载指定的<code>GO</code>版客户端，每个压缩包里都包含<code>32</code>位和<code>64</code>位，下载地址→<a href="https://github.com/wisdom-projects/holer/tree/master/Binary/Go" target="_blank" rel="noopener">传送门</a>。</p>
+<p>这里拿我们常见的<code>Linux</code>服务器架构来说，直接使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#下载并解压</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;wisdom-projects&#x2F;holer&#x2F;raw&#x2F;master&#x2F;Binary&#x2F;Go&#x2F;holer-linux-x86.tar.gz</span><br><span class="line">tar -zxvf holer-linux-x86.tar.gz</span><br><span class="line"></span><br><span class="line">#32位启动，分别为访问秘钥和服务端ip地址</span><br><span class="line">nohup .&#x2F;holer-linux-386 -k 7aa8d973bc8e40 -s ip地址 &amp;</span><br><span class="line">#64位启动</span><br><span class="line">nohup .&#x2F;holer-linux-amd64 -k 7aa8d973bc8e40 -s ip地址 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>如果是<code>Windows</code>系统，先把压缩包下载并解压到<code>D</code>盘根目录，然后按住<code>Win+R</code>，输入<code>cmd</code>进入命令窗口，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#进入到D盘根目录</span><br><span class="line">cd D:\</span><br><span class="line"></span><br><span class="line">#32位启动，分别为访问秘钥和服务端ip地址</span><br><span class="line">.\holer-windows-386.exe -k 7aa8d973bc8e40 -s ip地址</span><br><span class="line">#64位启动</span><br><span class="line">.\holer-windows-amd64.exe -k 7aa8d973bc8e40 -s ip地址</span><br></pre></td></tr></table></figure>
+
+<p>到这里基本上就运行成功了。</p>
+<h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>如果你想使用域名来配置服务器面板的话，就需要安装<code>Web</code>服务器了，这里就直接使用<code>Nginx</code>。</p>
+<p><strong>1、安装Nginx</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">rpm -ivh http:&#x2F;&#x2F;nginx.org&#x2F;packages&#x2F;centos&#x2F;6&#x2F;noarch&#x2F;RPMS&#x2F;nginx-release-centos-6-0.el6.ngx.noarch.rpm</span><br><span class="line">yum install nginx -y</span><br><span class="line">service nginx start</span><br><span class="line">chkconfig nginx on</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">rpm -ivh http:&#x2F;&#x2F;nginx.org&#x2F;packages&#x2F;centos&#x2F;7&#x2F;noarch&#x2F;RPMS&#x2F;nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br><span class="line">yum install nginx -y</span><br><span class="line">systemctl start nginx</span><br><span class="line">systemctl enable nginx</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt install nginx -y</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、申请SSL证书</strong></p>
+<p>这里就使用简单粗暴的<code>webroot</code>方式签发<code>Let&#39;s Encrypt</code>证书，首先解析好域名并生效。</p>
+<p>安装<code>letsencrypt</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install letsencrypt -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt install letsencrypt -y</span><br></pre></td></tr></table></figure>
+
+<p>申请<code>SSL</code>证书：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">letsencrypt certonly --webroot -w &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html --domain www.quchao.net</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">letsencrypt certonly --webroot -w &#x2F;var&#x2F;www&#x2F;html --domain www.quchao.net</span><br></pre></td></tr></table></figure>
+
+<p>请替换成自己域名后运行，期间会要你输入邮箱和<code>A</code>选项啥的，申请后证书文件在<code>/etc/letsencrypt/live</code>。</p>
+<p><strong>3、新建conf文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#将下面域名修改成自己的，然后证书路径也修改下，再一起复制进SSH客户端运行</span><br><span class="line">cat &gt; &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;holer.conf &lt;&lt; &#39;EOF&#39;</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name www.quchao.net;    </span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;www.quchao.net&#x2F;fullchain.pem;</span><br><span class="line">    ssl_certificate_key &#x2F;etc&#x2F;letsencrypt&#x2F;live&#x2F;www.quchao.net&#x2F;privkey.pem;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    ssl_ciphers &quot;EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5&quot;;</span><br><span class="line">    ssl_session_cache builtin:1000 shared:SSL:10m;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    location &#x2F;&#123;</span><br><span class="line">        proxy_set_header   Host             $host;</span><br><span class="line">        proxy_set_header   X-Real-IP        $remote_addr;</span><br><span class="line">        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">        client_max_body_size       1024m;</span><br><span class="line">        client_body_buffer_size    128k;</span><br><span class="line"></span><br><span class="line">        proxy_connect_timeout      90;</span><br><span class="line">        proxy_send_timeout         90;</span><br><span class="line">        proxy_read_timeout         90;</span><br><span class="line">        proxy_buffer_size          4k;</span><br><span class="line">        proxy_buffers              4 32k;</span><br><span class="line">        proxy_busy_buffers_size    64k;</span><br><span class="line">        proxy_temp_file_write_size 64k;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:600&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  &#x2F;50x.html;</span><br><span class="line">    location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server</span><br><span class="line">    &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.quchao.net;</span><br><span class="line">        rewrite ^(.*) https:&#x2F;&#x2F;www.quchao.net$1 permanent;</span><br><span class="line">    &#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>重启<code>Nginx</code>生效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+
+<p>最后连接的时候，就可以填域名了。</p>
+<p>最后要是觉得搭建服务器麻烦，或者不想搭建的，可以使用作者提供的免费服务，更多使用方法移至→<a href="http://blog.wdom.net/" target="_blank" rel="noopener">传送门</a>。</p>
+<hr>
+<blockquote>
+<p>本文为选摘文章，版权归 <a href="https://www.moerats.com/" target="_blank" rel="noopener">Rat’s</a> 所有，转载请注明出处！</p>
+</blockquote>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/29/CentOS-7-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%9A%84-Git/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="CentOS 7 安装最新的 Git" class="lazyload">
+                    <h1>CentOS 7 安装最新的 Git</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月29日</a>
+            <a><i class="nexmoefont icon-areachart"></i>386 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <blockquote>
+<p>yum 源仓库里的 Git 版本更新不及时，最新版本的 Git 是 1.8.3.1，但是官方最新版本已经到了 2.23.0。想要安装最新版本的的 Git，只能下载源码进行安装。</p>
+</blockquote>
+<h1 id="1-查看-yum-源仓库的-Git-信息："><a href="#1-查看-yum-源仓库的-Git-信息：" class="headerlink" title="1. 查看 yum 源仓库的 Git 信息："></a>1. 查看 yum 源仓库的 Git 信息：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum info git</span><br></pre></td></tr></table></figure>
+
+<p><img data-sizes="auto" data-src="/images/20160730222608.png" alt="" class="lazyload"></p>
+<p>可以看出，截至目前，yum 源仓库中最新的 Git 版本才 1.8.3.1，而查看最<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">新的 Git 发布版本</a>，已经 2.23.0 了。</p>
+<h1 id="2-依赖库安装"><a href="#2-依赖库安装" class="headerlink" title="2. 依赖库安装"></a>2. 依赖库安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line"># yum install  gcc perl-ExtUtils-MakeMaker</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-卸载低版本的-Git"><a href="#3-卸载低版本的-Git" class="headerlink" title="3. 卸载低版本的 Git"></a>3. 卸载低版本的 Git</h1><p>通过命令：<code>git –-version</code> 查看系统带的版本，Git 版本是： <code>1.8.3.1</code>，所以先要卸载低版本的 Git，命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum remove git</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-下载新版的-Git-源码包"><a href="#4-下载新版的-Git-源码包" class="headerlink" title="4. 下载新版的 Git 源码包"></a>4. 下载新版的 Git 源码包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># wget https:&#x2F;&#x2F;github.com&#x2F;git&#x2F;git&#x2F;archive&#x2F;v2.23.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>也可以离线下载，然后传到 CentOS 系统中指定的目录下。</p>
+<h1 id="5-解压到指定目录"><a href="#5-解压到指定目录" class="headerlink" title="5. 解压到指定目录"></a>5. 解压到指定目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># tar -xzvf v2.23.0.tar.gz -C ~&#x2F;app&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-安装-Git"><a href="#6-安装-Git" class="headerlink" title="6. 安装 Git"></a>6. 安装 Git</h1><p>分别执行以下命令进行编译安装，编译过程可能比较漫长，请耐心等待完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cd git-2.23.0</span><br><span class="line"># make prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;git all</span><br><span class="line"># make prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;git install</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-添加到环境变量"><a href="#7-添加到环境变量" class="headerlink" title="7. 添加到环境变量"></a>7. 添加到环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;git&#x2F;bin&quot; &gt;&gt; &#x2F;etc&#x2F;bashrc</span><br><span class="line"># source &#x2F;etc&#x2F;bashrc # 实时生效</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-查看版本号"><a href="#8-查看版本号" class="headerlink" title="8. 查看版本号"></a>8. 查看版本号</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># git --versiongit version 2.23.0</span><br></pre></td></tr></table></figure>
+
+<p>至此，CentOS 就安装上了最新版本的 Git。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/22/LinuxVPS-%E8%87%AA%E5%BB%BAZeroTier-%E7%9A%84MOON%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="LinuxVPS 自建ZeroTier 的MOON根目录服务器" class="lazyload">
+                    <h1>LinuxVPS 自建ZeroTier 的MOON根目录服务器</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月22日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+        </div>
+
+        <article>
+            
+                <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><strong>zerotier</strong> 可以作为一款 p2p 的 vlan <strong>内网穿透</strong>工具，功能强大且易用，同类产品还有 <strong>frp</strong>和 <strong>LanProxy</strong>等。最近有个朋友有创建 p2p vlan 的需求，在简单调研之后决定使用 zerotier 作为基础工具。</p>
+<p>官方给出的使用方案比较简单。首先需要一个中心的节点用于两个内网节点的握手，该中心节点需要有一个公网 IP。<a href="https://my.zerotier.com/login" target="_blank" rel="noopener">zerotier 官网</a>提供了中心节点相关服务，免费账户有一定的使用限制，但是由于其节点位于国外，延迟比较高，且可能还需要科学上网才能使用。除此之外，zerotier 也支持自己搭建中心节点服务器，也叫做 MOON 服务器。下面是它的搭建步骤。</p>
+<h2 id="MOON-服务器配置"><a href="#MOON-服务器配置" class="headerlink" title="MOON 服务器配置"></a>MOON 服务器配置</h2><p>操作系统版本是 <code>Ubuntu 18.04</code>, <code>Zerotier One</code> 版本是 <code>v1.2.10</code>, 公网 (也就是 MOON 服务器) 地址是 <code>1.1.1.1</code>。</p>
+<ol>
+<li>通过<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">官网</a>文档根据不同操作系统选择不同的安装方式，这里直接通过命令行安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s &#39;https:&#x2F;&#x2F;pgp.mit.edu&#x2F;pks&#x2F;lookup?op&#x3D;get&amp;search&#x3D;0x1657198823E52A61&#39; | gpg --import &amp;&amp; \ if z&#x3D;(curl -s &#39;https:&#x2F;&#x2F;install.zerotier.com&#x2F;&#39; | gpg); then echo &quot;z&quot; | sudo bash; fi</span><br></pre></td></tr></table></figure>
+
+<p>如果上述命令运行失败，那么使用下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s https:&#x2F;&#x2F;install.zerotier.com&#x2F; | sudo bash</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将 MOON 服务器加入 Zerotier 局域网</li>
+</ol>
+<p>虽然搭建了 MOON 服务器，我们还是需要借助 <a href="https://www.moewah.com/go/aHR0cHM6Ly9teS56ZXJvdGllci5jb20vbmV0d29yaw==" target="_blank" rel="noopener">zerotier network</a>，也就是需要先通过 zerotier 官网创建一个 network，并且内网节点需要使用 <code>join</code> 命令加入该网络才能实现内网节点的互通，换句话说 MOON 节点只起到了加速的作用，虚拟网络的分配和管理还是需要 zerotier 服务端参与。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zerotier-cli join &lt;network id&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>生成配置文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 &#x2F;var&#x2F;lib&#x2F;zerotier-one # 这里为了有写入文件的权限</span><br><span class="line">cd &#x2F;var&#x2F;lib&#x2F;zerotier-one</span><br><span class="line">sudo zerotier-idtool initmoon identity.public &gt; moon.json</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改配置文件 <code>moon.json</code>，主要是添加公网 IP，修改内容如下，<code>9993</code> 是默认端口</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;stableEndpoints&quot;: [ &quot;1.1.1.1&#x2F;9993&quot; ] #修改为VPS公网IP&#x2F;9993</span><br></pre></td></tr></table></figure>
+
+<p>还需要注意 <code>moon.json</code> 中的 id 值，它是 MOON 服务器的 ID，是一个 10 位的字符串，我的为 <code>efe9e9a259</code>，也可以用 <code>sudo zerotier-cli info</code> 查看，后面会用到。</p>
+<ol start="4">
+<li>生成 moon 文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zerotier-idtool genmoon moon.json</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>在 <code>/var/lib/zerotier-one</code> 目录下新建 <code>moons.d</code> 文件夹中，并将生成的 moon 文件放到该文件夹下，我的 moon 文件名为 <code>000000efe9e9a259.moon</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv 000000efe9e9a259.moon moons.d&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>重启 <code>zerotier-one</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo killall -9 zerotier-one # 这里我们杀死相关进程后会自动重启该服务</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="内网节点配置"><a href="#内网节点配置" class="headerlink" title="内网节点配置"></a>内网节点配置</h2><ol>
+<li>在内网节点安装 zerotier，安装方法和上面类似，根据<a href="https://www.moewah.com/go/aHR0cHM6Ly93d3cuemVyb3RpZXIuY29tL2Rvd25sb2FkLnNodG1s" target="_blank" rel="noopener">文档</a>选择不同操作系统的方法进行安装即可。请参考文章<a href="https://www.moewah.com/archives/1474.html" target="_blank" rel="noopener">《ZeroTier 无公网 IP 实现内网穿透》</a></li>
+<li>将 MOON 节点添加到常规节点</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zerotier-cli orbit efe9e9a259 efe9e9a259 # 注意这里是两次根节点的ID</span><br></pre></td></tr></table></figure>
+
+<p>如果没返回 <code>200 orbit OK</code> 的话，需要手动拷贝生成的 moon 文件 <code>000000efe9e9a259.moon</code> 文件到常规节点的机器上，位置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows: C:\ProgramData\ZeroTier\One</span><br><span class="line">Macintosh: &#x2F;Library&#x2F;Application Support&#x2F;ZeroTier&#x2F;One (在 Terminal 中应为 &#x2F;Library&#x2F;Application\ Support&#x2F;ZeroTier&#x2F;One)</span><br><span class="line">Linux: &#x2F;var&#x2F;lib&#x2F;zerotier-one</span><br><span class="line">FreeBSD&#x2F;OpenBSD: &#x2F;var&#x2F;db&#x2F;zerotier-one</span><br></pre></td></tr></table></figure>
+
+<p>然后重启 zerotier-one</p>
+<ol start="3">
+<li>查看节点列表，出现根服务器的 MOON 节点表示成功</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> ~ sudo zerotier-cli listpeers</span><br><span class="line">200 listpeers     </span><br><span class="line">200 listpeers 3dfa0fd16b - -1 - LEAF</span><br><span class="line">200 listpeers 8841408a2e 45.32.248.87&#x2F;9993;11749;11453 252 1.1.5 PLANET</span><br><span class="line">200 listpeers 9d219039f3 128.199.197.217&#x2F;9993;11749;11381 390 1.1.5 PLANET</span><br><span class="line">200 listpeers abfd31bd47 178.128.240.145&#x2F;35368;6238;14319 509 1.2.5 LEAF</span><br><span class="line">200 listpeers efe9e9a259 1.1.1.1&#x2F;9993;6238;1184 36 1.2.12 MOON</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>我们再在内网节点上运行 <code>ifconfig</code>(windows 是 <code>ipconfig</code>)，可以看到 zerotier vlan 分配给其的内网 IP</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zt0: flags&#x3D;8843 metric 5000 mtu 2800</span><br><span class="line">    ether 1a:42:9a:39:7d:3f</span><br><span class="line">    inet 10.147.18.127 netmask 0xffffff00 broadcast 10.147.18.255</span><br><span class="line">    inet6 fe80::1842:9aff:fe39:7d3f%zt0 prefixlen 64 scopeid 0xc</span><br><span class="line">    inet6 fcec:2f1a:a769:487e:c00e::1 prefixlen 40</span><br><span class="line">    nd6 options&#x3D;201</span><br><span class="line">    media: autoselect</span><br><span class="line">    status: active</span><br><span class="line">    open (pid 84214)</span><br></pre></td></tr></table></figure>
+
+<p>这里的 <code>10.147.18.127</code> 就是其虚拟局域网的 IP，在另外一个局域网中通过上述过程配置另外一个节点，它的虚拟局域网 IP 为 <code>10.147.18.30</code>，两个节点通过 <code>ping</code> 可以互相通</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/22/Openwrt-lede%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%9B%B4%E6%96%B0frp%E5%88%B0%E6%9C%80%E6%96%B00-28-2/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Openwrt lede软路由更新frp到最新0.28.2" class="lazyload">
+                    <h1>Openwrt lede软路由更新frp到最新0.28.2</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月22日</a>
+            <a><i class="nexmoefont icon-areachart"></i>410 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>frp分为两部分，客户端（frpc）和服务端（frps），所以使用过程中要注意不要混淆了文件。</p>
+<p>网络上默认有很多教程，教我们使用，但是对于Openwrt lede软路由默认只支持到0.20，没有提到怎么升级，也没有及时更新，所以研究了一下，总结了以下教程。</p>
+<p>新版解决了以下几个问题：</p>
+<ol>
+<li>同个域名，不同协议无法使用，比如，同一个域名，Http和https同时存在就无法使用了；</li>
+<li>空域名与www域名不能同时存在，会冲突无法访问；</li>
+<li>报错页面无法修改，默认的404页面提示是直接写在编译文件里面，无法直接修改。</li>
+</ol>
+<p>一、Frpc客户端的安装</p>
+<p>1、首先在Openwrt lede软路由酷软里面找到frpc进行安装，安装成功后先不要开启服务，如果开启了先停止后保存。</p>
+<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC1.png" alt="lede软路由更新frp" class="lazyload"></p>
+<p>2、访问 <a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a> （移动、联通、长城宽带或者乱七八糟的宽带可能无法访问，有个比较好的办法，就是你用手机4G直接下载到手机，转发到你电脑）下载最新版本</p>
+<p>我是的系统是amd64的下载所以下载   <a href="https://github.com/fatedier/frp/releases/download/v0.28.2/frp_0.28.2_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.28.2_linux_amd64.tar.gz</a></p>
+<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC2.png" alt="lede软路由更新frp" class="lazyload"></p>
+<h4 id="3-ssh登陆koolshare-账号：root-密码：koolshare"><a href="#3-ssh登陆koolshare-账号：root-密码：koolshare" class="headerlink" title="3.ssh登陆koolshare   账号：root  密码：koolshare"></a>3.ssh登陆koolshare   账号：root  密码：koolshare</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp&#x2F;releases&#x2F;download&#x2F;v0.28.2&#x2F;frp_0.28.2_linux_amd64.tar.gz</span><br><span class="line">tar -xzvf  frp_0.28.2_linux_amd64.tar.gz</span><br><span class="line">rm -rf  &#x2F;koolshare&#x2F;frpc&#x2F;frpc</span><br><span class="line">cp &#x2F;root&#x2F;frp_0.28.2_linux_amd64  &#x2F;koolshare&#x2F;frpc&#x2F;</span><br><span class="line">chmod +x &#x2F;koolshare&#x2F;frpc&#x2F;frpc</span><br></pre></td></tr></table></figure>
+
+<p>4.登陆酷软中心frpc</p>
+<p>状态已经更新0.28.2，目前是最新版</p>
+<p><img data-sizes="auto" data-src="/images/LEDE%E6%9B%B4%E6%96%B0frpc%E7%89%88%E6%9C%AC3.png" alt="lede软路由更新frp" class="lazyload"></p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/21/%E5%AE%9D%E5%A1%94%E5%85%A8%E7%AB%99%E5%BC%80%E5%90%AFhttps%E5%B9%B6%E8%BE%BE%E5%88%B0A/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="宝塔全站开启https并达到A+" class="lazyload">
+                    <h1>宝塔全站开启https并达到A+</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月21日</a>
+            <a><i class="nexmoefont icon-areachart"></i>529 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>由于现在Google浏览器提示非https的网站为不安全，为了使网站的https达到A+可谓费劲苦心。<br>下边说一下全站开启https的过程吧。</p>
+<h3 id="证书申请"><a href="#证书申请" class="headerlink" title="证书申请"></a>证书申请</h3><p>这个东西看自己哪里申请都行，现在免费的证书大部分用的都是Let’s Encrypt（90天期限）和赛门铁克（本站用的期限1年）可以在<strong>腾讯云</strong>免费申请</p>
+<p><img data-sizes="auto" data-src="/images/tenxunsslzssq.png" alt="全站开启https并达到A+插图" class="lazyload"></p>
+<p>打开后自己申请一个,所有默认即可。申请好后下载证书解压。(后边会用到)</p>
+<h3 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h3><p><img data-sizes="auto" data-src="/images/20180821123403.png" alt="全站开启https并达到A+插图(1)" class="lazyload"></p>
+<p>我使用的是宝塔（如果是新手的话推荐大家用宝塔）<br>打开网站的管理，找到ssl，如上图吧证书打开复制里边的内容添加到相应的框内。（过程不在赘述）勾选右上角的强制<a href="https://www.xiaomcm.com/tag/86" target="_blank" rel="noopener">https</a>，别忘记保存，之后访问你的网站你就会发现实https…</p>
+<h3 id="安全规则配置"><a href="#安全规则配置" class="headerlink" title="安全规则配置"></a>安全规则配置</h3><p><img data-sizes="auto" data-src="/images/20180821141104.png" alt="全站开启https并达到A+插图(2)" class="lazyload"></p>
+<p>打开网站配置修改一下部分</p>
+<h4 id="使用安全协议"><a href="#使用安全协议" class="headerlink" title="使用安全协议"></a>使用安全协议</h4><p>现在大部分都是用的TLSV1.2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用安全加密套件"><a href="#使用安全加密套件" class="headerlink" title="使用安全加密套件"></a>使用安全加密套件</h4><p>这个安全加密套件可以有多种匹配，本站推荐一下加密套间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256::!MD5;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用HSTS"><a href="#使用HSTS" class="headerlink" title="使用HSTS"></a>使用HSTS</h4><p>如山图找到网站的配置文件，在20行左右添加一下语句<br>- 其中max-age是必选参数，是一个以秒为单位的数值，它代表着HSTS Header的过期时间，通常设置为1年，即31536000秒。<br>- includeSubDomains是可选参数，如果包含它，则意味着当前域名及其子域名均开启HSTS保护。<br>- preload是可选参数，只有当你申请将自己的域名加入到浏览器内置列表的时候才需要使用到它。关于浏览器内置列表，下文有详细介绍。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_header Strict-Transport-Security &quot;max-age&#x3D;31536000; includeSubdomains; preload&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="https安全监测"><a href="#https安全监测" class="headerlink" title="https安全监测"></a>https安全监测</h3><p>以上东西配置好后网站就已经配置好https并且安全等级达到A+</p>
+<p>监测地址：<a href="https://www.xiaomcm.com/go?_=f9a83e1324aHR0cHM6Ly9teXNzbC5jb20v" target="_blank" rel="noopener">https://myssl.com/</a></p>
+<blockquote>
+<p>引用：<a href="https://www.xiaomcm.com/204.html" target="_blank" rel="noopener">https://www.xiaomcm.com/204.html</a></p>
+</blockquote>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/12/linux%E5%AE%89%E8%A3%85-jiacrontab-%E7%AE%A1%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="linux安装 jiacrontab 管理定时任务" class="lazyload">
+                    <h1>linux安装 jiacrontab 管理定时任务</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月12日</a>
+            <a><i class="nexmoefont icon-areachart"></i>832 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>自己有几个需要定时运行的爬虫，用不到诸如 pyspider 之类的爬虫框架，但是又觉得 crontab 不太直观。所以找到了 jiacrontab，自带 web 界面，使用 Go 语言开发。</p>
+<p>提供可视化界面的定时任务&amp;常驻任务管理工具。</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>允许设置每个脚本的超时时间，超时操作可选择邮件通知管理者，或强杀脚本进程</li>
+<li>允许设置脚本的最大并发数。</li>
+<li>一台 server 管理多个 client。</li>
+<li>每个脚本都可在 server 端灵活配置，如测试脚本运行，查看日志，强杀进程，停止定时…。</li>
+<li>允许添加脚本依赖（支持跨服务器），依赖脚本提供同步和异步的执行模式。</li>
+<li>友好的 web 界面，方便用户操作。</li>
+<li>脚本出错时可选择邮箱通知多人。</li>
+<li>支持常驻任务，任务失败后可配置自动重启。</li>
+<li>支持管道操作。</li>
+</ol>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>jiacrontab 由 server，client 两部分构成，两者完全独立通过 rpc 通信。<br>server：向用户提供可视化界面，调度多个 client。<br>client：实现定时逻辑，隔离用户脚本，将 client 布置于多台服务器上可由 server 统一管理。 每个脚本的定时格式完全兼容 linux 本身的 crontab 脚本配置格式。</p>
+<h2 id="界面截图"><a href="#界面截图" class="headerlink" title="界面截图"></a>界面截图</h2><p><img data-sizes="auto" data-src="/images/jiacrontab01.jpg" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="/images/jiacrontab02.jpg" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="/images/jiacrontab03.jpg" alt="" class="lazyload"></p>
+<h1 id="下载安装并运行"><a href="#下载安装并运行" class="headerlink" title="下载安装并运行"></a>下载安装并运行</h1><p>Github 地址：<a href="https://github.com/iwannay/jiacrontab" target="_blank" rel="noopener">https://github.com/iwannay/jiacrontab</a></p>
+<p>最新版下载地址：<a href="https://jiacrontab.iwannay.cn/download/" target="_blank" rel="noopener">https://jiacrontab.iwannay.cn/download/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ wget https:&#x2F;&#x2F;jiacrontab.iwannay.cn&#x2F;download&#x2F;jiacrontab-v1.4.5-linux-amd64.zip</span><br><span class="line">$ unzip jiacrontab-v1.4.5-linux-amd64.zip</span><br><span class="line">$ cd jiacrontab&#x2F;server</span><br><span class="line">$ nohup .&#x2F;jiaserver &amp;&gt; jiaserver.log &amp;</span><br><span class="line">$ cd .. &amp;&amp; cd client</span><br><span class="line">$ nohup .&#x2F;jiaclient &amp;&gt; jiaclient.log &amp;</span><br></pre></td></tr></table></figure>
+
+<p>之后，可以在浏览器中输入 <a href="http://YourServerIP:20000" target="_blank" rel="noopener">http://YourServerIP:20000</a> 进行访问。默认用户名为 <code>admin</code>，密码是 <code>123456</code>。</p>
+<h1 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h1><h5 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h5><p>在 <code>/etc/init.d</code> 新建开机启动脚本，命名为 <code>jiacrontab</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ vi &#x2F;etc&#x2F;init.d&#x2F;jiacrontab</span><br><span class="line"></span><br><span class="line"># 输入以下内容，:wq 保存</span><br><span class="line"></span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">### BEGIN INIT INFO</span><br><span class="line"># Provides:          uznEnehC</span><br><span class="line"># Required-Start:    $network $remote_fs $local_fs</span><br><span class="line"># Required-Stop:     $network $remote_fs $local_fs</span><br><span class="line"># Default-Start:     2 3 4 5</span><br><span class="line"># Default-Stop:      0 1 6</span><br><span class="line"># Short-Description: jiacontab</span><br><span class="line"># Description:       jiacontab startup</span><br><span class="line">### END INIT INFO</span><br><span class="line">cd root&#x2F;jiacrontab&#x2F;server # 假设之前下载到 root 文件夹，根据自身情况修改</span><br><span class="line">nohup .&#x2F;jiaserver &amp;&gt; jiaserver.log &amp;</span><br><span class="line">cd .. &amp;&amp; cd client</span><br><span class="line">nohup .&#x2F;jiaclient &amp;&gt; jiaclient.log &amp;</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+
+<p>给予脚本相应的权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 777 &#x2F;etc&#x2F;init.d&#x2F;jiacrontab</span><br></pre></td></tr></table></figure>
+
+<p>设置开机启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ update-rc.d jiacrontab defaults</span><br><span class="line"># update-rc.d -f jiacrontab remove # 删除开机启动，添加 -f 参数强制删除</span><br></pre></td></tr></table></figure>
+
+<h5 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h5><p>新建客户端service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;jiaclient.service</span><br></pre></td></tr></table></figure>
+
+<p>写入如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;jiacrontab</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">Group&#x3D;root</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;jiaclient</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line">KillMode&#x3D;control-group</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">GuessMainPID&#x3D;yes</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;</span><br><span class="line">PIDFile&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;client&#x2F;jiaclient.pid</span><br><span class="line">RestartSec&#x3D;15</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>新建服务端service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;jiaserver.service</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;jiacrontab</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User&#x3D;root</span><br><span class="line">Group&#x3D;root</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;jiaserver</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line">KillMode&#x3D;control-group</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">GuessMainPID&#x3D;yes</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;</span><br><span class="line">PIDFile&#x3D;&#x2F;data&#x2F;app&#x2F;jiacrontab&#x2F;server&#x2F;jiaserver.pid</span><br><span class="line">RestartSec&#x3D;15</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>启动jiacrontab以及设置开机启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start jiaclient</span><br><span class="line">systemctl enable jiaclient</span><br><span class="line"></span><br><span class="line">systemctl start jiaserver</span><br><span class="line">systemctl enable jiaserver</span><br></pre></td></tr></table></figure>
+
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/11/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F-JS-%E8%84%9A%E6%9C%AC-instant-page/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="网站加速 JS 脚本 instant.page" class="lazyload">
+                    <h1>网站加速 JS 脚本 instant.page</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月11日</a>
+            <a><i class="nexmoefont icon-areachart"></i>452 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>有一项技术叫做 <code>prefetch</code>，这个技术，其实说白了，就是一项预加载技术，当用户有意向访问某个页面之前，浏览器首先对此页面进行预加载，当用户真正点击链接后，会从预加载的缓存中直接读取页面内容，缩短页面的加载时间。</p>
+<p>而如何来使用这项技术？其实在 <code>html5</code> 的链接标签中有一个 <strong>rel 属性</strong>，其中有个参数就是 <code>prefetch</code>，不过使用的人不多。</p>
+<p>本文介绍的 <code>instant.page</code>，就是使用这项技术的一个脚本，脚本会根据用户鼠标在链接上的停留时间进行判断，当达到 65 毫秒，用户有一半的机会打开此链接，<code>instant.page</code> 将会对此页面进行预加载。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、使用官方提供的带有 Cloudflare 加速的脚本</p>
+<p><code>instant.page</code> 的使用非常简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;&#x2F;&#x2F;instant.page&#x2F;1.2.2&quot; type&#x3D;&quot;module&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>只需要把这行代码添加到网站的 <code>&lt;/body&gt;</code> 之前即可。</p>
+<p>2、自托管</p>
+<p>建议服务器在国内的朋友使用。只需将下面这段 <code>js</code> 上传到自己服务器，然后在 <code>&lt;/body&gt;</code> 标签之前根据路径添加下面的代码即可。</p>
+<p>然后在 <code>&lt;/body&gt;</code> 标签之前根据路径添加下面的代码即可。</p>
+<p><a href="https://cdn.zrahh.com/js/instantclick-1.2.2.js" target="_blank" rel="noopener">instantclick-1.2.2.js</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;存放路径&#x2F;instantclick-1.2.2.js&quot; type&#x3D;&quot;module&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、左岸提供的 cdn。脚本放在又拍云，不用担心拖慢速度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.zrahh.com&#x2F;js&#x2F;instantclick-1.2.2.js&quot; type&#x3D;&quot;module&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本文转自：<a href="https://www.zrahh.com/archives/399.html/comment-page-3#comments" target="_blank" rel="noopener">左岸博客</a></p>
+</blockquote>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/10/Linux%E6%9B%B4%E6%94%B9%E4%B8%BA%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Linux更改为密钥登录" class="lazyload">
+                    <h1>Linux更改为密钥登录</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月10日</a>
+            <a><i class="nexmoefont icon-areachart"></i>249 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>今天登录服务器发现有将近一万个登陆失败的提示，明摆着被人盯上了。。。于是将服务器的登录方式改为了RSA密钥登录。</p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>首先是要生成密钥，我直接使用的<strong>XShell</strong>生成，另存为文件</p>
+<p><img data-sizes="auto" data-src="/images/3242527655.png" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="/images/3147790571.png" alt="" class="lazyload"></p>
+<h2 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h2><p>进入<code>/home/用户名/.ssh</code>文件夹，如果是<code>root</code>用户就是<code>/root/.ssh</code>。<br>添加<code>authorized_keys</code>文件，已存在就下一步。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>更改文件权限为<code>600</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>将公钥文件复制到目录内，使用<code>&gt;&gt;</code>追加到<code>authorized_keys</code>文件里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>修改sshd配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line"></span><br><span class="line">RSAAuthentication yes #有这一项就开启，没有则不管</span><br><span class="line">PubkeyAuthentication yes #开启密钥认证</span><br><span class="line">PasswordAuthentication no #关闭密码登录</span><br><span class="line">PermitRootLogin yes #是否允许root用户登录，我用的root用户登录，所以开启，视需求而定</span><br></pre></td></tr></table></figure>
+
+<p>重启<code>sshd</code>服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+<p>使用私钥密钥登录，私钥一定要妥善保管。</p>
+<p><img data-sizes="auto" data-src="/images/2533459913.png" alt="" class="lazyload"></p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/08/06/Linux-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Linux 设置开机启动项的几种方法" class="lazyload">
+                    <h1>Linux 设置开机启动项的几种方法</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年08月06日</a>
+            <a><i class="nexmoefont icon-areachart"></i>843 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+
+        <article>
+            
+                <h3 id="Linux-设置开机启动项的几种方法"><a href="#Linux-设置开机启动项的几种方法" class="headerlink" title="Linux 设置开机启动项的几种方法"></a>Linux 设置开机启动项的几种方法</h3><p>Linux 设置开机启动项的几种方法</p>
+<h3 id="方法一：编辑rc-loacl脚本"><a href="#方法一：编辑rc-loacl脚本" class="headerlink" title="方法一：编辑rc.loacl脚本"></a>方法一：编辑rc.loacl脚本</h3><p>Ubuntu开机之后会执行/etc/rc.local文件中的脚本。</p>
+<p>所以我们可以直接在/etc/rc.local中添加启动脚本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;rc.local</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This script will be executed *after* all the other init scripts.</span></span><br><span class="line"><span class="comment"># You can put your own initialization stuff in here if you don't</span></span><br><span class="line"><span class="comment"># want to do the full Sys V style init stuff.</span></span><br><span class="line"></span><br><span class="line">touch /var/lock/subsys/<span class="built_in">local</span></span><br><span class="line">/etc/init.d/mysqld start <span class="comment">#mysql开机启动</span></span><br><span class="line">/etc/init.d/nginx start <span class="comment">#nginx开机启动</span></span><br><span class="line">/etc/init.d/php-fpm start <span class="comment">#php-fpm开机启动</span></span><br><span class="line">/etc/init.d/memcached start <span class="comment">#memcache开机启动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在文件末尾（exit 0之前）加上你开机需要启动的程序或执行的命令即可（执行的程序需要写绝对路径，添加到系统环境变量的除外），如：</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/thttpd/sbin/thttpd  -C /usr/<span class="built_in">local</span>/thttpd/etc/thttpd.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：添加一个开机启动服务。"><a href="#方法二：添加一个开机启动服务。" class="headerlink" title="方法二：添加一个开机启动服务。"></a>方法二：添加一个开机启动服务。</h3><p>将你的启动脚本复制到 /etc/init.d目录下，并设置脚本权限, 假设脚本为test</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv test &#x2F;etc&#x2F;init.d&#x2F;test</span><br><span class="line">sudo chmod 755 &#x2F;etc&#x2F;init.d&#x2F;test</span><br></pre></td></tr></table></figure>
+
+<p>将该脚本放倒启动列表中去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .etc&#x2F;init.d</span><br><span class="line">sudo update-rc.d test defaults 95</span><br></pre></td></tr></table></figure>
+
+<p>注：其中数字95是脚本启动的顺序号，按照自己的需要相应修改即可。在你有多个启动脚本，而它们之间又有先后启动的依赖关系时你就知道这个数字的具体作用了。</p>
+<p>将该脚本从启动列表中剔除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;init.d</span><br><span class="line"></span><br><span class="line">sudo update-rc.d -f test remove</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法三：自己写一个shell脚本"><a href="#方法三：自己写一个shell脚本" class="headerlink" title="方法三：自己写一个shell脚本"></a>方法三：自己写一个shell脚本</h3><p>将写好的脚本（.sh文件）放到目录 /etc/profile.d/ 下，系统启动后就会自动执行该目录下的所有shell脚本。</p>
+<h3 id="方法四：通过chkconfig命令设置"><a href="#方法四：通过chkconfig命令设置" class="headerlink" title="方法四：通过chkconfig命令设置"></a>方法四：通过chkconfig命令设置</h3><p>将启动文件cp到 /etc/init.d/或者/etc/rc.d/init.d/（前者是后者的软连接）下</p>
+<p>vim 启动文件，文件前面务必添加如下三行代码，否侧会提示chkconfig不支持</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh 告诉系统使用的shell,所以的shell脚本都是这样</span></span><br><span class="line"><span class="comment">#chkconfig: 35 20 80 分别代表运行级别，启动优先权，关闭优先权，此行代码必须</span></span><br><span class="line"><span class="comment">#description: http server（自己随便发挥）//两行都注释掉！！！，此行代码必须</span></span><br><span class="line"></span><br><span class="line">chkconfig --add 脚本文件名 操作后就已经添加了</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、注册服务实例"><a href="#五、注册服务实例" class="headerlink" title="五、注册服务实例"></a>五、注册服务实例</h2><ul>
+<li><p>配置文件目录<br> systemctl脚本目录：<code>/usr/lib/systemd/</code><br> 系统服务目录：<code>/usr/lib/systemd/system/</code><br> 用户服务目录：<code>/usr/lib/systemd/user/</code></p>
+</li>
+<li><p>在/usr/lib/systemd/system目录下新建service-name.service文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[UNIT]</span><br><span class="line">#服务描述</span><br><span class="line">Description&#x3D;Media wanager Service</span><br><span class="line">#指定了在systemd在执行完那些target之后再启动该服务</span><br><span class="line">After&#x3D;network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">#定义Service的运行类型，一般是forking(后台运行)   </span><br><span class="line">Type&#x3D;forking</span><br><span class="line"></span><br><span class="line">#定义systemctl start|stop|reload *.service 的执行方法（具体命令需要写绝对路径）</span><br><span class="line">#注：ExecStartPre为启动前执行的命令</span><br><span class="line">ExecStartPre&#x3D;&#x2F;usr&#x2F;bin&#x2F;test &quot;x$&#123;NETWORKMANAGER&#125;&quot; &#x3D; xyes</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;mobileoa&#x2F;apps&#x2F;shMediaManager.sh -start</span><br><span class="line">ExecReload&#x3D;</span><br><span class="line">ExecStop&#x3D;&#x2F;home&#x2F;mobileoa&#x2F;apps&#x2F;shMediaManager.sh -stop</span><br><span class="line"></span><br><span class="line">#创建私有的内存临时空间</span><br><span class="line">PrivateTmp&#x3D;True</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">#多用户</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>重载系统服务：<code>systemctl daemon-reload</code><br> 设置开机启动：<code>systemctl enable *.service</code><br> 启动服务：<code>systemctl start *.service</code><br> 停止服务：<code>systemctl stop *.service</code><br> 重启服务：<code>systemctl reload *.service</code></p>
+</li>
+</ul>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/06/21/Linux-VPS-%E4%BD%BF%E7%94%A8-Supervisor-%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Linux/VPS 使用 Supervisor 管理进程" class="lazyload">
+                    <h1>Linux/VPS 使用 Supervisor 管理进程</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月21日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+        </div>
+
+        <article>
+            
+                <blockquote>
+<p><a href="https://www.moewah.com/go/aHR0cDovL3N1cGVydmlzb3JkLm9yZy8=" target="_blank" rel="noopener">Supervisor</a> 是一款使用 Python 开发的非常优秀的进程管理工具。它可以在类 UNIX 系统上让用户精确地监视与控制多组指定数量的服务进程。当监控的服务进程意外退出时，会尝试自动重启这些服务，以保持服务可用状态。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Supervisor <a href="https://www.moewah.com/go/aHR0cDovL3d3dy5zdXBlcnZpc29yZC5vcmcvaW5zdGFsbGluZy5odG1s" target="_blank" rel="noopener">官方</a> 提供的安装方式较多，这里采用 pip 方式安装。</p>
+<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ yum install python-pip</span><br><span class="line"># 升级pip</span><br><span class="line">$ pip install --upgrade pip</span><br><span class="line">$ pip -V</span><br><span class="line">pip 9.0.1</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装-Supervisor"><a href="#安装-Supervisor" class="headerlink" title="安装 Supervisor"></a>安装 Supervisor</h3><p>通过 pip 安装 Supervisor：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip install supervisor</span><br><span class="line">Successfully installed supervisor-3.3.3</span><br></pre></td></tr></table></figure>
+
+<p>安装 Supervisor 后，会出现 supervisorctl 和 supervisord 两个程序，其中 supervisorctl 为服务监控终端，而 supervisord 才是所有监控服务的大脑。查看 supervisord 是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ supervisord -v</span><br><span class="line">3.3.3</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><p>将 supervisord 配置成开机启动服务，下载官方 <a href="https://www.moewah.com/go/aHR0cHM6Ly9naXRodWIuY29tL1N1cGVydmlzb3IvaW5pdHNjcmlwdHMvYmxvYi9tYXN0ZXIvcmVkaGF0LWluaXQtbWluZ2FsZXZtZQ==" target="_blank" rel="noopener">init 脚本</a>。</p>
+<p>修改关键路径配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PIDFILE&#x3D;&#x2F;var&#x2F;run&#x2F;supervisord.pid</span><br><span class="line">LOCKFILE&#x3D;&#x2F;var&#x2F;lock&#x2F;subsys&#x2F;supervisord</span><br><span class="line">OPTIONS&#x3D;&quot;-c &#x2F;etc&#x2F;supervisord.conf&quot;</span><br></pre></td></tr></table></figure>
+
+<p>移到该文件到 <code>/etc/init.d</code> 目录下，并重命名为 supervisor，添加可执行权限：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 777 &#x2F;etc&#x2F;init.d&#x2F;supervisor</span><br></pre></td></tr></table></figure>
+
+<p>配置成开机启动服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chkconfig --add supervisor</span><br><span class="line">$ chkconfig supervisor on</span><br><span class="line">$ chkconfig --list | grep &quot;supervisor&quot;</span><br><span class="line">supervisor  0:off 1:off 2:on 3:on 4:on 5:on 6:off</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>Supervisord 安装后，需要使用如下命令生成配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir &#x2F;etc&#x2F;supervisor</span><br><span class="line">$ echo_supervisord_conf &gt; &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="主配置部分"><a href="#主配置部分" class="headerlink" title="主配置部分"></a>主配置部分</h3><p><code>supervisord.conf</code> 的主配置部分说明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[unix_http_server]</span><br><span class="line">file&#x3D;&#x2F;tmp&#x2F;supervisor.sock   ; socket文件的路径</span><br><span class="line">;chmod&#x3D;0700                 ; socket文件权限</span><br><span class="line">;chown&#x3D;nobody:nogroup       ; socket文件用户和用户组</span><br><span class="line">;username&#x3D;user              ; 连接时认证的用户名</span><br><span class="line">;password&#x3D;123               ; 连接时认证的密码</span><br><span class="line"></span><br><span class="line">[inet_http_server]          ; 监听TCP</span><br><span class="line">port&#x3D;127.0.0.1:9001         ; 监听ip和端口</span><br><span class="line">username&#x3D;user               ; 连接时认证的用户名</span><br><span class="line">password&#x3D;123                ; 连接时认证的密码</span><br><span class="line"></span><br><span class="line">[supervisord]</span><br><span class="line">logfile&#x3D;&#x2F;var&#x2F;log&#x2F;supervisord.log ; log目录</span><br><span class="line">logfile_maxbytes&#x3D;50MB        ; log文件最大空间</span><br><span class="line">logfile_backups&#x3D;10           ; log文件保持的数量</span><br><span class="line">loglevel&#x3D;info                ; log级别</span><br><span class="line">pidfile&#x3D;&#x2F;var&#x2F;run&#x2F;supervisord.pid</span><br><span class="line">nodaemon&#x3D;false               ; 是否非守护进程态运行</span><br><span class="line">minfds&#x3D;1024                  ; 系统空闲的最少文件描述符</span><br><span class="line">minprocs&#x3D;200                 ; 可用的最小进程描述符</span><br><span class="line">;umask&#x3D;022                   ; 进程创建文件的掩码</span><br><span class="line">;identifier&#x3D;supervisor       ; supervisord标识符</span><br><span class="line">;directory&#x3D;&#x2F;tmp              ; 启动前切换到的目录</span><br><span class="line">;nocleanup&#x3D;true              ; 启动前是否清除子进程的日志文件</span><br><span class="line">;childlogdir&#x3D;&#x2F;tmp            ; AUTO模式，子进程日志路径</span><br><span class="line">;environment&#x3D;KEY&#x3D;&quot;value&quot;     ; 设置环境变量</span><br><span class="line"></span><br><span class="line">[rpcinterface:supervisor]    ; XML_RPC配置</span><br><span class="line">supervisor.rpcinterface_factory &#x3D; supervisor.rpcinterface:make_main_rpcinterface</span><br><span class="line"></span><br><span class="line">[supervisorctl]</span><br><span class="line">serverurl&#x3D;unix:&#x2F;&#x2F;&#x2F;tmp&#x2F;supervisor.sock ; 连接的socket路径</span><br><span class="line">;username&#x3D;chris               ; 用户名</span><br><span class="line">;password&#x3D;123                 ; 密码</span><br><span class="line">prompt&#x3D;mysupervisor           ; 输入用户名和密码时的提示符</span><br><span class="line">;history_file&#x3D;~&#x2F;.sc_history   ; 历史操作记录存储路径</span><br><span class="line"></span><br><span class="line">[include]                     ; 包含文件，将每个进程配置为一个文件并包含</span><br><span class="line">files &#x3D; &#x2F;etc&#x2F;supervisor&#x2F;*.ini ; 多个进程的配置文件</span><br></pre></td></tr></table></figure>
+
+<p>这部分我们不需要做太多的配置修改，如果需要开启 WEB 终端监控，则需要配置并开启 inet_http_server 项。</p>
+<h3 id="进程配置部分"><a href="#进程配置部分" class="headerlink" title="进程配置部分"></a>进程配置部分</h3><p>Supervisor 需管理的进程服务配置，示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[program:work]                      ; 服务名，例如work</span><br><span class="line">command&#x3D;php -r &quot;sleep(10);exit(1);&quot; ; 带有参数的可执行命令</span><br><span class="line">process_name&#x3D;%(process_num)s        ; 进程名，当numprocs&gt;1时，需包含%(process_num)s</span><br><span class="line">numprocs&#x3D;2                          ; 启动进程的数目数</span><br><span class="line">;directory&#x3D;&#x2F;tmp                     ; 运行前切换到该目录</span><br><span class="line">;umask&#x3D;022                          ; 进程掩码</span><br><span class="line">;priority&#x3D;999                       ; 子进程启动关闭优先级</span><br><span class="line">autostart&#x3D;true                      ; 子进程是否被自动启动</span><br><span class="line">startsecs&#x3D;1                         ; 成功启动几秒后则认为成功启动</span><br><span class="line">;startretries&#x3D;3                     ; 子进程启动失败后，最大尝试启动的次数</span><br><span class="line">autorestart&#x3D;unexpected            ; 子进程意外退出后自动重启的选项，false, unexpected, true。unexpected表示不在exitcodes列表时重启</span><br><span class="line">exitcodes&#x3D;0,2                     ; 期待的子程序退出码</span><br><span class="line">;stopsignal&#x3D;QUIT                  ; 进程停止信号，可以为TERM,HUP,INT,QUIT,KILL,USR1,or USR2等信号，默认为TERM</span><br><span class="line">;stopwaitsecs&#x3D;10                  ; 发送停止信号后等待的最大时间</span><br><span class="line">;stopasgroup&#x3D;false                ; 是否向子进程组发送停止信号</span><br><span class="line">;killasgroup&#x3D;false                ; 是否向子进程组发送kill信号</span><br><span class="line">;redirect_stderr&#x3D;true             ; 是否重定向日志到标准输出</span><br><span class="line">stdout_logfile&#x3D;&#x2F;data&#x2F;logs&#x2F;work.log ; 进程的stdout的日志路径</span><br><span class="line">;stdout_logfile_maxbytes&#x3D;1MB      ; 日志文件最大大小</span><br><span class="line">;stdout_logfile_backups&#x3D;10</span><br><span class="line">;stdout_capture_maxbytes&#x3D;1MB</span><br><span class="line">;stderr_logfile&#x3D;&#x2F;a&#x2F;path           ; stderr的日志路径</span><br><span class="line">;stderr_logfile_maxbytes&#x3D;1MB</span><br><span class="line">;stderr_logfile_backups&#x3D;10</span><br><span class="line">;stderr_capture_maxbytes&#x3D;1MB</span><br><span class="line">;environment&#x3D;A&#x3D;&quot;1&quot;,B&#x3D;&quot;2&quot;          ; 子进程的环境变量</span><br><span class="line">;serverurl&#x3D;AUTO                   ; 子进程的环境变量SUPERVISOR_SERVER_URL</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>通常将每个进程的配置信息配置成独立文件，并通过 include 模块包含，这样方便修改和管理配置文件。</p>
+</blockquote>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>配置完成后，启动 supervisord 守护服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisord -c &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br></pre></td></tr></table></figure>
+
+<p>常用的命令参数说明：</p>
+<ul>
+<li>-c：指定配置文件路径</li>
+<li>-n：是否非守护态运行</li>
+<li>-l：日志文件目录</li>
+<li>-i：唯一标识</li>
+</ul>
+<p>查看 supervisord 启动情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep &quot;supervisor&quot;</span><br><span class="line">root  24901  1  0 Sep23 ? 00:00:30 &#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;supervisord -c &#x2F;etc&#x2F;supervisor&#x2F;supervisord.conf</span><br><span class="line">$ netstat -tunpl</span><br><span class="line">tcp 0 0 127.0.0.1:9001  0.0.0.0:*  LISTEN  24901&#x2F;python</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="监控进程"><a href="#监控进程" class="headerlink" title="监控进程"></a>监控进程</h2><p>Supervisor 提供了多种监控服务的方式，包括 supervisorctl 命令行终端、Web 端、XML_RPC 接口多种方式。</p>
+<h3 id="命令终端"><a href="#命令终端" class="headerlink" title="命令终端"></a>命令终端</h3><p>直接使用 supervisorctl 即可在命令行终端查看所有服务的情况，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl </span><br><span class="line">work:0      RUNNING   pid 31313, uptime 0:00:07</span><br><span class="line">work:1      RUNNING   pid 31318, uptime 0:00:06</span><br><span class="line"># -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
+
+<p>supervisorctl 常用命令列表如下；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">status：查看服务状态</span><br><span class="line">update：重新加载配置文件</span><br><span class="line">restart：重新启动服务</span><br><span class="line">stop：停止服务</span><br><span class="line">pid：查看某服务的 pid</span><br><span class="line">tail：输出最新的 log 信息</span><br><span class="line">shutdown：关闭 supervisord 服务</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>在配置中开启 inet_http_server 后，即可通过 Web 界面便捷地监控进程服务了。</p>
+<p><img data-sizes="auto" data-src="/images/3728202999.png" alt="" class="lazyload"></p>
+
+            
+        </article>
+    </div>
+    
+</section>
+
+    <nav class="nexmoe-page-nav">
+      <a class="extend prev" rel="prev" href="/"><i class="nexmoefont icon-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1591714365744"></script>
+  
+
+
+
+
+
+</body>
+
+</html>

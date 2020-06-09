@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>15个Vim速查表-让你工作提高N倍效率 - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="前言最近经常在Linux上写代码，所以经常会用到vi&#x2F;vim，下面分享15个VIM的使用技巧表让工作效率更高一些。  进入VIM   命令 描述    vim filename 打开或新建文件,并将光标置于第一行首   vim +n filename 打开文件，并将光标置于第n行首   vim + filename 打开文件，并将光标置于最后一行首   vim +&#x2F;pattern filename">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15个Vim速查表-让你工作提高N倍效率">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/15%E4%B8%AAVim%E9%80%9F%E6%9F%A5%E8%A1%A8-%E8%AE%A9%E4%BD%A0%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%AB%98N%E5%80%8D%E6%95%88%E7%8E%87/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言最近经常在Linux上写代码，所以经常会用到vi&#x2F;vim，下面分享15个VIM的使用技巧表让工作效率更高一些。  进入VIM   命令 描述    vim filename 打开或新建文件,并将光标置于第一行首   vim +n filename 打开文件，并将光标置于第n行首   vim + filename 打开文件，并将光标置于最后一行首   vim +&#x2F;pattern filename">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-20T14:04:11.000Z">
+<meta property="article:modified_time" content="2020-06-09T14:29:02.428Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="vim技巧">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365604">-->
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>37</div>
+        <div><span>标签</span>75</div>
+        <div><span>分类</span>5</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hexo/">hexo</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux/">linux</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux教程/">linux教程</a>
+          <span class="category-list-count">27</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/vps评测/">vps评测</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/windows教程/">windows教程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/BT%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">BT下载</a> <a href="/tags/LEDE%E6%9B%B4%E6%94%B9%E6%BA%90/" style="font-size: 10px;">LEDE更改源</a> <a href="/tags/LEDE%E6%9B%B4%E6%96%B0frp/" style="font-size: 10px;">LEDE更新frp</a> <a href="/tags/LEDE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">LEDE系统安装</a> <a href="/tags/LEDE%E7%BC%96%E8%AF%91/" style="font-size: 10px;">LEDE编译</a> <a href="/tags/MOON%E6%A0%B9%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">MOON根目录</a> <a href="/tags/N2N%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" style="font-size: 10px;">N2N搭建教程</a> <a href="/tags/NPS%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">NPS搭建</a> <a href="/tags/P2P%E7%BB%84%E7%BD%91/" style="font-size: 10px;">P2P组网</a> <a href="/tags/VPN%E7%BB%84%E7%BD%91/" style="font-size: 10px;">VPN组网</a> <a href="/tags/ZeroTier/" style="font-size: 10px;">ZeroTier</a> <a href="/tags/centos%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0git/" style="font-size: 10px;">centos安装最新git</a> <a href="/tags/docker%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">docker离线下载</a> <a href="/tags/git%E5%AE%89%E8%A3%85/" style="font-size: 10px;">git安装</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo%E9%83%A8%E7%BD%B2%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">hexo部署打赏插件</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/https%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" style="font-size: 10px;">https一键安装</a> <a href="/tags/https%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">https修改</a> <a href="/tags/https%E5%BC%80%E5%90%AFTls1-3/" style="font-size: 10px;">https开启Tls1.3</a> <a href="/tags/https%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">https部署</a> <a href="/tags/instant-page/" style="font-size: 10px;">instant.page</a> <a href="/tags/jiacrontab%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">jiacrontab搭建</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lede%E7%BC%96%E8%AF%91/" style="font-size: 10px;">lede编译</a> <a href="/tags/linux%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" style="font-size: 10px;">linux免密登录</a> <a href="/tags/linux%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">linux命令</a> <a href="/tags/linux%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88git/" style="font-size: 10px;">linux安装最新版git</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 15px;">linux开机启动</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">linux开机启动程序</a> <a href="/tags/linux%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" style="font-size: 10px;">linux文件复制</a> <a href="/tags/linux%E6%9B%B4%E6%94%B9%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/" style="font-size: 10px;">linux更改简体中文</a> <a href="/tags/linux%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux系统</a> <a href="/tags/linux%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E8%BF%90/" style="font-size: 10px;">linux脚本自动运</a> <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/" style="font-size: 10px;">linux设置密钥登陆</a> <a href="/tags/nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">nginx无法启动</a> <a href="/tags/openwrt%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt二次编译</a> <a href="/tags/openwrt%E5%9B%BA%E4%BB%B6%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt固件编译</a> <a href="/tags/openwrt%E6%9B%B4%E6%96%B0frpc/" style="font-size: 10px;">openwrt更新frpc</a> <a href="/tags/php%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">php加速</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh%E5%8A%A0%E5%9B%BA/" style="font-size: 15px;">ssh加固</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口一键修改</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口修改</a> <a href="/tags/ssh%E9%98%B2%E7%A0%B4%E8%A7%A3/" style="font-size: 10px;">ssh防破解</a> <a href="/tags/ssl%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">ssl部署</a> <a href="/tags/tcp%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">tcp加速</a> <a href="/tags/vim%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">vim技巧</a> <a href="/tags/web%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">web邮箱</a> <a href="/tags/wget%E6%95%99%E7%A8%8B/" style="font-size: 10px;">wget教程</a> <a href="/tags/%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8Fvps/" style="font-size: 10px;">不限流量vps</a> <a href="/tags/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">临时邮箱</a> <a href="/tags/%E4%BE%BF%E5%AE%9C%E7%9A%84vps/" style="font-size: 10px;">便宜的vps</a> <a href="/tags/%E5%86%85%E7%BD%91%E6%98%A0%E5%B0%84/" style="font-size: 10px;">内网映射</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 20px;">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">分类导航</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" style="font-size: 10px;">定时任务</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">定时关机</a> <a href="/tags/%E5%AE%9D%E5%A1%94nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">宝塔nginx无法启动</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99/" style="font-size: 10px;">导航网站</a> <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%BB%84%E5%BB%BA/" style="font-size: 10px;">局域网组建</a> <a href="/tags/%E5%BB%BA%E7%AB%99vps/" style="font-size: 10px;">建站vps</a> <a href="/tags/%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">打赏插件</a> <a href="/tags/%E6%97%A0%E9%99%90%E9%87%8Fvps/" style="font-size: 10px;">无限量vps</a> <a href="/tags/%E6%97%A5%E6%9C%ACvps/" style="font-size: 10px;">日本vps</a> <a href="/tags/%E6%B4%9B%E6%9D%89%E7%9F%B6vps/" style="font-size: 10px;">洛杉矶vps</a> <a href="/tags/%E7%94%B5%E4%BF%A1%E8%81%94%E9%80%9A%E7%9B%B4%E8%BF%9E/" style="font-size: 10px;">电信联通直连</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">网站加速</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9FJS%E8%84%9A%E6%9C%AC/" style="font-size: 10px;">网站加速JS脚本</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">网站导航</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">自动关机</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/" style="font-size: 10px;">谷歌云开启root密码登陆</a> <a href="/tags/%E8%B7%A8%E7%BD%91%E5%85%B1%E4%BA%AB/" style="font-size: 10px;">跨网共享</a> <a href="/tags/%E9%9F%A9%E5%9B%BDvps/" style="font-size: 10px;">韩国vps</a> <a href="/tags/%E9%AB%98%E9%80%9Fvps/" style="font-size: 10px;">高速vps</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="15个Vim速查表-让你工作提高N倍效率" class="lazyload">
+          <h1>15个Vim速查表-让你工作提高N倍效率</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.8k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近经常在Linux上写代码，所以经常会用到vi/vim，下面分享15个VIM的使用技巧表让工作效率更高一些。</p>
+<hr>
+<h2 id="进入VIM"><a href="#进入VIM" class="headerlink" title="进入VIM"></a>进入VIM</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">vim filename</td>
+<td align="left">打开或新建文件,并将光标置于第一行首</td>
+</tr>
+<tr>
+<td align="left">vim +n filename</td>
+<td align="left">打开文件，并将光标置于第n行首</td>
+</tr>
+<tr>
+<td align="left">vim + filename</td>
+<td align="left">打开文件，并将光标置于最后一行首</td>
+</tr>
+<tr>
+<td align="left">vim +/pattern filename</td>
+<td align="left">打开文件，并将光标置于第一个与pattern匹配的串处</td>
+</tr>
+<tr>
+<td align="left">vim -r filename</td>
+<td align="left">在上次正用vim编辑时发生系统崩溃，恢复filename</td>
+</tr>
+<tr>
+<td align="left">vim filename….filename</td>
+<td align="left">打开多个文件，依次编辑</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="配置VIM"><a href="#配置VIM" class="headerlink" title="配置VIM"></a>配置VIM</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">all</td>
+<td align="left">列出所有选项设置情况</td>
+</tr>
+<tr>
+<td align="left">term</td>
+<td align="left">设置终端类型</td>
+</tr>
+<tr>
+<td align="left">ignorance</td>
+<td align="left">在搜索中忽略大小写</td>
+</tr>
+<tr>
+<td align="left">list</td>
+<td align="left">显示制表位(Ctrl+I)和行尾标志（$)</td>
+</tr>
+<tr>
+<td align="left">number</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="left">report</td>
+<td align="left">显示由面向行的命令修改过的数目</td>
+</tr>
+<tr>
+<td align="left">terse</td>
+<td align="left">显示简短的警告信息</td>
+</tr>
+<tr>
+<td align="left">warn</td>
+<td align="left">在转到别的文件时若没保存当前文件则显示NO write信息</td>
+</tr>
+<tr>
+<td align="left">nomagic</td>
+<td align="left">允许在搜索模式中，使用前面不带“\”的特殊字符</td>
+</tr>
+<tr>
+<td align="left">nowrapscan</td>
+<td align="left">禁止vi在搜索到达文件两端时，又从另一端开始</td>
+</tr>
+<tr>
+<td align="left">mesg</td>
+<td align="left">允许vi显示其他用户用write写到自己终端上的信息</td>
+</tr>
+<tr>
+<td align="left">:set number / set nonumber</td>
+<td align="left">显示/不显示行号</td>
+</tr>
+<tr>
+<td align="left">:set ruler /set noruler</td>
+<td align="left">显示/不显示标尺</td>
+</tr>
+<tr>
+<td align="left">:set hlsearch</td>
+<td align="left">高亮显示查找到的单词</td>
+</tr>
+<tr>
+<td align="left">:set nohlsearch</td>
+<td align="left">关闭高亮显示</td>
+</tr>
+<tr>
+<td align="left">:syntax on</td>
+<td align="left">语法高亮</td>
+</tr>
+<tr>
+<td align="left">:set nu</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="left">:set tabstop=8</td>
+<td align="left">设置tab大小,8为最常用最普遍的设置</td>
+</tr>
+<tr>
+<td align="left">:set softtabstop=8</td>
+<td align="left">4:4个空格,8:正常的制表符,12:一个制表符4个空格,16:两个制表符</td>
+</tr>
+<tr>
+<td align="left">:set autoindent</td>
+<td align="left">自动缩进</td>
+</tr>
+<tr>
+<td align="left">:set cindent</td>
+<td align="left">C语言格式里面的自动缩进</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">k nk</td>
+<td align="left">上 向上移动n行</td>
+</tr>
+<tr>
+<td align="left">j nj</td>
+<td align="left">下 向下移动n行</td>
+</tr>
+<tr>
+<td align="left">h nh</td>
+<td align="left">左 向左移动n行</td>
+</tr>
+<tr>
+<td align="left">l nl</td>
+<td align="left">右 向右移动n行</td>
+</tr>
+<tr>
+<td align="left">Space</td>
+<td align="left">光标右移一个字符</td>
+</tr>
+<tr>
+<td align="left">Backspace</td>
+<td align="left">光标左移一个字符</td>
+</tr>
+<tr>
+<td align="left">Enter</td>
+<td align="left">光标下移一行</td>
+</tr>
+<tr>
+<td align="left">w/W</td>
+<td align="left">光标右移一个字至字首</td>
+</tr>
+<tr>
+<td align="left">b/B</td>
+<td align="left">光标左移一个字至字首</td>
+</tr>
+<tr>
+<td align="left">e或E</td>
+<td align="left">光标右移一个字至字尾</td>
+</tr>
+<tr>
+<td align="left">)</td>
+<td align="left">光标移至句尾</td>
+</tr>
+<tr>
+<td align="left">(</td>
+<td align="left">光标移至句首</td>
+</tr>
+<tr>
+<td align="left">}</td>
+<td align="left">光标移至段落开头</td>
+</tr>
+<tr>
+<td align="left">{</td>
+<td align="left">光标移至段落结尾</td>
+</tr>
+<tr>
+<td align="left">n$</td>
+<td align="left">光标移至第n行尾</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">光标移至屏幕顶行</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">光标移至屏幕中间行</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">光标移至屏幕最后行</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">（注意是数字零）光标移至当前行首</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">移动光标到行首第一个非空字符上去</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">光标移至当前行尾</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">移到第一行</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">移到最后一行</td>
+</tr>
+<tr>
+<td align="left">f</td>
+<td align="left">移动光标到当前行的字符a上</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">相反</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">移动到与制匹配的括号上去（），{}，[]，&lt;&gt;等</td>
+</tr>
+<tr>
+<td align="left">nG</td>
+<td align="left">移动到第n行上</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">到最后一行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="屏幕滚动"><a href="#屏幕滚动" class="headerlink" title="屏幕滚动"></a>屏幕滚动</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+u</td>
+<td align="left">向文件首翻半屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl+d</td>
+<td align="left">向文件尾翻半屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl+f</td>
+<td align="left">向文件尾翻一屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl＋b</td>
+<td align="left">向文件首翻一屏</td>
+</tr>
+<tr>
+<td align="left">nz</td>
+<td align="left">将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="插入文本类"><a href="#插入文本类" class="headerlink" title="插入文本类"></a>插入文本类</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">在光标前</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">在当前行首</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">光标后</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">在当前行尾</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">在当前行之下新开一行</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">在当前行之上新开一行</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">替换当前字符</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">替换当前字符及其后的字符，直至按ESC键</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">从当前光标位置处开始，以输入的文本替代指定数目的字符</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">删除指定数目的行，并以所输入文本代替之</td>
+</tr>
+<tr>
+<td align="left">ncw/nCW</td>
+<td align="left">修改指定数目的字</td>
+</tr>
+<tr>
+<td align="left">nCC</td>
+<td align="left">修改指定数目的行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x/X</td>
+<td align="left">删除一个字符，x删除光标后的，而X删除光标前的</td>
+</tr>
+<tr>
+<td align="left">dw</td>
+<td align="left">删除一个单词(删除光标位置到下一个单词开始的位置)</td>
+</tr>
+<tr>
+<td align="left">dnw</td>
+<td align="left">删除n个单词</td>
+</tr>
+<tr>
+<td align="left">dne</td>
+<td align="left">也可，只是删除到单词尾</td>
+</tr>
+<tr>
+<td align="left">do</td>
+<td align="left">删至行首</td>
+</tr>
+<tr>
+<td align="left">d$</td>
+<td align="left">删至行尾</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td align="left">删除一行</td>
+</tr>
+<tr>
+<td align="left">ndd</td>
+<td align="left">删除当前行及其后n-1行</td>
+</tr>
+<tr>
+<td align="left">dnl</td>
+<td align="left">向右删除n个字母</td>
+</tr>
+<tr>
+<td align="left">dnh</td>
+<td align="left">向左删除n个字母</td>
+</tr>
+<tr>
+<td align="left">dnj</td>
+<td align="left">向下删除n行,当前行+其上n行</td>
+</tr>
+<tr>
+<td align="left">dnk</td>
+<td align="left">向上删除n行,当期行+其下n行</td>
+</tr>
+<tr>
+<td align="left">cnw[word]</td>
+<td align="left">将n个word改变为word</td>
+</tr>
+<tr>
+<td align="left">C$</td>
+<td align="left">改变到行尾</td>
+</tr>
+<tr>
+<td align="left">cc</td>
+<td align="left">改变整行</td>
+</tr>
+<tr>
+<td align="left">shift+j</td>
+<td align="left">删除行尾的换行符，下一行接上来了</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">p</td>
+<td align="left">粘贴用x或d删除的文本</td>
+</tr>
+<tr>
+<td align="left">ynw</td>
+<td align="left">复制n个单词</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td align="left">复制一行</td>
+</tr>
+<tr>
+<td align="left">ynl</td>
+<td align="left">复制n个字符</td>
+</tr>
+<tr>
+<td align="left">y$</td>
+<td align="left">复制当前光标至行尾处</td>
+</tr>
+<tr>
+<td align="left">nyy</td>
+<td align="left">拷贝n行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">u</td>
+<td align="left">撤销前一次的操作</td>
+</tr>
+<tr>
+<td align="left">shif+u(U)</td>
+<td align="left">撤销对该行的所有操作</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="搜索及替换"><a href="#搜索及替换" class="headerlink" title="搜索及替换"></a>搜索及替换</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/pattern</td>
+<td align="left">从光标开始处向文件尾搜索pattern</td>
+</tr>
+<tr>
+<td align="left">?pattern</td>
+<td align="left">从光标开始处向文件首搜索pattern</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">在同一方向重复上一次搜索命令</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td align="left">在反方向上重复上一次搜索命令</td>
+</tr>
+<tr>
+<td align="left">cw newword</td>
+<td align="left">替换为newword</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">继续查找</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">执行替换</td>
+</tr>
+<tr>
+<td align="left">:s/p1/p2/g</td>
+<td align="left">将当前行中所有p1均用p2替代,g表示执行 用c表示需要确认</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 s/p1/p2/g</td>
+<td align="left">将第n1至n2行中所有p1均用p2替代</td>
+</tr>
+<tr>
+<td align="left">:g/p1/s//p2/g</td>
+<td align="left">将文件中所有p1均用p2替换</td>
+</tr>
+<tr>
+<td align="left">:1,$ s/string1/string2/g</td>
+<td align="left">在全文中将string1替换为string2</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">m[a-z]</td>
+<td align="left">在文中做标记，标记号可为a-z的26个字母</td>
+</tr>
+<tr>
+<td align="left">`a</td>
+<td align="left">移动到标记a处</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="VISUAL模式"><a href="#VISUAL模式" class="headerlink" title="VISUAL模式"></a>VISUAL模式</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">v</td>
+<td align="left">进入visual 模式</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">进入行的visual 模式</td>
+</tr>
+<tr>
+<td align="left">ctrl+v</td>
+<td align="left">进如块操作模式用o和O改变选择的边的大小</td>
+</tr>
+<tr>
+<td align="left">在所有行插入相同的内容如include&lt;</td>
+<td align="left">将光标移到开始插入的位置，按CTRL+V进入VISUAL模式，选择好模块后按I（shift+i)，后插入要插入的文本，按[ESC]完成</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="行方式命令"><a href="#行方式命令" class="headerlink" title="行方式命令"></a>行方式命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:n1,n2 co n3</td>
+<td align="left">将n1行到n2行之间的内容拷贝到第n3行下</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 m n3</td>
+<td align="left">将n1行到n2行之间的内容移至到第n3行下</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 d</td>
+<td align="left">将n1行到n2行之间的内容删除</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 w!command</td>
+<td align="left">将文件中n1行至n2行的内容作为command的输入并执行之</td>
+</tr>
+<tr>
+<td align="left">若不指定n1，n2，则表示将整个文件内容作为command的输入</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="宏命令"><a href="#宏命令" class="headerlink" title="宏命令"></a>宏命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">q[a-z]</td>
+<td align="left">开始记录但前开始的操作为宏，名称可为【a-z】，然后用q终止录制宏</td>
+</tr>
+<tr>
+<td align="left">reg</td>
+<td align="left">显示当前定义的所有的宏，用@[a-z]来在当前光标处执行宏[a-z]</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:split</td>
+<td align="left">分割一个窗口</td>
+</tr>
+<tr>
+<td align="left">:split file.c</td>
+<td align="left">为另一个文件file.c分隔窗口</td>
+</tr>
+<tr>
+<td align="left">:nsplit file.c</td>
+<td align="left">为另一个文件file.c分隔窗口，并指定其行数</td>
+</tr>
+<tr>
+<td align="left">ctrl＋w</td>
+<td align="left">在窗口中切换</td>
+</tr>
+<tr>
+<td align="left">:close</td>
+<td align="left">关闭当前窗口</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="文件及其他"><a href="#文件及其他" class="headerlink" title="文件及其他"></a>文件及其他</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:q</td>
+<td align="left">退出vi</td>
+</tr>
+<tr>
+<td align="left">:q!</td>
+<td align="left">不保存文件并退出vi</td>
+</tr>
+<tr>
+<td align="left">:e filename</td>
+<td align="left">打开文件filename进行编辑</td>
+</tr>
+<tr>
+<td align="left">:e!</td>
+<td align="left">放弃修改文件内容，重新载入该文件编辑</td>
+</tr>
+<tr>
+<td align="left">:w</td>
+<td align="left">保存当前文件</td>
+</tr>
+<tr>
+<td align="left">:wq</td>
+<td align="left">存盘退出</td>
+</tr>
+<tr>
+<td align="left">:ZZ</td>
+<td align="left">保存当前文档并退出VIM</td>
+</tr>
+<tr>
+<td align="left">:!command</td>
+<td align="left">执行shell命令command</td>
+</tr>
+<tr>
+<td align="left">:r!command</td>
+<td align="left">将命令command的输出结果放到当前行</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 write temp.c</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">:read file.c</td>
+<td align="left">将文件file.c的内容插入到当前光标所在的下面</td>
+</tr>
+</tbody></table>
+
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/linux%E6%95%99%E7%A8%8B/">linux教程</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/vim%E6%8A%80%E5%B7%A7/" rel="tag">vim技巧</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>John Doe<br>
+    <strong>本文链接：</strong><a href="http://yoursite.com/2019/05/20/15%E4%B8%AAVim%E9%80%9F%E6%9F%A5%E8%A1%A8-%E8%AE%A9%E4%BD%A0%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%AB%98N%E5%80%8D%E6%95%88%E7%8E%87/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;05&#x2F;20&#x2F;15%E4%B8%AAVim%E9%80%9F%E6%9F%A5%E8%A1%A8-%E8%AE%A9%E4%BD%A0%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%AB%98N%E5%80%8D%E6%95%88%E7%8E%87&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;05&#x2F;20&#x2F;15%E4%B8%AAVim%E9%80%9F%E6%9F%A5%E8%A1%A8-%E8%AE%A9%E4%BD%A0%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%AB%98N%E5%80%8D%E6%95%88%E7%8E%87&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1591714365611"></script>
+  
+
+
+
+
+
+</body>
+
+</html>

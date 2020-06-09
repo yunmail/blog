@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365746">-->
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>37</div>
+        <div><span>标签</span>75</div>
+        <div><span>分类</span>5</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hexo/">hexo</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux/">linux</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux教程/">linux教程</a>
+          <span class="category-list-count">27</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/vps评测/">vps评测</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/windows教程/">windows教程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/BT%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">BT下载</a> <a href="/tags/LEDE%E6%9B%B4%E6%94%B9%E6%BA%90/" style="font-size: 10px;">LEDE更改源</a> <a href="/tags/LEDE%E6%9B%B4%E6%96%B0frp/" style="font-size: 10px;">LEDE更新frp</a> <a href="/tags/LEDE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">LEDE系统安装</a> <a href="/tags/LEDE%E7%BC%96%E8%AF%91/" style="font-size: 10px;">LEDE编译</a> <a href="/tags/MOON%E6%A0%B9%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">MOON根目录</a> <a href="/tags/N2N%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" style="font-size: 10px;">N2N搭建教程</a> <a href="/tags/NPS%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">NPS搭建</a> <a href="/tags/P2P%E7%BB%84%E7%BD%91/" style="font-size: 10px;">P2P组网</a> <a href="/tags/VPN%E7%BB%84%E7%BD%91/" style="font-size: 10px;">VPN组网</a> <a href="/tags/ZeroTier/" style="font-size: 10px;">ZeroTier</a> <a href="/tags/centos%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0git/" style="font-size: 10px;">centos安装最新git</a> <a href="/tags/docker%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">docker离线下载</a> <a href="/tags/git%E5%AE%89%E8%A3%85/" style="font-size: 10px;">git安装</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo%E9%83%A8%E7%BD%B2%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">hexo部署打赏插件</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/https%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" style="font-size: 10px;">https一键安装</a> <a href="/tags/https%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">https修改</a> <a href="/tags/https%E5%BC%80%E5%90%AFTls1-3/" style="font-size: 10px;">https开启Tls1.3</a> <a href="/tags/https%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">https部署</a> <a href="/tags/instant-page/" style="font-size: 10px;">instant.page</a> <a href="/tags/jiacrontab%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">jiacrontab搭建</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lede%E7%BC%96%E8%AF%91/" style="font-size: 10px;">lede编译</a> <a href="/tags/linux%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" style="font-size: 10px;">linux免密登录</a> <a href="/tags/linux%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">linux命令</a> <a href="/tags/linux%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88git/" style="font-size: 10px;">linux安装最新版git</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 15px;">linux开机启动</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">linux开机启动程序</a> <a href="/tags/linux%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" style="font-size: 10px;">linux文件复制</a> <a href="/tags/linux%E6%9B%B4%E6%94%B9%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/" style="font-size: 10px;">linux更改简体中文</a> <a href="/tags/linux%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux系统</a> <a href="/tags/linux%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E8%BF%90/" style="font-size: 10px;">linux脚本自动运</a> <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/" style="font-size: 10px;">linux设置密钥登陆</a> <a href="/tags/nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">nginx无法启动</a> <a href="/tags/openwrt%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt二次编译</a> <a href="/tags/openwrt%E5%9B%BA%E4%BB%B6%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt固件编译</a> <a href="/tags/openwrt%E6%9B%B4%E6%96%B0frpc/" style="font-size: 10px;">openwrt更新frpc</a> <a href="/tags/php%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">php加速</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh%E5%8A%A0%E5%9B%BA/" style="font-size: 15px;">ssh加固</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口一键修改</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口修改</a> <a href="/tags/ssh%E9%98%B2%E7%A0%B4%E8%A7%A3/" style="font-size: 10px;">ssh防破解</a> <a href="/tags/ssl%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">ssl部署</a> <a href="/tags/tcp%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">tcp加速</a> <a href="/tags/vim%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">vim技巧</a> <a href="/tags/web%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">web邮箱</a> <a href="/tags/wget%E6%95%99%E7%A8%8B/" style="font-size: 10px;">wget教程</a> <a href="/tags/%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8Fvps/" style="font-size: 10px;">不限流量vps</a> <a href="/tags/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">临时邮箱</a> <a href="/tags/%E4%BE%BF%E5%AE%9C%E7%9A%84vps/" style="font-size: 10px;">便宜的vps</a> <a href="/tags/%E5%86%85%E7%BD%91%E6%98%A0%E5%B0%84/" style="font-size: 10px;">内网映射</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 20px;">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">分类导航</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" style="font-size: 10px;">定时任务</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">定时关机</a> <a href="/tags/%E5%AE%9D%E5%A1%94nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">宝塔nginx无法启动</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99/" style="font-size: 10px;">导航网站</a> <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%BB%84%E5%BB%BA/" style="font-size: 10px;">局域网组建</a> <a href="/tags/%E5%BB%BA%E7%AB%99vps/" style="font-size: 10px;">建站vps</a> <a href="/tags/%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">打赏插件</a> <a href="/tags/%E6%97%A0%E9%99%90%E9%87%8Fvps/" style="font-size: 10px;">无限量vps</a> <a href="/tags/%E6%97%A5%E6%9C%ACvps/" style="font-size: 10px;">日本vps</a> <a href="/tags/%E6%B4%9B%E6%9D%89%E7%9F%B6vps/" style="font-size: 10px;">洛杉矶vps</a> <a href="/tags/%E7%94%B5%E4%BF%A1%E8%81%94%E9%80%9A%E7%9B%B4%E8%BF%9E/" style="font-size: 10px;">电信联通直连</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">网站加速</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9FJS%E8%84%9A%E6%9C%AC/" style="font-size: 10px;">网站加速JS脚本</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">网站导航</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">自动关机</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/" style="font-size: 10px;">谷歌云开启root密码登陆</a> <a href="/tags/%E8%B7%A8%E7%BD%91%E5%85%B1%E4%BA%AB/" style="font-size: 10px;">跨网共享</a> <a href="/tags/%E9%9F%A9%E5%9B%BDvps/" style="font-size: 10px;">韩国vps</a> <a href="/tags/%E9%AB%98%E9%80%9Fvps/" style="font-size: 10px;">高速vps</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2019/06/07/LinuxVPS-%E6%9C%8D%E5%8A%A1%E5%99%A8-SSH-%E7%AB%AF%E5%8F%A3%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9%E8%84%9A%E6%9C%AC/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="LinuxVPS 服务器 SSH 端口一键修改脚本" class="lazyload">
+                    <h1>LinuxVPS 服务器 SSH 端口一键修改脚本</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月07日</a>
+            <a><i class="nexmoefont icon-areachart"></i>261 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们的很多<code>VPS</code>服务器，默认的端口都是<code>22</code>，所以一直会被人扫描爆破，很容易会出现问题，所以我们需要通过修改端口来尽可能减少这种事情发生，这里博主就整了个<code>SSH</code>端口一键修改脚本。从<code>OneinStack</code>一键安装包上扒下来的。</p>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>支持<code>Debian</code>、<code>Ubuntu</code>、<code>CentOS</code>系统。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h2 id="1、运行以下命令"><a href="#1、运行以下命令" class="headerlink" title="1、运行以下命令"></a>1、运行以下命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;www.moerats.com&#x2F;usr&#x2F;down&#x2F;sshport.sh</span><br><span class="line">bash sshport.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、输入端口确认，再打开防火墙端口"><a href="#2、输入端口确认，再打开防火墙端口" class="headerlink" title="2、输入端口确认，再打开防火墙端口"></a>2、输入端口确认，再打开防火墙端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#如果防火墙使用的iptables（Centos 6），修改端口为8080</span><br><span class="line">iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line">#如果使用的是firewall（CentOS 7）</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;8080&#x2F;tcp --permanent </span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3、最后重启-ssh-生效"><a href="#3、最后重启-ssh-生效" class="headerlink" title="3、最后重启 ssh 生效"></a>3、最后重启 ssh 生效</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;sshd restart #centos系统</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;ssh restart #debian,ubuntu系统</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以使用新端口<code>SSH</code>登录了，不过对于更安全的登录方式当属使用密钥登录了。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/06/07/LinuxVPS-%E4%B8%80%E9%94%AE%E6%9B%B4%E6%94%B9%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E4%B8%BA%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="LinuxVPS 一键更改语言环境为简体中文" class="lazyload">
+                    <h1>LinuxVPS 一键更改语言环境为简体中文</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月07日</a>
+            <a><i class="nexmoefont icon-areachart"></i>131 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在<code>VPS</code>上写程序时发现有些系统中文会有乱码的情况，于是即兴写了这么一个脚本。这是一个用于把<code>Linux</code>的系统环境改为简体中文的小工具。也可以给本身无法显示中文的<code>VPS</code>增加中文显示。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;FunctionClub&#x2F;LocaleCN&#x2F;master&#x2F;LocaleCN.sh &amp;&amp; bash LocaleCN.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后重启<code>VPS</code>即可。</p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><h2 id="1、使用前"><a href="#1、使用前" class="headerlink" title="1、使用前"></a>1、使用前</h2><p><img data-sizes="auto" data-src="/images/3861424202.png" alt="" class="lazyload"></p>
+<h2 id="2、使用后"><a href="#2、使用后" class="headerlink" title="2、使用后"></a>2、使用后</h2><p><img data-sizes="auto" data-src="/images/253289467.png" alt="" class="lazyload"></p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/05/20/15%E4%B8%AAVim%E9%80%9F%E6%9F%A5%E8%A1%A8-%E8%AE%A9%E4%BD%A0%E5%B7%A5%E4%BD%9C%E6%8F%90%E9%AB%98N%E5%80%8D%E6%95%88%E7%8E%87/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="15个Vim速查表-让你工作提高N倍效率" class="lazyload">
+                    <h1>15个Vim速查表-让你工作提高N倍效率</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月20日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.8k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+        </div>
+
+        <article>
+            
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近经常在Linux上写代码，所以经常会用到vi/vim，下面分享15个VIM的使用技巧表让工作效率更高一些。</p>
+<hr>
+<h2 id="进入VIM"><a href="#进入VIM" class="headerlink" title="进入VIM"></a>进入VIM</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">vim filename</td>
+<td align="left">打开或新建文件,并将光标置于第一行首</td>
+</tr>
+<tr>
+<td align="left">vim +n filename</td>
+<td align="left">打开文件，并将光标置于第n行首</td>
+</tr>
+<tr>
+<td align="left">vim + filename</td>
+<td align="left">打开文件，并将光标置于最后一行首</td>
+</tr>
+<tr>
+<td align="left">vim +/pattern filename</td>
+<td align="left">打开文件，并将光标置于第一个与pattern匹配的串处</td>
+</tr>
+<tr>
+<td align="left">vim -r filename</td>
+<td align="left">在上次正用vim编辑时发生系统崩溃，恢复filename</td>
+</tr>
+<tr>
+<td align="left">vim filename….filename</td>
+<td align="left">打开多个文件，依次编辑</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="配置VIM"><a href="#配置VIM" class="headerlink" title="配置VIM"></a>配置VIM</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">all</td>
+<td align="left">列出所有选项设置情况</td>
+</tr>
+<tr>
+<td align="left">term</td>
+<td align="left">设置终端类型</td>
+</tr>
+<tr>
+<td align="left">ignorance</td>
+<td align="left">在搜索中忽略大小写</td>
+</tr>
+<tr>
+<td align="left">list</td>
+<td align="left">显示制表位(Ctrl+I)和行尾标志（$)</td>
+</tr>
+<tr>
+<td align="left">number</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="left">report</td>
+<td align="left">显示由面向行的命令修改过的数目</td>
+</tr>
+<tr>
+<td align="left">terse</td>
+<td align="left">显示简短的警告信息</td>
+</tr>
+<tr>
+<td align="left">warn</td>
+<td align="left">在转到别的文件时若没保存当前文件则显示NO write信息</td>
+</tr>
+<tr>
+<td align="left">nomagic</td>
+<td align="left">允许在搜索模式中，使用前面不带“\”的特殊字符</td>
+</tr>
+<tr>
+<td align="left">nowrapscan</td>
+<td align="left">禁止vi在搜索到达文件两端时，又从另一端开始</td>
+</tr>
+<tr>
+<td align="left">mesg</td>
+<td align="left">允许vi显示其他用户用write写到自己终端上的信息</td>
+</tr>
+<tr>
+<td align="left">:set number / set nonumber</td>
+<td align="left">显示/不显示行号</td>
+</tr>
+<tr>
+<td align="left">:set ruler /set noruler</td>
+<td align="left">显示/不显示标尺</td>
+</tr>
+<tr>
+<td align="left">:set hlsearch</td>
+<td align="left">高亮显示查找到的单词</td>
+</tr>
+<tr>
+<td align="left">:set nohlsearch</td>
+<td align="left">关闭高亮显示</td>
+</tr>
+<tr>
+<td align="left">:syntax on</td>
+<td align="left">语法高亮</td>
+</tr>
+<tr>
+<td align="left">:set nu</td>
+<td align="left">显示行号</td>
+</tr>
+<tr>
+<td align="left">:set tabstop=8</td>
+<td align="left">设置tab大小,8为最常用最普遍的设置</td>
+</tr>
+<tr>
+<td align="left">:set softtabstop=8</td>
+<td align="left">4:4个空格,8:正常的制表符,12:一个制表符4个空格,16:两个制表符</td>
+</tr>
+<tr>
+<td align="left">:set autoindent</td>
+<td align="left">自动缩进</td>
+</tr>
+<tr>
+<td align="left">:set cindent</td>
+<td align="left">C语言格式里面的自动缩进</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">k nk</td>
+<td align="left">上 向上移动n行</td>
+</tr>
+<tr>
+<td align="left">j nj</td>
+<td align="left">下 向下移动n行</td>
+</tr>
+<tr>
+<td align="left">h nh</td>
+<td align="left">左 向左移动n行</td>
+</tr>
+<tr>
+<td align="left">l nl</td>
+<td align="left">右 向右移动n行</td>
+</tr>
+<tr>
+<td align="left">Space</td>
+<td align="left">光标右移一个字符</td>
+</tr>
+<tr>
+<td align="left">Backspace</td>
+<td align="left">光标左移一个字符</td>
+</tr>
+<tr>
+<td align="left">Enter</td>
+<td align="left">光标下移一行</td>
+</tr>
+<tr>
+<td align="left">w/W</td>
+<td align="left">光标右移一个字至字首</td>
+</tr>
+<tr>
+<td align="left">b/B</td>
+<td align="left">光标左移一个字至字首</td>
+</tr>
+<tr>
+<td align="left">e或E</td>
+<td align="left">光标右移一个字至字尾</td>
+</tr>
+<tr>
+<td align="left">)</td>
+<td align="left">光标移至句尾</td>
+</tr>
+<tr>
+<td align="left">(</td>
+<td align="left">光标移至句首</td>
+</tr>
+<tr>
+<td align="left">}</td>
+<td align="left">光标移至段落开头</td>
+</tr>
+<tr>
+<td align="left">{</td>
+<td align="left">光标移至段落结尾</td>
+</tr>
+<tr>
+<td align="left">n$</td>
+<td align="left">光标移至第n行尾</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">光标移至屏幕顶行</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">光标移至屏幕中间行</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">光标移至屏幕最后行</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">（注意是数字零）光标移至当前行首</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">移动光标到行首第一个非空字符上去</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">光标移至当前行尾</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">移到第一行</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">移到最后一行</td>
+</tr>
+<tr>
+<td align="left">f</td>
+<td align="left">移动光标到当前行的字符a上</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">相反</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">移动到与制匹配的括号上去（），{}，[]，&lt;&gt;等</td>
+</tr>
+<tr>
+<td align="left">nG</td>
+<td align="left">移动到第n行上</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">到最后一行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="屏幕滚动"><a href="#屏幕滚动" class="headerlink" title="屏幕滚动"></a>屏幕滚动</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl+u</td>
+<td align="left">向文件首翻半屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl+d</td>
+<td align="left">向文件尾翻半屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl+f</td>
+<td align="left">向文件尾翻一屏</td>
+</tr>
+<tr>
+<td align="left">Ctrl＋b</td>
+<td align="left">向文件首翻一屏</td>
+</tr>
+<tr>
+<td align="left">nz</td>
+<td align="left">将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="插入文本类"><a href="#插入文本类" class="headerlink" title="插入文本类"></a>插入文本类</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">i</td>
+<td align="left">在光标前</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">在当前行首</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">光标后</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">在当前行尾</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">在当前行之下新开一行</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">在当前行之上新开一行</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">替换当前字符</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">替换当前字符及其后的字符，直至按ESC键</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">从当前光标位置处开始，以输入的文本替代指定数目的字符</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">删除指定数目的行，并以所输入文本代替之</td>
+</tr>
+<tr>
+<td align="left">ncw/nCW</td>
+<td align="left">修改指定数目的字</td>
+</tr>
+<tr>
+<td align="left">nCC</td>
+<td align="left">修改指定数目的行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x/X</td>
+<td align="left">删除一个字符，x删除光标后的，而X删除光标前的</td>
+</tr>
+<tr>
+<td align="left">dw</td>
+<td align="left">删除一个单词(删除光标位置到下一个单词开始的位置)</td>
+</tr>
+<tr>
+<td align="left">dnw</td>
+<td align="left">删除n个单词</td>
+</tr>
+<tr>
+<td align="left">dne</td>
+<td align="left">也可，只是删除到单词尾</td>
+</tr>
+<tr>
+<td align="left">do</td>
+<td align="left">删至行首</td>
+</tr>
+<tr>
+<td align="left">d$</td>
+<td align="left">删至行尾</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td align="left">删除一行</td>
+</tr>
+<tr>
+<td align="left">ndd</td>
+<td align="left">删除当前行及其后n-1行</td>
+</tr>
+<tr>
+<td align="left">dnl</td>
+<td align="left">向右删除n个字母</td>
+</tr>
+<tr>
+<td align="left">dnh</td>
+<td align="left">向左删除n个字母</td>
+</tr>
+<tr>
+<td align="left">dnj</td>
+<td align="left">向下删除n行,当前行+其上n行</td>
+</tr>
+<tr>
+<td align="left">dnk</td>
+<td align="left">向上删除n行,当期行+其下n行</td>
+</tr>
+<tr>
+<td align="left">cnw[word]</td>
+<td align="left">将n个word改变为word</td>
+</tr>
+<tr>
+<td align="left">C$</td>
+<td align="left">改变到行尾</td>
+</tr>
+<tr>
+<td align="left">cc</td>
+<td align="left">改变整行</td>
+</tr>
+<tr>
+<td align="left">shift+j</td>
+<td align="left">删除行尾的换行符，下一行接上来了</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">p</td>
+<td align="left">粘贴用x或d删除的文本</td>
+</tr>
+<tr>
+<td align="left">ynw</td>
+<td align="left">复制n个单词</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td align="left">复制一行</td>
+</tr>
+<tr>
+<td align="left">ynl</td>
+<td align="left">复制n个字符</td>
+</tr>
+<tr>
+<td align="left">y$</td>
+<td align="left">复制当前光标至行尾处</td>
+</tr>
+<tr>
+<td align="left">nyy</td>
+<td align="left">拷贝n行</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">u</td>
+<td align="left">撤销前一次的操作</td>
+</tr>
+<tr>
+<td align="left">shif+u(U)</td>
+<td align="left">撤销对该行的所有操作</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="搜索及替换"><a href="#搜索及替换" class="headerlink" title="搜索及替换"></a>搜索及替换</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">/pattern</td>
+<td align="left">从光标开始处向文件尾搜索pattern</td>
+</tr>
+<tr>
+<td align="left">?pattern</td>
+<td align="left">从光标开始处向文件首搜索pattern</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">在同一方向重复上一次搜索命令</td>
+</tr>
+<tr>
+<td align="left">N</td>
+<td align="left">在反方向上重复上一次搜索命令</td>
+</tr>
+<tr>
+<td align="left">cw newword</td>
+<td align="left">替换为newword</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">继续查找</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">执行替换</td>
+</tr>
+<tr>
+<td align="left">:s/p1/p2/g</td>
+<td align="left">将当前行中所有p1均用p2替代,g表示执行 用c表示需要确认</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 s/p1/p2/g</td>
+<td align="left">将第n1至n2行中所有p1均用p2替代</td>
+</tr>
+<tr>
+<td align="left">:g/p1/s//p2/g</td>
+<td align="left">将文件中所有p1均用p2替换</td>
+</tr>
+<tr>
+<td align="left">:1,$ s/string1/string2/g</td>
+<td align="left">在全文中将string1替换为string2</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">m[a-z]</td>
+<td align="left">在文中做标记，标记号可为a-z的26个字母</td>
+</tr>
+<tr>
+<td align="left">`a</td>
+<td align="left">移动到标记a处</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="VISUAL模式"><a href="#VISUAL模式" class="headerlink" title="VISUAL模式"></a>VISUAL模式</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">v</td>
+<td align="left">进入visual 模式</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">进入行的visual 模式</td>
+</tr>
+<tr>
+<td align="left">ctrl+v</td>
+<td align="left">进如块操作模式用o和O改变选择的边的大小</td>
+</tr>
+<tr>
+<td align="left">在所有行插入相同的内容如include&lt;</td>
+<td align="left">将光标移到开始插入的位置，按CTRL+V进入VISUAL模式，选择好模块后按I（shift+i)，后插入要插入的文本，按[ESC]完成</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="行方式命令"><a href="#行方式命令" class="headerlink" title="行方式命令"></a>行方式命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:n1,n2 co n3</td>
+<td align="left">将n1行到n2行之间的内容拷贝到第n3行下</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 m n3</td>
+<td align="left">将n1行到n2行之间的内容移至到第n3行下</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 d</td>
+<td align="left">将n1行到n2行之间的内容删除</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 w!command</td>
+<td align="left">将文件中n1行至n2行的内容作为command的输入并执行之</td>
+</tr>
+<tr>
+<td align="left">若不指定n1，n2，则表示将整个文件内容作为command的输入</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="宏命令"><a href="#宏命令" class="headerlink" title="宏命令"></a>宏命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">q[a-z]</td>
+<td align="left">开始记录但前开始的操作为宏，名称可为【a-z】，然后用q终止录制宏</td>
+</tr>
+<tr>
+<td align="left">reg</td>
+<td align="left">显示当前定义的所有的宏，用@[a-z]来在当前光标处执行宏[a-z]</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:split</td>
+<td align="left">分割一个窗口</td>
+</tr>
+<tr>
+<td align="left">:split file.c</td>
+<td align="left">为另一个文件file.c分隔窗口</td>
+</tr>
+<tr>
+<td align="left">:nsplit file.c</td>
+<td align="left">为另一个文件file.c分隔窗口，并指定其行数</td>
+</tr>
+<tr>
+<td align="left">ctrl＋w</td>
+<td align="left">在窗口中切换</td>
+</tr>
+<tr>
+<td align="left">:close</td>
+<td align="left">关闭当前窗口</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="文件及其他"><a href="#文件及其他" class="headerlink" title="文件及其他"></a>文件及其他</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">:q</td>
+<td align="left">退出vi</td>
+</tr>
+<tr>
+<td align="left">:q!</td>
+<td align="left">不保存文件并退出vi</td>
+</tr>
+<tr>
+<td align="left">:e filename</td>
+<td align="left">打开文件filename进行编辑</td>
+</tr>
+<tr>
+<td align="left">:e!</td>
+<td align="left">放弃修改文件内容，重新载入该文件编辑</td>
+</tr>
+<tr>
+<td align="left">:w</td>
+<td align="left">保存当前文件</td>
+</tr>
+<tr>
+<td align="left">:wq</td>
+<td align="left">存盘退出</td>
+</tr>
+<tr>
+<td align="left">:ZZ</td>
+<td align="left">保存当前文档并退出VIM</td>
+</tr>
+<tr>
+<td align="left">:!command</td>
+<td align="left">执行shell命令command</td>
+</tr>
+<tr>
+<td align="left">:r!command</td>
+<td align="left">将命令command的输出结果放到当前行</td>
+</tr>
+<tr>
+<td align="left">:n1,n2 write temp.c</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">:read file.c</td>
+<td align="left">将文件file.c的内容插入到当前光标所在的下面</td>
+</tr>
+</tbody></table>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/05/08/LINUX-%E8%B0%B7%E6%AD%8C%E4%BA%91%E5%BC%80%E5%90%AFSSH%E5%8F%8A%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="LINUX | 谷歌云开启SSH及设置root密码" class="lazyload">
+                    <h1>LINUX | 谷歌云开启SSH及设置root密码</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年05月08日</a>
+            <a><i class="nexmoefont icon-areachart"></i>307 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <h1 id="一、设置root密码"><a href="#一、设置root密码" class="headerlink" title="一、设置root密码"></a>一、设置root密码</h1><h3 id="1-先选择从浏览器打开ssh连接服务器"><a href="#1-先选择从浏览器打开ssh连接服务器" class="headerlink" title="1.先选择从浏览器打开ssh连接服务器"></a>1.先选择从浏览器打开ssh连接服务器</h3><p><img data-sizes="auto" data-src="/images/2557178057.png" alt="" class="lazyload"></p>
+<p> 2.切换到root账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-设置root密码"><a href="#3-设置root密码" class="headerlink" title="3.设置root密码"></a>3.设置root密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<h4 id="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"><a href="#然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车" class="headerlink" title="然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车"></a>然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车</h4><p><img data-sizes="auto" data-src="/images/2932129962.png" alt="" class="lazyload"></p>
+<h1 id="二、开启SSH权限"><a href="#二、开启SSH权限" class="headerlink" title="二、开启SSH权限"></a>二、开启SSH权限</h1><h2 id="①方法一"><a href="#①方法一" class="headerlink" title="①方法一"></a>①方法一</h2><h3 id="1-修改SSH配置文件-etc-ssh-sshd-config"><a href="#1-修改SSH配置文件-etc-ssh-sshd-config" class="headerlink" title="1.修改SSH配置文件/etc/ssh/sshd_config"></a>1.修改SSH配置文件/etc/ssh/sshd_config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-然后再输”i”进入编辑模式"><a href="#2-然后再输”i”进入编辑模式" class="headerlink" title="2.然后再输”i”进入编辑模式"></a>2.然后再输”i”进入编辑模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-找到以下内容并修改"><a href="#3-找到以下内容并修改" class="headerlink" title="3.找到以下内容并修改"></a>3.找到以下内容并修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes           &#x2F;&#x2F;默认为no，需要开启root用户访问改为yes</span><br><span class="line">PasswordAuthentication yes    &#x2F;&#x2F;默认为no，改为yes开启密码登陆</span><br></pre></td></tr></table></figure>
+
+<p><img data-sizes="auto" data-src="/images/3324977715.png" alt="" class="lazyload"></p>
+<h3 id="4-修改完成后，再下按-esc-键，然后再输入"><a href="#4-修改完成后，再下按-esc-键，然后再输入" class="headerlink" title="4.修改完成后，再下按 esc 键，然后再输入"></a>4.修改完成后，再下按 esc 键，然后再输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<p><img data-sizes="auto" data-src="/images/1145294211.png" alt="" class="lazyload"></p>
+<h3 id="5-重启服务器"><a href="#5-重启服务器" class="headerlink" title="5.重启服务器"></a>5.重启服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="②方法二"><a href="#②方法二" class="headerlink" title="②方法二"></a>②方法二</h2><h3 id="CentOS和Debian通用，输入以下两条命令"><a href="#CentOS和Debian通用，输入以下两条命令" class="headerlink" title="CentOS和Debian通用，输入以下两条命令"></a>CentOS和Debian通用，输入以下两条命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;s&#x2F;PermitRootLogin no&#x2F;PermitRootLogin yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">sed -i &#39;s&#x2F;PasswordAuthentication no&#x2F;PasswordAuthentication yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Ubuntu系统，输入以下两条命令"><a href="#Ubuntu系统，输入以下两条命令" class="headerlink" title="Ubuntu系统，输入以下两条命令"></a>Ubuntu系统，输入以下两条命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;s&#x2F;#PermitRootLogin prohibit-password&#x2F;PermitRootLogin yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">sed -i &#39;s&#x2F;PasswordAuthentication no&#x2F;PasswordAuthentication yes&#x2F;g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/04/26/%E4%B8%A4%E5%8F%B0Linux%E4%B8%AD%E4%B9%8B%E9%97%B4%E8%BF%81%E7%A7%BB%E6%96%87%E4%BB%B6%E6%95%99%E7%A8%8B/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="两台Linux中之间迁移文件教程" class="lazyload">
+                    <h1>两台Linux中之间迁移文件教程</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月26日</a>
+            <a><i class="nexmoefont icon-areachart"></i>356 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>因为某种需求所以需要使用命令行同步文件夹，很多教程有写过rsync，但是此处我并不需要随时同步，只需要迁移，所以通过简单的命令行操作就可以了。</p>
+<p>这里为了避免因为网络原因造成的ssh中断后出现文件传输终端，我们需要使用screen.</p>
+<h2 id="安装screen"><a href="#安装screen" class="headerlink" title="安装screen"></a>安装screen</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install screen #此处为centos&#96;</span><br><span class="line">&#96;apt install screen #此处为Ubuntu&#x2F;Debian</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用screen"><a href="#使用screen" class="headerlink" title="使用screen"></a>使用screen</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S 随便取一个你记得的名字</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>这里我们使用命令行操作。</p>
+<p>举个例子，我们有A/B两台Linux服务器，我想要A的文件传输到B的机器上。</p>
+<p>你<strong>需要登录A服务器</strong></p>
+<p>scp /data(你所需要传输的目录 此处data只是举例)/* (这里的意思是将/data目录下所有的文件传输) root@B服务器的IP地址:/你所需要传输到的目录</p>
+<p>用我自己一个完整的示范看下</p>
+<p><code>scp /data/wwwroot/www.aihoom.com/* root@down.aihoom.com:/data/wwwroot</code><br>此处是将我A服务器里的/data/wwwroot/<a href="https://opt.gs/" target="_blank" rel="noopener">opt.gs/</a>目录下所有文件 传输到了down.aihoom.com(B服务器)的/data/wwwroot目录下</p>
+<p>也可以传输整个文件夹过去</p>
+<p><code>scp -r /data/wwwroot/opt.gs root@down.aihoom.com:/data/wwwroot</code><br>意思是将<a href="https://opt.gs" target="_blank" rel="noopener">opt.gs</a>这个文件夹包括文件夹下的目录都传输到了 B服务器的/data/wwwroot目录下</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/04/09/Linux-VPS%E5%AE%89%E8%A3%85Google-Authenticator%E5%AE%9E%E7%8E%B0SSH%E7%99%BB%E9%99%86%E4%BA%8C%E6%AC%A1%E9%AA%8C%E8%AF%81/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Linux VPS安装Google Authenticator实现SSH登陆二次验证" class="lazyload">
+                    <h1>Linux VPS安装Google Authenticator实现SSH登陆二次验证</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月09日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+        </div>
+
+        <article>
+            
+                <p><strong>说明：</strong>一般我们考虑到<code>VPS</code>的安全问题的时候，都是更改<code>SSH</code>端口和密码，然后更安全的也就是禁用密码使用密匙登录。方法很久前就水过了，这里再分享一个方法，可以在<code>VPS</code>上安装一个<code>Google Authenticator</code>(谷歌身份验证器)，这样我们登录<code>VPS</code>的时候，不仅需要密码正确，而且还要你输入正确的动态验证码才能登录进去，这样安全性就高了不少，这里就说下<code>CentOS</code>、<code>Debian</code>、<code>Ubuntu</code>的使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：教程需要配合Google身份验证器一起使用，手机没有安装该APP的需要安装一下，方便获取动态验证码。</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、软件包安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">rpm -Uvh https:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;epel-release-latest-6.noarch.rpm</span><br><span class="line">yum install google-authenticator -y</span><br><span class="line"></span><br><span class="line">#CentOS 7系统</span><br><span class="line">rpm -Uvh https:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;epel-release-latest-7.noarch.rpm</span><br><span class="line">yum install google-authenticator -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt update</span><br><span class="line">apt install libpam-google-authenticator -y</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、编译安装</strong><br>安装依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install gcc make pam-devel libpng-devel libtool wget git autoconf automake qrencode -y</span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">apt update</span><br><span class="line">apt install -y gcc make autoconf automake libtool libpam0g-dev libqrencode3 git</span><br></pre></td></tr></table></figure>
+
+<p>安装验证器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;google-authenticator-libpam.git</span><br><span class="line">cd google-authenticator-libpam</span><br><span class="line">.&#x2F;bootstrap.sh</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>1、配置验证器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google-authenticator</span><br></pre></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Do you want authentication tokens to be time-based (y&#x2F;n) y</span><br><span class="line">#验证二维码，在浏览器打开使用谷歌验证器APP扫描添加即可。</span><br><span class="line">https:&#x2F;&#x2F;www.google.com&#x2F;chart?chs&#x3D;200x200xxx</span><br><span class="line">Your new secret key is: WKDPJHOKR2P3DOWL</span><br><span class="line">Your verification code is 189192</span><br><span class="line">#临时验证码，手机不在身边可以使用，不过一个码只能用一次</span><br><span class="line">Your emergency scratch codes are:</span><br><span class="line">  77678926</span><br><span class="line">  14729443</span><br><span class="line">  83656478</span><br><span class="line">  55669982</span><br><span class="line">  23960253</span><br><span class="line"></span><br><span class="line">#下面可以直接照着填，或者自己使用谷歌翻译，然后自行选择</span><br><span class="line">Do you want me to update your &quot;&#x2F;root&#x2F;.google_authenticator&quot; file (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">Do you want to disallow multiple uses of the same authentication</span><br><span class="line">token? This restricts you to one login about every 30s, but it increases</span><br><span class="line">your chances to notice or even prevent man-in-the-middle attacks (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">By default, tokens are good for 30 seconds and in order to compensate for</span><br><span class="line">possible time-skew between the client and the server, we allow an extra</span><br><span class="line">token before and after the current time. If you experience problems with poor</span><br><span class="line">time synchronization, you can increase the window from its default</span><br><span class="line">size of 1:30min to about 4min. Do you want to do so (y&#x2F;n) y</span><br><span class="line"></span><br><span class="line">If the computer that you are logging into isn&#39;t hardened against brute-force</span><br><span class="line">login attempts, you can enable rate-limiting for the authentication module.</span><br><span class="line">By default, this limits attackers to no more than 3 login attempts every 30s.</span><br><span class="line">Do you want to enable rate-limiting (y&#x2F;n) y</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、配置PAM文件</strong><br>修改<code>PAM</code>配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br></pre></td></tr></table></figure>
+
+<p>在相应的位置添加<code>auth required pam_google_authenticator.so</code>代码，大概如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6在#%PAM-1.0下面一行添加</span><br><span class="line">#CentOS 7在auth substack password-auth下面一行添加</span><br><span class="line">#Debian和Ubuntu在末尾添加</span><br></pre></td></tr></table></figure>
+
+<p>然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>或者直接使用命令添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#CentOS 6系统</span><br><span class="line">sed -i &#39;1a\auth required pam_google_authenticator.so&#39; &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br><span class="line">#CentOS 7系统</span><br><span class="line">sed -i &quot;&#x2F;auth[ ]*substack[ ]*pass*&#x2F;a\auth required pam_google_authenticator.so&quot; &#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">echo &#39;auth required pam_google_authenticator.so&#39; &gt;&gt;&#x2F;etc&#x2F;pam.d&#x2F;sshd</span><br></pre></td></tr></table></figure>
+
+<p>如果是编译安装的，还需要做一下软链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">ln -fs &#x2F;usr&#x2F;local&#x2F;lib&#x2F;security&#x2F;pam_google_authenticator.so &#x2F;lib64&#x2F;security&#x2F;</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">ln -fs &#x2F;usr&#x2F;local&#x2F;lib&#x2F;security&#x2F;pam_google_authenticator.so &#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;security&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、修改SSH文件</strong><br>这里可以直接使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -r &#39;s#(ChallengeResponseAuthentication) no#\1 yes#g&#39; &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>然后同步下时间：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查看下服务器时间</span><br><span class="line">date</span><br><span class="line">#如果时区不一样，再使用命令修改为本地时间</span><br><span class="line">ln -sf &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai &#x2F;etc&#x2F;localtime</span><br></pre></td></tr></table></figure>
+
+<p>对于<code>CentOS</code>系统，还需要关闭<code>SELINUX</code>，不过并不是所有系统都是开启状态，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#使用命令查看状态</span><br><span class="line">getenforce</span><br><span class="line">#如果输出disabled则为关闭，反之开启，然后使用命令关闭</span><br><span class="line">sed -i &#39;s&#x2F;SELINUX&#x3D;enforcing&#x2F;SELINUX&#x3D;disabled&#x2F;g&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br></pre></td></tr></table></figure>
+
+<p>最后重启<code>SSH</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">service sshd restart</span><br><span class="line">#Debian&#x2F;Ubuntu系统</span><br><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>配置好了，再登录<code>SSH</code>的时候，这里以<code>Xshell</code>为例，类型选择<code>Keyboard Interactive</code>方式，然后会要你输入动态验证码了。</p>
+<p><img data-sizes="auto" data-src="/images/Google_Authenticator.png" alt="" class="lazyload"></p>
+<p>基本上以后我们每次登录<code>VPS</code>的时候，不仅会要你输入密码，还会要你输入谷歌验证的动态码才能进入<code>VPS</code>，安全增加了不少。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/04/07/%E3%80%90%E6%8E%A8%E8%8D%90%E3%80%91dedipath-%E6%B4%9B%E6%9D%89%E7%9F%B6VPS%E6%B5%8B%E8%AF%84%EF%BC%8C-49-KVM-1g%E5%86%85%E5%AD%98-20gSSD-%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8F-Windows/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="【推荐】dedipath- 洛杉矶VPS测评，$9.49/KVM/1g内存/20gSSD/不限流量/Windows" class="lazyload">
+                    <h1>【推荐】dedipath- 洛杉矶VPS测评，$9.49/KVM/1g内存/20gSSD/不限流量/Windows</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月07日</a>
+            <a><i class="nexmoefont icon-areachart"></i>780 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+
+        <article>
+            
+                <p><strong>DediPath</strong>是美国一家VPS主机和独立服务器提供商，数据中心在美国洛杉矶和新泽西，其中洛杉矶用的是Psychz机房的服务器，电信、联通和移动都是直连Psychz。无限流量适合用来做站或者跑流量的业务，DediPath的独立服务器提供IPMI，可以自己选择安装操作系统。从wzfou.com的使用体验来看，其实找客服帮忙安装操作系统可能比自己使用IPMI安装系统要省事一些。最新 <u><strong>5</strong></u> 折优惠券 <strong><u>springvps5019</u></strong>，机会难得错过在等一年哦……</p>
+<p><strong>网络测试</strong>：185.223.255.13，<a href="http://lg.dc01.dedicontrol.com/10000MB.test" target="_blank" rel="noopener">http://lg.dc01.dedicontrol.com/10000MB.test</a></p>
+<p><strong>KVM虚拟VPS，自带Windows</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>内存</strong></th>
+<th align="center"><strong>CPU</strong></th>
+<th align="center"><strong>硬盘</strong></th>
+<th align="center"><strong>IPv4</strong></th>
+<th align="center"><strong>流量</strong></th>
+<th align="center"><strong>价格</strong></th>
+<th align="center"><strong>购买</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1G</td>
+<td align="center">1核</td>
+<td align="center">20G SSD</td>
+<td align="center">1</td>
+<td align="center">无限量</td>
+<td align="center">$9.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=25" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">2G</td>
+<td align="center">2核</td>
+<td align="center">40G SSD</td>
+<td align="center">1</td>
+<td align="center">无限量</td>
+<td align="center">$14.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=26" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">3G</td>
+<td align="center">2核</td>
+<td align="center">60G SSD</td>
+<td align="center">2</td>
+<td align="center">无限量</td>
+<td align="center">$19.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=27" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">4G</td>
+<td align="center">2核</td>
+<td align="center">80G SSD</td>
+<td align="center">2</td>
+<td align="center">无限量</td>
+<td align="center">$24.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=28" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">5G</td>
+<td align="center">3核</td>
+<td align="center">100G SSD</td>
+<td align="center">2</td>
+<td align="center">无限量</td>
+<td align="center">$29.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=29" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">6G</td>
+<td align="center">3核</td>
+<td align="center">120G SSD</td>
+<td align="center">3</td>
+<td align="center">无限量</td>
+<td align="center">$34.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=30" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">7G</td>
+<td align="center">4核</td>
+<td align="center">140G SSD</td>
+<td align="center">3</td>
+<td align="center">无限量</td>
+<td align="center">$34.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=31" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">8G</td>
+<td align="center">4核</td>
+<td align="center">160G SSD</td>
+<td align="center">4</td>
+<td align="center">无限量</td>
+<td align="center">$39.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=32" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+<tr>
+<td align="center">16G</td>
+<td align="center">8核</td>
+<td align="center">200G SSD</td>
+<td align="center">4</td>
+<td align="center">无限量</td>
+<td align="center">$44.49 USD</td>
+<td align="center"><a href="https://portal.dedipath.com/aff.php?aff=373&pid=33" target="_blank" rel="noopener">购买链接</a></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU 型号</td>
+<td>Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz</td>
+</tr>
+<tr>
+<td>CPU 核心数</td>
+<td>2</td>
+</tr>
+<tr>
+<td>CPU 主频</td>
+<td>2000.016 MHz</td>
+</tr>
+<tr>
+<td>硬盘大小</td>
+<td>150.0 GB (0.4 GB 已使用)</td>
+</tr>
+<tr>
+<td>内存大小</td>
+<td>2048 MB (217 MB 已使用)</td>
+</tr>
+<tr>
+<td>SWAP 交换空间大小</td>
+<td>0 MB (0 MB 已使用)</td>
+</tr>
+<tr>
+<td>在线时长</td>
+<td>0 days, 0 hour 15 min</td>
+</tr>
+<tr>
+<td>系统负载</td>
+<td>0.15, 0.12, 0.08</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>CentOS 7.0.1406</td>
+</tr>
+<tr>
+<td>架构</td>
+<td>x86_64 (64 位)</td>
+</tr>
+<tr>
+<td>核心</td>
+<td>2.6.32-042stab127.2</td>
+</tr>
+<tr>
+<td>虚拟化技术</td>
+<td>openvz</td>
+</tr>
+</tbody></table>
+<h2 id="硬盘-I-O"><a href="#硬盘-I-O" class="headerlink" title="硬盘 I/O"></a>硬盘 I/O</h2><table>
+<thead>
+<tr>
+<th>次数</th>
+<th>速度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一次测试</td>
+<td>480 MB/s</td>
+</tr>
+<tr>
+<td>第二次测试</td>
+<td>479 MB/s</td>
+</tr>
+<tr>
+<td>第三次测试</td>
+<td>559 MB/s</td>
+</tr>
+</tbody></table>
+<h2 id="网络测试"><a href="#网络测试" class="headerlink" title="网络测试"></a>网络测试</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><table>
+<thead>
+<tr>
+<th>节点</th>
+<th>IP 地址</th>
+<th>下载速度</th>
+<th>延迟</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CacheFly</td>
+<td>205.234.175.175</td>
+<td>11.9MB/s</td>
+<td>0.336 ms</td>
+</tr>
+<tr>
+<td>Linode 日本</td>
+<td>106.187.96.148</td>
+<td>8.18MB/s</td>
+<td>113.352 ms</td>
+</tr>
+<tr>
+<td>Linode 新加坡</td>
+<td>139.162.23.4</td>
+<td>9.09MB/s</td>
+<td>179.862 ms</td>
+</tr>
+<tr>
+<td>Linode 英国</td>
+<td>176.58.107.39</td>
+<td>10.3MB/s</td>
+<td>127.492 ms</td>
+</tr>
+<tr>
+<td>Linode 法兰克福</td>
+<td>139.162.130.8</td>
+<td>10.2MB/s</td>
+<td>141.497 ms</td>
+</tr>
+<tr>
+<td>Linode 加拿大</td>
+<td>50.116.14.9</td>
+<td>10.7MB/s</td>
+<td>9.420 ms</td>
+</tr>
+<tr>
+<td>Softlayer 达拉斯</td>
+<td>173.192.68.18</td>
+<td>11.6MB/s</td>
+<td>38.787 ms</td>
+</tr>
+<tr>
+<td>Softlayer 西雅图</td>
+<td>67.228.112.250</td>
+<td>11.7MB/s</td>
+<td>25.069 ms</td>
+</tr>
+<tr>
+<td>Softlayer 法兰克福</td>
+<td>159.122.69.4</td>
+<td>7.39MB/s</td>
+<td>145.784 ms</td>
+</tr>
+<tr>
+<td>Softlayer 新加坡</td>
+<td>119.81.28.170</td>
+<td>9.18MB/s</td>
+<td>179.957 ms</td>
+</tr>
+<tr>
+<td>Softlayer 香港</td>
+<td>119.81.130.170</td>
+<td>6.74MB/s</td>
+<td>157.608 ms</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>节点</th>
+<th>上传速度</th>
+<th>下载速度</th>
+<th>延迟</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上海电信</td>
+<td>3.38 Mbit/s</td>
+<td>54.97 Mbit/s</td>
+<td>613.84 ms</td>
+</tr>
+<tr>
+<td>成都电信</td>
+<td>3.47 Mbit/s</td>
+<td>53.80 Mbit/s</td>
+<td>223.676 ms</td>
+</tr>
+<tr>
+<td>西安电信</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>上海联通</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>重庆联通</td>
+<td>20.91 Mbit/s</td>
+<td>71.59 Mbit/s</td>
+<td>188.878 ms</td>
+</tr>
+<tr>
+<td>北京电信</td>
+<td>23.82 Mbit/s</td>
+<td>69.05 Mbit/s</td>
+<td>181.999 ms</td>
+</tr>
+<tr>
+<td>北京联通</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>湖南电信</td>
+<td>25.41 Mbit/s</td>
+<td>54.22 Mbit/s</td>
+<td>518.159 ms</td>
+</tr>
+</tbody></table>
+<p>郑州联通下载速度</p>
+<p><img data-sizes="auto" data-src="/images/dedipath01.png" alt="" class="lazyload"></p>
+<p>服务器wget下载速度</p>
+<p><img data-sizes="auto" data-src="/images/dedipath02.png" alt="" class="lazyload"></p>
+<h4 id="Youtube播放测试"><a href="#Youtube播放测试" class="headerlink" title="Youtube播放测试**"></a>Youtube播放测试**</h4><p>上午：8：57（已上BBR 混淆协议，郑州联通100M）</p>
+<p><img data-sizes="auto" data-src="/images/dedipath03.png" alt="" class="lazyload"></p>
+<p>上午：11：40</p>
+<p><img data-sizes="auto" data-src="/images/dedipath04.png" alt="" class="lazyload"></p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/04/04/php%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E4%B9%8BOpcache%EF%BC%8C%E8%AE%A9%E6%82%A8%E7%9A%84%E7%BD%91%E7%AB%99%E9%80%9F%E5%BA%A6%E9%A3%9E%E8%B5%B7%E6%9D%A5/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="php网站加速之Opcache，让您的网站速度飞起来" class="lazyload">
+                    <h1>php网站加速之Opcache，让您的网站速度飞起来</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月04日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+
+        <article>
+            
+                <blockquote>
+<h4 id="官方Doc"><a href="#官方Doc" class="headerlink" title="官方Doc"></a>官方Doc</h4></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;php.net&#x2F;manual&#x2F;zh&#x2F;book.opcache.php</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是</span><br><span class="line">省去了每次加载和解析 PHP 脚本的开销。PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。老版本可以使用</span><br><span class="line">PHP APC加速</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="PHP开启opcache方法"><a href="#PHP开启opcache方法" class="headerlink" title="PHP开启opcache方法"></a>PHP开启opcache方法</h4></blockquote>
+<h5 id="1-打开php-ini文件-找到：-opcache-，设置为："><a href="#1-打开php-ini文件-找到：-opcache-，设置为：" class="headerlink" title="1.打开php.ini文件, 找到：[opcache]，设置为："></a>1.打开php.ini文件, 找到：[opcache]，设置为：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[opcache]</span><br><span class="line">; dll地址</span><br><span class="line">zend_extension&#x3D;php_opcache.dll</span><br><span class="line">; 开关打开</span><br><span class="line">opcache.enable&#x3D;1</span><br><span class="line">; 开启CLI</span><br><span class="line">opcache.enable_cli&#x3D;1</span><br><span class="line">; 可用内存, 酌情而定, 单位为：Mb</span><br><span class="line">opcache.memory_consumption&#x3D;528</span><br><span class="line">; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)</span><br><span class="line">opcache.interned_strings_buffer&#x3D;8</span><br><span class="line">; 对多缓存文件限制, 命中率不到 100% 的话, 可以试着提高这个值</span><br><span class="line">opcache.max_accelerated_files&#x3D;10000</span><br><span class="line">; Opcache 会在一定时间内去检查文件的修改时间, 这里设置检查的时间周期, 默认为 2, 定位为秒</span><br><span class="line">opcache.revalidate_freq&#x3D;1</span><br><span class="line">; 打开快速关闭, 打开这个在PHP Request Shutdown的时候回收内存的速度会提高</span><br><span class="line">opcache.fast_shutdown&#x3D;1</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-重启apache即可。"><a href="#2-重启apache即可。" class="headerlink" title="2.重启apache即可。"></a>2.重启apache即可。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-配置完成后，可以使用如下代码查询opcache："><a href="#3-配置完成后，可以使用如下代码查询opcache：" class="headerlink" title="3.配置完成后，可以使用如下代码查询opcache："></a>3.配置完成后，可以使用如下代码查询opcache：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-访问页面得到如下界面："><a href="#4-访问页面得到如下界面：" class="headerlink" title="4.访问页面得到如下界面："></a>4.访问页面得到如下界面：</h5><p><img data-sizes="auto" data-src="" alt="php_opcache" class="lazyload"></p>
+<blockquote>
+<h4 id="opcache配置说明"><a href="#opcache配置说明" class="headerlink" title="opcache配置说明"></a>opcache配置说明</h4></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">[opcache]</span><br><span class="line">zend_extension &#x3D; &quot;G:&#x2F;PHP&#x2F;php-5.5.6-Win32-VC11-x64&#x2F;ext&#x2F;php_opcache.dll&quot;</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 的开关, 关闭时代码不再优化.</span><br><span class="line">opcache.enable&#x3D;1</span><br><span class="line"></span><br><span class="line">; Determines if Zend OPCache is enabled for the CLI version of PHP</span><br><span class="line">opcache.enable_cli&#x3D;1</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 共享内存的大小, 总共能够存储多少预编译的 PHP 代码(单位:MB)</span><br><span class="line">; 推荐 128</span><br><span class="line">opcache.memory_consumption&#x3D;64</span><br><span class="line"></span><br><span class="line">; Zend Optimizer + 暂存池中字符串的占内存总量.(单位:MB)</span><br><span class="line">; 推荐 8</span><br><span class="line">opcache.interned_strings_buffer&#x3D;4</span><br><span class="line"></span><br><span class="line">; 最大缓存的文件数目 200  到 100000 之间</span><br><span class="line">; 推荐 4000</span><br><span class="line">opcache.max_accelerated_files&#x3D;2000</span><br><span class="line"></span><br><span class="line">; 内存“浪费”达到此值对应的百分比,就会发起一个重启调度.</span><br><span class="line">opcache.max_wasted_percentage&#x3D;5</span><br><span class="line"></span><br><span class="line">; 开启这条指令, Zend Optimizer + 会自动将当前工作目录的名字追加到脚本键上,</span><br><span class="line">; 以此消除同名文件间的键值命名冲突.关闭这条指令会提升性能,</span><br><span class="line">; 但是会对已存在的应用造成破坏.</span><br><span class="line">opcache.use_cwd&#x3D;0</span><br><span class="line"></span><br><span class="line">; 开启文件时间戳验证 </span><br><span class="line">opcache.validate_timestamps&#x3D;1</span><br><span class="line"></span><br><span class="line">; 2s检查一次文件更新 注意:0是一直检查不是关闭</span><br><span class="line">; 推荐 60</span><br><span class="line">opcache.revalidate_freq&#x3D;2</span><br><span class="line"></span><br><span class="line">; 允许或禁止在 include_path 中进行文件搜索的优化</span><br><span class="line">;opcache.revalidate_path&#x3D;0</span><br><span class="line"></span><br><span class="line">; 是否保存文件&#x2F;函数的注释   如果apigen、Doctrine、 ZF2、 PHPUnit需要文件注释</span><br><span class="line">; 推荐 0</span><br><span class="line">opcache.save_comments&#x3D;1</span><br><span class="line"></span><br><span class="line">; 是否加载文件&#x2F;函数的注释</span><br><span class="line">;opcache.load_comments&#x3D;1</span><br><span class="line"></span><br><span class="line">; 打开快速关闭, 打开这个在PHP Request Shutdown的时候会收内存的速度会提高</span><br><span class="line">; 推荐 1</span><br><span class="line">opcache.fast_shutdown&#x3D;1</span><br><span class="line"></span><br><span class="line">;允许覆盖文件存在（file_exists等）的优化特性。</span><br><span class="line">;opcache.enable_file_override&#x3D;0</span><br><span class="line"></span><br><span class="line">; 定义启动多少个优化过程</span><br><span class="line">;opcache.optimization_level&#x3D;0xffffffff</span><br><span class="line"></span><br><span class="line">; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.</span><br><span class="line">;opcache.inherited_hack&#x3D;1</span><br><span class="line"></span><br><span class="line">; 启用此Hack可以暂时性的解决”can’t redeclare class”错误.</span><br><span class="line">;opcache.dups_fix&#x3D;0</span><br><span class="line"></span><br><span class="line">; 设置不缓存的黑名单</span><br><span class="line">; 不缓存指定目录下cache_开头的PHP文件. &#x2F;png&#x2F;www&#x2F;example.com&#x2F;public_html&#x2F;cache&#x2F;cache_ </span><br><span class="line">;opcache.blacklist_filename&#x3D;</span><br><span class="line"></span><br><span class="line">; 通过文件大小屏除大文件的缓存.默认情况下所有的文件都会被缓存.</span><br><span class="line">;opcache.max_file_size&#x3D;0</span><br><span class="line"></span><br><span class="line">; 每 N 次请求检查一次缓存校验.默认值0表示检查被禁用了.</span><br><span class="line">; 由于计算校验值有损性能,这个指令应当紧紧在开发调试的时候开启.</span><br><span class="line">;opcache.consistency_checks&#x3D;0</span><br><span class="line"></span><br><span class="line">; 从缓存不被访问后,等待多久后(单位为秒)调度重启</span><br><span class="line">;opcache.force_restart_timeout&#x3D;180</span><br><span class="line"></span><br><span class="line">; 错误日志文件名.留空表示使用标准错误输出(stderr).</span><br><span class="line">;opcache.error_log&#x3D;</span><br><span class="line"></span><br><span class="line">; 将错误信息写入到服务器(Apache等)日志</span><br><span class="line">;opcache.log_verbosity_level&#x3D;1</span><br><span class="line"></span><br><span class="line">; 内存共享的首选后台.留空则是让系统选择.</span><br><span class="line">;opcache.preferred_memory_model&#x3D;</span><br><span class="line"></span><br><span class="line">; 防止共享内存在脚本执行期间被意外写入, 仅用于内部调试.</span><br><span class="line">;opcache.protect_memory&#x3D;0</span><br><span class="line">高级运维PHPopcache性能加速</span><br></pre></td></tr></table></figure>
+
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/04/03/%E6%97%A5%E6%9C%ACVPS-1%E6%A0%B8-512M%E5%86%85%E5%AD%98-20G-SSD-%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F-1G%E7%AB%AF%E5%8F%A3-KVM-%E6%9C%88%E4%BB%98/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="日本VPS/1核/512M内存/20G SSD/无限流量/1G端口/KVM/月付" class="lazyload">
+                    <h1>日本VPS/1核/512M内存/20G SSD/无限流量/1G端口/KVM/月付</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年04月03日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.4k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 12 分钟</a>
+        </div>
+
+        <article>
+            
+                <a id="more"></a>
+
+<p>OneVPS是Think Huge Limited旗下的一个VPS服务商，目前全球共有7个机房，包括亚洲的日本机房和新加坡机房，以及荷兰的阿姆斯特丹、英国的曼切斯特、瑞士的苏黎世、东京、英国的伦敦和美国的纽约共7个数据中心。全部KVM架构，1Gbps的带宽，不限制流量。电信绕香港走PCCW，联通双程走IIJ，移动绕香港，回程也一样，联通走IIJ，移动绕香港。IP非日本原生，但由于可以看DMM和Netflix日区，因此被很多网络用来做落地中转使用，对哪些购买阿里云日本，泸日，或者软银的用户，可以加上这台做落地，或者从香港中转过去这里，本地和香港过去，晚高峰速度也是可以的，我们在servercat有做评测，欢迎前往查看，如果你有日本小鸡，那么这台还是值得考虑的，具体Offer内容如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>内存</strong></th>
+<th align="center"><strong>CPU</strong></th>
+<th align="center"><strong>SSD</strong></th>
+<th align="center"><strong>价格</strong></th>
+<th align="center"><strong>购买</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">512M</td>
+<td align="center">1核</td>
+<td align="center">20G</td>
+<td align="center">$4/月</td>
+<td align="center"><a href="https://www.onevps.com/portal/aff.php?aff=2122&pid=2" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">768M</td>
+<td align="center">1核</td>
+<td align="center">50G</td>
+<td align="center">$6/月</td>
+<td align="center"><a href="https://www.onevps.com/portal/aff.php?aff=2122&pid=3" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">1.0G</td>
+<td align="center">2核</td>
+<td align="center">80G</td>
+<td align="center">$9/月</td>
+<td align="center"><a href="https://www.onevps.com/portal/aff.php?aff=2122&pid=4" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">1.5G</td>
+<td align="center">2核</td>
+<td align="center">100G</td>
+<td align="center">$13/月</td>
+<td align="center"><a href="https://www.onevps.com/portal/aff.php?aff=2122&pid=5" target="_blank" rel="noopener">链接</a></td>
+</tr>
+<tr>
+<td align="center">2.0G</td>
+<td align="center">4核</td>
+<td align="center">125G</td>
+<td align="center">$20/月</td>
+<td align="center"><a href="https://www.onevps.com/portal/aff.php?aff=2122&pid=5" target="_blank" rel="noopener">链接</a></td>
+</tr>
+</tbody></table>
+<p><strong>特别提醒，本人测试日本得知一些信息</strong>：</p>
+<p>采用的是solusvm面板，流量限制为10T/月，VPS默认不在线，请在solusvm里面点击“boot”启动VPS。电线、联通都是走IIJ.Net，移动走香港hkix.net出去然后依旧是IIJ.Net到日本！服务器托管在m247的日本东京。</p>
+<p>VPS开通消息你一般都会收到邮件，注意看清楚IP后面的“：xxxx”，这是告诉你：默认root的登录端口不是22拉！</p>
+<h3 id="综合信息："><a href="#综合信息：" class="headerlink" title="综合信息："></a><strong>综合信息：</strong></h3><table>
+<thead>
+<tr>
+<th>测试IP</th>
+<th>193.38.139.1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>退款</td>
+<td>7天内可以退款</td>
+</tr>
+<tr>
+<td>机房</td>
+<td>东京</td>
+</tr>
+<tr>
+<td>虚拟技术</td>
+<td>KVM</td>
+</tr>
+</tbody></table>
+<h4 id="服务器路由情况："><a href="#服务器路由情况：" class="headerlink" title="服务器路由情况："></a>服务器路由情况：</h4><table>
+<thead>
+<tr>
+<th align="center"><strong>国内运营商</strong></th>
+<th align="center"><strong>去程</strong></th>
+<th align="center"><strong>回程</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">中国电信</td>
+<td align="center">IIJ</td>
+<td align="center">IIJ回国</td>
+</tr>
+<tr>
+<td align="center">中国联通</td>
+<td align="center">IIJ</td>
+<td align="center">IIJ回国</td>
+</tr>
+<tr>
+<td align="center">中国移动</td>
+<td align="center">绕香港移动走IIJ</td>
+<td align="center">NTT回国</td>
+</tr>
+</tbody></table>
+<h4 id="inbound下载测试："><a href="#inbound下载测试：" class="headerlink" title="inbound下载测试："></a>inbound下载测试：</h4><table>
+<thead>
+<tr>
+<th align="left">下载文件服务器</th>
+<th align="left">下载文件服务器</th>
+<th align="left">下载速度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CacheFly</td>
+<td align="left">205.234.175.175</td>
+<td align="left">20.6MB/s</td>
+</tr>
+<tr>
+<td align="left">Linode, Tokyo, JP</td>
+<td align="left">106.187.96.148</td>
+<td align="left">22.8MB/s</td>
+</tr>
+<tr>
+<td align="left">Linode, Singapore, SG</td>
+<td align="left">139.162.23.4</td>
+<td align="left">20.7MB/s</td>
+</tr>
+<tr>
+<td align="left">Linode, London, UK</td>
+<td align="left">176.58.107.39</td>
+<td align="left">6.12MB/s</td>
+</tr>
+<tr>
+<td align="left">Linode, Frankfurt, DE</td>
+<td align="left">139.162.130.8</td>
+<td align="left">8.16MB/s</td>
+</tr>
+<tr>
+<td align="left">Linode, Fremont, CA</td>
+<td align="left">50.116.14.9</td>
+<td align="left">7.53MB/s</td>
+</tr>
+<tr>
+<td align="left">Softlayer, Dallas, TX</td>
+<td align="left">173.192.68.18</td>
+<td align="left">14.8MB/s</td>
+</tr>
+<tr>
+<td align="left">Softlayer, Seattle, WA</td>
+<td align="left">67.228.112.250</td>
+<td align="left">16.2MB/s</td>
+</tr>
+<tr>
+<td align="left">Softlayer, Frankfurt, DE</td>
+<td align="left">159.122.69.4</td>
+<td align="left">9.44MB/s</td>
+</tr>
+<tr>
+<td align="left">Softlayer, Singapore, SG</td>
+<td align="left">119.81.28.170</td>
+<td align="left">20.1MB/s</td>
+</tr>
+<tr>
+<td align="left">Softlayer, HongKong, CN</td>
+<td align="left">119.81.130.170</td>
+<td align="left">21.0MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaTelecom, Shenzhen, CN</td>
+<td align="left">119.147.33.13</td>
+<td align="left">5.68MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaTelecom, Foshan, CN</td>
+<td align="left">113.96.156.154</td>
+<td align="left">3.64MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaTelecom, Sichuan, CN</td>
+<td align="left">110.185.115.154</td>
+<td align="left">3.75MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaTelecom, Shanghai, CN</td>
+<td align="left">180.153.105.145</td>
+<td align="left">5.91MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaUnicom, Shandong, CN</td>
+<td align="left">61.156.15.23</td>
+<td align="left">3.30MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaUnicom, Foshan, CN</td>
+<td align="left">27.45.166.157</td>
+<td align="left">4.19MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaUnicom, Beijing, CN</td>
+<td align="left">123.125.110.15</td>
+<td align="left">3.58MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaMobile, SiChuan, CN</td>
+<td align="left">112.19.7.27</td>
+<td align="left">3.54MB/s</td>
+</tr>
+<tr>
+<td align="left">ChinaMobile, Jiangsu, CN</td>
+<td align="left">223.111.187.157</td>
+<td align="left">3.80MB/s</td>
+</tr>
+<tr>
+<td align="left">CERNET, Beijing, CN</td>
+<td align="left">202.38.97.230</td>
+<td align="left">21.2MB/s</td>
+</tr>
+<tr>
+<td align="left">Hinet, Taiwan, TW</td>
+<td align="left">210.61.132.1</td>
+<td align="left">20.3MB/s</td>
+</tr>
+</tbody></table>
+<h4 id="全国ping值："><a href="#全国ping值：" class="headerlink" title="全国ping值："></a>全国ping值：</h4><table>
+<thead>
+<tr>
+<th>Ping的地点</th>
+<th>TTL</th>
+<th>丢包率</th>
+<th>响应时间(毫秒)</th>
+<th>MIN</th>
+<th>MAX</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>陕西西安电信(天翼云一区)</td>
+<td>44</td>
+<td>0</td>
+<td>63.7</td>
+<td>63.3</td>
+<td>64.4</td>
+</tr>
+<tr>
+<td>重庆联通</td>
+<td>49</td>
+<td>0</td>
+<td>63.4</td>
+<td>62.3</td>
+<td>65.7</td>
+</tr>
+<tr>
+<td>甘肃兰州(天翼云)</td>
+<td>41</td>
+<td>0</td>
+<td>117.8</td>
+<td>117.1</td>
+<td>119.2</td>
+</tr>
+<tr>
+<td>江西南昌电信</td>
+<td>50</td>
+<td>0</td>
+<td>129.8</td>
+<td>125.9</td>
+<td>131.8</td>
+</tr>
+<tr>
+<td>云南昆明(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>130</td>
+<td>129.6</td>
+<td>130.6</td>
+</tr>
+<tr>
+<td>江苏镇江移动</td>
+<td>45</td>
+<td>0</td>
+<td>103.5</td>
+<td>102.5</td>
+<td>106</td>
+</tr>
+<tr>
+<td>安徽滁州电信</td>
+<td>50</td>
+<td>0</td>
+<td>147.3</td>
+<td>146.8</td>
+<td>148.4</td>
+</tr>
+<tr>
+<td>广西南宁(天翼云)</td>
+<td>42</td>
+<td>25</td>
+<td>129.4</td>
+<td>128.2</td>
+<td>130.9</td>
+</tr>
+<tr>
+<td>北京电信(天翼云)</td>
+<td>49</td>
+<td>0</td>
+<td>183.1</td>
+<td>169.1</td>
+<td>216.2</td>
+</tr>
+<tr>
+<td>广西南宁（电信）</td>
+<td>48</td>
+<td>0</td>
+<td>157.3</td>
+<td>154.3</td>
+<td>159.2</td>
+</tr>
+<tr>
+<td>山东青岛(阿里云)</td>
+<td>47</td>
+<td>0</td>
+<td>51.2</td>
+<td>51.1</td>
+<td>51.3</td>
+</tr>
+<tr>
+<td>四川成都电信(天翼云)</td>
+<td>48</td>
+<td>25</td>
+<td>113.3</td>
+<td>113.3</td>
+<td>113.4</td>
+</tr>
+<tr>
+<td>河南郑州景安网络BGP</td>
+<td>46</td>
+<td>25</td>
+<td>170.7</td>
+<td>169.3</td>
+<td>172</td>
+</tr>
+<tr>
+<td>北京（华为云）</td>
+<td>44</td>
+<td>0</td>
+<td>247.7</td>
+<td>230.7</td>
+<td>260.5</td>
+</tr>
+<tr>
+<td>河南郑州(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>155.1</td>
+<td>151.7</td>
+<td>160.6</td>
+</tr>
+<tr>
+<td>北京BGP(互联港湾)</td>
+<td>48</td>
+<td>0</td>
+<td>103.3</td>
+<td>102.9</td>
+<td>103.9</td>
+</tr>
+<tr>
+<td>江苏镇江(电信)</td>
+<td>48</td>
+<td>0</td>
+<td>64</td>
+<td>62.9</td>
+<td>65.3</td>
+</tr>
+<tr>
+<td>辽宁大连（蓝视云）</td>
+<td>47</td>
+<td>25</td>
+<td>148.9</td>
+<td>148.2</td>
+<td>150.1</td>
+</tr>
+<tr>
+<td>广州(移动)</td>
+<td>46</td>
+<td>0</td>
+<td>64.8</td>
+<td>62.2</td>
+<td>71.5</td>
+</tr>
+<tr>
+<td>重庆(天翼云)</td>
+<td>41</td>
+<td>0</td>
+<td>123.7</td>
+<td>123.5</td>
+<td>124</td>
+</tr>
+<tr>
+<td>上海BGP(互联港湾)</td>
+<td>45</td>
+<td>0</td>
+<td>160.4</td>
+<td>153.2</td>
+<td>170.4</td>
+</tr>
+<tr>
+<td>安徽芜湖电信</td>
+<td>48</td>
+<td>0</td>
+<td>125.9</td>
+<td>122</td>
+<td>127.4</td>
+</tr>
+<tr>
+<td>安徽合肥（vikihost）</td>
+<td>46</td>
+<td>0</td>
+<td>82</td>
+<td>77.8</td>
+<td>89.8</td>
+</tr>
+<tr>
+<td>安徽合肥移动</td>
+<td>44</td>
+<td>0</td>
+<td>82</td>
+<td>80</td>
+<td>86.7</td>
+</tr>
+<tr>
+<td>广东广州BGP(互联港湾)</td>
+<td>47</td>
+<td>0</td>
+<td>232.1</td>
+<td>226.9</td>
+<td>235.9</td>
+</tr>
+<tr>
+<td>上海(腾讯云)</td>
+<td>46</td>
+<td>0</td>
+<td>159.3</td>
+<td>158</td>
+<td>161</td>
+</tr>
+<tr>
+<td>重庆电信</td>
+<td>48</td>
+<td>0</td>
+<td>121.4</td>
+<td>120.9</td>
+<td>122.9</td>
+</tr>
+<tr>
+<td>吉林延边联通</td>
+<td>49</td>
+<td>0</td>
+<td>82.5</td>
+<td>81.5</td>
+<td>83.9</td>
+</tr>
+<tr>
+<td>广东茂名（电信）</td>
+<td>49</td>
+<td>0</td>
+<td>172.2</td>
+<td>168.8</td>
+<td>173.6</td>
+</tr>
+<tr>
+<td>贵州黔西南布依族苗族自治州（电信）</td>
+<td>47</td>
+<td>0</td>
+<td>191.5</td>
+<td>182.9</td>
+<td>197.4</td>
+</tr>
+<tr>
+<td>湖北武汉(天翼云)</td>
+<td>49</td>
+<td>0</td>
+<td>98.9</td>
+<td>98.5</td>
+<td>99.9</td>
+</tr>
+<tr>
+<td>四川锦阳（明源网络）</td>
+<td>50</td>
+<td>25</td>
+<td>94.6</td>
+<td>92.1</td>
+<td>97.8</td>
+</tr>
+<tr>
+<td>广东中山电信</td>
+<td>45</td>
+<td>0</td>
+<td>79.2</td>
+<td>78.6</td>
+<td>80.3</td>
+</tr>
+<tr>
+<td>上海电信(天翼云三区)</td>
+<td>48</td>
+<td>0</td>
+<td>55</td>
+<td>54</td>
+<td>56</td>
+</tr>
+<tr>
+<td>福建厦门电信(天翼云厦门一区)</td>
+<td>49</td>
+<td>0</td>
+<td>98.8</td>
+<td>96.9</td>
+<td>100.2</td>
+</tr>
+<tr>
+<td>北京(阿里云)</td>
+<td>45</td>
+<td>0</td>
+<td>60.5</td>
+<td>59</td>
+<td>61.3</td>
+</tr>
+<tr>
+<td>上海联通</td>
+<td>48</td>
+<td>0</td>
+<td>33.8</td>
+<td>33.6</td>
+<td>34</td>
+</tr>
+<tr>
+<td>江苏苏州(天翼云)</td>
+<td>41</td>
+<td>0</td>
+<td>148.6</td>
+<td>146.6</td>
+<td>151.8</td>
+</tr>
+<tr>
+<td>广东广州电信（天翼云四区）</td>
+<td>42</td>
+<td>0</td>
+<td>159.1</td>
+<td>148.2</td>
+<td>166.5</td>
+</tr>
+<tr>
+<td>福建厦门(天翼云厦门二区/BGP线路)</td>
+<td>46</td>
+<td>0</td>
+<td>97.6</td>
+<td>96.9</td>
+<td>99.3</td>
+</tr>
+<tr>
+<td>青海南宁(天翼云)</td>
+<td>43</td>
+<td>0</td>
+<td>214.4</td>
+<td>210.6</td>
+<td>216.2</td>
+</tr>
+<tr>
+<td>安徽滁州电信</td>
+<td>50</td>
+<td>0</td>
+<td>150.7</td>
+<td>146.3</td>
+<td>158.2</td>
+</tr>
+<tr>
+<td>广州(青云QingCloud)</td>
+<td>47</td>
+<td>0</td>
+<td>140.7</td>
+<td>136.4</td>
+<td>143.7</td>
+</tr>
+<tr>
+<td>天津联通</td>
+<td>48</td>
+<td>0</td>
+<td>51.6</td>
+<td>51.3</td>
+<td>51.7</td>
+</tr>
+<tr>
+<td>江苏南通电信</td>
+<td>51</td>
+<td>0</td>
+<td>160.3</td>
+<td>156.9</td>
+<td>169.4</td>
+</tr>
+<tr>
+<td>辽宁大连电信(UFOCLOUD飞碟云)</td>
+<td>47</td>
+<td>0</td>
+<td>191.4</td>
+<td>190.4</td>
+<td>193.8</td>
+</tr>
+<tr>
+<td>广东广州电信(天翼云二区)</td>
+<td>49</td>
+<td>0</td>
+<td>147.1</td>
+<td>138</td>
+<td>154.7</td>
+</tr>
+<tr>
+<td>江苏无锡(51IDC.COM)</td>
+<td>43</td>
+<td>0</td>
+<td>168.9</td>
+<td>164.4</td>
+<td>179.3</td>
+</tr>
+<tr>
+<td>青海西宁电信</td>
+<td>43</td>
+<td>0</td>
+<td>136.9</td>
+<td>133.4</td>
+<td>138.9</td>
+</tr>
+<tr>
+<td>广州(腾讯云)</td>
+<td>46</td>
+<td>0</td>
+<td>65.3</td>
+<td>64.2</td>
+<td>66.7</td>
+</tr>
+<tr>
+<td>福建福州(天翼云)</td>
+<td>48</td>
+<td>25</td>
+<td>147.1</td>
+<td>139.9</td>
+<td>153.5</td>
+</tr>
+<tr>
+<td>四川绵阳电信</td>
+<td>50</td>
+<td>0</td>
+<td>152.1</td>
+<td>148.8</td>
+<td>154.5</td>
+</tr>
+<tr>
+<td>江苏徐州电信（几何云）</td>
+<td>43</td>
+<td>0</td>
+<td>99.3</td>
+<td>99.1</td>
+<td>99.7</td>
+</tr>
+<tr>
+<td>浙江杭州(阿里云)</td>
+<td>46</td>
+<td>0</td>
+<td>39.5</td>
+<td>39.3</td>
+<td>39.7</td>
+</tr>
+<tr>
+<td>浙江杭州(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>91.1</td>
+<td>90.1</td>
+<td>92</td>
+</tr>
+<tr>
+<td>安徽合肥(移动)</td>
+<td>45</td>
+<td>0</td>
+<td>90</td>
+<td>85.4</td>
+<td>94.4</td>
+</tr>
+<tr>
+<td>天津(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>116.8</td>
+<td>114.4</td>
+<td>118.8</td>
+</tr>
+<tr>
+<td>江苏徐州联通（几何云）</td>
+<td>47</td>
+<td>0</td>
+<td>50.5</td>
+<td>49.2</td>
+<td>54.1</td>
+</tr>
+<tr>
+<td>江苏南京（蓝视云）</td>
+<td>48</td>
+<td>0</td>
+<td>93.5</td>
+<td>92.5</td>
+<td>94.3</td>
+</tr>
+<tr>
+<td>宁夏中卫(天翼云)</td>
+<td>43</td>
+<td>0</td>
+<td>85.1</td>
+<td>83</td>
+<td>90.5</td>
+</tr>
+<tr>
+<td>山东青岛(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>111</td>
+<td>110.7</td>
+<td>111.2</td>
+</tr>
+<tr>
+<td>山西太原(天翼云)</td>
+<td>43</td>
+<td>25</td>
+<td>169.3</td>
+<td>169</td>
+<td>169.7</td>
+</tr>
+<tr>
+<td>江苏南京电信(天翼云)</td>
+<td>48</td>
+<td>25</td>
+<td>95.8</td>
+<td>95.5</td>
+<td>96</td>
+</tr>
+<tr>
+<td>成都(腾讯云)</td>
+<td>46</td>
+<td>0</td>
+<td>140.4</td>
+<td>136.8</td>
+<td>149</td>
+</tr>
+<tr>
+<td>江苏常州(移动)</td>
+<td>43</td>
+<td>0</td>
+<td>149.2</td>
+<td>148</td>
+<td>151.5</td>
+</tr>
+<tr>
+<td>云南昆明电信</td>
+<td>48</td>
+<td>0</td>
+<td>188.5</td>
+<td>188.4</td>
+<td>188.7</td>
+</tr>
+<tr>
+<td>江西南昌电信(炎黄盛世)</td>
+<td>50</td>
+<td>0</td>
+<td>154.4</td>
+<td>151.9</td>
+<td>160.7</td>
+</tr>
+<tr>
+<td>福建福州电信</td>
+<td>48</td>
+<td>0</td>
+<td>148.9</td>
+<td>141.3</td>
+<td>160.5</td>
+</tr>
+<tr>
+<td>浙江杭州电信</td>
+<td>48</td>
+<td>0</td>
+<td>68.7</td>
+<td>66.7</td>
+<td>71.4</td>
+</tr>
+<tr>
+<td>北京(青云QingCloud三区A)</td>
+<td>47</td>
+<td>0</td>
+<td>57.1</td>
+<td>53.6</td>
+<td>59.3</td>
+</tr>
+<tr>
+<td>江苏常州(电信)</td>
+<td>46</td>
+<td>0</td>
+<td>136.5</td>
+<td>129.7</td>
+<td>146.6</td>
+</tr>
+<tr>
+<td>重庆(腾讯云)</td>
+<td>45</td>
+<td>0</td>
+<td>144.1</td>
+<td>138.2</td>
+<td>148.6</td>
+</tr>
+<tr>
+<td>湖北襄阳（电信）</td>
+<td>46</td>
+<td>25</td>
+<td>208.7</td>
+<td>208.7</td>
+<td>208.8</td>
+</tr>
+<tr>
+<td>内蒙古呼和浩特(天翼云)</td>
+<td>48</td>
+<td>0</td>
+<td>143.9</td>
+<td>140.3</td>
+<td>149.8</td>
+</tr>
+<tr>
+<td>广东茂名（联通）</td>
+<td>47</td>
+<td>0</td>
+<td>68.7</td>
+<td>68</td>
+<td>70.2</td>
+</tr>
+<tr>
+<td>浙江杭州联通</td>
+<td>48</td>
+<td>0</td>
+<td>42.6</td>
+<td>40.8</td>
+<td>45.5</td>
+</tr>
+<tr>
+<td>湖南长沙（天翼云）</td>
+<td>47</td>
+<td>0</td>
+<td>131.3</td>
+<td>129.8</td>
+<td>134.4</td>
+</tr>
+<tr>
+<td>吉林长春(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>128.4</td>
+<td>127.8</td>
+<td>129.6</td>
+</tr>
+<tr>
+<td>广东深圳(阿里云)</td>
+<td>46</td>
+<td>0</td>
+<td>164.8</td>
+<td>151.1</td>
+<td>171.8</td>
+</tr>
+<tr>
+<td>上海电信(天翼云一区)</td>
+<td>49</td>
+<td>0</td>
+<td>84</td>
+<td>82.9</td>
+<td>85.3</td>
+</tr>
+<tr>
+<td>江苏镇江电信</td>
+<td>48</td>
+<td>0</td>
+<td>126.6</td>
+<td>125.1</td>
+<td>128.7</td>
+</tr>
+<tr>
+<td>广东深圳(天威视讯)</td>
+<td>45</td>
+<td>0</td>
+<td>74.8</td>
+<td>73.9</td>
+<td>76.4</td>
+</tr>
+<tr>
+<td>上海(青云QingCloud)</td>
+<td>48</td>
+<td>0</td>
+<td>131.6</td>
+<td>131.2</td>
+<td>132</td>
+</tr>
+<tr>
+<td>广西南宁联通</td>
+<td>47</td>
+<td>0</td>
+<td>63</td>
+<td>62.8</td>
+<td>63.2</td>
+</tr>
+<tr>
+<td>陕西西安电信（天翼云二区）</td>
+<td>42</td>
+<td>0</td>
+<td>103.9</td>
+<td>103.7</td>
+<td>104.3</td>
+</tr>
+<tr>
+<td>北京鹏博士</td>
+<td>44</td>
+<td>0</td>
+<td>168.7</td>
+<td>165.8</td>
+<td>170.7</td>
+</tr>
+<tr>
+<td>天津(腾讯云)</td>
+<td>46</td>
+<td>0</td>
+<td>103</td>
+<td>102.8</td>
+<td>103.2</td>
+</tr>
+<tr>
+<td>辽宁沈阳(天翼云)</td>
+<td>47</td>
+<td>0</td>
+<td>228.9</td>
+<td>227.6</td>
+<td>232.3</td>
+</tr>
+<tr>
+<td>上海(阿里云)</td>
+<td>46</td>
+<td>0</td>
+<td>37</td>
+<td>36.9</td>
+<td>37.3</td>
+</tr>
+<tr>
+<td>贵州贵阳(天翼云)</td>
+<td>49</td>
+<td>50</td>
+<td>110.8</td>
+<td>110.3</td>
+<td>111.3</td>
+</tr>
+<tr>
+<td>贵州黔西南布依族苗族自治州（明源网络）</td>
+<td>47</td>
+<td>0</td>
+<td>100</td>
+<td>95.6</td>
+<td>103.9</td>
+</tr>
+<tr>
+<td>江西南昌(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>71.4</td>
+<td>70.6</td>
+<td>72</td>
+</tr>
+<tr>
+<td>河南洛阳(bgp)</td>
+<td>48</td>
+<td>0</td>
+<td>212.7</td>
+<td>212.7</td>
+<td>212.7</td>
+</tr>
+<tr>
+<td>北京(青云QingCloud三区B)</td>
+<td>46</td>
+<td>25</td>
+<td>105.7</td>
+<td>105.1</td>
+<td>106.2</td>
+</tr>
+<tr>
+<td>海南海口(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>168.1</td>
+<td>165.7</td>
+<td>169.1</td>
+</tr>
+<tr>
+<td>江苏镇江联通</td>
+<td>47</td>
+<td>0</td>
+<td>91.6</td>
+<td>91.4</td>
+<td>91.6</td>
+</tr>
+<tr>
+<td>河北石家庄(天翼云)</td>
+<td>40</td>
+<td>0</td>
+<td>67.4</td>
+<td>67</td>
+<td>67.7</td>
+</tr>
+<tr>
+<td>广东佛山电信(30CN.NET)</td>
+<td>48</td>
+<td>25</td>
+<td>138.8</td>
+<td>134.7</td>
+<td>142.2</td>
+</tr>
+<tr>
+<td>内蒙古呼和浩特（蓝视云）</td>
+<td>48</td>
+<td>0</td>
+<td>161.9</td>
+<td>148.2</td>
+<td>168.8</td>
+</tr>
+<tr>
+<td>广东深圳(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>158.3</td>
+<td>150.8</td>
+<td>164.1</td>
+</tr>
+<tr>
+<td>江苏镇江电信(云朵艾欧)</td>
+<td>48</td>
+<td>0</td>
+<td>121.4</td>
+<td>116.7</td>
+<td>126.9</td>
+</tr>
+<tr>
+<td>四川德阳移动</td>
+<td>44</td>
+<td>0</td>
+<td>111.8</td>
+<td>111.7</td>
+<td>111.9</td>
+</tr>
+<tr>
+<td>安徽芜湖（天翼云）</td>
+<td>42</td>
+<td>0</td>
+<td>132.1</td>
+<td>121.1</td>
+<td>144.6</td>
+</tr>
+<tr>
+<td>新疆乌鲁木齐(天翼云)</td>
+<td>42</td>
+<td>0</td>
+<td>200.4</td>
+<td>198.8</td>
+<td>201.2</td>
+</tr>
+</tbody></table>
+<p><strong>Youtube播放测试</strong></p>
+<p>凌晨01:50（已上锐速，混淆协议，深圳电信100M）</p>
+<p><img data-sizes="auto" data-src="/images/japan01.jpg" alt="" class="lazyload"></p>
+<p>晚上21:20（已上锐速，混淆协议，深圳电信100M）</p>
+<p><img data-sizes="auto" data-src="/images/japan02.jpg" alt="" class="lazyload"></p>
+<p>白天09:20（已上锐速，混淆协议，深圳电信100M）</p>
+<p><img data-sizes="auto" data-src="/images/japan03.jpg" alt="" class="lazyload"></p>
+<h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a><strong>官网</strong></h4><p><a href="https://www.onevps.com/portal/aff.php?aff=2122" target="_blank" rel="noopener">www.onevps.com</a></p>
+<h4 id="Looking-Glass"><a href="#Looking-Glass" class="headerlink" title="Looking Glass:"></a><strong>Looking Glass:</strong></h4><p>日本，东京<br>Test IP：193.38.139.1<br>新加坡<br>Test IP：81.90.189.197</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2019/03/17/Wget%E4%B8%8B%E8%BD%BD%E7%BB%88%E6%9E%81%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Wget下载终极用法详解" class="lazyload">
+                    <h1>Wget下载终极用法详解</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年03月17日</a>
+            <a><i class="nexmoefont icon-areachart"></i>975 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。</p>
+<h4 id="1、用Wget下载单个文件"><a href="#1、用Wget下载单个文件" class="headerlink" title="1、用Wget下载单个文件"></a>1、用Wget下载单个文件</h4><p>下载的时候会显示：<br>　　~文件的大小、连接状态、连接地址以及文件的大小<br>　　~保存的名称<br>　　~下载进度条<br>　　~下载速度、时间，还有多少未下载</p>
+<p>例如 :</p>
+<p><code>wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="2、用Wget-O下载可以为下载的文件指定另外一个名字"><a href="#2、用Wget-O下载可以为下载的文件指定另外一个名字" class="headerlink" title="2、用Wget-O下载可以为下载的文件指定另外一个名字"></a>2、用Wget-O下载可以为下载的文件指定另外一个名字</h4><p>默认情况下wget会用最后的斜线后面的所有字符来命名下载下来的文件,例如上面的frp_0.21.0_windows_amd64.zip</p>
+<p>这不是我们所想要的，我们可以用-O选项来改变将文件保存为frp.zip</p>
+<p><code>wget -O frp.zip https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="3、用Wget-–limit-rate限制下载的速度"><a href="#3、用Wget-–limit-rate限制下载的速度" class="headerlink" title="3、用Wget –limit-rate限制下载的速度"></a>3、用Wget –limit-rate限制下载的速度</h4><p><code>wget --limit-rate=300k https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="4、断点继续下载用Wget-c"><a href="#4、断点继续下载用Wget-c" class="headerlink" title="4、断点继续下载用Wget -c"></a>4、断点继续下载用Wget -c</h4><p>当你在下载一个大文件时突然中断了那么这个选项就派上用场了</p>
+<p><code>wget -c https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="5、后台下载用wget-b"><a href="#5、后台下载用wget-b" class="headerlink" title="5、后台下载用wget -b"></a>5、后台下载用wget -b</h4><p>用此选项下载时只会初始化下载而不会显示相关信息</p>
+<p><code>wget -b https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code><br>下载以后会在wget目录下生产wget-log文件，用记事本打开可查看里面的内容。</p>
+<h4 id="6、测试你要下载的地址是否可用，用Wget-–spider"><a href="#6、测试你要下载的地址是否可用，用Wget-–spider" class="headerlink" title="6、测试你要下载的地址是否可用，用Wget –spider"></a>6、测试你要下载的地址是否可用，用Wget –spider</h4><p><code>wget --spider DOWNLOAD-URL</code></p>
+<h4 id="7、增加重连次数用Wget-tries"><a href="#7、增加重连次数用Wget-tries" class="headerlink" title="7、增加重连次数用Wget -tries"></a>7、增加重连次数用Wget -tries</h4><p>在网络有问题的情况次选项尤其有用，默认是wget会重连20次以成功完成下载，我们可以把他增加为我们期待的次数</p>
+<p><code>wget --tries=100 DOWNLOAD-URL</code></p>
+<h4 id="8、下载多个文件-URLS用wget-i"><a href="#8、下载多个文件-URLS用wget-i" class="headerlink" title="8、下载多个文件/URLS用wget -i"></a>8、下载多个文件/URLS用wget -i</h4><p>首先把所有要下载的文件或者URL存到一个记事本中，比如aa.txt，里面内容如下</p>
+<p><code>URL1</code><br><code>URL2</code><br><code>URL3</code><br><code>URL4</code><br>接下来输入如下代码就可以批量下载了</p>
+<p><code>wget -i aa.txt</code></p>
+<h4 id="9、下载一个完整的网站用wget-mirror"><a href="#9、下载一个完整的网站用wget-mirror" class="headerlink" title="9、下载一个完整的网站用wget -mirror"></a>9、下载一个完整的网站用wget -mirror</h4><p>以下实现是你想完整的下载一个网站用于本地浏览</p>
+<p><code>wget --mirror  -p --convert-links -P LOCAL-DIR WEBSITE-URL</code><br>–mirror:打开镜像选项<br>-p:下载所有用于显示给定网址所必须的文件<br>–convert-links：下载以后，转换链接用于本地显示<br>-P LOCAL_DIR：保存所有的文件或目录到指定的目录下</p>
+<h4 id="10、保存输出到日志文件而不是标准输出用wget-o"><a href="#10、保存输出到日志文件而不是标准输出用wget-o" class="headerlink" title="10、保存输出到日志文件而不是标准输出用wget -o"></a>10、保存输出到日志文件而不是标准输出用wget -o</h4><p>当你想要把信息保存到一个文件而不是在终端显示时用以下代码。</p>
+<p><code>wget -o download.log DOWNLOAD-URL</code></p>
+<h4 id="11、当超过指定大小时终止下载用wget-Q"><a href="#11、当超过指定大小时终止下载用wget-Q" class="headerlink" title="11、当超过指定大小时终止下载用wget -Q"></a>11、当超过指定大小时终止下载用wget -Q</h4><p>当文件已下载10M，此时你想停止下载可以使用下面的命令行</p>
+<p><code>wget -Q10m -i FILE-WHICH-HAS-URLS</code><br>注意：此选项只能在下载多个文件时有用，当你下载一个文件时没用。</p>
+<h4 id="12、下载特定文件类型的文件用wget-r-A"><a href="#12、下载特定文件类型的文件用wget-r-A" class="headerlink" title="12、下载特定文件类型的文件用wget -r -A"></a>12、下载特定文件类型的文件用wget -r -A</h4><p>你可以用此方法下载一下文件：</p>
+<p>~从一个网站下载所有图片<br>~从一个网站下载所有视频</p>
+<p>~从一个网站下载所有PDF文件</p>
+<p><code>wget -r -A.pdf http://url-to-webpage-with-pdfs/</code></p>
+<h4 id="13、指定不下载某一类型的文件用wget-–reject"><a href="#13、指定不下载某一类型的文件用wget-–reject" class="headerlink" title="13、指定不下载某一类型的文件用wget –reject"></a>13、指定不下载某一类型的文件用wget –reject</h4><p>你发现一个网站很有用，但是你不想下载上面的图片，因为太占流量，此时你可以用如下命令。</p>
+<p><code>wget --reject=gif WEBSITE-TO-BE-DOWNLOADED</code></p>
+<h4 id="14、用wget实现FTP下载"><a href="#14、用wget实现FTP下载" class="headerlink" title="14、用wget实现FTP下载"></a>14、用wget实现FTP下载</h4><p>匿名FTP下载用</p>
+<p><code>wget ftp-url</code><br>有用户名和密码的FTP下载</p>
+<p><code>wget --ftp-user=USERNAME --ftp-password=PASSWORD DOWNLOAD-URL</code></p>
+<h4 id="15、wget下载有的资源时必须用选项"><a href="#15、wget下载有的资源时必须用选项" class="headerlink" title="15、wget下载有的资源时必须用选项"></a>15、wget下载有的资源时必须用选项</h4><p>–no-check-certificate，否则会提示没有认证不允许下载</p>
+<p><code>wget --no-check-certificate URL</code></p>
+
+            
+        </article>
+    </div>
+    
+</section>
+
+    <nav class="nexmoe-page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="nexmoefont icon-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1591714365748"></script>
+  
+
+
+
+
+
+</body>
+
+</html>

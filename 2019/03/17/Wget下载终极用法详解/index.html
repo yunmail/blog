@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Wget下载终极用法详解 - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。 1、用Wget下载单个文件下载的时候会显示：　　~文件的大小、连接状态、连接地址以及文件的大小　　~保存的名称　　~下载进度条　　~下载速度、时间，还有多少未下载 例如 : wget https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp&#x2F;releases&#x2F;download&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wget下载终极用法详解">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/Wget%E4%B8%8B%E8%BD%BD%E7%BB%88%E6%9E%81%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。 1、用Wget下载单个文件下载的时候会显示：　　~文件的大小、连接状态、连接地址以及文件的大小　　~保存的名称　　~下载进度条　　~下载速度、时间，还有多少未下载 例如 : wget https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp&#x2F;releases&#x2F;download&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-17T15:20:00.000Z">
+<meta property="article:modified_time" content="2020-06-09T14:29:02.439Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="wget教程">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1591714365632">-->
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>37</div>
+        <div><span>标签</span>75</div>
+        <div><span>分类</span>5</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hexo/">hexo</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux/">linux</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/linux教程/">linux教程</a>
+          <span class="category-list-count">27</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/vps评测/">vps评测</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/windows教程/">windows教程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/BT%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">BT下载</a> <a href="/tags/LEDE%E6%9B%B4%E6%94%B9%E6%BA%90/" style="font-size: 10px;">LEDE更改源</a> <a href="/tags/LEDE%E6%9B%B4%E6%96%B0frp/" style="font-size: 10px;">LEDE更新frp</a> <a href="/tags/LEDE%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">LEDE系统安装</a> <a href="/tags/LEDE%E7%BC%96%E8%AF%91/" style="font-size: 10px;">LEDE编译</a> <a href="/tags/MOON%E6%A0%B9%E7%9B%AE%E5%BD%95/" style="font-size: 10px;">MOON根目录</a> <a href="/tags/N2N%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" style="font-size: 10px;">N2N搭建教程</a> <a href="/tags/NPS%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">NPS搭建</a> <a href="/tags/P2P%E7%BB%84%E7%BD%91/" style="font-size: 10px;">P2P组网</a> <a href="/tags/VPN%E7%BB%84%E7%BD%91/" style="font-size: 10px;">VPN组网</a> <a href="/tags/ZeroTier/" style="font-size: 10px;">ZeroTier</a> <a href="/tags/centos%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0git/" style="font-size: 10px;">centos安装最新git</a> <a href="/tags/docker%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">docker离线下载</a> <a href="/tags/git%E5%AE%89%E8%A3%85/" style="font-size: 10px;">git安装</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo%E9%83%A8%E7%BD%B2%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">hexo部署打赏插件</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/https%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85/" style="font-size: 10px;">https一键安装</a> <a href="/tags/https%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">https修改</a> <a href="/tags/https%E5%BC%80%E5%90%AFTls1-3/" style="font-size: 10px;">https开启Tls1.3</a> <a href="/tags/https%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">https部署</a> <a href="/tags/instant-page/" style="font-size: 10px;">instant.page</a> <a href="/tags/jiacrontab%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">jiacrontab搭建</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lede%E7%BC%96%E8%AF%91/" style="font-size: 10px;">lede编译</a> <a href="/tags/linux%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" style="font-size: 10px;">linux免密登录</a> <a href="/tags/linux%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">linux命令</a> <a href="/tags/linux%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88git/" style="font-size: 10px;">linux安装最新版git</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/" style="font-size: 15px;">linux开机启动</a> <a href="/tags/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">linux开机启动程序</a> <a href="/tags/linux%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" style="font-size: 10px;">linux文件复制</a> <a href="/tags/linux%E6%9B%B4%E6%94%B9%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/" style="font-size: 10px;">linux更改简体中文</a> <a href="/tags/linux%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">linux系统</a> <a href="/tags/linux%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E8%BF%90/" style="font-size: 10px;">linux脚本自动运</a> <a href="/tags/linux%E8%AE%BE%E7%BD%AE%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/" style="font-size: 10px;">linux设置密钥登陆</a> <a href="/tags/nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">nginx无法启动</a> <a href="/tags/openwrt%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt二次编译</a> <a href="/tags/openwrt%E5%9B%BA%E4%BB%B6%E7%BC%96%E8%AF%91/" style="font-size: 10px;">openwrt固件编译</a> <a href="/tags/openwrt%E6%9B%B4%E6%96%B0frpc/" style="font-size: 10px;">openwrt更新frpc</a> <a href="/tags/php%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">php加速</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh%E5%8A%A0%E5%9B%BA/" style="font-size: 15px;">ssh加固</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口一键修改</a> <a href="/tags/ssh%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/" style="font-size: 10px;">ssh端口修改</a> <a href="/tags/ssh%E9%98%B2%E7%A0%B4%E8%A7%A3/" style="font-size: 10px;">ssh防破解</a> <a href="/tags/ssl%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">ssl部署</a> <a href="/tags/tcp%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">tcp加速</a> <a href="/tags/vim%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">vim技巧</a> <a href="/tags/web%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">web邮箱</a> <a href="/tags/wget%E6%95%99%E7%A8%8B/" style="font-size: 10px;">wget教程</a> <a href="/tags/%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8Fvps/" style="font-size: 10px;">不限流量vps</a> <a href="/tags/%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/" style="font-size: 10px;">临时邮箱</a> <a href="/tags/%E4%BE%BF%E5%AE%9C%E7%9A%84vps/" style="font-size: 10px;">便宜的vps</a> <a href="/tags/%E5%86%85%E7%BD%91%E6%98%A0%E5%B0%84/" style="font-size: 10px;">内网映射</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 20px;">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">分类导航</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" style="font-size: 10px;">定时任务</a> <a href="/tags/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">定时关机</a> <a href="/tags/%E5%AE%9D%E5%A1%94nginx%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/" style="font-size: 10px;">宝塔nginx无法启动</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99/" style="font-size: 10px;">导航网站</a> <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E7%BB%84%E5%BB%BA/" style="font-size: 10px;">局域网组建</a> <a href="/tags/%E5%BB%BA%E7%AB%99vps/" style="font-size: 10px;">建站vps</a> <a href="/tags/%E6%89%93%E8%B5%8F%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">打赏插件</a> <a href="/tags/%E6%97%A0%E9%99%90%E9%87%8Fvps/" style="font-size: 10px;">无限量vps</a> <a href="/tags/%E6%97%A5%E6%9C%ACvps/" style="font-size: 10px;">日本vps</a> <a href="/tags/%E6%B4%9B%E6%9D%89%E7%9F%B6vps/" style="font-size: 10px;">洛杉矶vps</a> <a href="/tags/%E7%94%B5%E4%BF%A1%E8%81%94%E9%80%9A%E7%9B%B4%E8%BF%9E/" style="font-size: 10px;">电信联通直连</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F/" style="font-size: 10px;">网站加速</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9FJS%E8%84%9A%E6%9C%AC/" style="font-size: 10px;">网站加速JS脚本</a> <a href="/tags/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">网站导航</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/" style="font-size: 10px;">自动关机</a> <a href="/tags/%E8%B0%B7%E6%AD%8C%E4%BA%91%E5%BC%80%E5%90%AFroot%E5%AF%86%E7%A0%81%E7%99%BB%E9%99%86/" style="font-size: 10px;">谷歌云开启root密码登陆</a> <a href="/tags/%E8%B7%A8%E7%BD%91%E5%85%B1%E4%BA%AB/" style="font-size: 10px;">跨网共享</a> <a href="/tags/%E9%9F%A9%E5%9B%BDvps/" style="font-size: 10px;">韩国vps</a> <a href="/tags/%E9%AB%98%E9%80%9Fvps/" style="font-size: 10px;">高速vps</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Wget下载终极用法详解" class="lazyload">
+          <h1>Wget下载终极用法详解</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2019年03月17日</a>
+    <a><i class="nexmoefont icon-areachart"></i>975 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。</p>
+<h4 id="1、用Wget下载单个文件"><a href="#1、用Wget下载单个文件" class="headerlink" title="1、用Wget下载单个文件"></a>1、用Wget下载单个文件</h4><p>下载的时候会显示：<br>　　~文件的大小、连接状态、连接地址以及文件的大小<br>　　~保存的名称<br>　　~下载进度条<br>　　~下载速度、时间，还有多少未下载</p>
+<p>例如 :</p>
+<p><code>wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="2、用Wget-O下载可以为下载的文件指定另外一个名字"><a href="#2、用Wget-O下载可以为下载的文件指定另外一个名字" class="headerlink" title="2、用Wget-O下载可以为下载的文件指定另外一个名字"></a>2、用Wget-O下载可以为下载的文件指定另外一个名字</h4><p>默认情况下wget会用最后的斜线后面的所有字符来命名下载下来的文件,例如上面的frp_0.21.0_windows_amd64.zip</p>
+<p>这不是我们所想要的，我们可以用-O选项来改变将文件保存为frp.zip</p>
+<p><code>wget -O frp.zip https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="3、用Wget-–limit-rate限制下载的速度"><a href="#3、用Wget-–limit-rate限制下载的速度" class="headerlink" title="3、用Wget –limit-rate限制下载的速度"></a>3、用Wget –limit-rate限制下载的速度</h4><p><code>wget --limit-rate=300k https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="4、断点继续下载用Wget-c"><a href="#4、断点继续下载用Wget-c" class="headerlink" title="4、断点继续下载用Wget -c"></a>4、断点继续下载用Wget -c</h4><p>当你在下载一个大文件时突然中断了那么这个选项就派上用场了</p>
+<p><code>wget -c https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code></p>
+<h4 id="5、后台下载用wget-b"><a href="#5、后台下载用wget-b" class="headerlink" title="5、后台下载用wget -b"></a>5、后台下载用wget -b</h4><p>用此选项下载时只会初始化下载而不会显示相关信息</p>
+<p><code>wget -b https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_windows_amd64.zip</code><br>下载以后会在wget目录下生产wget-log文件，用记事本打开可查看里面的内容。</p>
+<h4 id="6、测试你要下载的地址是否可用，用Wget-–spider"><a href="#6、测试你要下载的地址是否可用，用Wget-–spider" class="headerlink" title="6、测试你要下载的地址是否可用，用Wget –spider"></a>6、测试你要下载的地址是否可用，用Wget –spider</h4><p><code>wget --spider DOWNLOAD-URL</code></p>
+<h4 id="7、增加重连次数用Wget-tries"><a href="#7、增加重连次数用Wget-tries" class="headerlink" title="7、增加重连次数用Wget -tries"></a>7、增加重连次数用Wget -tries</h4><p>在网络有问题的情况次选项尤其有用，默认是wget会重连20次以成功完成下载，我们可以把他增加为我们期待的次数</p>
+<p><code>wget --tries=100 DOWNLOAD-URL</code></p>
+<h4 id="8、下载多个文件-URLS用wget-i"><a href="#8、下载多个文件-URLS用wget-i" class="headerlink" title="8、下载多个文件/URLS用wget -i"></a>8、下载多个文件/URLS用wget -i</h4><p>首先把所有要下载的文件或者URL存到一个记事本中，比如aa.txt，里面内容如下</p>
+<p><code>URL1</code><br><code>URL2</code><br><code>URL3</code><br><code>URL4</code><br>接下来输入如下代码就可以批量下载了</p>
+<p><code>wget -i aa.txt</code></p>
+<h4 id="9、下载一个完整的网站用wget-mirror"><a href="#9、下载一个完整的网站用wget-mirror" class="headerlink" title="9、下载一个完整的网站用wget -mirror"></a>9、下载一个完整的网站用wget -mirror</h4><p>以下实现是你想完整的下载一个网站用于本地浏览</p>
+<p><code>wget --mirror  -p --convert-links -P LOCAL-DIR WEBSITE-URL</code><br>–mirror:打开镜像选项<br>-p:下载所有用于显示给定网址所必须的文件<br>–convert-links：下载以后，转换链接用于本地显示<br>-P LOCAL_DIR：保存所有的文件或目录到指定的目录下</p>
+<h4 id="10、保存输出到日志文件而不是标准输出用wget-o"><a href="#10、保存输出到日志文件而不是标准输出用wget-o" class="headerlink" title="10、保存输出到日志文件而不是标准输出用wget -o"></a>10、保存输出到日志文件而不是标准输出用wget -o</h4><p>当你想要把信息保存到一个文件而不是在终端显示时用以下代码。</p>
+<p><code>wget -o download.log DOWNLOAD-URL</code></p>
+<h4 id="11、当超过指定大小时终止下载用wget-Q"><a href="#11、当超过指定大小时终止下载用wget-Q" class="headerlink" title="11、当超过指定大小时终止下载用wget -Q"></a>11、当超过指定大小时终止下载用wget -Q</h4><p>当文件已下载10M，此时你想停止下载可以使用下面的命令行</p>
+<p><code>wget -Q10m -i FILE-WHICH-HAS-URLS</code><br>注意：此选项只能在下载多个文件时有用，当你下载一个文件时没用。</p>
+<h4 id="12、下载特定文件类型的文件用wget-r-A"><a href="#12、下载特定文件类型的文件用wget-r-A" class="headerlink" title="12、下载特定文件类型的文件用wget -r -A"></a>12、下载特定文件类型的文件用wget -r -A</h4><p>你可以用此方法下载一下文件：</p>
+<p>~从一个网站下载所有图片<br>~从一个网站下载所有视频</p>
+<p>~从一个网站下载所有PDF文件</p>
+<p><code>wget -r -A.pdf http://url-to-webpage-with-pdfs/</code></p>
+<h4 id="13、指定不下载某一类型的文件用wget-–reject"><a href="#13、指定不下载某一类型的文件用wget-–reject" class="headerlink" title="13、指定不下载某一类型的文件用wget –reject"></a>13、指定不下载某一类型的文件用wget –reject</h4><p>你发现一个网站很有用，但是你不想下载上面的图片，因为太占流量，此时你可以用如下命令。</p>
+<p><code>wget --reject=gif WEBSITE-TO-BE-DOWNLOADED</code></p>
+<h4 id="14、用wget实现FTP下载"><a href="#14、用wget实现FTP下载" class="headerlink" title="14、用wget实现FTP下载"></a>14、用wget实现FTP下载</h4><p>匿名FTP下载用</p>
+<p><code>wget ftp-url</code><br>有用户名和密码的FTP下载</p>
+<p><code>wget --ftp-user=USERNAME --ftp-password=PASSWORD DOWNLOAD-URL</code></p>
+<h4 id="15、wget下载有的资源时必须用选项"><a href="#15、wget下载有的资源时必须用选项" class="headerlink" title="15、wget下载有的资源时必须用选项"></a>15、wget下载有的资源时必须用选项</h4><p>–no-check-certificate，否则会提示没有认证不允许下载</p>
+<p><code>wget --no-check-certificate URL</code></p>
+
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/linux%E6%95%99%E7%A8%8B/">linux教程</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/wget%E6%95%99%E7%A8%8B/" rel="tag">wget教程</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>John Doe<br>
+    <strong>本文链接：</strong><a href="http://yoursite.com/2019/03/17/Wget%E4%B8%8B%E8%BD%BD%E7%BB%88%E6%9E%81%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;03&#x2F;17&#x2F;Wget%E4%B8%8B%E8%BD%BD%E7%BB%88%E6%9E%81%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;03&#x2F;17&#x2F;Wget%E4%B8%8B%E8%BD%BD%E7%BB%88%E6%9E%81%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1591714365635"></script>
+  
+
+
+
+
+
+</body>
+
+</html>
