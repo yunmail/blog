@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1594451119499">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1594451367254">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -183,55 +183,14 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年07月11日</a>
-            <a><i class="nexmoefont icon-areachart"></i>326 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+            <a><i class="nexmoefont icon-areachart"></i>472 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
 
         <article>
             
-                <h1 id="修改DNS配置"><a href="#修改DNS配置" class="headerlink" title="修改DNS配置"></a>修改DNS配置</h1><p>查看当前DNS配置：<code>cat /etc/resolv.conf</code></p>
-<p><strong>方法一（临时修改，重启失效）</strong></p>
-<p>修改下面文件：</p>
-<pre><code>vi /etc/resolv.conf</code></pre><p>加入想要修改的DNS</p>
-<pre><code>nameserver 8.8.8.8
-nameserver 8.8.4.4</code></pre><p>如果多个DNS，就一行一个，修改之后保存退出即可；</p>
-<p>此方法修改后即刻生效，但重启后失效</p>
-<p><strong>方法二（永久修改，持续生效）</strong></p>
-<p>修改下面文件：</p>
-<pre><code>vi /etc/network/interfaces</code></pre><p>在文件最后加入：</p>
-<pre><code>dns-nameservers 8.8.8.8</code></pre><h1 id="使修改的-DNS-生效"><a href="#使修改的-DNS-生效" class="headerlink" title="使修改的 DNS 生效"></a>使修改的 DNS 生效</h1><p>修改完保存了并不是立即生效的。输入下面命令使配置生效：</p>
-<pre><code># 使网卡配置生效
-/etc/init.d/networking restart
-# 使 DNS 生效
-/etc/init.d/resolvconf restart</code></pre><p>查看是否已经生效：</p>
-<pre><code>cat /etc/resolv.conf</code></pre><p>如果已经变成了你设置的DNS，那就设置成功了。</p>
-<h1 id="nslookup解析命令"><a href="#nslookup解析命令" class="headerlink" title="nslookup解析命令"></a>nslookup解析命令</h1><p>安装nslookup</p>
-<pre><code>#Ubuntu
-apt-get install dnsutils
-#Debian
-apt-get update
-apt-get install dnsutils
-#Centos
-yum install bind-utils</code></pre><p>使用方法</p>
-<pre><code>nslookup www.baidu.com
-说明
-nslookup 你需要解析的域名</code></pre><p>例：</p>
-<pre><code>root@ubuntu:~# nslookup www.baidu.com
-Server:         8.8.8.8
-Address:        8.8.8.8#53
-
-Non-authoritative answer:
-www.baidu.com   canonical name = www.a.shifen.com.
-www.a.shifen.com        canonical name = www.wshifen.com.
-Name:   www.wshifen.com
-Address: 104.193.88.77
-Name:   www.wshifen.com
-Address: 104.193.88.123</code></pre><blockquote>
-<p>参考链接：</p>
-<p><a href="https://blog.csdn.net/u012732259/article/details/76502231" target="_blank" rel="noopener">https://blog.csdn.net/u012732259/article/details/76502231</a></p>
-<p><a href="https://www.cnblogs.com/EasonJim/p/7857671.html" target="_blank" rel="noopener">https://www.cnblogs.com/EasonJim/p/7857671.html</a></p>
-</blockquote>
-
+                <p>于各种故障原因，有些用户会通过重装VPS系统来解决这些问题。可是因为服务商不提供DHCP，所以只好手动设置IP和DNS Server，可是在系统重装的时候忘记输入DNS Server最后导致进去系统后，各种域名无法解析。因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。那么该怎么办呢?</p>
+<hr>
             
         </article>
     </div>
@@ -471,7 +430,7 @@ Address: 104.193.88.123</code></pre><blockquote>
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1594451119500"></script>
+<script src="/js/app.js?v=1594451367255"></script>
   
 
 
