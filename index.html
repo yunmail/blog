@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1594449660631">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1594449871932">-->
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body class="mdui-drawer-body-left">
@@ -183,26 +183,13 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年07月11日</a>
-            <a><i class="nexmoefont icon-areachart"></i>224 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>284 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
         <article>
             
-                <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>使用<code>fsutil</code>命令，<code>Windows</code>下一般都自带了这个命令，直接使用即可；<br>右键以管理员身份运行“命令提示符”<br>命令的格式为：<code>fsutil file createnew 新文件名 文件大小</code><br>例：</p>
-<p>在D盘根目录下创建一个名为“<code>sunpma.zip</code>”的文件</p>
-<pre><code>1MB大小
-fsutil file createnew D:\sunpma.zip 1048576
-100MB大小
-fsutil file createnew D:\sunpma.zip 104857600
-1GB大小
-fsutil file createnew D:\sunpma.zip 1073741824</code></pre><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p><code>Linux</code>系统下直接使用dd命令即可，一般系统都会自带，不需要额外安装；<br>命令的格式为：<code>dd if=/dev/zero of=要生成的文件 bs=读入的block大小 count=读取的block个数</code><br>例：<br>在<code>/home</code>目录下创建一个后缀名为“<code>.dat</code>”的文件</p>
-<pre><code>100MB大小
-dd if=/dev/zero of=/home/100MB.dat bs=1M count=100
-1GB大小
-dd if=/dev/zero of=/home/1GB.dat bs=1M count=1024
-10GB大小
-dd if=/dev/zero of=/home/10GB.dat bs=1M count=10240</code></pre>
+                <p>经常买vps小伙伴，为了测试下载速度会把视频放到站点上，到处找视频麻烦还得上传。利用系统自带功能随机生成一个指定大小的文件，岂不美哉！</p>
             
         </article>
     </div>
@@ -439,7 +426,7 @@ dd if=/dev/zero of=/home/10GB.dat bs=1M count=10240</code></pre>
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1594449660632"></script>
+<script src="/js/app.js?v=1594449871933"></script>
   
 
 
